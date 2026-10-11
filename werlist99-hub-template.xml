@@ -1,0 +1,1087 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' dir='rtl' lang='ar' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<script>document.documentElement.className += ' js';</script>
+<meta content='width=device-width, initial-scale=1' name='viewport'/>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<meta content='#6366f1' name='theme-color'/>
+
+<b:if cond='data:view.isMultipleItems'>
+  <title><data:blog.pageTitle/></title>
+<b:else/>
+  <title><data:blog.pageName/> - <data:blog.title/></title>
+</b:if>
+
+<b:if cond='data:blog.metaDescription'>
+  <meta expr:content='data:blog.metaDescription' name='description'/>
+<b:else/>
+  <meta content='werlist99 - شروحات Windows والحاسوب، أدوات برمجية ومشاريع مفتوحة المصدر. كل حاجة في مكان واحد.' name='description'/>
+</b:if>
+<meta content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' name='robots'/>
+<link expr:href='data:blog.canonicalUrl' rel='canonical'/>
+
+<meta content='website' property='og:type'/>
+<meta expr:content='data:blog.title' property='og:site_name'/>
+<b:if cond='data:view.isPost'>
+  <meta expr:content='data:blog.pageName' property='og:title'/>
+<b:else/>
+  <meta expr:content='data:blog.pageTitle' property='og:title'/>
+</b:if>
+<meta expr:content='data:blog.canonicalUrl' property='og:url'/>
+<meta content='https://avatars.githubusercontent.com/u/245860205?v=4' property='og:image'/>
+<meta content='https://avatars.githubusercontent.com/u/245860205?v=4' name='twitter:image'/>
+<meta content='summary_large_image' name='twitter:card'/>
+<meta content='@werlist99' name='twitter:creator'/>
+
+<link expr:href='data:blog.homepageUrl + &quot;favicon.ico&quot;' rel='shortcut icon' type='image/x-icon'/>
+<link href='https://avatars.githubusercontent.com/u/245860205?v=4' rel='apple-touch-icon' sizes='180x180'/>
+
+<link href='https://fonts.googleapis.com' rel='preconnect'/>
+<link crossorigin='anonymous' href='https://fonts.gstatic.com' rel='preconnect'/>
+<link href='https://cdnjs.cloudflare.com' rel='preconnect'/>
+<link href='https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&amp;family=Tajawal:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap' rel='stylesheet'/>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' rel='stylesheet'/>
+
+<script type='application/ld+json'>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://werlist99.blogspot.com/#website",
+      "url": "https://werlist99.blogspot.com/",
+      "name": "werlist99",
+      "description": "Tech blog: Windows &amp; PC guides, tools and open-source projects.",
+      "inLanguage": "ar",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://werlist99.blogspot.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://werlist99.blogspot.com/#person",
+      "name": "werlist99",
+      "alternateName": "zougar99",
+      "url": "https://werlist99.blogspot.com/",
+      "image": "https://avatars.githubusercontent.com/u/245860205?v=4",
+      "jobTitle": "Developer &amp; Tech Blogger",
+      "address": { "@type": "PostalAddress", "addressCountry": "Morocco" },
+      "sameAs": [ "https://github.com/zougar99" ],
+      "knowsAbout": ["Python", "JavaScript", "C++", "PHP", "Firefox Extensions", "Windows", "Web Development"]
+    }
+  ]
+}
+</script>
+
+<b:skin><![CDATA[
+/*
+=========================================
+Template: WeRList99 - Hub v5.0
+Blog homepage = posts; GitHub hub moved to /p/projects.html
+=========================================
+*/
+:root{
+  --primary:#6366f1; --primary-dark:#4f46e5; --secondary:#8b5cf6;
+  --accent:#f59e0b; --bg-dark:#0f172a; --bg-card:#1e293b; --bg-light:#334155;
+  --text-light:#f1f5f9; --text-muted:#94a3b8; --border:#475569;
+  --success:#10b981; --danger:#ef4444; --radius:15px;
+}
+body.light-mode{
+  --bg-dark:#f1f5f9; --bg-card:#ffffff; --bg-light:#e2e8f0;
+  --text-light:#1e293b; --text-muted:#64748b; --border:#cbd5e1;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Tajawal','Cairo',Arial,sans-serif;background:var(--bg-dark);color:var(--text-light);line-height:1.8;direction:rtl;transition:background .3s,color .3s}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;height:auto}
+ul{list-style:none}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+#projects,#stack,#links,#posts{scroll-margin-top:85px}
+
+/* ===== Reading progress ===== */
+.progress-bar{position:fixed;top:0;left:0;height:3px;width:0;z-index:2000;
+  background:linear-gradient(90deg,var(--primary),var(--secondary),var(--accent))}
+
+/* ===== Hero (compact) ===== */
+.header{position:relative;overflow:hidden;border-bottom:3px solid var(--primary);
+  background:linear-gradient(135deg,var(--bg-dark) 0%,var(--bg-card) 100%);padding:36px 0 30px}
+.header::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;
+  background:radial-gradient(circle,rgba(99,102,241,.12) 0%,transparent 70%);animation:pulse 10s infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+.header-content{position:relative;z-index:1;text-align:center}
+.hero-avatar{width:84px;height:84px;border-radius:50%;border:4px solid var(--primary);object-fit:cover;
+  box-shadow:0 0 0 6px rgba(99,102,241,.15);margin-bottom:14px}
+.logo{font-size:1.9rem;font-weight:900;background:linear-gradient(135deg,var(--primary),var(--secondary),var(--accent));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:inline-block}
+.hero-bio{color:var(--text-muted);max-width:640px;margin:8px auto 0;font-size:.98rem}
+.hero-badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:14px}
+.chip{background:var(--bg-card);border:1px solid var(--border);padding:4px 12px;border-radius:20px;font-size:.82rem;color:var(--text-muted)}
+.chip i{color:var(--primary)}
+.header-social{display:flex;gap:12px;justify-content:center;margin-top:18px}
+.header-social a{width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:var(--bg-card);
+  border-radius:50%;color:var(--text-light);font-size:1.05rem;border:1px solid var(--border);transition:.3s}
+.header-social a:hover{background:var(--primary);color:#fff;transform:translateY(-5px);border-color:var(--primary)}
+.hub-search{max-width:520px;margin:20px auto 0;display:flex;background:var(--bg-card);border:1px solid var(--border);border-radius:50px;overflow:hidden}
+.hub-search input{flex:1;background:transparent;border:none;color:var(--text-light);padding:12px 20px;font-family:inherit;font-size:.95rem;outline:none}
+.hub-search button{background:linear-gradient(135deg,var(--primary),var(--secondary));border:none;color:#fff;padding:0 22px;cursor:pointer;font-size:1rem}
+
+/* ===== Navbar ===== */
+.navbar{background:color-mix(in srgb,var(--bg-card) 95%,transparent);backdrop-filter:blur(10px);
+  position:sticky;top:0;z-index:1000;border-bottom:1px solid var(--border)}
+.nav-container{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;max-width:1200px;margin:0 auto;gap:10px}
+.nav-links{display:flex;gap:6px;flex-wrap:wrap}
+.nav-links a{color:var(--text-light);font-weight:500;padding:8px 13px;border-radius:8px;transition:.3s;font-size:.95rem}
+.nav-links a:hover,.nav-links a.active{background:var(--primary);color:#fff}
+.menu-toggle{display:none;background:none;border:none;color:var(--text-light);font-size:1.5rem;cursor:pointer}
+.nav-tools{display:flex;gap:8px;align-items:center}
+.theme-toggle,.lang-toggle,.search-toggle{background:var(--bg-dark);border:1px solid var(--border);color:var(--text-light);
+  padding:8px 12px;border-radius:8px;cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;font-size:.9rem}
+.theme-toggle:hover,.lang-toggle:hover,.search-toggle:hover{border-color:var(--primary)}
+
+/* ===== Search overlay ===== */
+.search-overlay{position:fixed;inset:0;z-index:1600;display:none;align-items:center;justify-content:center;
+  background:rgba(15,23,42,.88);backdrop-filter:blur(6px);padding:20px}
+.search-overlay.open{display:flex}
+.search-overlay .search-box{width:100%;max-width:560px;display:flex;background:var(--bg-card);
+  border:1px solid var(--border);border-radius:16px;overflow:hidden;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+.search-overlay input{flex:1;background:transparent;border:none;color:var(--text-light);padding:18px 22px;font-family:inherit;font-size:1.05rem;outline:none}
+.search-overlay button{background:linear-gradient(135deg,var(--primary),var(--secondary));border:none;color:#fff;padding:0 26px;cursor:pointer;font-size:1.1rem}
+
+/* ===== Layout ===== */
+.main-wrapper{display:grid;grid-template-columns:1fr 350px;gap:30px;padding:40px 0;max-width:1200px;margin:0 auto}
+.content{min-width:0}
+.hub-section{margin-bottom:45px}
+.section-title{font-size:1.6rem;margin-bottom:25px;padding-bottom:14px;border-bottom:3px solid var(--primary);
+  display:flex;align-items:center;gap:10px;font-weight:700}
+.section-title i{color:var(--primary)}
+.section-title .count-badge{margin-right:auto;font-size:.8rem;background:var(--bg-card);border:1px solid var(--border);
+  padding:3px 12px;border-radius:20px;color:var(--text-muted);font-weight:400}
+
+/* ===== Home posts grid ===== */
+.home-posts{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-bottom:28px}
+.home-posts .article-card{margin-bottom:0;display:flex;flex-direction:column;height:100%}
+.home-posts .article-card .post-content{flex:1;display:flex;flex-direction:column}
+.home-posts .article-card .read-more{align-self:flex-start}
+.home-posts .article-card:first-child{grid-column:1/-1}
+.home-posts .article-card:first-child .post-thumbnail{height:380px}
+.home-posts .article-card:first-child .post-title{font-size:2rem}
+.cat-strip{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:8px 0 26px}
+.cat-strip>span{color:var(--text-muted);font-size:.9rem}
+.cat-chip{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:6px 16px;font-size:.88rem;transition:.3s}
+.cat-chip:hover{background:var(--primary);color:#fff;border-color:var(--primary)}
+
+/* ===== GitHub stats (projects page) ===== */
+.gh-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:15px;margin-bottom:25px}
+.gh-stat{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center}
+.gh-stat b{display:block;font-size:1.6rem;color:var(--primary);line-height:1.2}
+.gh-stat span{font-size:.82rem;color:var(--text-muted)}
+.gh-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+.gh-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;
+  display:flex;flex-direction:column;transition:.3s;position:relative;overflow:hidden}
+.gh-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(99,102,241,.08),transparent);opacity:0;transition:.3s}
+.gh-card:hover{transform:translateY(-5px);border-color:var(--primary);box-shadow:0 16px 34px rgba(99,102,241,.16)}
+.gh-card:hover::before{opacity:1}
+.gh-card>*{position:relative;z-index:1}
+.gh-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.gh-head i{color:var(--primary);font-size:1.15rem}
+.gh-head h3{font-size:1.05rem;font-weight:700;word-break:break-word}
+.gh-head h3 a:hover{color:var(--primary)}
+.gh-desc{color:var(--text-muted);font-size:.9rem;flex:1;margin-bottom:16px;min-height:42px}
+.gh-foot{display:flex;align-items:center;gap:14px;font-size:.82rem;color:var(--text-muted);flex-wrap:wrap}
+.gh-foot .lang{display:flex;align-items:center;gap:6px}
+.lang-dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.gh-topic{background:var(--bg-dark);border:1px solid var(--border);border-radius:20px;padding:2px 10px;font-size:.72rem}
+
+/* ===== Tech stack ===== */
+.tech-stack{display:flex;flex-wrap:wrap;gap:10px}
+.badge{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:10px 16px;
+  font-weight:600;font-size:.9rem;display:flex;align-items:center;gap:8px;transition:.3s}
+.badge:hover{border-color:var(--primary);transform:translateY(-3px)}
+.badge i{font-size:1.1rem}
+
+/* ===== Links grid ===== */
+.links-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.link-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:18px;
+  display:flex;gap:14px;align-items:center;transition:.3s}
+.link-card:hover{transform:translateY(-4px);border-color:var(--primary)}
+.link-card .lc-icon{width:46px;height:46px;flex-shrink:0;border-radius:12px;display:flex;align-items:center;
+  justify-content:center;font-size:1.2rem;color:#fff;background:linear-gradient(135deg,var(--primary),var(--secondary))}
+.link-card h4{font-size:.98rem;margin-bottom:3px}
+.link-card p{font-size:.82rem;color:var(--text-muted);line-height:1.5}
+
+/* ===== Cards (posts) ===== */
+.article-card{background:var(--bg-card);border-radius:var(--radius);overflow:hidden;margin-bottom:25px;
+  border:1px solid var(--border);transition:.3s}
+.article-card:hover{transform:translateY(-5px);box-shadow:0 20px 40px rgba(99,102,241,.15);border-color:var(--primary)}
+.post-thumbnail{width:100%;height:250px;object-fit:cover}
+.post-thumbnail.single{height:340px}
+.post-content{padding:25px}
+.post-meta{display:flex;flex-wrap:wrap;gap:15px;align-items:center;margin-bottom:15px;font-size:.9rem;color:var(--text-muted)}
+.post-meta span{display:flex;align-items:center;gap:5px}
+.post-meta .category,.post-meta .category a{background:var(--primary);color:#fff;padding:3px 12px;border-radius:20px;font-size:.8rem}
+.post-meta .category a{margin:0 2px}
+.post-title{font-size:1.5rem;margin-bottom:15px;line-height:1.4}
+.post-title a:hover{color:var(--primary)}
+.post-excerpt{color:var(--text-muted);margin-bottom:20px}
+.read-more{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--primary),var(--secondary));
+  color:#fff;padding:10px 25px;border-radius:25px;font-weight:500;transition:.3s;border:none;cursor:pointer;font-family:inherit;font-size:1rem}
+.read-more:hover{transform:translateX(-5px);box-shadow:0 10px 20px rgba(99,102,241,.3)}
+
+/* ===== Breadcrumb ===== */
+.breadcrumb{display:flex;flex-wrap:wrap;gap:8px;align-items:center;color:var(--text-muted);font-size:.88rem;margin-bottom:18px}
+.breadcrumb a{color:var(--primary)}
+.breadcrumb .sep{opacity:.6}
+
+/* ===== Post page ===== */
+.post-body{background:var(--bg-card);padding:40px;border-radius:var(--radius);margin-bottom:30px;font-size:1.05rem;line-height:2}
+.post-body h2,.post-body h3,.post-body h4{margin:30px 0 15px;color:var(--primary);scroll-margin-top:90px}
+.post-body p{margin-bottom:20px}
+.post-body img{border-radius:10px;margin:20px 0}
+.post-body a{color:var(--accent);text-decoration:underline}
+.post-body blockquote{background:var(--bg-dark);border-right:4px solid var(--primary);padding:20px;margin:20px 0;border-radius:0 10px 10px 0;font-style:italic}
+.post-body code{background:var(--bg-dark);padding:2px 8px;border-radius:4px;font-family:'JetBrains Mono',monospace;color:var(--accent);font-size:.9em}
+.post-body pre{position:relative;background:var(--bg-dark);padding:44px 20px 20px;border-radius:10px;overflow-x:auto;margin:20px 0;border:1px solid var(--border)}
+.post-body pre code{color:var(--text-light);background:none;padding:0}
+.post-body ul,.post-body ol{margin:15px 25px 15px 0}
+.post-body li{margin-bottom:10px}
+.copy-code{position:absolute;top:10px;left:10px;background:var(--primary);color:#fff;border:none;border-radius:8px;
+  padding:5px 12px;font-size:.8rem;cursor:pointer;font-family:inherit}
+.copy-code:hover{background:var(--secondary)}
+
+/* ===== Post tools (TOC / font / share) ===== */
+.post-tools{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start;justify-content:space-between;margin-bottom:22px}
+.toc{background:var(--bg-dark);border:1px solid var(--border);border-radius:10px;padding:14px 18px;flex:1 1 100%}
+.toc summary{cursor:pointer;font-weight:700;color:var(--primary)}
+.toc-list{display:flex;flex-direction:column;gap:6px;margin-top:12px}
+.toc-list a{color:var(--text-muted);font-size:.92rem}
+.toc-list a:hover{color:var(--primary)}
+.toc-list a.lvl-3{padding-right:20px}
+.font-tools{display:flex;gap:8px;align-items:center;color:var(--text-muted);font-size:.85rem}
+.tool-btn{background:var(--bg-dark);border:1px solid var(--border);color:var(--text-light);width:36px;height:34px;
+  border-radius:8px;cursor:pointer;font-weight:700;font-family:inherit;font-size:.9rem;transition:.2s}
+.tool-btn:hover{border-color:var(--primary);color:var(--primary)}
+.share-buttons{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:20px;background:var(--bg-card);border-radius:10px;margin:10px 0 30px}
+.share-buttons>span{font-weight:600;margin-left:auto}
+.share-btn{width:42px;height:42px;display:flex;align-items:center;justify-content:center;border-radius:50%;color:#fff;transition:transform .3s;border:none;cursor:pointer;font-size:1rem}
+.share-btn:hover{transform:scale(1.1)}
+.share-btn.facebook{background:#1877f2}.share-btn.twitter{background:#111}
+.share-btn.whatsapp{background:#25d366}.share-btn.telegram{background:#0088cc}
+.share-btn.native{background:var(--primary)}
+.related-posts{margin-top:40px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.related-card{background:var(--bg-card);border-radius:10px;overflow:hidden;border:1px solid var(--border);transition:transform .3s}
+.related-card:hover{transform:translateY(-5px)}
+.related-card img{width:100%;height:150px;object-fit:cover}
+.related-card-content{padding:15px}
+.related-card h4{font-size:.98rem;line-height:1.5}
+.related-card h4 a:hover{color:var(--primary)}
+.comments{background:var(--bg-card);padding:30px;border-radius:var(--radius);margin-top:30px}
+.comments-title{font-size:1.4rem;margin-bottom:25px;display:flex;align-items:center;gap:10px}
+
+/* ===== Sidebar ===== */
+.sidebar{position:sticky;top:80px;height:fit-content}
+.widget{background:var(--bg-card);border-radius:var(--radius);padding:25px;margin-bottom:25px;border:1px solid var(--border)}
+.widget-title{font-size:1.15rem;margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid var(--primary);display:flex;align-items:center;gap:8px}
+.widget-title i{color:var(--primary)}
+.about-widget{text-align:center}
+.about-avatar{width:110px;height:110px;border-radius:50%;margin:0 auto 18px;border:4px solid var(--primary);object-fit:cover}
+.about-widget p{color:var(--text-muted);font-size:.93rem;margin-bottom:15px}
+.social-widget{display:flex;flex-wrap:wrap;gap:10px}
+.social-widget a{width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:10px;color:#fff;font-size:1.15rem;transition:.3s}
+.social-widget a:hover{transform:translateY(-3px)}
+.social-widget .github{background:#333}.social-widget .twitter{background:#1da1f2}
+.social-widget .instagram{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)}
+.social-widget .youtube{background:#ff0000}.social-widget .tiktok{background:#000}.social-widget .telegram{background:#0088cc}
+.popular-posts{display:flex;flex-direction:column;gap:15px}
+.popular-post{display:flex;gap:15px;align-items:center}
+.popular-post img{width:75px;height:75px;border-radius:10px;object-fit:cover}
+.popular-post-content h4{font-size:.93rem;margin-bottom:5px;line-height:1.4}
+.popular-post-content h4 a:hover{color:var(--primary)}
+.popular-post-content span{font-size:.78rem;color:var(--text-muted)}
+.links-list li{margin-bottom:12px;padding-right:20px;position:relative}
+.links-list li::before{content:'\1F517';position:absolute;right:0}
+.links-list a{color:var(--text-muted);transition:color .3s}
+.links-list a:hover{color:var(--primary)}
+.newsletter input{width:100%;background:var(--bg-dark);border:1px solid var(--border);border-radius:10px;
+  padding:12px 15px;color:var(--text-light);font-family:inherit;margin-bottom:10px;outline:none}
+.newsletter button{width:100%}
+
+/* ===== Pagination ===== */
+.pagination{display:flex;justify-content:center;gap:10px;margin:40px 0}
+.pagination a{padding:12px 20px;background:var(--bg-card);border-radius:8px;color:var(--text-light);transition:.3s;border:1px solid var(--border)}
+.pagination a:hover{background:var(--primary);color:#fff}
+
+/* ===== Footer ===== */
+.footer{background:var(--bg-card);padding:60px 0 30px;margin-top:60px;border-top:3px solid var(--primary)}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:40px;margin-bottom:40px}
+.footer-section h3{font-size:1.2rem;margin-bottom:20px;color:var(--primary)}
+.footer-section p,.footer-section li{color:var(--text-muted);margin-bottom:10px}
+.footer-section ul li{padding-right:20px;position:relative}
+.footer-section ul li::before{content:'\2022';position:absolute;right:0;color:var(--primary)}
+.footer-social{display:flex;gap:12px;flex-wrap:wrap}
+.footer-social a{width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:var(--bg-dark);border-radius:50%;color:var(--text-light);transition:.3s}
+.footer-social a:hover{background:var(--primary);color:#fff;transform:translateY(-3px)}
+.footer-bottom{text-align:center;padding-top:30px;border-top:1px solid var(--border);color:var(--text-muted)}
+
+/* ===== Misc ===== */
+.extra-section{display:none}
+.back-to-top{position:fixed;bottom:30px;left:30px;width:50px;height:50px;background:var(--primary);color:#fff;border:none;
+  border-radius:50%;font-size:1.2rem;cursor:pointer;opacity:0;visibility:hidden;transition:.3s;z-index:999}
+.back-to-top.visible{opacity:1;visibility:visible}
+.back-to-top:hover{background:var(--secondary);transform:translateY(-5px)}
+.loader{display:inline-block;width:34px;height:34px;border:3px solid var(--border);border-top-color:var(--primary);border-radius:50%;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loader-wrap{display:flex;justify-content:center;padding:30px}
+.error-page{text-align:center;padding:90px 20px}
+.error-page h1{font-size:6rem;color:var(--primary);margin-bottom:20px}
+.error-page h2{font-size:2rem;margin-bottom:20px}
+
+/* ===== Reveal (no-JS safe: hidden only when html.js) ===== */
+html.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+html.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  html.js .reveal{opacity:1 !important;transform:none !important;transition:none}
+}
+
+/* ===== Responsive ===== */
+@media (max-width:1024px){
+  .main-wrapper{grid-template-columns:1fr}
+  .sidebar{position:static;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px}
+}
+@media (max-width:768px){
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg-card);flex-direction:column;padding:20px;gap:10px;border-bottom:1px solid var(--border)}
+  .nav-links.active{display:flex}
+  .menu-toggle{display:block}
+  .header{padding:28px 0 24px}
+  .logo{font-size:1.6rem}
+  .home-posts{grid-template-columns:1fr}
+  .home-posts .article-card:first-child .post-thumbnail{height:240px}
+  .home-posts .article-card:first-child .post-title{font-size:1.5rem}
+  .post-body{padding:25px}
+  .post-thumbnail{height:200px}
+  .post-thumbnail.single{height:220px}
+}
+@media (max-width:480px){
+  .container{padding:0 15px}
+  .post-thumbnail{height:180px}
+  .gh-stats{grid-template-columns:repeat(2,1fr)}
+}
+]]></b:skin>
+
+<b:defaultmarkups>
+
+  <b:defaultmarkup type='Common'>
+    <b:includable id='@body-class'>
+      <b:class cond='data:view.isHomepage' name='home-page'/>
+      <b:class cond='data:view.isPost' name='article-page'/>
+      <b:class cond='data:view.isPage' name='page'/>
+      <b:class cond='data:view.isMultipleItems' name='items-page'/>
+      <b:class cond='data:view.isError' name='error-page'/>
+    </b:includable>
+    <b:includable id='widget-title'>
+      <b:if cond='data:title'><h3 class='widget-title'><data:title/></h3></b:if>
+    </b:includable>
+  </b:defaultmarkup>
+
+  <b:defaultmarkup type='Blog'>
+
+    <b:includable id='commentPicker' var='post'>
+      <b:include data='post' name='threadedComments'/>
+    </b:includable>
+
+    <b:includable id='commentsTitle'>
+      <h3 class='comments-title'><i class='far fa-comments'></i> <span data-i18n='comments'>التعليقات</span></h3>
+    </b:includable>
+
+    <b:includable id='commentFormIframeSrc' var='post'>
+      <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
+    </b:includable>
+
+    <b:includable id='threadedCommentForm' var='post'>
+      <div class='comment-form'>
+        <a name='comment-form'/>
+        <b:include data='post' name='commentFormIframeSrc'/>
+        <iframe allowtransparency='allowtransparency' class='blogger-iframe-colorize blogger-comment-from-post' expr:height='data:cmtIframeInitialHeight ?: &quot;90px&quot;' frameborder='0' id='comment-editor' name='comment-editor' src='' width='100%'/>
+        <data:post.cmtfpIframe/>
+        <script type='text/javascript'>BLOG_CMT_createIframe('<data:post.appRpcRelayPath/>');</script>
+      </div>
+    </b:includable>
+
+    <b:includable id='threadedCommentJs' var='post'>
+      <script async='async' expr:src='data:post.commentSrc' type='text/javascript'/>
+      <b:template-script inline='true' name='threaded_comments'/>
+      <script type='text/javascript'>
+        blogger.widgets.blog.initThreadedComments(<data:post.commentJso/>,<data:post.commentMsgs/>,<data:post.commentConfig/>);
+      </script>
+    </b:includable>
+
+    <b:includable id='threadedComments' var='post'>
+      <section class='comments threaded' expr:data-embed='data:post.embedCommentForm' expr:data-num-comments='data:post.numberOfComments' id='comments'>
+        <a name='comments'/>
+        <b:include name='commentsTitle'/>
+        <div class='comments-content'>
+          <b:if cond='data:post.embedCommentForm'><b:include data='post' name='threadedCommentJs'/></b:if>
+          <div id='comment-holder'><data:post.commentHtml/></div>
+        </div>
+        <p class='comment-footer'>
+          <b:if cond='data:post.allowNewComments'>
+            <b:include data='post' name='threadedCommentForm'/>
+          <b:else/>
+            <data:post.noNewCommentsText/>
+          </b:if>
+        </p>
+      </section>
+    </b:includable>
+
+    <b:includable id='main'>
+      <b:if cond='data:view.isError'>
+        <div class='error-page'>
+          <h1>404</h1>
+          <h2 data-i18n='nf'>الصفحة غير موجودة</h2>
+          <a class='read-more' expr:href='data:blog.homepageUrl'><span data-i18n='back_home'>العودة للرئيسية</span> <i class='fas fa-arrow-left'></i></a>
+        </div>
+      <b:else/>
+        <b:if cond='data:view.isHomepage'>
+          <div class='section-title' id='posts'><i class='fas fa-newspaper'></i> <span data-i18n='latest'>آخر المقالات</span></div>
+          <div class='home-posts'>
+            <b:loop values='data:posts' var='post'>
+              <b:include data='post' name='post'/>
+            </b:loop>
+          </div>
+          <div class='cat-strip'>
+            <span data-i18n='browse'>تصفح حسب التصنيف:</span>
+            <a class='cat-chip' data-i18n='c_trouble' href='/search/label/Troubleshooting'>الشروحات التقنية</a>
+            <a class='cat-chip' data-i18n='c_guides' href='/search/label/Tech%20Guides'>أدلة تقنية</a>
+            <a class='cat-chip' data-i18n='c_soft' href='/search/label/Software%20%26%20Tools'>برامج وأدوات</a>
+            <a class='cat-chip' data-i18n='c_news' href='/search/label/News%20%26%20Updates'>أخبار وتحديثات</a>
+            <a class='cat-chip' data-i18n='c_tips' href='/search/label/Productivity%20Tips'>نصائح الإنتاجية</a>
+          </div>
+        <b:else/>
+          <b:loop values='data:posts' var='post'>
+            <b:include data='post' name='post'/>
+          </b:loop>
+        </b:if>
+
+        <b:if cond='data:view.isMultipleItems'>
+          <div class='pagination'>
+            <b:if cond='data:newerPageUrl'><a expr:href='data:newerPageUrl'><i class='fas fa-arrow-right'></i> <span data-i18n='prev'>السابق</span></a></b:if>
+            <b:if cond='data:olderPageUrl'><a expr:href='data:olderPageUrl'><span data-i18n='next'>التالي</span> <i class='fas fa-arrow-left'></i></a></b:if>
+          </div>
+        </b:if>
+      </b:if>
+    </b:includable>
+
+    <b:includable id='post' var='post'>
+      <b:if cond='data:view.isPost'>
+        <article class='article-card post-single' itemscope='itemscope' itemtype='https://schema.org/BlogPosting'>
+          <div class='post-content'>
+            <nav class='breadcrumb'>
+              <a expr:href='data:blog.homepageUrl'><i class='fas fa-house'></i> <span data-i18n='nav_home'>الرئيسية</span></a>
+              <span class='sep'>&#8250;</span>
+              <span><data:post.title/></span>
+            </nav>
+            <div class='post-meta'>
+              <span><i class='far fa-user'></i> <data:post.author.name/></span>
+              <span><i class='far fa-calendar-alt'></i> <time expr:datetime='data:post.date.iso8601' itemprop='datePublished'><data:post.date/></time></span>
+              <span class='read-time'><i class='far fa-clock'></i></span>
+              <b:if cond='data:post.labels'>
+                <span class='category'><i class='fas fa-tag'></i><b:loop values='data:post.labels' var='label'><a expr:href='data:label.url' rel='tag'><data:label.name/></a></b:loop></span>
+              </b:if>
+            </div>
+            <h1 class='post-title' itemprop='headline' style='font-size:2rem'><data:post.title/></h1>
+          </div>
+          <b:if cond='data:post.featuredImage'>
+            <img class='post-thumbnail single' expr:alt='data:post.title' expr:src='resizeImage(data:post.featuredImage, 900, &quot;16:9&quot;)' itemprop='image'/>
+          </b:if>
+          <div class='post-content'>
+            <div class='post-tools'>
+              <details class='toc' id='tocBox' open='open'>
+                <summary><i class='fas fa-list-ul'></i> <span data-i18n='toc'>فهرس المقال</span></summary>
+                <nav class='toc-list' id='tocList'></nav>
+              </details>
+              <div class='font-tools'>
+                <span data-i18n='font_size'>حجم الخط</span>
+                <button class='tool-btn' onclick='changeFont(-10)' type='button'>A-</button>
+                <button class='tool-btn' onclick='changeFont(10)' type='button'>A+</button>
+              </div>
+            </div>
+            <div class='post-body' id='postBody' itemprop='articleBody'><data:post.body/></div>
+            <span id='postLabels' style='display:none'><b:loop values='data:post.labels' var='label'><data:label.name/>|</b:loop></span>
+            <div class='share-buttons'>
+              <span data-i18n='share'>شارك المقال:</span>
+              <button class='share-btn facebook' data-share='facebook' title='Facebook' type='button'><i class='fab fa-facebook-f'></i></button>
+              <button class='share-btn twitter' data-share='twitter' title='X' type='button'><i class='fab fa-x-twitter'></i></button>
+              <button class='share-btn whatsapp' data-share='whatsapp' title='WhatsApp' type='button'><i class='fab fa-whatsapp'></i></button>
+              <button class='share-btn telegram' data-share='telegram' title='Telegram' type='button'><i class='fab fa-telegram-plane'></i></button>
+              <button class='share-btn native' onclick='nativeShare()' title='Share' type='button'><i class='fas fa-share-nodes'></i></button>
+            </div>
+            <div class='related-posts'>
+              <h3 class='section-title'><i class='fas fa-link'></i> <span data-i18n='related'>مقالات مشابهة</span></h3>
+              <div class='related-grid' id='relatedPosts'><div class='loader-wrap'><span class='loader'></span></div></div>
+            </div>
+            <b:if cond='data:view.isSingleItem'>
+              <div class='comments-wrap'>
+                <b:include data='post' name='commentPicker'/>
+              </div>
+            </b:if>
+          </div>
+        </article>
+      <b:elseif cond='data:view.isPage'/>
+        <article class='article-card'>
+          <div class='post-content'><h1 class='post-title' style='font-size:2rem'><data:post.title/></h1></div>
+          <div class='post-content'><div class='post-body' id='postBody'><data:post.body/></div></div>
+        </article>
+      <b:else/>
+        <article class='article-card'>
+          <b:if cond='data:post.featuredImage'>
+            <img class='post-thumbnail' expr:alt='data:post.title' expr:src='resizeImage(data:post.featuredImage, 600, &quot;16:9&quot;)' loading='lazy'/>
+          </b:if>
+          <div class='post-content'>
+            <div class='post-meta'>
+              <span><i class='far fa-calendar-alt'></i> <time expr:datetime='data:post.date.iso8601'><data:post.date/></time></span>
+              <b:if cond='data:post.labels'>
+                <span class='category'><i class='fas fa-tag'></i><b:loop values='data:post.labels' var='label'><a expr:href='data:label.url' rel='tag'><data:label.name/></a></b:loop></span>
+              </b:if>
+              <span><i class='far fa-comment'></i> <data:post.numberOfComments/></span>
+            </div>
+            <h2 class='post-title'><a expr:href='data:post.url'><data:post.title/></a></h2>
+            <p class='post-excerpt'><data:post.snippets.short/></p>
+            <a class='read-more' expr:href='data:post.url'><span data-i18n='read_more'>اقرأ المزيد</span> <i class='fas fa-arrow-left'></i></a>
+          </div>
+        </article>
+      </b:if>
+    </b:includable>
+
+  </b:defaultmarkup>
+
+</b:defaultmarkups>
+
+</head>
+
+<body>
+
+<div class='progress-bar' id='progressBar'></div>
+<button aria-label='Top' class='back-to-top' id='backToTop' onclick='scrollToTop()' type='button'>
+  <i class='fas fa-arrow-up'></i>
+</button>
+
+<header class='header' id='top'>
+  <div class='container header-content'>
+    <img alt='werlist99' class='hero-avatar' height='84' src='https://avatars.githubusercontent.com/u/245860205?v=4' width='84'/>
+    <h1 class='logo'>werlist99</h1>
+    <p class='hero-bio' data-i18n='bio'>مدوّن تقني من المغرب: شروحات Windows والحاسوب، أدوات برمجية ومشاريع مفتوحة المصدر. كل حاجة في مكان واحد.</p>
+    <div class='hero-badges'>
+      <span class='chip'><i class='fas fa-location-dot'></i> Morocco</span>
+      <span class='chip'><i class='fab fa-windows'></i> Windows</span>
+      <span class='chip'><i class='fab fa-python'></i> Python</span>
+      <span class='chip'><i class='fab fa-firefox-browser'></i> Firefox Add-ons</span>
+    </div>
+    <div class='header-social'>
+      <a href='https://github.com/zougar99' rel='noopener' target='_blank' title='GitHub'><i class='fab fa-github'></i></a>
+      <a href='https://twitter.com/werlist99' rel='noopener' target='_blank' title='Twitter'><i class='fab fa-twitter'></i></a>
+      <a href='https://youtube.com/@werlist99' rel='noopener' target='_blank' title='YouTube'><i class='fab fa-youtube'></i></a>
+      <a href='https://instagram.com/werlist99' rel='noopener' target='_blank' title='Instagram'><i class='fab fa-instagram'></i></a>
+      <a href='https://t.me/werlist99' rel='noopener' target='_blank' title='Telegram'><i class='fab fa-telegram-plane'></i></a>
+    </div>
+    <form action='/search' class='hub-search' method='get' role='search'>
+      <input aria-label='Search' name='q' placeholder='ابحث في المدونة...' type='text'/>
+      <button type='submit'><i class='fas fa-search'></i></button>
+    </form>
+  </div>
+</header>
+
+<nav class='navbar'>
+  <div class='nav-container'>
+    <button aria-label='Menu' class='menu-toggle' onclick='toggleMenu()' type='button'><i class='fas fa-bars'></i></button>
+    <div class='nav-links' id='navLinks'>
+      <a class='active' href='/'><i class='fas fa-house'></i> <span data-i18n='nav_home'>الرئيسية</span></a>
+      <a href='/p/projects.html'><i class='fab fa-github'></i> <span data-i18n='nav_projects'>مشاريعي</span></a>
+      <a href='/#posts'><i class='fas fa-newspaper'></i> <span data-i18n='nav_posts'>مقالات</span></a>
+      <a href='/p/about.html'><i class='fas fa-user'></i> <span data-i18n='nav_about'>من أنا</span></a>
+      <a href='/p/contact.html'><i class='fas fa-envelope'></i> <span data-i18n='nav_contact'>اتصل بنا</span></a>
+    </div>
+    <div class='nav-tools'>
+      <button aria-label='Search' class='search-toggle' onclick='toggleSearch()' type='button'><i class='fas fa-search'></i></button>
+      <button class='lang-toggle' onclick='toggleLang()' type='button'><i class='fas fa-language'></i> <span id='langLabel'>EN</span></button>
+      <button aria-label='Theme' class='theme-toggle' id='themeBtn' onclick='toggleTheme()' type='button'><i class='fas fa-moon' id='themeIcon'></i></button>
+    </div>
+  </div>
+</nav>
+
+<div class='search-overlay' id='searchOverlay' onclick='overlayClose(event)'>
+  <form action='/search' class='search-box' method='get' role='search'>
+    <input aria-label='Search' name='q' placeholder='ابحث في المدونة...' type='text' id='searchInput'/>
+    <button type='submit'><i class='fas fa-search'></i></button>
+  </form>
+</div>
+
+<main class='main-wrapper container'>
+  <div class='content'>
+
+    <b:if cond='data:view.url.canonical == data:blog.homepageUrl + &quot;p/projects.html&quot;'>
+      <section class='hub-section' id='projects'>
+        <div class='section-title'><i class='fab fa-github'></i> <span data-i18n='projects'>مشاريعي على GitHub</span>
+          <span class='count-badge' id='repoCount'></span>
+        </div>
+        <div class='gh-stats' id='ghStats'></div>
+        <div class='gh-grid' id='ghProjects'><div class='loader-wrap'><span class='loader'></span></div></div>
+      </section>
+
+      <section class='hub-section' id='stack'>
+        <div class='section-title'><i class='fas fa-layer-group'></i> <span data-i18n='stack'>التقنيات</span></div>
+        <div class='tech-stack'>
+          <span class='badge'><i class='fab fa-python' style='color:#3776ab'></i> Python</span>
+          <span class='badge'><i class='fab fa-js' style='color:#f7df1e'></i> JavaScript</span>
+          <span class='badge'><i class='fab fa-html5' style='color:#e34f26'></i> HTML5</span>
+          <span class='badge'><i class='fab fa-css3-alt' style='color:#1572b6'></i> CSS3</span>
+          <span class='badge'><i class='fab fa-php' style='color:#777bb4'></i> PHP</span>
+          <span class='badge'><i class='fab fa-node-js' style='color:#3c873a'></i> Node.js</span>
+          <span class='badge'><i class='fab fa-firefox-browser' style='color:#ff7139'></i> WebExtensions</span>
+          <span class='badge'><i class='fas fa-code' style='color:#00599c'></i> C++</span>
+          <span class='badge'><i class='fab fa-git-alt' style='color:#f05033'></i> Git</span>
+          <span class='badge'><i class='fab fa-windows' style='color:#0078d6'></i> Windows</span>
+        </div>
+      </section>
+
+      <section class='hub-section' id='links'>
+        <div class='section-title'><i class='fas fa-link'></i> <span data-i18n='links'>روابط مفيدة</span></div>
+        <div class='links-grid' id='linkGrid'></div>
+      </section>
+    </b:if>
+
+    <b:section class='main-section' id='main' maxwidgets='1' showaddelement='no'>
+      <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog'/>
+    </b:section>
+
+    <!-- Blogger renders widgets only when the theme has MORE THAN ONE b:section. Do NOT remove this extra section, or Blog1 disappears. -->
+    <b:section class='extra-section' id='extra' maxwidgets='1' showaddelement='no'/>
+
+  </div>
+
+  <aside class='sidebar'>
+    <div class='widget about-widget'>
+      <div class='widget-title'><i class='fas fa-user-circle'></i> <span data-i18n='about'>من أنا</span></div>
+      <img alt='werlist99' class='about-avatar' height='110' src='https://avatars.githubusercontent.com/u/245860205?v=4' width='110'/>
+      <p data-i18n='about_text'>مدوّن تقني من المغرب. كنشارك شروحات Windows، أدوات برمجية ومشاريع مفتوحة المصدر.</p>
+      <div style='margin-top:12px'><a href='/p/about.html' style='color:var(--primary)'><span data-i18n='read_more'>اقرأ المزيد</span> &#8592;</a></div>
+    </div>
+
+    <div class='widget'>
+      <div class='widget-title'><i class='fas fa-share-alt'></i> <span data-i18n='follow'>تابعني</span></div>
+      <div class='social-widget'>
+        <a class='github' href='https://github.com/zougar99' rel='noopener' target='_blank'><i class='fab fa-github'></i></a>
+        <a class='twitter' href='https://twitter.com/werlist99' rel='noopener' target='_blank'><i class='fab fa-twitter'></i></a>
+        <a class='instagram' href='https://instagram.com/werlist99' rel='noopener' target='_blank'><i class='fab fa-instagram'></i></a>
+        <a class='youtube' href='https://youtube.com/@werlist99' rel='noopener' target='_blank'><i class='fab fa-youtube'></i></a>
+        <a class='tiktok' href='https://tiktok.com/@werlist99' rel='noopener' target='_blank'><i class='fab fa-tiktok'></i></a>
+        <a class='telegram' href='https://t.me/werlist99' rel='noopener' target='_blank'><i class='fab fa-telegram-plane'></i></a>
+      </div>
+    </div>
+
+    <div class='widget newsletter'>
+      <div class='widget-title'><i class='fas fa-envelope-open-text'></i> <span data-i18n='newsletter'>النشرة البريدية</span></div>
+      <p data-i18n='newsletter_text'>توصل بأحدث المقالات فبريدك.</p>
+      <form onsubmit='subscribeMail(event)'>
+        <input aria-label='Email' placeholder='بريدك الإلكتروني...' type='email' required='required'/>
+        <button class='read-more' type='submit'><span data-i18n='subscribe'>اشترك الآن</span></button>
+      </form>
+    </div>
+
+    <div class='widget'>
+      <div class='widget-title'><i class='fas fa-clock-rotate-left'></i> <span data-i18n='recent'>أحدث المقالات</span></div>
+      <div class='popular-posts' id='recentPosts'><div class='loader-wrap'><span class='loader'></span></div></div>
+    </div>
+
+    <div class='widget'>
+      <div class='widget-title'><i class='fas fa-folder'></i> <span data-i18n='cats'>التصنيفات</span></div>
+      <ul class='categories-list links-list'>
+        <li><a data-i18n='c_trouble' href='/search/label/Troubleshooting'>الشروحات التقنية</a></li>
+        <li><a data-i18n='c_guides' href='/search/label/Tech%20Guides'>أدلة تقنية</a></li>
+        <li><a data-i18n='c_soft' href='/search/label/Software%20%26%20Tools'>برامج وأدوات</a></li>
+        <li><a data-i18n='c_news' href='/search/label/News%20%26%20Updates'>أخبار وتحديثات</a></li>
+        <li><a data-i18n='c_tips' href='/search/label/Productivity%20Tips'>نصائح الإنتاجية</a></li>
+      </ul>
+    </div>
+  </aside>
+</main>
+
+<footer class='footer'>
+  <div class='container'>
+    <div class='footer-grid'>
+      <div class='footer-section'>
+        <h3><i class='fas fa-rocket'></i> werlist99</h3>
+        <p data-i18n='footer_about'>مدونة شخصية: شروحات Windows والحاسوب، أدوات برمجية ومشاريع مفتوحة المصدر.</p>
+        <div class='footer-social'>
+          <a href='https://github.com/zougar99' rel='noopener' target='_blank'><i class='fab fa-github'></i></a>
+          <a href='https://twitter.com/werlist99' rel='noopener' target='_blank'><i class='fab fa-twitter'></i></a>
+          <a href='https://youtube.com/@werlist99' rel='noopener' target='_blank'><i class='fab fa-youtube'></i></a>
+          <a href='https://instagram.com/werlist99' rel='noopener' target='_blank'><i class='fab fa-instagram'></i></a>
+        </div>
+      </div>
+      <div class='footer-section'>
+        <h3 data-i18n='quick'>روابط سريعة</h3>
+        <ul>
+          <li><a data-i18n='nav_home' href='/'>الرئيسية</a></li>
+          <li><a data-i18n='nav_projects' href='/p/projects.html'>مشاريعي</a></li>
+          <li><a data-i18n='nav_about' href='/p/about.html'>من أنا</a></li>
+          <li><a data-i18n='nav_contact' href='/p/contact.html'>اتصل بنا</a></li>
+          <li><a data-i18n='privacy' href='/p/privacy-policy.html'>سياسة الخصوصية</a></li>
+          <li><a data-i18n='disclaimer' href='/p/disclaimer.html'>إخلاء المسؤولية</a></li>
+        </ul>
+      </div>
+      <div class='footer-section'>
+        <h3 data-i18n='popular'>أشهر التصنيفات</h3>
+        <ul>
+          <li><a data-i18n='c_trouble' href='/search/label/Troubleshooting'>الشروحات التقنية</a></li>
+          <li><a data-i18n='c_guides' href='/search/label/Tech%20Guides'>أدلة تقنية</a></li>
+          <li><a data-i18n='c_soft' href='/search/label/Software%20%26%20Tools'>برامج وأدوات</a></li>
+          <li><a data-i18n='c_news' href='/search/label/News%20%26%20Updates'>أخبار وتحديثات</a></li>
+          <li><a data-i18n='c_tips' href='/search/label/Productivity%20Tips'>نصائح الإنتاجية</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class='footer-bottom'>
+      <p>&#169; <span id='currentYear'>2026</span> werlist99. <span data-i18n='rights'>جميع الحقوق محفوظة.</span></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+//<![CDATA[
+var GH_USER = 'zougar99';
+var GH_CACHE_HOURS = 6;
+var GH_MAX_REPOS = 9;
+var BLOG_URL = 'https://werlist99.blogspot.com';
+
+var CURATED_LINKS = [
+  { name:'GitHub',         icon:'fab fa-github',           desc:'مشاريعي ومستودعاتي',      url:'https://github.com/zougar99',        color:'#333' },
+  { name:'Stack Overflow', icon:'fab fa-stack-overflow',   desc:'أسئلة وأجوبة للمبرمجين',  url:'https://stackoverflow.com',          color:'#f48024' },
+  { name:'MDN Web Docs',   icon:'fab fa-firefox-browser',  desc:'مرجع الويب الرسمي',       url:'https://developer.mozilla.org',      color:'#ff7139' },
+  { name:'Dev.to',         icon:'fab fa-dev',              desc:'مجتمع المطورين',          url:'https://dev.to',                     color:'#0a0a0a' },
+  { name:'freeCodeCamp',   icon:'fab fa-free-code-camp',   desc:'تعلم البرمجة مجاناً',     url:'https://freecodecamp.org',           color:'#0a0a23' },
+  { name:'Python.org',     icon:'fab fa-python',           desc:'الموقع الرسمي لـ Python', url:'https://python.org',                 color:'#3776ab' }
+];
+
+var I18N = {
+  ar:{ nav_home:'الرئيسية', nav_projects:'مشاريعي', nav_posts:'مقالات', nav_links:'روابط',
+       nav_about:'من أنا', nav_contact:'اتصل بنا', projects:'مشاريعي على GitHub', stack:'التقنيات',
+       links:'روابط مفيدة', latest:'آخر المقالات', related:'مقالات مشابهة', comments:'التعليقات',
+       about:'من أنا', about_text:'مدوّن تقني من المغرب. كنشارك شروحات Windows، أدوات برمجية ومشاريع مفتوحة المصدر.',
+       follow:'تابعني', recent:'أحدث المقالات', cats:'التصنيفات', share:'شارك المقال:',
+       read_more:'اقرأ المزيد', prev:'السابق', next:'التالي', back_home:'العودة للرئيسية',
+       nf:'الصفحة غير موجودة', quick:'روابط سريعة', popular:'أشهر التصنيفات', privacy:'سياسة الخصوصية',
+       disclaimer:'إخلاء المسؤولية', rights:'جميع الحقوق محفوظة.',
+       footer_about:'مدونة شخصية: شروحات Windows والحاسوب، أدوات برمجية ومشاريع مفتوحة المصدر.',
+       bio:'مدوّن تقني من المغرب: شروحات Windows والحاسوب، أدوات برمجية ومشاريع مفتوحة المصدر. كل حاجة في مكان واحد.',
+       repos:'مستودع', stars:'نجمة', followers:'متابع', following:'يتابع',
+       toc:'فهرس المقال', font_size:'حجم الخط', newsletter:'النشرة البريدية',
+       newsletter_text:'توصل بأحدث المقالات فبريدك.', subscribe:'اشترك الآن', browse:'تصفح حسب التصنيف:',
+       c_trouble:'الشروحات التقنية', c_guides:'أدلة تقنية', c_soft:'برامج وأدوات', c_news:'أخبار وتحديثات', c_tips:'نصائح الإنتاجية' },
+  en:{ nav_home:'Home', nav_projects:'Projects', nav_posts:'Articles', nav_links:'Links',
+       nav_about:'About', nav_contact:'Contact', projects:'My GitHub Projects', stack:'Tech Stack',
+       links:'Useful Links', latest:'Latest Posts', related:'Related Posts', comments:'Comments',
+       about:'About Me', about_text:'Tech blogger from Morocco. I share Windows guides, dev tools and open-source projects.',
+       follow:'Follow Me', recent:'Latest Posts', cats:'Categories', share:'Share:',
+       read_more:'Read more', prev:'Previous', next:'Next', back_home:'Back to home',
+       nf:'Page not found', quick:'Quick Links', popular:'Top Categories', privacy:'Privacy Policy',
+       disclaimer:'Disclaimer', rights:'All rights reserved.',
+       footer_about:'Personal blog: Windows & PC guides, dev tools and open-source projects.',
+       bio:'Tech blogger from Morocco: Windows & PC guides, dev tools and open-source projects. All in one place.',
+       repos:'repos', stars:'stars', followers:'followers', following:'following',
+       toc:'Table of Contents', font_size:'Font size', newsletter:'Newsletter',
+       newsletter_text:'Get the latest posts in your inbox.', subscribe:'Subscribe', browse:'Browse by category:',
+       c_trouble:'Troubleshooting', c_guides:'Tech Guides', c_soft:'Software & Tools', c_news:'News & Updates', c_tips:'Productivity Tips' }
+};
+
+/* ============ Helpers ============ */
+function esc(s){
+  return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){
+    return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c];
+  });
+}
+function safeUrl(u){
+  var s = String(u == null ? '' : u);
+  return /^https?:\/\//i.test(s) ? s : '#';
+}
+
+/* ============ UI ============ */
+function toggleMenu(){ document.getElementById('navLinks').classList.toggle('active'); }
+function scrollToTop(){ window.scrollTo({top:0,behavior:'smooth'}); }
+function setThemeIcon(light){ var i = document.getElementById('themeIcon'); if (i) i.className = light ? 'fas fa-sun' : 'fas fa-moon'; }
+function toggleTheme(){
+  var light = document.body.classList.toggle('light-mode');
+  localStorage.setItem('theme', light ? 'Light' : 'Dark');
+  setThemeIcon(light);
+}
+function toggleLang(){
+  var cur = localStorage.getItem('lang') || 'ar';
+  applyLang(cur === 'ar' ? 'en' : 'ar');
+}
+function applyLang(lang){
+  localStorage.setItem('lang', lang);
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  var lbl = document.getElementById('langLabel'); if (lbl) lbl.textContent = lang === 'ar' ? 'EN' : 'ع';
+  var dict = I18N[lang];
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var k = el.getAttribute('data-i18n');
+    if (dict[k]) { el.textContent = dict[k]; }
+  });
+  renderStats(GH_DATA_STATS);
+  setReadTime();
+}
+function toggleSearch(){
+  var o = document.getElementById('searchOverlay');
+  o.classList.toggle('open');
+  if (o.classList.contains('open')) setTimeout(function(){ var i=document.getElementById('searchInput'); if(i) i.focus(); }, 50);
+}
+function overlayClose(e){ if (e.target && e.target.id === 'searchOverlay') document.getElementById('searchOverlay').classList.remove('open'); }
+function subscribeMail(e){ e.preventDefault(); alert('شكراً! سجّلنا بريدك (بدّل هاد الفورم بخدمة حقيقية).'); }
+function nativeShare(){
+  var data = { title: document.title, url: location.href };
+  if (navigator.share) { navigator.share(data).catch(function(){}); }
+  else { navigator.clipboard.writeText(location.href); alert('تم نسخ الرابط'); }
+}
+function bindShare(){
+  var u = encodeURIComponent(location.href);
+  var t = encodeURIComponent(document.title);
+  var map = {
+    facebook: 'https://www.facebook.com/sharer/sharer.php?u=' + u,
+    twitter:  'https://twitter.com/intent/tweet?url=' + u + '&text=' + t,
+    whatsapp: 'https://api.whatsapp.com/send?text=' + t + '%20' + u,
+    telegram: 'https://t.me/share/url?url=' + u + '&text=' + t
+  };
+  document.querySelectorAll('[data-share]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var url = map[btn.getAttribute('data-share')];
+      if (url) window.open(url, '_blank', 'noopener');
+    });
+  });
+}
+function changeFont(d){
+  var b = document.getElementById('postBody'); if (!b) return;
+  var cur = parseInt(b.getAttribute('data-fs') || '100', 10);
+  cur = Math.min(140, Math.max(80, cur + d));
+  b.setAttribute('data-fs', cur);
+  b.style.fontSize = cur + '%';
+}
+
+/* ============ GitHub (projects page only) ============ */
+var GH_DATA_STATS = null;
+function ghCacheGet(key){
+  try { var raw = localStorage.getItem(key); if (!raw) return null;
+    var obj = JSON.parse(raw); if (Date.now() - obj.t > GH_CACHE_HOURS*3600*1000) return null; return obj.d;
+  } catch(e){ return null; }
+}
+function ghCacheSet(key, data){ try { localStorage.setItem(key, JSON.stringify({t:Date.now(), d:data})); } catch(e){} }
+function renderStats(stats){
+  var box = document.getElementById('ghStats'); if (!box || !stats) return;
+  var d = I18N[localStorage.getItem('lang') || 'ar'];
+  box.innerHTML =
+    '<div class="gh-stat"><b>'+esc(stats.repos)+'</b><span>'+esc(d.repos)+'</span></div>'+
+    '<div class="gh-stat"><b>'+esc(stats.stars)+'</b><span>'+esc(d.stars)+'</span></div>'+
+    '<div class="gh-stat"><b>'+esc(stats.followers)+'</b><span>'+esc(d.followers)+'</span></div>'+
+    '<div class="gh-stat"><b>'+esc(stats.following)+'</b><span>'+esc(d.following)+'</span></div>';
+}
+function langColor(lang){
+  var map = {Python:'#3776ab',JavaScript:'#f7df1e',TypeScript:'#3178c6',PHP:'#777bb4',Swift:'#ffac45',
+    'C++':'#00599c',C:'#555',HTML:'#e34f26',CSS:'#1572b6',Shell:'#89e051',Java:'#b07219',Go:'#00add8'};
+  return map[lang] || '#8b5cf6';
+}
+function renderProjects(repos){
+  var box = document.getElementById('ghProjects'); if (!box) return;
+  if (!repos || !repos.length){ box.innerHTML = '<p style="color:var(--text-muted)">-</p>'; return; }
+  var html = '';
+  repos.slice(0, GH_MAX_REPOS).forEach(function(r){
+    var topics = (r.topics || []).slice(0,3).map(function(t){ return '<span class="gh-topic">'+esc(t)+'</span>'; }).join(' ');
+    html += '<div class="gh-card">'+
+      '<div class="gh-head"><i class="fas fa-folder-open"></i><h3><a href="'+esc(safeUrl(r.html_url))+'" target="_blank" rel="noopener">'+esc(r.name)+'</a></h3></div>'+
+      '<p class="gh-desc">'+esc(r.description || '-')+'</p>'+
+      '<div class="gh-foot">'+
+        (r.language ? '<span class="lang"><span class="lang-dot" style="background:'+esc(langColor(r.language))+'"></span>'+esc(r.language)+'</span>' : '')+
+        '<span><i class="far fa-star"></i> '+esc(r.stargazers_count)+'</span>'+
+        '<span><i class="fas fa-code-branch"></i> '+esc(r.forks_count)+'</span>'+
+      '</div>'+
+      (topics ? '<div class="gh-foot" style="margin-top:10px">'+topics+'</div>' : '')+
+    '</div>';
+  });
+  box.innerHTML = html;
+}
+function injectItemList(repos){
+  if (!repos || !repos.length) return;
+  var items = repos.slice(0, GH_MAX_REPOS).map(function(r,i){ return { "@type":"ListItem", "position":i+1, "name":r.name, "url":r.html_url }; });
+  var s = document.createElement('script');
+  s.type = 'application/ld+json';
+  s.textContent = JSON.stringify({ "@context":"https://schema.org", "@type":"ItemList", "itemListElement": items });
+  document.head.appendChild(s);
+}
+function loadGitHub(){
+  if (!document.getElementById('ghProjects')) return;
+  var cachedRepos = ghCacheGet('ghrepos'), cachedStats = ghCacheGet('ghstats');
+  if (cachedRepos && cachedStats){ GH_DATA_STATS = cachedStats; renderStats(cachedStats); renderProjects(cachedRepos); injectItemList(cachedRepos); return; }
+  fetch('https://api.github.com/users/'+GH_USER)
+    .then(function(r){ return r.json(); })
+    .then(function(u){
+      var stats = { repos:u.public_repos, stars:0, followers:u.followers, following:u.following };
+      return fetch('https://api.github.com/users/'+GH_USER+'/repos?sort=updated&per_page=100')
+        .then(function(r){ return r.json(); })
+        .then(function(repos){
+          if (Array.isArray(repos)){
+            stats.stars = repos.reduce(function(a,r){ return a + (r.stargazers_count||0); }, 0);
+            var sorted = repos.filter(function(r){ return !r.fork; })
+              .sort(function(a,b){ return (b.stargazers_count - a.stargazers_count) || (new Date(b.updated_at) - new Date(a.updated_at)); });
+            GH_DATA_STATS = stats; renderStats(stats); renderProjects(sorted); injectItemList(sorted);
+            ghCacheSet('ghstats', stats); ghCacheSet('ghrepos', sorted);
+          }
+        });
+    })
+    .catch(function(){ renderProjects(ghCacheGet('ghrepos') || []); });
+}
+
+/* ============ Links (projects page only) ============ */
+function renderLinks(){
+  var box = document.getElementById('linkGrid'); if (!box) return;
+  var html = '';
+  CURATED_LINKS.forEach(function(l){
+    var icon = /^[a-z0-9\- ]+$/i.test(l.icon||'') ? l.icon : 'fas fa-star';
+    html += '<a class="link-card" href="'+esc(safeUrl(l.url))+'" target="_blank" rel="noopener">'+
+      '<span class="lc-icon" style="background:'+esc(l.color||'')+'"><i class="'+esc(icon)+'"></i></span>'+
+      '<span><h4>'+esc(l.name)+'</h4><p>'+esc(l.desc)+'</p></span></a>';
+  });
+  box.innerHTML = html;
+}
+
+/* ============ Blogger feeds (JSONP) ============ */
+function loadFeed(url){ var s=document.createElement('script'); s.src=url; document.body.appendChild(s); }
+function feedEntry(e){
+  var link='';
+  for (var j=0;j<e.link.length;j++){ if(e.link[j].rel==='alternate'){ link=e.link[j].href; break; } }
+  return { title:e.title.$t, link:link, thumb:e.media$thumbnail ? e.media$thumbnail.url : '' };
+}
+function showRecent(json){
+  var box = document.getElementById('recentPosts'); if (!box) return;
+  if (!json.feed.entry){ box.innerHTML='<p style="color:var(--text-muted)">-</p>'; return; }
+  var html='';
+  for (var i=0;i<json.feed.entry.length && i<5;i++){
+    var e=feedEntry(json.feed.entry[i]);
+    var thumb = e.thumb ? safeUrl(e.thumb.replace('/s72-c/','/w75-h75-c/')) : '';
+    html += '<div class="popular-post">'+(thumb?'<img alt="" loading="lazy" src="'+esc(thumb)+'"/>':'')+
+      '<div class="popular-post-content"><h4><a href="'+esc(safeUrl(e.link))+'">'+esc(e.title)+'</a></h4></div></div>';
+  }
+  box.innerHTML = html;
+}
+function showRelated(json){
+  var box = document.getElementById('relatedPosts'); if (!box) return;
+  if (!json.feed.entry){ box.innerHTML=''; return; }
+  var html='';
+  for (var i=0;i<json.feed.entry.length && i<4;i++){
+    var e=feedEntry(json.feed.entry[i]);
+    if (e.link === location.href) continue;
+    var thumb = e.thumb ? safeUrl(e.thumb.replace('/s72-c/','/w400-h150-c/')) : '';
+    html += '<div class="related-card">'+(thumb?'<img alt="" loading="lazy" src="'+esc(thumb)+'"/>':'')+
+      '<div class="related-card-content"><h4><a href="'+esc(safeUrl(e.link))+'">'+esc(e.title)+'</a></h4></div></div>';
+  }
+  box.innerHTML = html || '<p style="color:var(--text-muted)">-</p>';
+}
+
+/* ============ Post features ============ */
+function buildTOC(){
+  var body = document.getElementById('postBody'); if (!body) return;
+  var list = document.getElementById('tocList'); if (!list) return;
+  var hs = body.querySelectorAll('h2,h3');
+  if (!hs.length){ var t = document.getElementById('tocBox'); if (t) t.style.display='none'; return; }
+  var html='';
+  hs.forEach(function(h,i){
+    if (!h.id) h.id = 'h-' + i;
+    html += '<a class="'+(h.tagName==='H3'?'lvl-3':'')+'" href="#'+h.id+'">'+esc(h.textContent)+'</a>';
+  });
+  list.innerHTML = html;
+}
+function addCopyButtons(){
+  document.querySelectorAll('.post-body pre').forEach(function(pre){
+    if (pre.querySelector('.copy-code')) return;
+    var b = document.createElement('button');
+    b.className='copy-code'; b.type='button'; b.textContent='نسخ';
+    b.addEventListener('click', function(){
+      var code = pre.querySelector('code') || pre;
+      navigator.clipboard.writeText(code.innerText).then(function(){ b.textContent='تم ✓'; setTimeout(function(){ b.textContent='نسخ'; },1500); });
+    });
+    pre.appendChild(b);
+  });
+}
+function setReadTime(){
+  var body = document.getElementById('postBody'); if (!body) return;
+  var txt = (body.innerText || '').trim();
+  var words = txt ? txt.split(/\s+/).length : 0;
+  var mins = Math.max(1, Math.round(words/200));
+  var lang = localStorage.getItem('lang') || 'ar';
+  document.querySelectorAll('.read-time').forEach(function(el){
+    el.innerHTML = '<i class="far fa-clock"></i> ' + mins + (lang==='ar' ? ' دقائق قراءة' : ' min read');
+  });
+}
+function injectPostSchema(){
+  var body = document.getElementById('postBody'); if (!body) return;
+  var t = document.querySelector('time[datetime]'); if (!t) return;
+  var h1 = document.querySelector('.post-title');
+  var img = document.querySelector('.post-thumbnail');
+  var ld = {
+    "@context":"https://schema.org", "@type":"BlogPosting",
+    "mainEntityOfPage": { "@type":"WebPage", "@id": location.href },
+    "headline": h1 ? h1.textContent : document.title,
+    "datePublished": t.getAttribute('datetime'),
+    "dateModified": t.getAttribute('datetime'),
+    "author": { "@type":"Person", "name":"werlist99", "url": BLOG_URL + '/' },
+    "publisher": { "@type":"Organization", "name":"werlist99", "logo": { "@type":"ImageObject", "url":"https://avatars.githubusercontent.com/u/245860205?v=4" } }
+  };
+  if (img) ld.image = img.src;
+  var s = document.createElement('script');
+  s.type='application/ld+json';
+  s.textContent = JSON.stringify(ld);
+  document.head.appendChild(s);
+}
+function initReveal(){
+  if (!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: .08 });
+  document.querySelectorAll('.hub-section, .article-card, .widget').forEach(function(el){ el.classList.add('reveal'); io.observe(el); });
+}
+
+/* ============ Boot ============ */
+document.addEventListener('DOMContentLoaded', function(){
+  var light = localStorage.getItem('theme') === 'Light';
+  if (light) document.body.classList.add('light-mode');
+  setThemeIcon(light);
+  applyLang(localStorage.getItem('lang') || 'ar');
+  var y = document.getElementById('currentYear'); if (y) y.textContent = new Date().getFullYear();
+  renderLinks();
+  loadGitHub();
+  initReveal();
+  if (document.getElementById('postBody')){
+    buildTOC(); addCopyButtons(); setReadTime(); injectPostSchema(); bindShare();
+  }
+  loadFeed('/feeds/posts/default?alt=json-in-script&max-results=5&callback=showRecent');
+  var labelsEl = document.getElementById('postLabels');
+  if (labelsEl){
+    var label = labelsEl.textContent.split('|')[0].trim();
+    if (label) loadFeed('/feeds/posts/default/-/'+encodeURIComponent(label)+'?alt=json-in-script&max-results=5&callback=showRelated');
+  }
+});
+
+window.addEventListener('scroll', function(){
+  var b = document.getElementById('backToTop');
+  if (b){ if (window.scrollY > 300) b.classList.add('visible'); else b.classList.remove('visible'); }
+  var pb = document.getElementById('progressBar');
+  if (pb){ var h=document.documentElement; var max=h.scrollHeight-h.clientHeight;
+    var sc=h.scrollTop||document.body.scrollTop; pb.style.width=(max>0?(sc/max*100):0)+'%'; }
+});
+//]]>
+</script>
+
+</body>
+</html>
