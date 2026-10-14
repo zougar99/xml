@@ -1,0 +1,3599 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateVersion='1.0.0' expr:class='data:blog.languageDirection' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale.language' lang='en' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+  <head>
+    <!-- Deploy: Theme > Edit HTML > paste this full file. Theme &#8594; Customize &#8594; Advanced: set Body + Title fonts to Default (removes render-blocking Open Sans / Roboto from Blogger). -->
+    <!-- PERF: URL /?m=1 = legacy mobile theme (Google shell). It often ignores this head + injects extra CSS/fonts &#8212; PageSpeed shows "no preconnect" + maia.css + static_pages. Fix: Settings &#8594; Mobile (or Theme) &#8594; turn OFF "Show mobile theme" / use responsive desktop theme only; test with /?m=0 or canonical URL without ?m= -->
+    <!-- Perf / a11y: Run Lighthouse on the public blog URL (*.blogspot.com). blogger.com (dashboard, Help Center footer, maia-footer) is Google UI &#8212; not your theme; ignore contrast/lang/touch failures there. -->
+    <!-- PSI SEO "HTTP 404": that audit applies to the URL you paste. Wrong subdomain = 404 (e.g. extobw99 vs extefw99). Use exactly: https://extefw99.blogspot.com/ -->
+    <!-- Official hub title: Extensions Firefox werlist99 &#8212; https://extefw99.blogspot.com/ (match in Blogger Settings > Title) -->
+    <!-- === Logo / Favicon فـ Blogger (ما كاينش فـ Layout) === -->
+    <!-- 1) blogger.com &#8594; من القائمة اليسرى اختار مدونتك &#8594; Settings (الإعدادات) &#9881;&#65039; &#8212; مش Layout ولا Theme بس. -->
+    <!-- 2) نز&#1617;ل لتحت حتى لقيت "Basic" / الأساسي &#8212; Favicon غالبا&#1611; هناك (أيقونة صغيرة + Choose file). -->
+    <!-- 3) إلا ما لقيتيه: جر&#1617;ب Theme &#8594; Customize (تخصيص / أيقونة الدهانة) &#8594; Advanced أو الصفحة الأولى &#8594; Favicon. -->
+    <!-- 4) خدم من كمبيوتر ومتصفح كامل (Chrome/Edge)&#1563; الموبايل أحيانا&#1611; ما كيعرضش كل الخيارات. -->
+    <!-- 5) Favicon (تبويب المتصفح): صورة صغيرة مربعة &#8804;100KB &#8212; مستقلة عن شعار الصفحة. -->
+    <!-- شعار الذئب/الدرع &#8212; طريقتين: (أ) فـ Theme &#8594; Edit HTML &#8594; Ctrl+H &#8594; ابحث عن hub.werlist99.invalid/wolf-shield-logo.webp &#8594; عو&#1617;ضه برابط الصورة من المسودة (Replace all) &#8594; Save. (ب) لصق الرابط فـ assets/blogger_logo_url.txt ثم py -3 amo_blogger_sync/apply_blogger_logo_url.py -->
+    <!-- Favicon فـ &lt;link rel="icon"&gt; بس: data:blog.favicon + data:blog.blogspotFaviconUrl (واحد كيكفي&#1563; إلا ما عندش: GIF شفاف صغير فالثيم). -->
+    <!-- SEO: set meta description per post + blog; verify in Search Console; optional google-site-verification meta in Blogger settings -->
+    <!-- Manual sitemap reference moved out of the template (size): publish posts + pages, then submit sitemap.xml and feeds/pages/default in Google Search Console. -->
+    <meta charset='utf-8'/>
+    <!-- Google tag (gtag.js) -->
+    <script async='async' src='https://www.googletagmanager.com/gtag/js?id=G-5CX6CV85NG'/>
+    <script type='text/javascript'>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag(&#39;js&#39;, new Date());
+gtag(&#39;config&#39;, &#39;G-5CX6CV85NG&#39;);
+    </script>
+    <!-- Resource hints: keep &#8804;4 preconnect (PSI). Fonts preconnect removed &#8212; Theme uses system stack unless you pick Google fonts in Customize. -->
+    <link href='https://www.googletagmanager.com' rel='preconnect'/>
+    <link href='https://www.blogger.com' rel='preconnect'/>
+    <link crossorigin='anonymous' href='https://blogger.googleusercontent.com' rel='preconnect'/>
+    <link href='https://www.gstatic.com' rel='dns-prefetch'/>
+    <link href='https://apis.google.com' rel='dns-prefetch'/>
+    <link crossorigin='anonymous' href='https://addons.mozilla.org' rel='preconnect'/>
+    <!-- PERF/SEO: preload the LCP hero logo (Core Web Vitals / ranking) -->
+    <link as='image' href='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEicaYzWSGOelDJvCzE07V0DSWPjy_j7YWE_B8B82yHmAgz5P8djzNJoKHhfIfr2O7sjYfnPTn7P0bVIU_yCyWDoMT7lGQu-onGpwOb9PF7dR6EXty-p7ZyUs961D-ukMOVhjO-qsY1508wBBHLMopMKy_nLiZzvgDCTz7m-aUkUBbQwOkGvybux_iZ0LGw/s725/Gemini_Generated_Image_i8671i8671i8671i.webp' rel='preload' type='image/webp'/>
+    <!-- content-language helps some tools; primary lang is expr:lang + lang on &lt;html&gt;. -->
+    <meta content='en' http-equiv='content-language'/>
+    <script type='text/javascript'>
+(function(){var e=document.documentElement;if(e&amp;&amp;!e.getAttribute(&#39;lang&#39;))e.setAttribute(&#39;lang&#39;,&#39;en&#39;);})();
+    </script>
+    <meta content='width=device-width, initial-scale=1' name='viewport'/>
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+    <meta content='telephone=no' name='format-detection'/>
+    <!-- Logo فـ &lt;img&gt;: رابط blogger.googleusercontent.com من صورة مرفوعة فـ Blogger -->
+    <title><data:blog.pageTitle/></title>
+    <b:include data='blog' name='all-head-content'/>
+    <!-- Tab / PWA: favicon (Blogger ما كيدعمش ?: مربوطة 3 مرات &#8212; غير b:if + ?: جوج بس) -->
+    <b:if cond='data:blog.favicon or data:blog.blogspotFaviconUrl'>
+      <link expr:href='data:blog.favicon ?: data:blog.blogspotFaviconUrl' rel='icon' type='image/png'/>
+      <link expr:href='data:blog.favicon ?: data:blog.blogspotFaviconUrl' rel='shortcut icon' type='image/png'/>
+      <link expr:href='data:blog.favicon ?: data:blog.blogspotFaviconUrl' rel='apple-touch-icon'/>
+    <b:else/>
+      <!-- Tiny transparent GIF &#8212; not AMO. Replace via Theme settings Favicon or set_hub_logo_url.py -->
+      <link href='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEicaYzWSGOelDJvCzE07V0DSWPjy_j7YWE_B8B82yHmAgz5P8djzNJoKHhfIfr2O7sjYfnPTn7P0bVIU_yCyWDoMT7lGQu-onGpwOb9PF7dR6EXty-p7ZyUs961D-ukMOVhjO-qsY1508wBBHLMopMKy_nLiZzvgDCTz7m-aUkUBbQwOkGvybux_iZ0LGw/s725/Gemini_Generated_Image_i8671i8671i8671i.webp' rel='icon' type='image/webp'/>
+      <link href='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEicaYzWSGOelDJvCzE07V0DSWPjy_j7YWE_B8B82yHmAgz5P8djzNJoKHhfIfr2O7sjYfnPTn7P0bVIU_yCyWDoMT7lGQu-onGpwOb9PF7dR6EXty-p7ZyUs961D-ukMOVhjO-qsY1508wBBHLMopMKy_nLiZzvgDCTz7m-aUkUBbQwOkGvybux_iZ0LGw/s725/Gemini_Generated_Image_i8671i8671i8671i.webp' rel='shortcut icon' type='image/webp'/>
+      <link href='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEicaYzWSGOelDJvCzE07V0DSWPjy_j7YWE_B8B82yHmAgz5P8djzNJoKHhfIfr2O7sjYfnPTn7P0bVIU_yCyWDoMT7lGQu-onGpwOb9PF7dR6EXty-p7ZyUs961D-ukMOVhjO-qsY1508wBBHLMopMKy_nLiZzvgDCTz7m-aUkUBbQwOkGvybux_iZ0LGw/s725/Gemini_Generated_Image_i8671i8671i8671i.webp' rel='apple-touch-icon'/>
+    </b:if>
+    <!-- Plan B إلا ما عندك Favicon: انسخ رابط HTTPS من مسودة (صورة)&#1548; احذف هاد السطر والسطر لي تحتو (تعليق XML) باش يتفعل&#1617;و&#1548; وبد&#1617;ل PASTE_HTTPS_IMAGE_URL
+    <link href='PASTE_HTTPS_IMAGE_URL' rel='icon' type='image/png'/>
+    <link href='PASTE_HTTPS_IMAGE_URL' rel='apple-touch-icon'/>
+    -->
+    <meta expr:content='data:blog.title' name='apple-mobile-web-app-title'/>
+    <link expr:href='data:blog.canonicalUrl' rel='canonical'/>
+    <!-- SEO: hreflang (single-language site; declares default + en) -->
+    <link expr:href='data:blog.canonicalUrl' hreflang='x-default' rel='alternate'/>
+    <link expr:href='data:blog.canonicalUrl' hreflang='en' rel='alternate'/>
+    <meta content='index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1' name='robots'/>
+    <!-- Search Console: zid hna tag dyal verification (wla via Blogger Settings > Search preferences > Google Search Console):
+         <meta content='PASTE_VERIFICATION_CODE' name='google-site-verification'/>
+         Submit https://extefw99.blogspot.com/sitemap.xml and /feeds/posts/default?alt=rss in Search Console. -->
+    <b:if cond='data:blog.url == data:blog.homepageUrl or data:blog.url == data:blog.homepageUrl + &quot;/&quot; or data:blog.homepageUrl == data:blog.url + &quot;/&quot;'>
+      <meta content='Firefox extensions, WebExtensions, Mozilla AMO, werlist99, Wer List99, Firefox add-ons, browser extensions, Add to Firefox, privacy tools' name='keywords'/>
+    </b:if>
+    <b:if cond='data:blog.metaDescription'>
+      <meta expr:content='data:blog.metaDescription' name='description'/>
+    </b:if>
+    <b:if cond='!data:blog.metaDescription'>
+      <b:if cond='data:blog.url == data:blog.homepageUrl or data:blog.url == data:blog.homepageUrl + &quot;/&quot; or data:blog.homepageUrl == data:blog.url + &quot;/&quot;'>
+        <meta content='Wer List99 — Firefox extensions &amp; WebExtensions hub. Official Mozilla AMO listings, Add to Firefox guides, release notes &amp; privacy-focused tools. Independent developer; not affiliated with Mozilla.' name='description'/>
+      <b:else/>
+        <b:if cond='data:blog.pageType == &quot;item&quot;'>
+          <b:loop values='data:posts' var='post'>
+            <meta expr:content='data:post.snippet' name='description'/>
+          </b:loop>
+        </b:if>
+      </b:if>
+    </b:if>
+    <b:if cond='data:blog.pageType != &quot;item&quot;'>
+      <meta expr:content='data:blog.title' name='author'/>
+    </b:if>
+    <meta content='#12171d' name='theme-color'/>
+    <meta content='#eef6ef' media='(prefers-color-scheme: light)' name='theme-color'/>
+    <meta content='#0d160f' media='(prefers-color-scheme: dark)' name='theme-color'/>
+    <meta content='#12171d' name='msapplication-TileColor'/>
+    <meta content='strict-origin-when-cross-origin' name='referrer'/>
+    <meta content='en_US' property='og:locale'/>
+    <link href='https://addons.mozilla.org/en-US/firefox/user/19705561/' rel='me'/>
+    <link href='https://addons.mozilla.org' rel='dns-prefetch'/>
+    <link href='https://www.mozilla.org' rel='dns-prefetch'/>
+    <link expr:href='data:blog.feedUrl' rel='alternate' title='Atom' type='application/atom+xml'/>
+    <link expr:href='data:blog.homepageUrl.canonical + &quot;feeds/posts/default?alt=rss&quot;' rel='alternate' title='RSS' type='application/rss+xml'/>
+    <meta expr:content='data:blog.title' property='og:site_name'/>
+    <meta expr:content='data:blog.pageTitle' property='og:title'/>
+    <meta expr:content='data:blog.canonicalUrl' property='og:url'/>
+    <meta content='summary_large_image' name='twitter:card'/>
+    <meta expr:content='data:blog.pageTitle' name='twitter:title'/>
+    <b:if cond='data:blog.metaDescription'>
+      <meta expr:content='data:blog.metaDescription' property='og:description'/>
+      <meta expr:content='data:blog.metaDescription' name='twitter:description'/>
+    </b:if>
+    <b:if cond='!data:blog.metaDescription'>
+      <b:if cond='data:blog.url == data:blog.homepageUrl or data:blog.url == data:blog.homepageUrl + &quot;/&quot; or data:blog.homepageUrl == data:blog.url + &quot;/&quot;'>
+        <meta content='Wer List99 — Firefox extensions &amp; WebExtensions hub. Official Mozilla AMO listings, Add to Firefox guides, release notes. Independent developer; not affiliated with Mozilla.' property='og:description'/>
+        <meta content='Wer List99 — Firefox extensions &amp; WebExtensions hub. Official Mozilla AMO listings, Add to Firefox guides, release notes. Independent developer; not affiliated with Mozilla.' name='twitter:description'/>
+      <b:else/>
+        <b:if cond='data:blog.pageType == &quot;item&quot;'>
+          <b:loop values='data:posts' var='post'>
+            <meta expr:content='data:post.snippet' property='og:description'/>
+            <meta expr:content='data:post.snippet' name='twitter:description'/>
+          </b:loop>
+        </b:if>
+      </b:if>
+    </b:if>
+    <b:if cond='data:blog.url == data:blog.homepageUrl or data:blog.url == data:blog.homepageUrl + &quot;/&quot; or data:blog.homepageUrl == data:blog.url + &quot;/&quot;'>
+      <meta content='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEicaYzWSGOelDJvCzE07V0DSWPjy_j7YWE_B8B82yHmAgz5P8djzNJoKHhfIfr2O7sjYfnPTn7P0bVIU_yCyWDoMT7lGQu-onGpwOb9PF7dR6EXty-p7ZyUs961D-ukMOVhjO-qsY1508wBBHLMopMKy_nLiZzvgDCTz7m-aUkUBbQwOkGvybux_iZ0LGw/s725/Gemini_Generated_Image_i8671i8671i8671i.webp' property='og:image'/>
+      <meta content='Wer List99 — Firefox extensions hub' property='og:image:alt'/>
+      <meta content='725' property='og:image:width'/>
+      <meta content='725' property='og:image:height'/>
+      <meta content='image/webp' property='og:image:type'/>
+    </b:if>
+    <b:if cond='data:blog.pageType == &quot;item&quot;'>
+      <meta content='article' property='og:type'/>
+      <b:loop values='data:posts' var='post'>
+        <b:if cond='data:post.thumbnailUrl'>
+          <meta expr:content='data:post.thumbnailUrl' property='og:image'/>
+          <meta expr:content='data:post.thumbnailUrl' name='twitter:image'/>
+        <b:else/>
+          <b:if cond='data:post.firstImageUrl'>
+            <meta expr:content='data:post.firstImageUrl' property='og:image'/>
+            <meta expr:content='data:post.firstImageUrl' name='twitter:image'/>
+          <b:else/>
+            <meta content='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEicaYzWSGOelDJvCzE07V0DSWPjy_j7YWE_B8B82yHmAgz5P8djzNJoKHhfIfr2O7sjYfnPTn7P0bVIU_yCyWDoMT7lGQu-onGpwOb9PF7dR6EXty-p7ZyUs961D-ukMOVhjO-qsY1508wBBHLMopMKy_nLiZzvgDCTz7m-aUkUBbQwOkGvybux_iZ0LGw/s725/Gemini_Generated_Image_i8671i8671i8671i.webp' property='og:image'/>
+            <meta content='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEicaYzWSGOelDJvCzE07V0DSWPjy_j7YWE_B8B82yHmAgz5P8djzNJoKHhfIfr2O7sjYfnPTn7P0bVIU_yCyWDoMT7lGQu-onGpwOb9PF7dR6EXty-p7ZyUs961D-ukMOVhjO-qsY1508wBBHLMopMKy_nLiZzvgDCTz7m-aUkUBbQwOkGvybux_iZ0LGw/s725/Gemini_Generated_Image_i8671i8671i8671i.webp' name='twitter:image'/>
+          </b:if>
+        </b:if>
+        <meta expr:content='data:post.title' property='og:image:alt'/>
+        <b:if cond='data:post.labels.first'>
+          <meta expr:content='data:post.labels.first.name' property='article:section'/>
+        </b:if>
+        <b:loop values='data:post.labels' var='label'>
+          <meta expr:content='data:label.name' property='article:tag'/>
+        </b:loop>
+        <meta expr:content='data:post.author' property='article:author'/>
+        <meta expr:content='data:post.date.iso8601' property='article:published_time'/>
+        <meta expr:content='data:post.date.iso8601' property='article:modified_time'/>
+      </b:loop>
+    </b:if>
+    <b:if cond='data:blog.pageType == &quot;static_page&quot;'>
+      <meta content='article' property='og:type'/>
+    </b:if>
+    <b:if cond='data:blog.pageType != &quot;item&quot; and data:blog.pageType != &quot;static_page&quot;'>
+      <meta content='website' property='og:type'/>
+    </b:if>
+    <b:if cond='data:blog.url == data:blog.homepageUrl or data:blog.url == data:blog.homepageUrl + &quot;/&quot; or data:blog.homepageUrl == data:blog.url + &quot;/&quot;'>
+      <script type='application/ld+json'>
+      {&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@graph&quot;:[
+        {&quot;@type&quot;:&quot;Organization&quot;,&quot;name&quot;:<data:blog.title json='true'/>,&quot;url&quot;:<data:blog.homepageUrl.canonical json='true'/>,&quot;logo&quot;:{&quot;@type&quot;:&quot;ImageObject&quot;,&quot;url&quot;:&quot;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEicaYzWSGOelDJvCzE07V0DSWPjy_j7YWE_B8B82yHmAgz5P8djzNJoKHhfIfr2O7sjYfnPTn7P0bVIU_yCyWDoMT7lGQu-onGpwOb9PF7dR6EXty-p7ZyUs961D-ukMOVhjO-qsY1508wBBHLMopMKy_nLiZzvgDCTz7m-aUkUBbQwOkGvybux_iZ0LGw/s725/Gemini_Generated_Image_i8671i8671i8671i.webp&quot;,&quot;width&quot;:725,&quot;height&quot;:725},&quot;sameAs&quot;:[&quot;https://addons.mozilla.org/en-US/firefox/user/19705561/&quot;,&quot;https://addons.mozilla.org/&quot;]},
+        {&quot;@type&quot;:&quot;WebSite&quot;,&quot;url&quot;:<data:blog.homepageUrl.canonical json='true'/>,&quot;name&quot;:<data:blog.title json='true'/>,&quot;description&quot;:<data:blog.metaDescription json='true'/>,&quot;inLanguage&quot;:&quot;en&quot;,&quot;potentialAction&quot;:{&quot;@type&quot;:&quot;SearchAction&quot;,&quot;target&quot;:{&quot;@type&quot;:&quot;EntryPoint&quot;,&quot;urlTemplate&quot;:&quot;<data:blog.homepageUrl.canonical/>search?q={search_term_string}&quot;},&quot;query-input&quot;:&quot;required name=search_term_string&quot;},&quot;publisher&quot;:{&quot;@type&quot;:&quot;Organization&quot;,&quot;name&quot;:<data:blog.title json='true'/>,&quot;url&quot;:<data:blog.homepageUrl.canonical json='true'/>,&quot;sameAs&quot;:[&quot;https://addons.mozilla.org/en-US/firefox/user/19705561/&quot;,&quot;https://addons.mozilla.org/&quot;]}},
+        {&quot;@type&quot;:&quot;Blog&quot;,&quot;name&quot;:<data:blog.title json='true'/>,&quot;url&quot;:<data:blog.homepageUrl.canonical json='true'/>,&quot;description&quot;:<data:blog.metaDescription json='true'/>,&quot;inLanguage&quot;:&quot;en&quot;,&quot;publisher&quot;:{&quot;@type&quot;:&quot;Organization&quot;,&quot;name&quot;:<data:blog.title json='true'/>,&quot;url&quot;:<data:blog.homepageUrl.canonical json='true'/>,&quot;sameAs&quot;:[&quot;https://addons.mozilla.org/en-US/firefox/user/19705561/&quot;,&quot;https://addons.mozilla.org/&quot;]}},
+        {&quot;@type&quot;:&quot;FAQPage&quot;,&quot;mainEntity&quot;:[
+          {&quot;@type&quot;:&quot;Question&quot;,&quot;name&quot;:&quot;How do I install add-ons from Mozilla AMO?&quot;,&quot;acceptedAnswer&quot;:{&quot;@type&quot;:&quot;Answer&quot;,&quot;text&quot;:&quot;Open the official AMO listing and click Add to Firefox. This site links only to addons.mozilla.org.&quot;}},
+          {&quot;@type&quot;:&quot;Question&quot;,&quot;name&quot;:&quot;Do these extensions work on Firefox for Android?&quot;,&quot;acceptedAnswer&quot;:{&quot;@type&quot;:&quot;Answer&quot;,&quot;text&quot;:&quot;Some add-ons support Firefox for Android. Check the Compatibility section on each AMO listing.&quot;}},
+          {&quot;@type&quot;:&quot;Question&quot;,&quot;name&quot;:&quot;Where can I read privacy information?&quot;,&quot;acceptedAnswer&quot;:{&quot;@type&quot;:&quot;Answer&quot;,&quot;text&quot;:&quot;Read each add-on&#8217;s privacy notes on AMO and the Privacy page on this blog.&quot;}}
+        ]}
+      ]}
+      </script>
+    </b:if>
+    <b:if cond='data:blog.pageType == &quot;item&quot;'>
+      <b:loop values='data:posts' var='post'>
+        <b:if cond='data:post.thumbnailUrl'>
+        <script type='application/ld+json'>
+        {&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@type&quot;:&quot;BlogPosting&quot;,&quot;mainEntityOfPage&quot;:{&quot;@type&quot;:&quot;WebPage&quot;,&quot;@id&quot;:<data:post.url json='true'/>},&quot;headline&quot;:<data:post.title json='true'/>,&quot;description&quot;:<data:blog.metaDescription json='true'/>,&quot;speakable&quot;:{&quot;@type&quot;:&quot;WebPageElement&quot;,&quot;cssSelector&quot;:[&quot;.post-body&quot;,&quot;h1&quot;]},&quot;url&quot;:<data:post.url json='true'/>,&quot;datePublished&quot;:<data:post.date.iso8601 json='true'/>,&quot;dateModified&quot;:<data:post.date.iso8601 json='true'/>,&quot;author&quot;:{&quot;@type&quot;:&quot;Person&quot;,&quot;name&quot;:<data:post.author json='true'/>},&quot;publisher&quot;:{&quot;@type&quot;:&quot;Organization&quot;,&quot;name&quot;:<data:blog.title json='true'/>,&quot;url&quot;:<data:blog.homepageUrl.canonical json='true'/>},&quot;image&quot;:{&quot;@type&quot;:&quot;ImageObject&quot;,&quot;url&quot;:<data:post.thumbnailUrl json='true'/>,&quot;caption&quot;:<data:post.title json='true'/>}}
+        </script>
+        <b:else/>
+        <b:if cond='data:post.firstImageUrl'>
+        <script type='application/ld+json'>
+        {&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@type&quot;:&quot;BlogPosting&quot;,&quot;mainEntityOfPage&quot;:{&quot;@type&quot;:&quot;WebPage&quot;,&quot;@id&quot;:<data:post.url json='true'/>},&quot;headline&quot;:<data:post.title json='true'/>,&quot;description&quot;:<data:blog.metaDescription json='true'/>,&quot;speakable&quot;:{&quot;@type&quot;:&quot;WebPageElement&quot;,&quot;cssSelector&quot;:[&quot;.post-body&quot;,&quot;h1&quot;]},&quot;url&quot;:<data:post.url json='true'/>,&quot;datePublished&quot;:<data:post.date.iso8601 json='true'/>,&quot;dateModified&quot;:<data:post.date.iso8601 json='true'/>,&quot;author&quot;:{&quot;@type&quot;:&quot;Person&quot;,&quot;name&quot;:<data:post.author json='true'/>},&quot;publisher&quot;:{&quot;@type&quot;:&quot;Organization&quot;,&quot;name&quot;:<data:blog.title json='true'/>,&quot;url&quot;:<data:blog.homepageUrl.canonical json='true'/>},&quot;image&quot;:{&quot;@type&quot;:&quot;ImageObject&quot;,&quot;url&quot;:<data:post.firstImageUrl json='true'/>,&quot;caption&quot;:<data:post.title json='true'/>}}
+        </script>
+        <b:else/>
+        <script type='application/ld+json'>
+        {&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@type&quot;:&quot;BlogPosting&quot;,&quot;mainEntityOfPage&quot;:{&quot;@type&quot;:&quot;WebPage&quot;,&quot;@id&quot;:<data:post.url json='true'/>},&quot;headline&quot;:<data:post.title json='true'/>,&quot;description&quot;:<data:blog.metaDescription json='true'/>,&quot;speakable&quot;:{&quot;@type&quot;:&quot;WebPageElement&quot;,&quot;cssSelector&quot;:[&quot;.post-body&quot;,&quot;h1&quot;]},&quot;url&quot;:<data:post.url json='true'/>,&quot;datePublished&quot;:<data:post.date.iso8601 json='true'/>,&quot;dateModified&quot;:<data:post.date.iso8601 json='true'/>,&quot;author&quot;:{&quot;@type&quot;:&quot;Person&quot;,&quot;name&quot;:<data:post.author json='true'/>},&quot;publisher&quot;:{&quot;@type&quot;:&quot;Organization&quot;,&quot;name&quot;:<data:blog.title json='true'/>,&quot;url&quot;:<data:blog.homepageUrl.canonical json='true'/>}}
+        </script>
+        </b:if>
+        </b:if>
+        <script type='application/ld+json'>
+        {&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@type&quot;:&quot;BreadcrumbList&quot;,&quot;itemListElement&quot;:[
+          {&quot;@type&quot;:&quot;ListItem&quot;,&quot;position&quot;:1,&quot;name&quot;:<data:blog.title json='true'/>,&quot;item&quot;:<data:blog.homepageUrl.canonical json='true'/>},
+          {&quot;@type&quot;:&quot;ListItem&quot;,&quot;position&quot;:2,&quot;name&quot;:<data:post.title json='true'/>,&quot;item&quot;:<data:post.url json='true'/>}
+        ]}
+        </script>
+      </b:loop>
+    </b:if>
+    <b:if cond='data:blog.pageType == &quot;static_page&quot;'>
+      <b:loop values='data:posts' var='post'>
+        <script type='application/ld+json'>
+        {&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@type&quot;:&quot;WebPage&quot;,&quot;name&quot;:<data:post.title json='true'/>,&quot;url&quot;:<data:post.url json='true'/>,&quot;description&quot;:<data:blog.metaDescription json='true'/>,&quot;isPartOf&quot;:{&quot;@type&quot;:&quot;WebSite&quot;,&quot;url&quot;:<data:blog.homepageUrl.canonical json='true'/>,&quot;name&quot;:<data:blog.title json='true'/>}}
+        </script>
+        <script type='application/ld+json'>
+        {&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@type&quot;:&quot;BreadcrumbList&quot;,&quot;itemListElement&quot;:[
+          {&quot;@type&quot;:&quot;ListItem&quot;,&quot;position&quot;:1,&quot;name&quot;:<data:blog.title json='true'/>,&quot;item&quot;:<data:blog.homepageUrl.canonical json='true'/>},
+          {&quot;@type&quot;:&quot;ListItem&quot;,&quot;position&quot;:2,&quot;name&quot;:<data:post.title json='true'/>,&quot;item&quot;:<data:post.url json='true'/>}
+        ]}
+        </script>
+      </b:loop>
+    </b:if>
+    <!-- Skin uses system font stack only; Google Fonts in Lighthouse come from Theme Designer or Blogger unless set to Default. -->
+    <b:skin version='1.0.0'><![CDATA[
+    /* Landing palette (extension-landing-blogger-snippet parity) + blog tokens */
+    :root {
+      --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+      --red: #c41e3a;
+      --el-bg: #eef6ef;
+      --el-card: #ffffff;
+      --el-text: #132818;
+      --el-muted: #2a3a30;
+      --el-g: #1b5e20;
+      --el-gm: #2e7d32;
+      --el-gb: #43a047;
+      --el-bd: #b2dfbc;
+      --el-bds: #e8f5e9;
+      --el-sh: 0 10px 40px rgba(27, 94, 32, 0.08);
+      --el-shh: 0 20px 50px rgba(27, 94, 32, 0.14);
+      --black: #0a0a0a;
+      --white: #ffffff;
+      --bg: var(--el-bg);
+      --bg2: var(--el-bg);
+      --card: var(--el-card);
+      --text: var(--el-text);
+      --muted: var(--el-muted);
+      --green: var(--el-g);
+      --green-mid: var(--el-gm);
+      --green-bright: var(--el-gb);
+      --firefox: #ff7139;
+      --border: var(--el-bd);
+      --border-soft: var(--el-bds);
+      --shadow: var(--el-sh);
+      --shadow-hover: var(--el-shh);
+      --radius: 20px;
+      --topbar-h: 56px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --el-bg: #0d160f;
+        --el-card: #1a281d;
+        --el-text: #e8f5e9;
+        --el-muted: #c8e6c9;
+        --el-bd: #2e4a32;
+        --el-bds: #1e2e22;
+        --el-sh: 0 12px 40px rgba(0, 0, 0, 0.45);
+        --el-shh: 0 20px 56px rgba(0, 0, 0, 0.55);
+        --bg: var(--el-bg);
+        --bg2: var(--el-bg);
+        --card: var(--el-card);
+        --text: var(--el-text);
+        --muted: var(--el-muted);
+        --border: var(--el-bd);
+        --border-soft: var(--el-bds);
+        --shadow: var(--el-sh);
+        --shadow-hover: var(--el-shh);
+        --green-mid: #81c784;
+        --green-bright: #a5d6a7;
+      }
+      .card-icon { background: linear-gradient(145deg, #1b3320, #243d28) !important; }
+      .topbar { background: rgba(13, 22, 15, 0.92) !important; border-color: var(--border) !important; }
+      .lp-readbar { background: linear-gradient(90deg, #12171d 0%, #ff3131 22%, #2e7d32 50%, #1b5e20 72%, #0d160f 100%); }
+      .ext-lp-ic { background: linear-gradient(145deg, #1b3320, #243d28) !important; }
+      .ext-lp-ic.ext-lp-ic-pic { background: #fff !important; }
+      .topbar-sub { color: #c8e6c9; }
+      .topbar-title { color: #e8f5e9; -webkit-text-fill-color: #e8f5e9; }
+      /* Dark override for the hardcoded light hero gradient */
+      .hero {
+        background:
+          linear-gradient(135deg, rgba(37, 99, 235, 0.09) 0%, transparent 48%),
+          linear-gradient(225deg, rgba(196, 30, 58, 0.08) 0%, transparent 40%),
+          linear-gradient(165deg, var(--el-card) 0%, var(--el-bg) 100%);
+      }
+      /* Dark override for the hardcoded light lang strip gradient */
+      .lang-strip {
+        background: linear-gradient(120deg, var(--el-card) 0%, rgba(30, 46, 34, 0.85) 55%, rgba(26, 40, 29, 0.9) 100%);
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    .lp-readbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      z-index: 100;
+      pointer-events: none;
+      background: linear-gradient(90deg, #12171d 0%, #ff3131 18%, #1b5e20 42%, #2e7d32 62%, #43a047 82%, #12171d 100%);
+      box-shadow: 0 1px 0 rgba(18, 23, 29, 0.25);
+    }
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      background: var(--bg2);
+      color: var(--text);
+      line-height: 1.55;
+      min-height: 100vh;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 90% 55% at 50% -25%, rgba(27, 94, 32, 0.08), transparent),
+        radial-gradient(ellipse 50% 45% at 100% 20%, rgba(46, 125, 50, 0.05), transparent),
+        radial-gradient(ellipse 45% 40% at 0% 90%, rgba(19, 40, 24, 0.04), transparent);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: calc(var(--topbar-h) + 23px) 20px 64px;
+    }
+    .topbar {
+      position: fixed;
+      top: 3px;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      height: var(--topbar-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 22px;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(14px) saturate(1.2);
+      -webkit-backdrop-filter: blur(14px) saturate(1.2);
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .topbar-brand {
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+    .topbar-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 1px solid var(--el-bd);
+      box-shadow: 0 1px 4px rgba(27, 94, 32, 0.12);
+      flex-shrink: 0;
+    }
+    /* Full wordmark: avoid cropping; hide duplicate text title next to image */
+    .topbar-logo.topbar-logo-wordmark {
+      width: auto;
+      height: 30px;
+      max-width: min(150px, 40vw);
+      object-fit: contain;
+      background: rgba(18, 23, 29, 0.06);
+      position: relative;
+      top: 1px;
+    }
+    .topbar-logo-wordmark ~ .topbar-brand-stack .topbar-title {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    .topbar-logo-fallback {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      font-size: 1.35rem;
+      line-height: 1;
+      background: linear-gradient(145deg, #e8f5e9, #c8e6c9);
+      border: 1px solid var(--el-bd);
+      flex-shrink: 0;
+    }
+    .topbar-brand-stack { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 1px; min-width: 0; text-align: left; }
+    .topbar-title {
+      font-weight: 800;
+      font-size: 1.05rem;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: var(--el-text);
+      -webkit-text-fill-color: var(--el-text);
+    }
+    .topbar-sub {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #1a2820;
+    }
+    .topbar-logo-fallback.topbar-initials {
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: #fff;
+      background: linear-gradient(145deg, #5c1018, #1a0a0c);
+      font-family: var(--font-sans);
+    }
+    .topbar-nav { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+    .topbar-nav a {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 14px;
+      border-radius: 10px;
+    }
+    .topbar-nav a:hover { color: var(--green-mid); background: var(--border-soft); }
+    .hero {
+      text-align: center;
+      padding: 42px 24px 50px;
+      background:
+        linear-gradient(135deg, rgba(37, 99, 235, 0.06) 0%, transparent 48%),
+        linear-gradient(225deg, rgba(196, 30, 58, 0.05) 0%, transparent 40%),
+        linear-gradient(165deg, #ffffff 0%, #fafafa 100%);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 8%;
+      right: 8%;
+      height: 3px;
+      border-radius: 3px;
+      background: linear-gradient(90deg, #0a0a0a, #c41e3a, #ffffff, #2563eb, #0a0a0a);
+      opacity: 0.85;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      margin-bottom: 14px;
+      padding: 6px 12px;
+      background: var(--card);
+      border-radius: 999px;
+      border: 1px solid var(--border);
+    }
+    .hero h1 {
+      font-weight: 800;
+      font-size: clamp(1.85rem, 4.5vw, 2.5rem);
+      letter-spacing: -0.035em;
+      margin: 0 0 14px;
+      line-height: 1.12;
+    }
+    .hero-lead {
+      max-width: 540px;
+      margin: 0 auto 22px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; align-items: center; }
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.65rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.875rem;
+      text-decoration: none;
+      color: var(--green-mid);
+      border: 2px solid var(--border);
+      background: transparent;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .btn-ghost:hover { background: var(--border-soft); border-color: var(--green-bright); }
+    .trust {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 20px;
+      margin-bottom: 36px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .trust span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      background: var(--card);
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(10, 10, 10, 0.06);
+    }
+    .store-strip {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 36px;
+    }
+    .store-strip a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 16px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--text);
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 10px rgba(10, 10, 10, 0.06);
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+    .store-strip a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.12);
+      border-color: var(--green-bright);
+    }
+    .store-strip .s-firefox { border-left: 3px solid #ff7139; }
+    .dev-tools-strip {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin: 0 0 28px;
+      padding: 0 4px;
+    }
+    .dev-tools-strip .dt-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--text);
+      background: var(--card);
+      border: 1px dashed var(--border);
+      box-shadow: 0 1px 6px rgba(10, 10, 10, 0.05);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .dev-tools-strip .dt-pill:hover {
+      border-color: var(--green-bright);
+      border-style: solid;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.12);
+    }
+    .section-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 20px;
+      min-height: 4.5rem;
+      contain: layout style;
+    }
+    .section-head h2 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin: 0;
+    }
+    .section-head p { margin: 0; font-size: 0.9rem; color: var(--muted); }
+    .grid {
+      display: grid;
+      gap: 22px;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    }
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      padding: 22px 22px 20px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--green-bright);
+    }
+    .card.featured {
+      grid-column: 1 / -1;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 26px;
+    }
+    @media (min-width: 720px) {
+      .card.featured .card-body { flex: 1; min-width: 240px; }
+    }
+    .card-top { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 10px; }
+    .card-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: linear-gradient(145deg, #ffffff, #dbeafe, #fecaca);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.55rem;
+      flex-shrink: 0;
+      border: 1px solid var(--border);
+      box-shadow: inset 0 1px 0 #ffffff, 0 2px 10px rgba(10, 10, 10, 0.06);
+    }
+    .card h1 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin: 0 0 4px;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+      color: var(--text);
+    }
+    .card h2, .card h2 a {
+      font-size: 1.18rem;
+      font-weight: 700;
+      margin: 0 0 4px;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .card h2 a:hover { color: var(--green-mid); }
+    .card .tag {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--green-mid);
+      margin-bottom: 6px;
+    }
+    .card-meta { font-size: 0.78rem; color: var(--muted); margin-bottom: 10px; }
+    .card p, .post-body { margin: 0 0 16px; font-size: 0.93rem; color: var(--muted); flex: 1; }
+    .post-body { color: var(--text); }
+    .post-body img { max-width: 100%; height: auto; border-radius: 12px; }
+    /* Static pages (About, Privacy…): no duplicate card header — body supplies title + layout */
+    .static-page-article {
+      grid-column: 1 / -1;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+    }
+    .static-page-article .post-static-page { margin-top: 0; }
+    .card-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+    a.btn-firefox {
+      display: inline-flex !important;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.68rem 1.35rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 40%, #1d4ed8 100%) !important;
+      color: #ffffff !important;
+      font-weight: 600 !important;
+      font-size: 0.875rem !important;
+      text-decoration: none !important;
+      border: 1px solid #1e40af;
+      box-shadow: 0 6px 22px rgba(37, 99, 235, 0.35);
+      transition: filter 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    a.btn-firefox:hover { filter: brightness(1.08); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(37, 99, 235, 0.45); }
+    a.btn-store-firefox {
+      background: linear-gradient(135deg, #991b1b 0%, #c41e3a 45%, #dc2626 100%) !important;
+      border: 1px solid #7f1d1d !important;
+      box-shadow: 0 4px 20px rgba(196, 30, 58, 0.4) !important;
+    }
+    a.btn-store-firefox:hover { box-shadow: 0 8px 28px rgba(220, 38, 38, 0.45) !important; }
+    a.btn-firefox .fox-icon { font-size: 1.05rem; line-height: 1; flex-shrink: 0; }
+    .link-store {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--green-mid);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+    .link-store:hover { border-bottom-color: var(--green-mid); }
+    .faq {
+      margin-top: 48px;
+      padding: 28px 24px;
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+    .faq h2 { font-size: 1.2rem; font-weight: 800; margin: 0 0 16px; text-align: center; }
+    .faq details { border-bottom: 1px solid var(--border); padding: 14px 0; }
+    .faq details:last-child { border-bottom: 0; }
+    .faq summary {
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      list-style: none;
+      min-height: 44px;
+      padding: 12px 0;
+      line-height: 1.4;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; float: inline-end; font-weight: 800; color: var(--green-mid); }
+    .faq details[open] summary::after { content: "−"; }
+    .faq details p { margin: 12px 0 0; font-size: 0.9rem; color: var(--muted); }
+    .ext-lp-faq-full { margin: 18px 0 0; text-align: center; font-size: 0.92rem; }
+    .foot {
+      text-align: center;
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+    .foot a { color: var(--green-mid); font-weight: 600; text-decoration: none; }
+    .foot a:hover { text-decoration: underline; }
+    .foot-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 8px; align-items: center; }
+    .foot-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 8px 12px;
+      border-radius: 10px;
+    }
+    .foot-links a:focus-visible { outline: 2px solid var(--green-mid); outline-offset: 2px; }
+    .blog-pager {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 32px;
+      font-weight: 600;
+    }
+    .blog-pager a {
+      color: var(--green-mid);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 16px;
+      border-radius: 10px;
+    }
+    .blog-pager a:hover { text-decoration: underline; background: var(--border-soft); }
+    .post-comments { margin-top: 28px; padding: 24px; background: var(--card); border-radius: var(--radius); border: 1px solid var(--border); }
+    .status-msg {
+      text-align: center;
+      padding: 18px 20px;
+      color: var(--muted);
+      background: var(--card);
+      border: 1px dashed var(--border);
+      border-radius: 14px;
+      margin-bottom: 18px;
+      font-size: 0.92rem;
+    }
+    .status-msg a { color: var(--green-mid); font-weight: 700; }
+    .skip-link {
+      position: absolute;
+      left: 12px;
+      top: -100px;
+      z-index: 200;
+      padding: 10px 16px;
+      background: var(--green-mid);
+      color: #fff !important;
+      font-weight: 700;
+      font-size: 0.875rem;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 12px; outline: 2px solid var(--green-bright); outline-offset: 2px; }
+    .layout-grid {
+      display: grid;
+      gap: 28px;
+      align-items: start;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 1024px) {
+      .layout-grid { grid-template-columns: minmax(0, 1fr) minmax(260px, 320px); }
+      .layout-sidebar { position: sticky; top: calc(var(--topbar-h) + 16px); }
+    }
+    .layout-main { min-width: 0; }
+    /* Reduce CLS when posts grid is empty or nav message appears */
+    #main.main.section .grid {
+      min-height: 120px;
+    }
+    #main.main.section .status-msg {
+      min-height: 2.75rem;
+      box-sizing: border-box;
+    }
+    .breadcrumb { margin-bottom: 16px; font-size: 0.82rem; color: var(--muted); }
+    .breadcrumb ol {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .breadcrumb li:not(:last-child)::after { content: "/"; margin-left: 8px; color: var(--border); font-weight: 600; }
+    .breadcrumb a { color: var(--green-mid); font-weight: 600; text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb [aria-current='page'] { color: var(--text); font-weight: 700; max-width: 100%; }
+    .stats-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+    .stats-strip .stat {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .stats-strip .stat strong { display: block; font-size: 1.5rem; font-weight: 800; color: var(--green-mid); line-height: 1.2; }
+    .stats-strip .stat span { font-size: 0.75rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+    .rss-cta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 32px;
+      padding: 22px 24px;
+      background: linear-gradient(135deg, var(--border-soft), var(--card));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .rss-cta h3 { margin: 0 0 6px; font-size: 1.05rem; font-weight: 800; }
+    .rss-cta p { margin: 0; font-size: 0.9rem; color: var(--muted); max-width: 420px; }
+    .rss-cta-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .card-thumb {
+      display: block;
+      margin: -6px -6px 14px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      aspect-ratio: 16 / 9;
+      background: var(--border-soft);
+    }
+    .card-thumb img { width: 100%; height: 100%; object-fit: cover; vertical-align: middle; }
+    .layout-sidebar .widget {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px 16px 16px;
+      margin-bottom: 18px;
+    }
+    .layout-sidebar .widget:last-child { margin-bottom: 0; }
+    .layout-sidebar .widget-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin: 0 0 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border-soft);
+      color: var(--text);
+    }
+    .layout-sidebar .widget-content { font-size: 0.88rem; color: var(--muted); }
+    .layout-sidebar .widget-content a { color: var(--green-mid); font-weight: 600; text-decoration: none; }
+    .layout-sidebar .widget-content a:hover { text-decoration: underline; }
+    .layout-sidebar .widget-content ul { margin: 0; padding-left: 1.1rem; }
+    .layout-sidebar .widget-content li { margin-bottom: 6px; }
+    .layout-sidebar .dev-tools { scroll-margin-top: calc(var(--topbar-h) + 12px); }
+    .layout-sidebar .dev-tools-intro { margin: 0 0 14px; font-size: 0.8rem; line-height: 1.45; color: var(--muted); }
+    .layout-sidebar .dev-tools-group { margin-bottom: 16px; }
+    .layout-sidebar .dev-tools-group:last-of-type { margin-bottom: 0; }
+    .layout-sidebar .dev-tools-label {
+      margin: 0 0 8px;
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green-mid);
+    }
+    .layout-sidebar .dev-tools ul { list-style: none; padding-left: 0; margin: 0; }
+    .layout-sidebar .dev-tools li { margin-bottom: 5px; }
+    .layout-sidebar .dev-tools a {
+      display: flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: var(--border-soft);
+      border: 1px solid var(--border);
+      font-size: 0.8rem;
+      font-weight: 600;
+      line-height: 1.35;
+      text-decoration: none !important;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .layout-sidebar .dev-tools a:hover {
+      border-color: var(--green-bright);
+      box-shadow: 0 2px 10px rgba(37, 99, 235, 0.12);
+      text-decoration: none !important;
+    }
+    .layout-sidebar input[type='text'],
+    .layout-sidebar input[type='email'] {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      font-family: inherit;
+      font-size: 0.875rem;
+      margin-bottom: 8px;
+    }
+    /* Blog search: 44px+ touch targets (Lighthouse a11y) */
+    #BlogSearch1 .blog-search-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: stretch;
+    }
+    #BlogSearch1 .search-input {
+      flex: 1 1 160px;
+      min-width: 0;
+      margin-bottom: 0;
+    }
+    #BlogSearch1 input[name='q'] {
+      min-height: 48px !important;
+      margin-bottom: 0;
+      box-sizing: border-box;
+    }
+    #BlogSearch1 .search-action {
+      min-height: 48px !important;
+      min-width: 96px !important;
+      padding: 0 20px !important;
+      border-radius: 10px;
+      border: 1px solid var(--el-bd);
+      background: var(--el-gm);
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.875rem;
+    }
+    #BlogSearch1 .search-action:hover { filter: brightness(1.06); }
+    #BlogSearch1 .search-action:focus-visible {
+      outline: 2px solid var(--el-g);
+      outline-offset: 2px;
+    }
+    /* Popular posts: list markup (avoid invalid role=feed from default snippetedPosts) */
+    #PopularPosts1 .popular-posts-a11y ul.popular-posts-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    #PopularPosts1 .popular-post-item { margin-bottom: 8px; }
+    #PopularPosts1 .popular-post-item:last-child { margin-bottom: 0; }
+    #PopularPosts1 .popular-post-row,
+    #PopularPosts1 .popular-post-link-only {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 44px;
+      padding: 6px 8px;
+      margin: 0 -4px;
+      border-radius: 10px;
+      text-decoration: none !important;
+      color: var(--green-mid);
+      font-weight: 600;
+      line-height: 1.3;
+    }
+    #PopularPosts1 .popular-post-row:hover,
+    #PopularPosts1 .popular-post-link-only:hover {
+      background: var(--border-soft);
+    }
+    #PopularPosts1 .popular-post-thumb {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    #PopularPosts1 .popular-post-title { flex: 1; min-width: 0; }
+    .layout-sidebar .follow-by-email-submit {
+      border-radius: 999px !important;
+      background: linear-gradient(135deg, #2563eb, #1e40af) !important;
+      color: #fff !important;
+      font-weight: 600 !important;
+      border: none !important;
+      padding: 10px 18px !important;
+      cursor: pointer;
+    }
+    .foot-copy { margin: 16px 0 0; font-size: 0.8rem; color: var(--muted); }
+    .post-body h2, .post-body h3, .post-body h4 { margin-top: 1.4em; margin-bottom: 0.5em; line-height: 1.25; }
+    .post-body a { color: var(--green-mid); font-weight: 600; }
+    .post-body blockquote { margin: 1rem 0; padding: 12px 16px; border-left: 4px solid #c41e3a; background: var(--border-soft); border-radius: 0 12px 12px 0; }
+    .post-body pre, .post-body code { font-family: ui-monospace, monospace; font-size: 0.88em; }
+    .post-body pre { overflow-x: auto; padding: 14px; border-radius: 12px; background: var(--border-soft); border: 1px solid var(--border); }
+    .catalog-compact { margin-bottom: 28px; }
+    .catalog-compact .catalog-list { margin: 12px 0 0; padding-left: 1.2rem; color: var(--muted); font-size: 0.93rem; }
+    .catalog-compact .catalog-list li { margin-bottom: 8px; }
+    .catalog-compact .catalog-list a { font-weight: 600; color: var(--green-mid); text-decoration: none; }
+    .catalog-compact .catalog-list a:hover { text-decoration: underline; }
+    .publish-guide { margin-bottom: 28px; }
+    .publish-guide h2 { font-size: 1.15rem; font-weight: 800; margin: 0 0 14px; letter-spacing: -0.02em; }
+    .publish-guide ol { margin: 0; padding-left: 1.25rem; color: var(--text); font-size: 0.92rem; line-height: 1.5; }
+    .publish-guide li { margin-bottom: 12px; }
+    .publish-guide li strong { color: var(--green-mid); }
+    .publish-guide .label-hint {
+      display: block;
+      margin-top: 6px;
+      padding: 10px 12px;
+      background: var(--border-soft);
+      border-radius: 10px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-family: ui-monospace, monospace;
+      word-break: break-word;
+    }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; align-items: center; }
+    .tag-row .tag { margin-bottom: 0; font-size: 0.62rem; padding: 4px 8px; border-radius: 6px; background: var(--border-soft); }
+    .lang-strip {
+      margin-bottom: 28px;
+      padding: 18px 20px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: linear-gradient(120deg, #ffffff 0%, rgba(219, 234, 254, 0.85) 50%, rgba(254, 226, 226, 0.7) 100%);
+      box-shadow: var(--shadow);
+    }
+    .lang-strip-head {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      margin-bottom: 12px;
+    }
+    .lang-strip p { margin: 0; font-size: 0.88rem; color: var(--muted); line-height: 1.55; padding: 14px 0; border-top: 1px solid var(--border-soft); }
+    .lang-strip p:first-of-type { border-top: 0; padding-top: 0; }
+    .lang-strip p:last-child { padding-bottom: 0; }
+    .lang-strip-ar {
+      font-family: "Noto Sans Arabic", sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+    /* Hard contrast on landing (Blogger section text can be forced light) */
+    #content .ext-lp-root { color: var(--el-text); isolation: isolate; }
+    #content .ext-lp-hero h1 { color: var(--el-text); }
+    #content .ext-lp-hero-name { color: var(--el-text); }
+    #content .ext-lp-hero-hub { color: var(--el-muted); }
+    #content .ext-lp-hero-edition { color: #c62828; }
+    #content .ext-lp-lead { color: var(--el-muted); }
+    #content .ext-lp-lead strong { color: var(--el-text); }
+    #content .ext-lp-badge { color: var(--el-gm); }
+    #content .ext-lp-ghost {
+      color: var(--el-gm);
+      border-color: var(--el-bd);
+      background: rgba(255, 255, 255, 0.5);
+    }
+    #content .ext-lp-ghost:hover { background: var(--el-bds); }
+    #content .ext-lp-trust span { color: var(--el-muted); }
+    @media (prefers-color-scheme: dark) {
+      #content .ext-lp-root,
+      #content .ext-lp-hero h1 { color: #e8f5e9; }
+      #content .ext-lp-hero-name { color: #ffffff; }
+      #content .ext-lp-hero-hub { color: #c8e6c9; }
+      #content .ext-lp-hero-edition { color: #ff8a80; }
+      #content .ext-lp-lead { color: #a5d6a7; }
+      #content .ext-lp-lead strong { color: #e8f5e9; }
+      #content .ext-lp-badge { color: #a5d6a7; }
+      #content .ext-lp-ghost {
+        color: #c8e6c9;
+        border-color: #2e4a32;
+        background: rgba(26, 40, 29, 0.6);
+      }
+      #content .ext-lp-ghost:hover { background: #1e2e22; }
+      #content .ext-lp-trust span { color: #c8e6c9; }
+    }
+
+    /* extension-landing-blogger-snippet layout */
+    .ext-lp-root {
+      box-sizing: border-box;
+      margin: 0 auto 2rem;
+      max-width: 1080px;
+      padding: 0 4px 8px;
+    }
+    .ext-lp-hero {
+      text-align: center;
+      padding: 2.2rem 1.25rem 2.6rem;
+      background: linear-gradient(165deg, var(--el-bds) 0%, var(--el-card) 50%);
+      border-radius: var(--radius);
+      border: 1px solid var(--el-bd);
+      box-shadow: var(--el-sh);
+      margin-bottom: 1.75rem;
+    }
+    .ext-lp-hero-brand { margin-bottom: 0.35rem; }
+    .ext-lp-hero-logo-wrap { display: flex; flex-direction: column; align-items: center; gap: 0.45rem; margin-bottom: 0.75rem; }
+    .ext-lp-hero-logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 18px;
+      object-fit: cover;
+      border: 1px solid var(--el-bd);
+      box-shadow: var(--el-sh);
+    }
+    .ext-lp-hero-logo.ext-lp-hero-logo-wordmark {
+      width: min(200px, 58vw);
+      height: auto;
+      max-width: 100%;
+      aspect-ratio: 1;
+      object-fit: contain;
+      border-radius: 14px;
+      background: rgba(18, 23, 29, 0.06);
+      display: block;
+      margin-block-start: 4px;
+      margin-inline: auto;
+      transform: translateY(2px);
+    }
+    .ext-lp-hero-brandlines {
+      margin: 0.5rem 0 0;
+      text-align: center;
+      max-width: 28rem;
+      margin-inline: auto;
+    }
+    .ext-lp-hero-name {
+      margin: 0;
+      font-size: clamp(1.4rem, 4.2vw, 1.85rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: var(--el-text);
+    }
+    .ext-lp-hero-hub {
+      margin: 0.35rem 0 0;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--el-muted);
+    }
+    .ext-lp-hero-edition {
+      margin: 0.45rem 0 0;
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #c62828;
+    }
+    .ext-lp-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--el-gm);
+      margin-bottom: 12px;
+      padding: 5px 11px;
+      background: var(--el-card);
+      border-radius: 999px;
+      border: 1px solid var(--el-bd);
+    }
+    .ext-lp-hero h1 {
+      margin: 0 0 0.5rem;
+      font-size: clamp(1.75rem, 4.5vw, 2.35rem);
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 1.12;
+      min-height: 2.65em;
+    }
+    .ext-lp-lead {
+      max-width: 34rem;
+      margin: 0 auto 1.1rem;
+      color: var(--el-muted);
+      font-size: 1.02rem;
+    }
+    .ext-lp-hero-act { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; align-items: center; }
+    .ext-lp-ghost {
+      display: inline-flex;
+      padding: 0.62rem 1.15rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-decoration: none;
+      color: var(--el-gm);
+      border: 2px solid var(--el-bd);
+      background: transparent;
+    }
+    .ext-lp-ghost:hover { background: var(--el-bds); }
+    .ext-lp-trust {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px 14px;
+      margin-bottom: 1.75rem;
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--el-muted);
+    }
+    .ext-lp-trust span {
+      padding: 5px 11px;
+      background: var(--el-card);
+      border-radius: 999px;
+      border: 1px solid var(--el-bd);
+    }
+    .ext-lp-sh {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px 16px;
+      margin-bottom: 16px;
+    }
+    .ext-lp-sh h2 {
+      margin: 0;
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+    .ext-lp-sh p {
+      margin: 0;
+      font-size: 0.88rem;
+      color: var(--el-muted);
+      flex: 0 0 auto;
+      white-space: nowrap;
+    }
+    .ext-lp-grid {
+      display: grid;
+      gap: 1.25rem;
+      grid-template-columns: 1fr;
+      min-height: 280px;
+      contain: layout style;
+    }
+    @media (min-width: 560px) {
+      .ext-lp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (min-width: 900px) {
+      .ext-lp-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    /* Catalog grid is on #amo-catalog-root.ext-lp-grid (articles are direct grid children). */
+    .ext-lp-card {
+      background: var(--el-card);
+      border-radius: var(--radius);
+      border: 1px solid var(--el-bd);
+      box-shadow: var(--el-sh);
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.22s ease, box-shadow 0.22s, border-color 0.2s;
+    }
+    .ext-lp-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--el-shh);
+      border-color: var(--el-gb);
+    }
+    .ext-lp-card.ext-lp-feat {
+      grid-column: 1 / -1;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 1.35rem;
+    }
+    @media (max-width: 640px) {
+      .ext-lp-card.ext-lp-feat { flex-direction: column; }
+    }
+    .ext-lp-top { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 8px; }
+    .ext-lp-ic {
+      width: 52px;
+      height: 52px;
+      border-radius: 15px;
+      background: linear-gradient(145deg, #e8f5e9, #c8e6c9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.45rem;
+      flex-shrink: 0;
+    }
+    .ext-lp-ic.ext-lp-ic-pic {
+      padding: 2px;
+      background: #fff;
+      border: 1px solid var(--el-bds);
+      box-sizing: border-box;
+    }
+    .ext-lp-ic img.ext-lp-ic-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      object-fit: contain;
+      display: block;
+    }
+    .ext-lp-card h2 {
+      margin: 0 0 3px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--el-text);
+    }
+    .ext-lp-tag {
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--el-gm);
+      margin-bottom: 4px;
+    }
+    .ext-lp-meta { font-size: 0.76rem; color: var(--el-muted); margin-bottom: 8px; }
+    .ext-lp-card > p { margin: 0 0 12px; font-size: 0.9rem; color: var(--el-muted); flex: 1; }
+    .ext-lp-act { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .ext-lp-ls {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--el-gm);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+    .ext-lp-ls:hover { border-bottom-color: var(--el-gm); }
+    .ext-lp-root a.btn-firefox {
+      background: linear-gradient(135deg, #ff7139, #e25500) !important;
+      color: #fff !important;
+      border: 1px solid #c2410c !important;
+      box-shadow: 0 3px 14px rgba(226, 85, 0, 0.35) !important;
+    }
+    .ext-lp-root a.btn-firefox:hover { filter: brightness(1.06); }
+    .ext-lp-foot-note { text-align: center; font-size: 0.82rem; color: var(--el-muted); margin: 1.25rem 0 0; }
+    header.ext-lp-topbar {
+      border-radius: 14px;
+      border: 1px solid var(--el-bds);
+      max-width: 1080px;
+      margin-left: auto;
+      margin-right: auto;
+      width: calc(100% - 32px);
+      box-shadow: var(--el-sh);
+    }
+    article.card.platform-tile { position: relative; overflow: hidden; }
+    article.card.platform-tile::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #ff7139, var(--el-gm));
+      opacity: 0.65;
+      pointer-events: none;
+    }
+    .listing-hint {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    /* ============ EXTENSIONS: animations + new components (theme-variable only, AMP-safe) ============ */
+    @keyframes wlFadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: none; }
+    }
+    @keyframes wlZoomIn {
+      from { opacity: 0; transform: scale(0.86); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes wlShimmer {
+      0% { background-position: 130% 0; }
+      100% { background-position: -30% 0; }
+    }
+    @keyframes wlFoxWiggle {
+      0%, 100% { transform: rotate(0); }
+      25% { transform: rotate(-9deg); }
+      75% { transform: rotate(9deg); }
+    }
+    @keyframes wlShine {
+      from { left: -80%; }
+      to { left: 130%; }
+    }
+    @keyframes wlPopIn {
+      from { opacity: 0; transform: scale(0.6) translateY(10px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    /* Hero entrance cascade (homepage) */
+    .ext-lp-hero-logo-wrap { animation: wlZoomIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both; }
+    .ext-lp-badge { animation: wlFadeUp 0.5s ease-out 0.1s both; }
+    .ext-lp-hero h1 { animation: wlFadeUp 0.55s ease-out 0.18s both; }
+    .ext-lp-lead { animation: wlFadeUp 0.55s ease-out 0.28s both; }
+    .ext-lp-hero-act { animation: wlFadeUp 0.55s ease-out 0.38s both; }
+    .ext-lp-trust { animation: wlFadeUp 0.5s ease-out 0.5s both; }
+    /* Scroll reveal (IntersectionObserver adds .wl-in) */
+    .wl-reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.5s ease-out, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .wl-reveal.wl-in { opacity: 1; transform: none; }
+    /* Skeleton shimmer while the AMO catalog loads */
+    .ext-lp-skel {
+      pointer-events: none;
+      min-height: 190px;
+      border: 1px dashed var(--el-bd);
+      background-image: linear-gradient(100deg, transparent 25%, rgba(120, 144, 126, 0.14) 42%, transparent 58%);
+      background-size: 220% 100%;
+      background-repeat: no-repeat;
+      background-position: 130% 0;
+      animation: wlShimmer 1.3s linear infinite;
+    }
+    /* Micro-interactions */
+    a.btn-firefox {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+    a.btn-firefox:hover .fox-icon,
+    a.btn-firefox:focus-visible .fox-icon { display: inline-block; animation: wlFoxWiggle 0.5s ease-in-out; }
+    a.btn-firefox::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -80%;
+      width: 45%;
+      transform: skewX(-22deg);
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+      pointer-events: none;
+    }
+    a.btn-firefox:hover::after { animation: wlShine 0.85s ease; }
+    .topbar-logo { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .topbar-brand:hover .topbar-logo { transform: scale(1.06) rotate(-2deg); }
+    .topbar.scrolled { box-shadow: 0 6px 22px rgba(10, 10, 10, 0.1); }
+    /* Theme toggle button (light/dark) */
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 44px;
+      min-height: 44px;
+      padding: 6px;
+      font-size: 1.1rem;
+      line-height: 1;
+      color: var(--text);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .theme-toggle:hover { border-color: var(--green-bright); transform: translateY(-1px) scale(1.05); }
+    .theme-toggle:focus-visible { outline: 2px solid var(--green-mid); outline-offset: 2px; }
+    .theme-toggle .tt-light { display: none; }
+    html.theme-dark .theme-toggle .tt-light { display: inline; }
+    html.theme-dark .theme-toggle .tt-dark { display: none; }
+    /* Back to top */
+    .back-to-top {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 60;
+      width: 46px;
+      height: 46px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      color: #fff;
+      background: linear-gradient(135deg, var(--el-g), var(--el-gm));
+      border: 1px solid var(--el-bd);
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(27, 94, 32, 0.35);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(12px);
+      transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+    }
+    .back-to-top.show { opacity: 1; visibility: visible; transform: none; animation: wlPopIn 0.3s ease; }
+    .back-to-top:hover { transform: translateY(-3px); }
+    .back-to-top:focus-visible { outline: 2px solid var(--green-bright); outline-offset: 2px; }
+    /* Mobile nav (burger) */
+    .nav-burger {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      min-width: 44px;
+      min-height: 44px;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      cursor: pointer;
+      padding: 0;
+    }
+    .nav-burger span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      border-radius: 2px;
+      background: var(--text);
+      transition: transform 0.25s ease, opacity 0.2s ease;
+    }
+    body.nav-open .nav-burger span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    body.nav-open .nav-burger span:nth-child(2) { opacity: 0; }
+    body.nav-open .nav-burger span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+    @media (max-width: 820px) {
+      .nav-burger { display: inline-flex; }
+      .topbar-nav {
+        position: absolute;
+        top: calc(var(--topbar-h) + 8px);
+        right: 12px;
+        left: 12px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        padding: 10px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        box-shadow: var(--shadow-hover);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+        transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
+      }
+      body.nav-open .topbar-nav { opacity: 1; visibility: visible; transform: none; }
+      .topbar-nav a { justify-content: flex-start; width: 100%; }
+    }
+    /* FAQ smooth open/close */
+    .faq details ::details-content { display: contents; }
+    .faq details p {
+      opacity: 0;
+      transform: translateY(-4px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .faq details[open] p { opacity: 1; transform: none; }
+    @supports (interpolate-size: allow-keywords) {
+      .faq details { interpolate-size: allow-keywords; }
+      .faq details::details-content {
+        height: 0;
+        overflow: hidden;
+        transition: height 0.32s ease, content-visibility 0.32s allow-discrete;
+      }
+      .faq details[open]::details-content { height: auto; }
+    }
+    /* Share buttons */
+    .share-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-soft);
+    }
+    .share-row .share-label { font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+    .share-row a, .share-row button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 44px;
+      min-height: 44px;
+      padding: 6px 12px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      font-family: inherit;
+      text-decoration: none;
+      color: var(--text);
+      background: var(--border-soft);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+    .share-row a:hover, .share-row button:hover { transform: translateY(-2px); border-color: var(--green-bright); box-shadow: 0 6px 16px rgba(27, 94, 32, 0.16); }
+    /* Related posts */
+    .related-box { margin-top: 26px; padding: 22px 24px; background: var(--card); border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow); }
+    .related-box h3 { margin: 0 0 14px; font-size: 1.05rem; font-weight: 800; }
+    .related-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+    .related-list a {
+      display: flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: var(--border-soft);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.88rem;
+      text-decoration: none !important;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .related-list a:hover { border-color: var(--green-bright); transform: translateX(3px); }
+
+    /* ============ EXTENSIONS: professional polish pack ============ */
+    /* Animated gradient headline (hero) */
+    @keyframes wlGradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .ext-lp-hero h1 {
+      background: linear-gradient(90deg, var(--green-mid), var(--green-bright), var(--firefox), var(--green-mid));
+      background-size: 250% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      animation: wlFadeUp 0.55s ease-out 0.18s both, wlGradientShift 7s ease-in-out 0.9s infinite;
+    }
+    /* Floating hero logo */
+    @keyframes wlFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .ext-lp-hero-logo { animation: wlFloat 5s ease-in-out 1.2s infinite; }
+    /* Badge shimmer sweep */
+    @keyframes wlBadgeShine {
+      0% { background-position: -150% 0; }
+      60%, 100% { background-position: 250% 0; }
+    }
+    .ext-lp-badge { position: relative; overflow: hidden; }
+    .ext-lp-badge::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(110deg, transparent 32%, rgba(255, 255, 255, 0.45) 50%, transparent 68%);
+      background-size: 200% 100%;
+      background-repeat: no-repeat;
+      animation: wlBadgeShine 3.6s ease-in-out 1.4s infinite;
+      pointer-events: none;
+    }
+    /* Nav link animated underline */
+    .topbar-nav a { position: relative; }
+    .topbar-nav a::after {
+      content: "";
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 7px;
+      height: 2px;
+      border-radius: 2px;
+      background: var(--green-mid);
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform 0.25s ease;
+      pointer-events: none;
+    }
+    .topbar-nav a:hover::after,
+    .topbar-nav a:focus-visible::after { transform: scaleX(1); }
+    /* Topbar shrink on scroll */
+    .topbar { transition: height 0.25s ease, box-shadow 0.25s ease; }
+    .topbar.topbar-shrink { height: calc(var(--topbar-h) - 12px); }
+    .topbar-logo {
+      transition: transform 0.25s ease, box-shadow 0.25s ease, width 0.25s ease, height 0.25s ease;
+    }
+    .topbar.topbar-shrink .topbar-logo { width: 34px; height: 34px; }
+    /* Ambient glow orb (decorative) */
+    @keyframes wlGlowDrift {
+      0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.55; }
+      50% { transform: translate(28px, -22px) scale(1.08); opacity: 0.8; }
+    }
+    body::after {
+      content: "";
+      position: fixed;
+      top: 12%;
+      right: -12%;
+      width: 440px;
+      height: 440px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(67, 160, 71, 0.10), transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+      animation: wlGlowDrift 13s ease-in-out infinite;
+    }
+    /* Card 3D tilt (JS adds transform on pointermove) */
+    .grid, .ext-lp-grid { perspective: 1200px; }
+    .card.wl-tilt, .ext-lp-card.wl-tilt {
+      transform-style: preserve-3d;
+      will-change: transform;
+      transition: transform 0.14s ease-out, box-shadow 0.25s ease, border-color 0.2s;
+    }
+
+    /* ============ EXTENSIONS: live data pack (Firefox badge, stars, stats pop, GitHub cards) ============ */
+    .wl-ff-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+      padding: 7px 14px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--el-text);
+      background: var(--el-card);
+      border: 1px solid var(--el-bd);
+      border-radius: 999px;
+      box-shadow: var(--el-sh);
+      animation: wlFadeUp 0.5s ease-out 0.35s both;
+    }
+    .wl-ff-badge strong { color: var(--el-gm); font-weight: 800; }
+    .wl-stars { margin-top: 4px; font-size: 0.82rem; font-weight: 700; color: var(--firefox); }
+    .wl-stars span { letter-spacing: 1px; }
+    .stats-strip .stat strong.wl-pop { animation: wlPopIn 0.45s ease-out both; }
+    .wl-gh-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 18px 0 0; }
+    .wl-gh-card {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 190px;
+      padding: 12px 16px;
+      background: var(--el-card);
+      border: 1px solid var(--el-bd);
+      border-radius: var(--radius);
+      color: var(--el-text);
+      text-decoration: none !important;
+      font-size: 0.82rem;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      animation: wlFadeUp 0.5s ease-out both;
+    }
+    .wl-gh-card:hover { transform: translateY(-3px); border-color: var(--el-gb); box-shadow: var(--el-shh); }
+    .wl-gh-card strong { font-size: 0.92rem; color: var(--el-text); }
+    .wl-gh-card em { color: var(--el-gm); font-style: normal; }
+
+    /* Reduced motion: everything appears instantly (also set by JS on body) */
+    body.wl-reduced-motion *,
+    body.wl-reduced-motion *::before,
+    body.wl-reduced-motion *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+    body.wl-reduced-motion .wl-reveal { opacity: 1; transform: none; }
+
+    ]]></b:skin>
+  </head>
+  <body class='ext-platform'>
+    <a class='skip-link' href='#content'>Skip to main content</a>
+    <div aria-hidden='true' class='lp-readbar'/>
+    <header class='topbar ext-lp-topbar' role='banner'>
+      <a class='topbar-brand' expr:href='data:blog.homepageUrl.canonical' title='Wer List99 — Firefox extensions hub'>
+        <img class='topbar-logo' decoding='async' expr:alt='data:blog.title' fetchpriority='high' height='64' loading='eager' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEicaYzWSGOelDJvCzE07V0DSWPjy_j7YWE_B8B82yHmAgz5P8djzNJoKHhfIfr2O7sjYfnPTn7P0bVIU_yCyWDoMT7lGQu-onGpwOb9PF7dR6EXty-p7ZyUs961D-ukMOVhjO-qsY1508wBBHLMopMKy_nLiZzvgDCTz7m-aUkUBbQwOkGvybux_iZ0LGw/s725/Gemini_Generated_Image_i8671i8671i8671i.webp' width='64'/>
+        <span class='topbar-brand-stack'>
+          <span class='topbar-title'>Wer List99</span>
+          <span class='topbar-sub'>Firefox extensions</span>
+        </span>
+      </a>
+      <button aria-controls='topbar-nav' aria-expanded='false' aria-label='Menu' class='nav-burger' id='navBurger' type='button'>
+        <span/><span/><span/>
+      </button>
+      <nav aria-label='Main' class='topbar-nav' id='topbar-nav'>
+        <a expr:href='data:blog.homepageUrl.canonical'>Home</a>
+        <a expr:href='data:blog.homepageUrl.canonical + &quot;#catalogue&quot;'>Catalog</a>
+        <a href='https://addons.mozilla.org/en-US/firefox/user/19705561/' rel='noopener noreferrer' target='_blank'>AMO profile</a>
+        <a href='https://addons.mozilla.org/developers/' rel='noopener noreferrer' target='_blank'>Developer Hub</a>
+        <a expr:href='data:blog.homepageUrl.canonical + &quot;#faq&quot;'>FAQ</a>
+      </nav>
+      <button aria-label='Toggle dark or light theme' class='theme-toggle' id='themeToggle' type='button'>
+        <span aria-hidden='true' class='tt-dark'>🌙</span>
+        <span aria-hidden='true' class='tt-light'>&#9728;&#65039;</span>
+      </button>
+    </header>
+
+    <div class='wrap'>
+      <div class='layout-grid'>
+        <main class='layout-main' id='content' role='main' tabindex='-1'>
+      <b:if cond='data:blog.url == data:blog.homepageUrl or data:blog.url == data:blog.homepageUrl + &quot;/&quot; or data:blog.homepageUrl == data:blog.url + &quot;/&quot;'>
+              <div class='ext-lp-root' id='ext-lp'>
+                <div class='ext-lp-hero'>
+                  <div class='ext-lp-hero-brand'>
+                    <div class='ext-lp-hero-logo-wrap'>
+                      <img alt='WerList99' class='ext-lp-hero-logo ext-lp-hero-logo-wordmark' decoding='async' fetchpriority='high' height='200' loading='eager' sizes='(max-width: 600px) 58vw, 200px' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEicaYzWSGOelDJvCzE07V0DSWPjy_j7YWE_B8B82yHmAgz5P8djzNJoKHhfIfr2O7sjYfnPTn7P0bVIU_yCyWDoMT7lGQu-onGpwOb9PF7dR6EXty-p7ZyUs961D-ukMOVhjO-qsY1508wBBHLMopMKy_nLiZzvgDCTz7m-aUkUBbQwOkGvybux_iZ0LGw/s725/Gemini_Generated_Image_i8671i8671i8671i.webp' width='200'/>
+                      <div class='ext-lp-hero-brandlines'>
+                        <p class='ext-lp-hero-name'>WerList99</p>
+                        <p class='ext-lp-hero-hub'>EXTENSIONS HUB</p>
+                        <p class='ext-lp-hero-edition'>THE WOLF PACK EDITION</p>
+                      </div>
+                    </div>
+                  </div>
+                  <span class='ext-lp-badge'>Mozilla AMO &#183; werlist99</span>
+                  <span class='wl-ff-badge' hidden='hidden'><span aria-hidden='true'>🦊</span> Latest Firefox: <strong id='ffVersion'>&#8230;</strong></span>
+                  <h1>Firefox extensions hub</h1>
+                  <p class='ext-lp-lead'>Official listings on <strong>addons.mozilla.org</strong>. Install in Firefox with <strong>Add to Firefox</strong>. The catalog loads live from AMO; posts below document releases and updates.</p>
+                  <div class='ext-lp-hero-act'>
+                    <a aria-label='All add-ons on Mozilla AMO' class='btn-firefox' href='https://addons.mozilla.org/en-US/firefox/user/19705561/' rel='noopener noreferrer' target='_blank'>
+                      <span aria-hidden='true' class='fox-icon'>🦊</span>
+                      All add-ons on AMO
+                    </a>
+                    <a class='ext-lp-ghost' expr:href='data:blog.homepageUrl.canonical + &quot;#catalogue&quot;'>Browse catalog</a>
+                    <a class='ext-lp-ghost' expr:href='data:blog.homepageUrl.canonical + &quot;#blog&quot;'>Latest posts</a>
+                    <a class='ext-lp-ghost' href='https://addons.mozilla.org/developers/' rel='noopener noreferrer' target='_blank'>AMO Developer Hub</a>
+                  </div>
+                </div>
+                <div class='ext-lp-trust' role='list'>
+                  <span role='listitem'>🦊 Firefox</span>
+                  <span role='listitem'>🧩 WebExtensions</span>
+                  <span role='listitem'>📦 Mozilla AMO</span>
+                </div>
+                <div class='stats-strip' id='liveStats'>
+                  <div class='stat'><strong id='statAddons'>&#8212;</strong><span>Add-ons on AMO</span></div>
+                  <div class='stat'><strong id='statUsers'>&#8212;</strong><span>Active users</span></div>
+                  <div class='stat'><strong id='statFfVersion'>&#8212;</strong><span>Latest Firefox</span></div>
+                  <div class='stat'><strong id='statNextRelease'>&#8212;</strong><span>Next FF release</span></div>
+                </div>
+                <div class='wl-gh-row' hidden='hidden' id='ghRow'/>
+                <div class='ext-lp-sh' id='catalogue'>
+                  <h2 id='catalog-title'>Extension catalog</h2>
+                  <p><a class='ext-lp-ls' href='https://addons.mozilla.org/en-US/firefox/user/19705561/' rel='noopener noreferrer' target='_blank'>Developer profile on AMO &#8594;</a></p>
+                </div>
+                                                                                                                                                <!-- AMO_PATCH_CATALOG_GRID_START -->
+                <noscript>
+                  <p class='ext-lp-meta'>Catalog needs JavaScript: <a class='ext-lp-ls' href='https://addons.mozilla.org/en-US/firefox/user/19705561/' rel='noopener noreferrer' target='_blank'>open the Mozilla AMO profile</a></p>
+                </noscript>
+                <div class='ext-lp-grid' id='amo-catalog-root'>
+                  <article aria-hidden='true' class='ext-lp-card ext-lp-skel'/>
+                  <article aria-hidden='true' class='ext-lp-card ext-lp-skel'/>
+                  <article aria-hidden='true' class='ext-lp-card ext-lp-skel'/>
+                  <p class='ext-lp-meta' id='amo-loading-msg'>Loading catalog from Mozilla AMO&#8230;</p>
+                </div>
+                <script type='text/javascript'>//<![CDATA[
+window.__AMO_CATALOG__ = window.__AMO_CATALOG__ || { author: '19705561', exclude: '' };
+/**
+ * Live Firefox add-on catalog from AMO (no theme re-upload).
+ * Paste into Blogger theme once, or load as external script if your host allows.
+ *
+ * Config: window.__AMO_CATALOG__ = { author: "19705561", exclude: "slug1,slug2" };
+ * Defaults: author 19705561, exclude empty.
+ */
+(function () {
+  "use strict";
+
+  var CFG = window.__AMO_CATALOG__ || {};
+  var AUTHOR = String(CFG.author || "19705561");
+  var EXCLUDE = {};
+  String(CFG.exclude || "")
+    .split(/[,\s]+/)
+    .forEach(function (s) {
+      s = s.trim().toLowerCase();
+      if (s) EXCLUDE[s] = true;
+    });
+
+  function addonTitle(a) {
+    var n = a.name;
+    if (n && typeof n === "object") {
+      return n["en-US"] || Object.keys(n).map(function (k) { return n[k]; })[0] || a.slug || "?";
+    }
+    return String(n || a.slug || "?");
+  }
+
+  function addonSummary(a) {
+    var s = a.summary;
+    var t = "";
+    if (s && typeof s === "object") {
+      t = s["en-US"] || Object.keys(s).map(function (k) { return s[k]; })[0] || "";
+    } else {
+      t = String(s || "");
+    }
+    t = t.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+    if (t.length > 240) t = t.slice(0, 237) + "...";
+    return t || "Firefox WebExtension on Mozilla AMO.";
+  }
+
+  function slugIcon(slug) {
+    var sl = (slug || "").toLowerCase();
+    if (sl.indexOf("youtube") >= 0) return "\u25b6\ufe0f";
+    if (sl.indexOf("password") >= 0 || sl.indexOf("generator") >= 0) return "\ud83d\udd10";
+    if (sl.indexOf("phish") >= 0) return "\ud83d\udee1\ufe0f";
+    if (sl.indexOf("tarjam") >= 0 || sl.indexOf("translat") >= 0) return "\ud83c\udf10";
+    if (sl.indexOf("aegis") >= 0) return "\ud83d\udd12";
+    return "\ud83e\udde9";
+  }
+
+  function slugTag(slug) {
+    var sl = (slug || "").toLowerCase();
+    if (sl.indexOf("youtube") >= 0) return "Featured \u00b7 YouTube";
+    if (sl.indexOf("password") >= 0 || sl.indexOf("generator") >= 0) return "Passwords";
+    if (sl.indexOf("phish") >= 0) return "Security";
+    if (sl.indexOf("tarjam") >= 0) return "Translation";
+    if (sl.indexOf("aegis") >= 0) return "Privacy";
+    return "Firefox \u00b7 AMO";
+  }
+
+  function addonTagLine(a) {
+    var slug = String(a.slug || "");
+    var cur = slugTag(slug);
+    if (cur !== "Firefox \u00b7 AMO") return cur;
+    var cats = a.categories;
+    if (cats && cats.length) {
+      return String(cats[0])
+        .split("-")
+        .map(function (w) {
+          return w ? w.charAt(0).toUpperCase() + w.slice(1).toLowerCase() : "";
+        })
+        .join(" ");
+    }
+    return "Firefox \u00b7 AMO";
+  }
+
+  function formatUsers(n) {
+    if (n < 0) n = 0;
+    if (n >= 1e6) {
+      var m = (n / 1e6).toFixed(1).replace(/\.0$/, "");
+      return m + "M users";
+    }
+    if (n >= 1e3) {
+      var k = (n / 1e3).toFixed(1).replace(/\.0$/, "");
+      return k + "k users";
+    }
+    return n + " users";
+  }
+
+  function addonMetaLine(a) {
+    var parts = [];
+    var u = a.average_daily_users;
+    if (typeof u === "number" && u > 0) parts.push(formatUsers(u));
+    var r = a.ratings || {};
+    var cnt = r.count || 0;
+    if (cnt > 0) {
+      var avg = Number(r.average) || 0;
+      parts.push(avg.toFixed(1) + " (" + String(cnt) + " reviews)");
+    }
+    parts.push("AMO");
+    return parts.join(" \u00b7 ");
+  }
+
+  function starsHtml(a) {
+    var r = a.ratings || {};
+    var cnt = r.count || 0;
+    if (cnt <= 0) return "";
+    var avg = Number(r.average) || 0;
+    var full = Math.max(0, Math.min(5, Math.round(avg)));
+    var s = "";
+    for (var i = 1; i <= 5; i++) s += i <= full ? "\u2605" : "\u2606";
+    return (
+      "<div class='wl-stars' role='img' aria-label='" + avg.toFixed(1) + " out of 5 stars (" + cnt + " reviews)'>" +
+      "<span aria-hidden='true'>" + s + "</span> " + avg.toFixed(1) + "</div>"
+    );
+  }
+
+  function addonIconUrl(a) {
+    var icons = a.icons || {};
+    var order = ["64", "32", "128"];
+    for (var i = 0; i < order.length; i++) {
+      var u = icons[order[i]];
+      if (typeof u === "string" && u.indexOf("http") === 0 && u.indexOf("/default-") < 0) return u;
+    }
+    var iu = a.icon_url;
+    if (typeof iu === "string" && iu.indexOf("http") === 0 && iu.indexOf("default-128") < 0 && iu.indexOf("/default-") < 0) {
+      return iu;
+    }
+    return null;
+  }
+
+  function iconUrlForDisplay(u) {
+    if (typeof u !== "string" || !u) return u;
+    if (u.indexOf("-128.png") !== -1) return u.replace(/-128\.png/g, "-64.png");
+    if (u.indexOf("_128.png") !== -1) return u.replace(/_128\.png/g, "_64.png");
+    return u;
+  }
+
+  function esc(s) {
+    return String(s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function hrefEsc(url) {
+    return esc(url || "").replace(/'/g, "&#39;");
+  }
+
+  function featuredIndex(addons) {
+    for (var i = 0; i < addons.length; i++) {
+      if ((addons[i].slug || "").toLowerCase().indexOf("youtube") >= 0) return i;
+    }
+    return 0;
+  }
+
+  function orderAddons(addons) {
+    var fi = featuredIndex(addons);
+    var first = addons[fi];
+    var rest = [];
+    for (var i = 0; i < addons.length; i++) {
+      if (i !== fi) rest.push(addons[i]);
+    }
+    return [first].concat(rest);
+  }
+
+  async function fetchAll() {
+    var results = [];
+    var url = "https://addons.mozilla.org/api/v5/addons/search/?author=" + encodeURIComponent(AUTHOR) + "&type=extension&page_size=50";
+    while (url) {
+      var res = await fetch(url, { credentials: "omit" });
+      if (!res.ok) throw new Error("AMO " + res.status);
+      var data = await res.json();
+      var batch = data.results || [];
+      for (var i = 0; i < batch.length; i++) results.push(batch[i]);
+      url = data.next || null;
+    }
+    results.sort(function (a, b) {
+      return addonTitle(a).toLowerCase().localeCompare(addonTitle(b).toLowerCase());
+    });
+    return results.filter(function (a) {
+      var sl = (a.slug || "").toLowerCase();
+      return !EXCLUDE[sl];
+    });
+  }
+
+  function cardHtml(a, featured) {
+    var title = esc(addonTitle(a));
+    var url = hrefEsc(a.url || "");
+    var summ = esc(addonSummary(a));
+    var tag = esc(addonTagLine(a));
+    var meta = esc(addonMetaLine(a));
+    var stars = starsHtml(a);
+    var slug = String(a.slug || "");
+    var icUrl = iconUrlForDisplay(addonIconUrl(a));
+    var iconBlock;
+    if (icUrl) {
+      iconBlock =
+        "<div class='ext-lp-ic ext-lp-ic-pic' aria-hidden='true'><img class='ext-lp-ic-img' src='" +
+        hrefEsc(icUrl) +
+        "' alt='' width='52' height='52' sizes='52px' loading='lazy' decoding='async' fetchpriority='low'/></div>";
+    } else {
+      iconBlock = "<div class='ext-lp-ic' aria-hidden='true'>" + slugIcon(slug) + "</div>";
+    }
+    var featCls = featured ? " ext-lp-feat" : "";
+    var inner =
+      "                <article class='ext-lp-card" +
+      featCls +
+      "'>\n                  <div class='ext-lp-top'>\n" +
+      "                    " +
+      iconBlock +
+      "\n                    <div>\n                      <div class='ext-lp-tag'>" +
+      tag +
+      "</div>\n                      <h2>" +
+      title +
+      "</h2>\n                      <div class='ext-lp-meta'>" +
+      meta +
+      "</div>" +
+      stars +
+      "\n                    </div>\n                  </div>\n";
+    if (featured) {
+      inner +=
+        "                  <div style='flex:1;min-width:220px'>\n                    <p>" +
+        summ +
+        "</p>\n                    <div class='ext-lp-act'>\n                      <a class='btn-firefox' href='" +
+        url +
+        "' rel='noopener noreferrer' target='_blank'>\n                        <span class='fox-icon' aria-hidden='true'>\ud83e\udd8a</span>\n                        Firefox \u2014 install\n                      </a>\n                      <a class='ext-lp-ls' href='" +
+        url +
+        "' rel='noopener noreferrer' target='_blank'>AMO page \u2192</a>\n                    </div>\n                  </div>\n";
+    } else {
+      inner +=
+        "                  <p>" +
+        summ +
+        "</p>\n                  <div class='ext-lp-act'>\n                    <a class='btn-firefox' href='" +
+        url +
+        "' rel='noopener noreferrer' target='_blank'>\n                      <span class='fox-icon' aria-hidden='true'>\ud83e\udd8a</span>\n                      Firefox \u2014 install\n                    </a>\n                  </div>\n";
+    }
+    inner += "                </article>";
+    return inner;
+  }
+
+  function injectItemListJsonLd(addons) {
+    var el = document.getElementById("amo-itemlist-ld");
+    if (!el) return;
+    var items = addons.map(function (a, i) {
+      var app = {
+        "@type": "SoftwareApplication",
+        name: addonTitle(a),
+        url: a.url || "",
+        operatingSystem: "Firefox",
+        applicationCategory: "BrowserApplication",
+      };
+      var r = a.ratings || {};
+      if ((r.count || 0) > 0) {
+        app.aggregateRating = {
+          "@type": "AggregateRating",
+          ratingValue: Number(r.average) || 0,
+          ratingCount: r.count,
+          bestRating: 5,
+          worstRating: 1,
+        };
+      }
+      if (typeof a.average_daily_users === "number" && a.average_daily_users > 0) {
+        app.interactionStatistic = {
+          "@type": "InteractionCounter",
+          interactionType: "https://schema.org/InstallAction",
+          userInteractionCount: a.average_daily_users,
+        };
+      }
+      return {
+        "@type": "ListItem",
+        position: i + 1,
+        item: app,
+      };
+    });
+    el.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Featured Firefox add-ons (AMO)",
+      "numberOfItems": items.length,
+      "itemListElement": items,
+    });
+  }
+  
+  function renderSkeleton() {
+    var html = "";
+    for (var i = 0; i < 3; i++) {
+      html += "<article class='ext-lp-card ext-lp-skel' aria-hidden='true'></article>";
+    }
+    html += "<p class='ext-lp-meta' id='amo-loading-msg'>Loading catalog from Mozilla AMO\u2026</p>";
+    return html;
+  }
+  
+  function staggerReveal(root) {
+    var cards = root.querySelectorAll(".ext-lp-card");
+    for (var i = 0; i < cards.length; i++) {
+      cards[i].style.animation = "wlFadeUp 0.5s ease-out both";
+      cards[i].style.animationDelay = Math.min(i * 70, 420) + "ms";
+    }
+  }
+  
+  var CACHE_KEY = "amoCatalogV1";
+  var CACHE_TTL = 10 * 60 * 1000;
+  
+  function readCache() {
+    try {
+      var raw = window.sessionStorage.getItem(CACHE_KEY);
+      if (!raw) return null;
+      var obj = JSON.parse(raw);
+      if (!obj || typeof obj.t !== "number" || !obj.items) return null;
+      return obj;
+    } catch (e) {
+      return null;
+    }
+  }
+  
+  function writeCache(items) {
+    try {
+      window.sessionStorage.setItem(CACHE_KEY, JSON.stringify({ t: Date.now(), items: items }));
+    } catch (e) {}
+  }
+  
+  function updateLiveStats(addons) {
+    var totalUsers = 0;
+    for (var i = 0; i < addons.length; i++) {
+      var u = addons[i].average_daily_users;
+      if (typeof u === "number" && u > 0) totalUsers += u;
+    }
+    var set = function (id, text) {
+      var el = document.getElementById(id);
+      if (el && text) {
+        el.textContent = text;
+        el.classList.remove("wl-pop");
+        void el.offsetWidth;
+        el.classList.add("wl-pop");
+      }
+    };
+    set("statAddons", String(addons.length));
+    set("statUsers", formatUsers(totalUsers).replace(" users", ""));
+  }
+
+  function renderCatalog(root, addons) {
+    var ordered = orderAddons(addons);
+    root.innerHTML = ordered
+      .map(function (a, i) {
+        return cardHtml(a, i === 0);
+      })
+      .join("\n");
+    injectItemListJsonLd(ordered);
+    updateLiveStats(ordered);
+    staggerReveal(root);
+  }
+  
+  function renderError(root) {
+    root.innerHTML =
+      "<p class='ext-lp-meta'>Catalog could not load. <a class='ext-lp-ls' href='https://addons.mozilla.org/en-US/firefox/user/" +
+      esc(AUTHOR) +
+      "/' rel='noopener noreferrer' target='_blank'>Open AMO profile \u2192</a></p>";
+  }
+  
+  function run() {
+    var root = document.getElementById("amo-catalog-root");
+    if (!root) return;
+    var cached = readCache();
+    if (cached && cached.items.length && Date.now() - cached.t < CACHE_TTL) {
+      renderCatalog(root, cached.items);
+      return;
+    }
+    if (cached && cached.items.length) {
+      renderCatalog(root, cached.items);
+    } else {
+      root.innerHTML = renderSkeleton();
+    }
+    fetchAll()
+      .then(function (addons) {
+        if (!addons.length) {
+          root.innerHTML =
+            "<p class='ext-lp-meta'>No add-ons found on AMO for this author.</p>";
+          return;
+        }
+        writeCache(addons);
+        renderCatalog(root, addons);
+      })
+      .catch(function (e) {
+        if (cached && cached.items.length) return;
+        renderError(root);
+        if (window.console && console.warn) console.warn("[amo-catalog]", e);
+      });
+  }
+
+  function scheduleCatalog() {
+    var started = false;
+    var kick = function () {
+      if (started) return;
+      started = true;
+      run();
+    };
+    /* rAF defers to next paint; hidden tabs / headless renderers (Googlebot) never
+       fire rAF, so fall back to a timer and re-kick on visibilitychange. */
+    var defer = function () {
+      if (started) return;
+      if (window.requestAnimationFrame && document.visibilityState !== "hidden") {
+        requestAnimationFrame(function () {
+          requestAnimationFrame(kick);
+        });
+      } else {
+        setTimeout(kick, 60);
+      }
+    };
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", defer);
+    } else {
+      defer();
+    }
+    document.addEventListener("visibilitychange", function () {
+      if (document.visibilityState === "visible") defer();
+    });
+    setTimeout(kick, 2500); /* safety net: background tabs / headless renderers */
+  }
+  scheduleCatalog();
+})();
+
+//]]></script>
+                <script id='amo-itemlist-ld' type='application/ld+json'/>
+                <!-- AMO_PATCH_CATALOG_GRID_END -->
+                <script type='text/javascript'>//<![CDATA[
+/* CONFIG GitHub: ila bghiti t-warr repos dyal extensions dyalek, zid hna "owner/repo".
+   Khallih vide ([]) ila ma 3andekch repos — section kat-khba rasha automatiquement. */
+window.__WL_GITHUB__ = window.__WL_GITHUB__ || { repos: [] };
+/**
+ * Live data pack:
+ * 1) Firefox versions (product-details.mozilla.org) -> hero badge + stats strip (fresh content / SEO)
+ * 2) GitHub repos (optional, config-driven) -> stars / forks / last-update cards
+ */
+(function () {
+  "use strict";
+
+  var FF_KEY = "wlFxVersionsV1";
+  var FF_TTL = 6 * 60 * 60 * 1000;
+
+  function fmtDate(iso) {
+    var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    var p = String(iso || "").split("-");
+    if (p.length !== 3) return String(iso || "");
+    var m = parseInt(p[1], 10);
+    var day = parseInt(p[2], 10);
+    if (!m || !day || m < 1 || m > 12) return String(iso);
+    return months[m - 1] + " " + day;
+  }
+
+  function fillFf(v) {
+    if (!v) return;
+    var ver = v.LATEST_FIREFOX_VERSION || "";
+    var badge = document.querySelector(".wl-ff-badge");
+    var verEl = document.getElementById("ffVersion");
+    var statVer = document.getElementById("statFfVersion");
+    var statNext = document.getElementById("statNextRelease");
+    if (ver) {
+      if (verEl) verEl.textContent = ver;
+      if (badge) badge.hidden = false;
+      if (statVer) statVer.textContent = ver;
+    }
+    if (statNext && v.NEXT_RELEASE_DATE) statNext.textContent = fmtDate(v.NEXT_RELEASE_DATE);
+  }
+
+  function loadFirefoxVersions() {
+    var cached = null;
+    try {
+      var raw = window.sessionStorage.getItem(FF_KEY);
+      if (raw) cached = JSON.parse(raw);
+    } catch (e) { cached = null; }
+    if (cached && cached.t && cached.v && Date.now() - cached.t < FF_TTL) {
+      fillFf(cached.v);
+      return;
+    }
+    fetch("https://product-details.mozilla.org/1.0/firefox_versions.json", { credentials: "omit" })
+      .then(function (res) {
+        if (!res.ok) throw new Error("product-details " + res.status);
+        return res.json();
+      })
+      .then(function (v) {
+        try { window.sessionStorage.setItem(FF_KEY, JSON.stringify({ t: Date.now(), v: v })); } catch (e) {}
+        fillFf(v);
+      })
+      .catch(function () { /* silent: badge stays hidden */ });
+  }
+
+  function escAttr(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  function loadGitHub() {
+    var cfg = window.__WL_GITHUB__ || {};
+    var repos = (cfg.repos || []).slice(0, 4);
+    var row = document.getElementById("ghRow");
+    if (!row || !repos.length) return;
+    Promise.all(repos.map(function (full) {
+      return fetch("https://api.github.com/repos/" + encodeURIComponent(full), { credentials: "omit" })
+        .then(function (res) { return res.ok ? res.json() : null; })
+        .catch(function () { return null; });
+    })).then(function (list) {
+      var cards = [];
+      for (var i = 0; i < list.length; i++) {
+        var repo = list[i];
+        if (!repo) continue;
+        cards.push(
+          "<a class='wl-gh-card' href='" + escAttr(repo.html_url) + "' rel='noopener noreferrer' target='_blank' style='animation-delay:" + (i * 90) + "ms'>" +
+          "<strong>" + escAttr(repo.name || "") + "</strong>" +
+          "<span>\u2b50 " + (repo.stargazers_count || 0) + " \u00b7 \ud83c\udf74 " + (repo.forks_count || 0) + "</span>" +
+          "<em>updated " + escAttr(String(repo.pushed_at || "").slice(0, 10)) + "</em></a>"
+        );
+      }
+      if (cards.length) {
+        row.innerHTML = cards.join("");
+        row.hidden = false;
+      }
+    });
+  }
+
+  function run() {
+    loadFirefoxVersions();
+    loadGitHub();
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", run);
+  } else {
+    run();
+  }
+})();
+//]]></script>
+                <p class='ext-lp-foot-note'><a class='ext-lp-ls' href='https://addons.mozilla.org/en-US/firefox/user/19705561/' rel='noopener noreferrer' target='_blank'>Developer profile on AMO</a> &#183; <a class='ext-lp-ls' expr:href='data:blog.feedUrl'>Atom</a> &#183; <a class='ext-lp-ls' expr:href='data:blog.homepageUrl.canonical + &quot;feeds/posts/default?alt=rss&quot;'>RSS</a></p>
+              </div>
+      </b:if>
+      <b:section class='main' id='main' showaddelement='yes'>
+        <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2' visible='true'>
+          <b:widget-settings>
+            <b:widget-setting name='showDateHeader'>false</b:widget-setting>
+            <b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
+            <b:widget-setting name='showShareButtons'>false</b:widget-setting>
+            <b:widget-setting name='showCommentLink'>false</b:widget-setting>
+            <b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
+            <b:widget-setting name='postLocationLabel'>Localisation :</b:widget-setting>
+            <b:widget-setting name='showAuthor'>false</b:widget-setting>
+            <b:widget-setting name='style.linkcolor'>#ffffff</b:widget-setting>
+            <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
+            <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
+            <b:widget-setting name='timestampLabel'/>
+            <b:widget-setting name='reactionsLabel'/>
+            <b:widget-setting name='showAuthorProfile'>false</b:widget-setting>
+            <b:widget-setting name='style.layout'>1x1</b:widget-setting>
+            <b:widget-setting name='showLabels'>false</b:widget-setting>
+            <b:widget-setting name='showLocation'>false</b:widget-setting>
+            <b:widget-setting name='showTimestamp'>false</b:widget-setting>
+            <b:widget-setting name='postsPerAd'>1</b:widget-setting>
+            <b:widget-setting name='showBacklinks'>false</b:widget-setting>
+            <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
+            <b:widget-setting name='showInlineAds'>false</b:widget-setting>
+            <b:widget-setting name='showReactions'>false</b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main' var='top'>
+            <!-- Breadcrumb + back: blog posts only &#8212; static pages (About, Privacy&#8230;) use their own layout in post.body -->
+            <b:if cond='data:blog.pageType == &quot;item&quot;'>
+              <nav style='margin-bottom:12px;'><a class='link-store' expr:href='data:blog.homepageUrl.canonical'>&#8592; Back to blog</a></nav>
+              <nav aria-label='Breadcrumb' class='breadcrumb'>
+                <ol itemscope='itemscope' itemtype='https://schema.org/BreadcrumbList'>
+                  <li itemprop='itemListElement' itemscope='itemscope' itemtype='https://schema.org/ListItem'>
+                    <a expr:href='data:blog.homepageUrl.canonical' itemprop='item'><span itemprop='name'><data:blog.title/></span></a>
+                    <meta content='1' itemprop='position'/>
+                  </li>
+                  <b:loop values='data:posts' var='post'>
+                    <li itemprop='itemListElement' itemscope='itemscope' itemtype='https://schema.org/ListItem'>
+                      <span aria-current='page' itemprop='name'><data:post.title/></span>
+                      <meta expr:content='data:post.url' itemprop='item'/>
+                      <meta content='2' itemprop='position'/>
+                    </li>
+                  </b:loop>
+                </ol>
+              </nav>
+            </b:if>
+            <b:include data='top' name='status-message'/>
+            <section aria-label='Blog posts' class='grid' id='blog' style='scroll-margin-top:calc(var(--topbar-h) + 12px);'>
+              <b:loop values='data:posts' var='post'>
+                <b:include data='post' name='post'/>
+              </b:loop>
+            </section>
+            <b:include name='nextprev'/>
+            <b:if cond='data:blog.url == data:blog.homepageUrl or data:blog.url == data:blog.homepageUrl + &quot;/&quot; or data:blog.homepageUrl == data:blog.url + &quot;/&quot;'>
+              <section aria-labelledby='faq-title' class='faq ext-lp-faq' id='faq'>
+                <h2 id='faq-title'>FAQ</h2>
+                <details>
+                  <summary>How do I install add-ons from Mozilla AMO?</summary>
+                  <p>Open the <strong>official AMO</strong> listing and click <strong>Add to Firefox</strong>. Links on this site point only to addons.mozilla.org.</p>
+                </details>
+                <details>
+                  <summary>Do these extensions work on Firefox for Android?</summary>
+                  <p>Some add-ons support Firefox for Android &#8212; check <strong>Compatibility</strong> on each AMO listing.</p>
+                </details>
+                <details>
+                  <summary>Where can I read privacy information?</summary>
+                  <p>Read each add-on&#8217;s privacy notes on AMO and this blog&#8217;s <strong>Privacy</strong> page.</p>
+                </details>
+                <p class='ext-lp-faq-full'><a class='ext-lp-ls' expr:href='data:blog.homepageUrl.canonical + &quot;p/faq.html&quot;'>Full FAQ &#8594;</a></p>
+              </section>
+            </b:if>
+            <footer class='foot'>
+              <script>//<![CDATA[
+(function () {
+  "use strict";
+  var d = document, de = d.documentElement;
+
+  /* Reduced motion flag (mirrors the CSS media query for JS-driven animation) */
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    d.body.classList.add("wl-reduced-motion");
+  }
+
+  /* Manual dark/light toggle: overrides prefers-color-scheme, persists in localStorage */
+  function applyTheme(m) {
+    de.classList.toggle("theme-dark", m === "dark");
+    de.style.colorScheme = m;
+  }
+  var stored = null;
+  try { stored = window.localStorage.getItem("wl-theme"); } catch (e) {}
+  if (stored === "dark" || stored === "light") applyTheme(stored);
+  var tt = d.getElementById("themeToggle");
+  if (tt) {
+    tt.addEventListener("click", function () {
+      var dark = de.classList.toggle("theme-dark");
+      de.style.colorScheme = dark ? "dark" : "light";
+      try { window.localStorage.setItem("wl-theme", dark ? "dark" : "light"); } catch (e) {}
+    });
+  }
+
+  /* Reading progress bar (drives .lp-readbar width) */
+  var bar = d.querySelector(".lp-readbar");
+  function updateBar() {
+    if (!bar) return;
+    var h = de.scrollHeight - window.innerHeight;
+    var p = h > 0 ? Math.min(100, Math.max(0, (window.scrollY / h) * 100)) : 100;
+    bar.style.width = p + "%";
+    bar.style.right = "auto";
+  }
+
+  /* Back to top visibility + topbar shadow */
+  var btt = d.getElementById("backToTop");
+  var topbar = d.querySelector(".topbar");
+  function onScroll() {
+    updateBar();
+    if (btt) btt.classList.toggle("show", window.scrollY > 600);
+    if (topbar) topbar.classList.toggle("scrolled", window.scrollY > 8);
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+  if (btt) {
+    btt.addEventListener("click", function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: d.body.classList.contains("wl-reduced-motion") ? "auto" : "smooth" });
+    });
+  }
+
+  /* Mobile nav burger */
+  var burger = d.getElementById("navBurger");
+  var nav = d.getElementById("topbar-nav");
+  if (burger && nav) {
+    burger.addEventListener("click", function () {
+      var open = d.body.classList.toggle("nav-open");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    nav.addEventListener("click", function (e) {
+      if (e.target && e.target.closest && e.target.closest("a")) {
+        d.body.classList.remove("nav-open");
+        burger.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+
+  /* Scroll reveal (cards, sections) with stagger */
+  var targets = [];
+  var sections = d.querySelectorAll(".ext-lp-sh, .faq, .stats-strip, .rss-cta, .related-box, .layout-sidebar .widget");
+  var i;
+  for (i = 0; i < sections.length; i++) sections[i].classList.add("wl-reveal");
+  var postCards = d.querySelectorAll("#blog .card");
+  for (i = 0; i < postCards.length; i++) {
+    postCards[i].classList.add("wl-reveal");
+    postCards[i].style.transitionDelay = Math.min(i * 70, 280) + "ms";
+  }
+  targets = d.querySelectorAll(".wl-reveal");
+  if (d.body.classList.contains("wl-reduced-motion") || !("IntersectionObserver" in window)) {
+    for (i = 0; i < targets.length; i++) targets[i].classList.add("wl-in");
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      for (var j = 0; j < entries.length; j++) {
+        if (entries[j].isIntersecting) {
+          entries[j].target.classList.add("wl-in");
+          io.unobserve(entries[j].target);
+        }
+      }
+    }, { rootMargin: "0px 0px -40px", threshold: 0.08 });
+    for (i = 0; i < targets.length; i++) io.observe(targets[i]);
+  }
+
+  /* Reading time estimate on post cards (~200 wpm) */
+  var rt = d.querySelectorAll(".wl-readtime");
+  for (i = 0; i < rt.length; i++) {
+    var len = parseInt(rt[i].getAttribute("data-len"), 10) || 0;
+    var min = Math.max(1, Math.round(len / 5 / 200));
+    rt[i].textContent = "\u00b7 ~" + min + " min read";
+  }
+
+  /* Copy post link (share row) */
+  var copyBtn = d.querySelector(".share-row button[data-url]");
+  if (copyBtn) {
+    copyBtn.addEventListener("click", function () {
+      var u = copyBtn.getAttribute("data-url") || window.location.href;
+      function done() {
+        var old = copyBtn.textContent;
+        copyBtn.textContent = "\u2713";
+        setTimeout(function () { copyBtn.textContent = old; }, 1400);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(u).then(done, function () { window.prompt("Copy link:", u); });
+      } else {
+        window.prompt("Copy link:", u);
+      }
+    });
+  }
+
+  /* Related posts from the first label (Blogger JSON feed) */
+  var box = d.getElementById("related-box");
+  if (box) {
+    var label = box.getAttribute("data-label");
+    if (label) {
+      var s = d.createElement("script");
+      s.src = window.location.protocol + "//" + window.location.host + "/-/" + encodeURIComponent(label) + "?alt=json-in-script&max-results=6";
+      window.wlRelated = function (data) {
+        var list = d.getElementById("related-list");
+        var here = window.location.href.split("#")[0];
+        var items = [];
+        var feed = data && data.feed;
+        var entries = (feed && feed.entry) || [];
+        for (var k = 0; k < entries.length && items.length < 4; k++) {
+          var en = entries[k], href = "", alt;
+          var links = en.link || [];
+          for (var l = 0; l < links.length; l++) {
+            if (links[l].rel === "alternate") { href = links[l].href; break; }
+          }
+          if (!href || href.split("#")[0] === here) continue;
+          items.push({ t: (en.title && en.title.$t) || "Post", u: href });
+        }
+        if (items.length && list) {
+          list.innerHTML = items.map(function (it) {
+            return "<li><a href='" + it.u.replace(/&/g, "&amp;") + "'>" + it.t.replace(/&/g, "&amp;").replace(/</g, "&lt;") + "</a></li>";
+          }).join("");
+          box.hidden = false;
+          box.classList.add("wl-in");
+        }
+      };
+      d.body.appendChild(s);
+    }
+  }
+
+  /* Professional pack: topbar shrink on scroll */
+  var topbarEl = d.querySelector(".topbar");
+  function onScrollPro() {
+    if (topbarEl) topbarEl.classList.toggle("topbar-shrink", window.scrollY > 40);
+  }
+  window.addEventListener("scroll", onScrollPro, { passive: true });
+  onScrollPro();
+
+  /* Professional pack: 3D card tilt (hover devices only, honors reduced motion) */
+  var hoverFine = window.matchMedia && window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  var reducedMo = d.body.classList.contains("wl-reduced-motion");
+  function bindTilt(root) {
+    if (reducedMo || !hoverFine) return;
+    var cards = (root || d).querySelectorAll(".ext-lp-card, #blog .card");
+    for (var t = 0; t < cards.length; t++) {
+      var c = cards[t];
+      if (c.getAttribute("data-tilt")) continue;
+      c.setAttribute("data-tilt", "1");
+      c.classList.add("wl-tilt");
+      (function (card) {
+        card.addEventListener("pointermove", function (e) {
+          var r = card.getBoundingClientRect();
+          var px = (e.clientX - r.left) / r.width - 0.5;
+          var py = (e.clientY - r.top) / r.height - 0.5;
+          card.style.transform = "perspective(900px) rotateX(" + (-py * 5).toFixed(2) + "deg) rotateY(" + (px * 6).toFixed(2) + "deg) translateY(-4px)";
+        });
+        card.addEventListener("pointerleave", function () {
+          card.style.transform = "";
+        });
+      })(c);
+    }
+  }
+  bindTilt(d);
+  if ("MutationObserver" in window) {
+    var tiltObserver = new MutationObserver(function () { bindTilt(d); });
+    var catalogRoot = d.getElementById("amo-catalog-root");
+    var blogGrid = d.getElementById("blog");
+    if (catalogRoot) tiltObserver.observe(catalogRoot, { childList: true });
+    if (blogGrid) tiltObserver.observe(blogGrid, { childList: true });
+  }
+})();
+//]]></script>
+              <script type='text/javascript'>//<![CDATA[
+/* ============ EXTENSIONS: SEO pack ============ */
+/* ItemList JSON-LD on label / search / archive pages. Safe no-op on home & posts. */
+(function () {
+  "use strict";
+  function injectItemList() {
+    var blog = document.getElementById("blog");
+    if (!blog) return;
+    var cards = blog.querySelectorAll(".card h2 a");
+    if (!cards.length) return;
+    var items = [];
+    for (var i = 0; i < cards.length; i++) {
+      var href = cards[i].getAttribute("href");
+      var title = (cards[i].textContent || "").trim();
+      if (!href || !title) continue;
+      items.push({ "@type": "ListItem", position: items.length + 1, url: href, name: title });
+    }
+    if (!items.length) return;
+    var s = document.createElement("script");
+    s.type = "application/ld+json";
+    s.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: (document.title || "").replace(/\s*(\|[- ]+)?Wer.*$/i, "").trim(),
+      numberOfItems: items.length,
+      itemListElement: items
+    });
+    document.head.appendChild(s);
+  }
+  var isHome = document.getElementById("ext-lp") !== null;
+  var isItem = document.querySelector("article.card h1") !== null;
+  if (!isHome && !isItem) injectItemList();
+})();
+
+/* External SEO API hook. Off by default.
+   Zid f head qbel had script:
+     window.__WL_SEO__ = { endpoint: "https://your-service/api/seo" };
+   Your service receives POST { url } and returns JSON
+     { description, keywords }
+   which are applied only if the theme did not already emit them. */
+(function () {
+  "use strict";
+  var cfg = window.__WL_SEO__ || {};
+  var endpoint = String(cfg.endpoint || "").trim();
+  if (!endpoint) return;
+  function setMeta(attr, name, content) {
+    if (!content) return;
+    if (document.head.querySelector(attr + '="' + name + '"')) return;
+    var m = document.createElement("meta");
+    m.setAttribute(attr, name);
+    m.setAttribute("content", content);
+    document.head.appendChild(m);
+  }
+  fetch(endpoint, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ url: location.href }),
+    credentials: "omit"
+  })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (data) {
+      if (!data) return;
+      if (data.description) setMeta("name", "description", data.description);
+      if (data.keywords) setMeta("name", "keywords", data.keywords);
+    })
+    .catch(function () { /* silent */ });
+})();
+//]]></script>
+              <div class='foot-links'>
+                <a expr:href='data:blog.homepageUrl.canonical'>Home</a>
+                <a expr:href='data:blog.homepageUrl.canonical + &quot;p/about-us.html&quot;'>About</a>
+                <a expr:href='data:blog.homepageUrl.canonical + &quot;p/faq.html&quot;'>FAQ</a>
+                <a expr:href='data:blog.homepageUrl.canonical + &quot;p/privacy-policy.html&quot;'>Privacy</a>
+                <a expr:href='data:blog.homepageUrl.canonical + &quot;p/disclaimer.html&quot;'>Disclaimer</a>
+                <a expr:href='data:blog.homepageUrl.canonical + &quot;p/terms.html&quot;'>Terms</a>
+                <a expr:href='data:blog.homepageUrl.canonical + &quot;p/contact.html&quot;'>Contact</a>
+                <a expr:href='data:blog.feedUrl' rel='alternate' type='application/atom+xml'>Atom</a>
+                <a expr:href='data:blog.homepageUrl.canonical + &quot;feeds/posts/default?alt=rss&quot;' rel='alternate' type='application/rss+xml'>RSS</a>
+                <a expr:href='data:blog.homepageUrl.canonical + &quot;sitemap.xml&quot;'>Sitemap</a>
+              </div>
+              <p class='foot-copy'>&#169; 2026 <data:blog.title/> &#183; Firefox add-ons hub (werlist99). Not affiliated with Mozilla.</p>
+            </footer>
+          </b:includable>
+          <b:includable id='aboutPostAuthor'>
+  <div class='author-name'>
+    <a class='g-profile' expr:href='data:post.author.profileUrl' rel='author' title='author profile'>
+      <span>
+        <data:post.author.name/>
+      </span>
+    </a>
+  </div>
+  <div>
+    <span class='author-desc'>
+      <data:post.author.aboutMe/>
+    </span>
+  </div>
+</b:includable>
+          <b:includable id='addComments'>
+  <a expr:href='data:post.commentsUrl' expr:onclick='data:post.commentsUrlOnclick'>
+    <b:message name='messages.postAComment'/>
+  </a>
+</b:includable>
+          <b:includable id='commentAuthorAvatar'>
+  <div class='avatar-image-container'>
+    <img class='author-avatar' expr:src='data:comment.authorAvatarSrc' height='35' width='35'/>
+  </div>
+</b:includable>
+          <b:includable id='commentDeleteIcon' var='comment'>
+  <span expr:class='&quot;item-control &quot; + data:comment.adminClass'>
+    <b:if cond='data:showCmtPopup'>
+      <div class='goog-toggle-button'>
+        <div class='goog-inline-block comment-action-icon'/>
+      </div>
+    <b:else/>
+      <a class='comment-delete' expr:href='data:comment.deleteUrl' expr:title='data:messages.deleteComment'>
+        <img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+      </a>
+    </b:if>
+  </span>
+</b:includable>
+          <b:includable id='commentForm' var='post'>
+  <div class='comment-form'>
+    <a name='comment-form'/>
+    <h4 id='comment-post-message'><data:messages.postAComment/></h4>
+    <b:if cond='data:this.messages.blogComment != &quot;&quot;'>
+      <p><data:this.messages.blogComment/></p>
+    </b:if>
+    <b:include data='post' name='commentFormIframeSrc'/>
+    <iframe allowtransparency='allowtransparency' class='blogger-iframe-colorize blogger-comment-from-post' expr:height='data:cmtIframeInitialHeight ?: &quot;90px&quot;' frameborder='0' id='comment-editor' name='comment-editor' src='' width='100%'/>
+    <data:post.cmtfpIframe/>
+    <script type='text/javascript'>
+      BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;);
+    </script>
+  </div>
+</b:includable>
+          <b:includable id='commentFormIframeSrc' var='post'>
+  <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
+</b:includable>
+          <b:includable id='commentItem' var='comment'>
+  <div class='comment' expr:id='&quot;c&quot; + data:comment.id'>
+    <b:include cond='data:blog.enabledCommentProfileImages' name='commentAuthorAvatar'/>
+
+    <div class='comment-block'>
+      <div class='comment-author'>
+        <b:if cond='data:comment.authorUrl'>
+          <b:message name='messages.authorSaidWithLink'>
+            <b:param expr:value='data:comment.author' name='authorName'/>
+            <b:param expr:value='data:comment.authorUrl' name='authorUrl'/>
+          </b:message>
+        <b:else/>
+          <b:message name='messages.authorSaid'>
+            <b:param expr:value='data:comment.author' name='authorName'/>
+          </b:message>
+        </b:if>
+      </div>
+      <div expr:class='&quot;comment-body&quot; + (data:comment.isDeleted ? &quot; deleted&quot; : &quot;&quot;)'>
+        <data:comment.body/>
+      </div>
+      <div class='comment-footer'>
+        <span class='comment-timestamp'>
+          <a expr:href='data:comment.url' title='comment permalink'>
+            <data:comment.timestamp/>
+          </a>
+          <b:include data='comment' name='commentDeleteIcon'/>
+        </span>
+      </div>
+    </div>
+  </div>
+</b:includable>
+          <b:includable id='commentList' var='comments'>
+  <div id='comments-block'>
+    <b:loop values='data:comments' var='comment'>
+      <b:include data='comment' name='commentItem'/>
+    </b:loop>
+  </div>
+</b:includable>
+          <b:includable id='commentPicker' var='post'>
+  <b:if cond='data:post.showThreadedComments'>
+    <b:include data='post' name='threadedComments'/>
+  <b:else/>
+    <b:include data='post' name='comments'/>
+  </b:if>
+</b:includable>
+          <b:includable id='comment_form' var='post'>
+            <div class='comment-form'>
+              <a expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'>Post a comment</a>
+            </div>
+          </b:includable>
+          <b:includable id='comment_picker' var='post'>
+            <b:if cond='data:post.allowComments'>
+              <section class='post-comments'>
+                <b:include data='post' name='comments'/>
+              </section>
+            </b:if>
+          </b:includable>
+          <b:includable id='comments' var='post'>
+            <h3 style='margin-top:0;font-size:1.1rem;'>Comments</h3>
+            <b:if cond='data:post.embedCommentForm'>
+              <b:include data='post' name='comment_form'/>
+            </b:if>
+            <b:if cond='data:post.numberOfComments &gt; 0'>
+              <div id='comments-block'>
+                <b:loop values='data:post.comments' var='comment'>
+                  <div expr:id='&quot;c&quot; + data:comment.id' style='margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--border);'>
+                    <b:if cond='data:comment.authorUrl'>
+                      <a expr:href='data:comment.authorUrl' rel='nofollow'><data:comment.author/></a>
+                    </b:if>
+                    <b:if cond='!data:comment.authorUrl'>
+                      <strong><data:comment.author/></strong>
+                    </b:if>
+                    <div style='font-size:0.85rem;color:var(--muted);'><data:comment.timestamp/></div>
+                    <div><data:comment.body/></div>
+                  </div>
+                </b:loop>
+              </div>
+            </b:if>
+          </b:includable>
+          <b:includable id='commentsTitle'>
+  <h3 class='title'><data:messages.comments/></h3>
+</b:includable>
+          <b:includable id='feedLinks'/>
+          <b:includable id='feedLinksBody' var='links'>
+  <div class='feed-links'>
+  <data:messages.subscribeTo/>
+  <b:loop values='data:links' var='f'>
+     <a class='feed-link' expr:href='data:f.url' expr:type='data:f.mimeType' target='_blank'><data:f.name/> (<data:f.feedType/>)</a>
+  </b:loop>
+  </div>
+</b:includable>
+          <b:includable id='homePageLink'>
+  <a class='home-link' expr:href='data:blog.homepageUrl.canonical'>
+    <data:messages.home/>
+  </a>
+</b:includable>
+          <b:includable id='iframeComments' var='post'>
+  <!-- G+ comments, no longer available. The includable is retained for backwards-compatibility. -->
+</b:includable>
+          <b:includable id='inlineAd' var='post'>
+  <b:if cond='!data:view.isPreview'>
+    <b:if cond='data:this.adCode or data:this.adClientId or data:blog.adsenseClientId'>
+      <!-- Ad -->
+      <div class='inline-ad'>
+        <b:if cond='data:this.adCode != &quot;&quot;'>
+          <data:this.adCode/>
+        <b:else/>
+          <b:include cond='data:this.adClientId or data:blog.adsenseClientId' name='defaultAdUnit'/>
+        </b:if>
+      </div>
+    </b:if>
+  <b:else/>
+    <div class='inline-ad'>
+      <div class='inline-ad-placeholder'>
+        <span><b:message name='messages.adsGoHere'/></span>
+      </div>
+    </div>
+  </b:if>
+</b:includable>
+          <b:includable id='mainVariations' var='post'/>
+          <b:includable id='nextPageLink'>
+  <a class='blog-pager-older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' expr:title='data:messages.olderPosts'>
+    <data:messages.olderPosts/>
+  </a>
+</b:includable>
+          <b:includable id='nextprev'>
+            <div class='blog-pager'>
+              <span id='blog-pager-newer-link'>
+                <b:if cond='data:newerPageUrl'>
+                  <a expr:href='data:newerPageUrl' expr:title='data:newerPageTitle'>&#8592; Newer posts</a>
+                </b:if>
+              </span>
+              <span id='blog-pager-older-link'>
+                <b:if cond='data:olderPageUrl'>
+                  <a expr:href='data:olderPageUrl' expr:title='data:olderPageTitle'>Older posts &#8594;</a>
+                </b:if>
+              </span>
+            </div>
+          </b:includable>
+          <b:includable id='post' var='post'>
+            <b:if cond='data:blog.pageType == &quot;static_page&quot;'>
+              <article class='static-page-article'>
+                <div class='post-body post-static-page'><data:post.body/></div>
+                <b:include data='post' name='comment_picker'/>
+              </article>
+            <b:else/>
+            <article class='card platform-tile'>
+              <b:if cond='data:blog.pageType != &quot;item&quot;'>
+                <p class='listing-hint'>AMO add-on &#183; official link in post</p>
+                <b:if cond='data:post.thumbnailUrl'>
+                  <a class='card-thumb' expr:href='data:post.url' expr:title='data:post.title'>
+                    <img expr:alt='data:post.title' expr:src='data:post.thumbnailUrl' height='360' loading='lazy' width='640'/>
+                  </a>
+                </b:if>
+                <b:if cond='!data:post.thumbnailUrl'>
+                  <b:if cond='data:post.firstImageUrl'>
+                    <a class='card-thumb' expr:href='data:post.url' expr:title='data:post.title'>
+                      <img expr:alt='data:post.title' expr:src='data:post.firstImageUrl' height='360' loading='lazy' width='640'/>
+                    </a>
+                  </b:if>
+                </b:if>
+              </b:if>
+              <div class='card-top'>
+                <div aria-hidden='true' class='card-icon'>📝</div>
+                <div>
+                  <b:if cond='data:post.labels'>
+                    <div class='tag-row'>
+                      <b:loop values='data:post.labels' var='label'>
+                        <span class='tag'><data:label.name/></span>
+                      </b:loop>
+                    </div>
+                  </b:if>
+                  <b:if cond='!data:post.labels'>
+                    <div class='tag'>Post</div>
+                  </b:if>
+                  <b:if cond='data:blog.pageType == &quot;item&quot;'>
+                    <h1>
+                      <data:post.title/>
+                    </h1>
+                  </b:if>
+                  <b:if cond='data:blog.pageType != &quot;item&quot;'>
+                    <h2>
+                      <a expr:href='data:post.url'><data:post.title/></a>
+                    </h2>
+                  </b:if>
+                  <div class='card-meta'>
+                    <b:if cond='data:post.dateHeader'>
+                      <data:post.dateHeader/>
+                    </b:if>
+                    <b:if cond='!data:post.dateHeader'>
+                      <time expr:datetime='data:post.timestamp'><data:post.timestamp/></time>
+                    </b:if>
+                    <b:if cond='data:blog.pageType != &quot;item&quot;'>
+                      <span class='wl-readtime' expr:data-len='data:post.snippet.length'>&#183; ~1 min read</span>
+                    </b:if>
+                  </div>
+                </div>
+              </div>
+              <b:if cond='data:blog.pageType == &quot;item&quot;'>
+                <div class='post-body'><data:post.body/></div>
+                <div class='share-row'>
+                  <span class='share-label'>Share</span>
+                  <a expr:href='&quot;https://twitter.com/intent/tweet?text=&quot; + data:post.title.escaped + &quot;&amp;url=&quot; + data:post.url' rel='noopener noreferrer' target='_blank' title='Share on X'>𝕏</a>
+                  <a expr:href='&quot;https://www.facebook.com/sharer/sharer.php?u=&quot; + data:post.url' rel='noopener noreferrer' target='_blank' title='Share on Facebook'>f</a>
+                  <a expr:href='&quot;https://api.whatsapp.com/send?text=&quot; + data:post.title.escaped + &quot; &quot; + data:post.url' rel='noopener noreferrer' target='_blank' title='Share on WhatsApp'>&#9990;</a>
+                  <a expr:href='&quot;https://www.reddit.com/submit?url=&quot; + data:post.url + &quot;&amp;title=&quot; + data:post.title.escaped' rel='noopener noreferrer' target='_blank' title='Share on Reddit'>r/</a>
+                  <button expr:data-url='data:post.url' title='Copy link' type='button'>🔗</button>
+                </div>
+                <section aria-label='Related posts' class='related-box' expr:data-label='data:post.labels.first.name.escaped' hidden='hidden' id='related-box'>
+                  <h3>Related posts</h3>
+                  <ul class='related-list' id='related-list'/>
+                </section>
+                <b:include data='post' name='comment_picker'/>
+              </b:if>
+              <b:if cond='data:blog.pageType != &quot;item&quot;'>
+                <p><data:post.snippet/></p>
+                <div class='card-actions'>
+                  <a class='btn-firefox' expr:href='data:post.url'>
+                    <span aria-hidden='true' class='fox-icon'>🔌</span>
+                    Read post
+                  </a>
+                </div>
+              </b:if>
+            </article>
+            </b:if>
+          </b:includable>
+          <b:includable id='postBody' var='post'>
+  <!-- If metaDescription is empty, use the post body as the schema.org description too, for G+/FB snippeting. -->
+  <div class='post-body entry-content float-container' expr:id='&quot;post-body-&quot; + data:post.id'>
+    <data:post.body/>
+  </div>
+</b:includable>
+          <b:includable id='postBodySnippet' var='post'>
+  <b:include data='post' name='postBody'/>
+</b:includable>
+          <b:includable id='postCommentsAndAd' var='post'>
+  <article class='post-outer-container'>
+    <!-- Post title and body -->
+    <div class='post-outer'>
+      <b:include data='post' name='post'/>
+    </div>
+
+    <!-- Comments -->
+    <b:include cond='data:view.isSingleItem' data='post' name='commentPicker'/>
+
+    <!-- Show ad inside post container, after comments, if single item. -->
+    <b:include cond='data:view.isSingleItem and data:post.includeAd' data='post' name='inlineAd'/>
+  </article>
+
+  <!-- Show ad outside post container (between posts) for feed pages. -->
+  <b:include cond='data:view.isMultipleItems and data:post.includeAd' data='post' name='inlineAd'/>
+</b:includable>
+          <b:includable id='postCommentsLink'>
+  <b:if cond='data:view.isMultipleItems'>
+    <span class='byline post-comment-link container'>
+      <b:include cond='data:post.commentSource != 1' name='commentsLink'/>
+    </span>
+  </b:if>
+</b:includable>
+          <b:includable id='postFooter' var='post'>
+  <div class='post-footer'>
+    <b:include name='footerBylines'/>
+    <b:include data='post' name='postFooterAuthorProfile'/>
+  </div>
+</b:includable>
+          <b:includable id='postFooterAuthorProfile' var='post'>
+  <b:if cond='data:post.author.aboutMe and data:view.isPost'>
+    <div class='author-profile'>
+      <b:if cond='data:post.author.authorPhoto.url'>
+        <img class='author-image' expr:src='data:post.author.authorPhoto.url' width='50px'/>
+        <div class='author-about'>
+          <b:include data='post' name='aboutPostAuthor'/>
+        </div>
+      <b:else/>
+        <b:include data='post' name='aboutPostAuthor'/>
+      </b:if>
+    </div>
+  </b:if>
+</b:includable>
+          <b:includable id='postHeader' var='post'>
+  <b:include name='headerByline'/>
+</b:includable>
+          <b:includable id='postMeta' var='post'>
+  <b:include data='post' name='postMetadataJSON'/>
+</b:includable>
+          <b:includable id='postPagination'>
+  <div class='blog-pager container' id='blog-pager'>
+    <b:include cond='data:newerPageUrl' name='previousPageLink'/>
+    <b:include cond='data:olderPageUrl' name='nextPageLink'/>
+    <b:include cond='data:view.url != data:blog.homepageUrl' name='homePageLink'/>
+  </div>
+</b:includable>
+          <b:includable id='postQuickEdit' var='post'/>
+          <b:includable id='postTitle' var='post'>
+  <a expr:name='data:post.id'/>
+  <b:if cond='data:post.title != &quot;&quot;'>
+    <h3 class='post-title entry-title'>
+      <b:if cond='data:post.link or (data:post.url and data:view.url != data:post.url)'>
+        <a expr:href='data:post.link ?: data:post.url'><data:post.title/></a>
+      <b:else/>
+        <data:post.title/>
+      </b:if>
+    </h3>
+  </b:if>
+</b:includable>
+          <b:includable id='previousPageLink'>
+  <a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:messages.newerPosts'>
+    <data:messages.newerPosts/>
+  </a>
+</b:includable>
+          <b:includable id='quickedit'/>
+          <b:includable id='status-message'>
+            <b:if cond='data:navMessage'>
+              <b:if cond='data:blog.url == data:blog.homepageUrl or data:blog.url == data:blog.homepageUrl + &quot;/&quot; or data:blog.homepageUrl == data:blog.url + &quot;/&quot;'>
+              <b:else/>
+                <div class='status-msg'><data:navMessage/></div>
+              </b:if>
+            <b:else/>
+              <b:if cond='data:blog.pageType == &quot;error_page&quot;'>
+                <div class='status-msg'>404 &#8212; this page does not exist. <a expr:href='data:blog.homepageUrl.canonical'>Back to home &#8594;</a></div>
+              </b:if>
+            </b:if>
+          </b:includable>
+          <b:includable id='threadedCommentForm' var='post'>
+  <div class='comment-form'>
+    <a name='comment-form'/>
+    <h4 id='comment-post-message'><data:messages.postAComment/></h4>
+    <b:if cond='data:this.messages.blogComment != &quot;&quot;'>
+      <p><data:this.messages.blogComment/></p>
+    </b:if>
+    <b:include data='post' name='commentFormIframeSrc'/>
+    <iframe allowtransparency='allowtransparency' class='blogger-iframe-colorize blogger-comment-from-post' expr:height='data:cmtIframeInitialHeight ?: &quot;90px&quot;' frameborder='0' id='comment-editor' name='comment-editor' src='' width='100%'/>
+    <data:post.cmtfpIframe/>
+    <script type='text/javascript'>
+      BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;);
+    </script>
+  </div>
+</b:includable>
+          <b:includable id='threadedCommentJs' var='post'>
+  <script async='async' expr:src='data:post.commentSrc' type='text/javascript'/>
+  <b:template-script inline='true' name='threaded_comments'/>
+  <script type='text/javascript'>
+    blogger.widgets.blog.initThreadedComments(
+        <data:post.commentJso/>,
+        <data:post.commentMsgs/>,
+        <data:post.commentConfig/>);
+  </script>
+</b:includable>
+          <b:includable id='threadedComments' var='post'>
+  <section class='comments threaded' expr:data-embed='data:post.embedCommentForm' expr:data-num-comments='data:post.numberOfComments' id='comments'>
+    <a name='comments'/>
+
+    <b:include name='commentsTitle'/>
+
+    <div class='comments-content'>
+      <b:if cond='data:post.embedCommentForm'>
+        <b:include data='post' name='threadedCommentJs'/>
+      </b:if>
+      <div id='comment-holder'>
+         <data:post.commentHtml/>
+      </div>
+    </div>
+
+    <p class='comment-footer'>
+      <b:if cond='data:post.allowNewComments'>
+        <b:include data='post' name='threadedCommentForm'/>
+      <b:else/>
+        <data:post.noNewCommentsText/>
+      </b:if>
+      <b:if cond='data:post.showManageComments'>
+        <b:include data='post' name='manageComments'/>
+      </b:if>
+    </p>
+
+    <b:if cond='data:showCmtPopup'>
+      <div id='comment-popup'>
+        <iframe allowtransparency='allowtransparency' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'>
+        </iframe>
+      </div>
+    </b:if>
+  </section>
+</b:includable>
+          <b:includable id='tooltipCss'>
+  <!-- LINT.IfChange -->
+  <style>
+    .post-body a.b-tooltip-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .post-body a.b-tooltip-container .b-tooltip {
+      display: block !important;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translate(-20%, 1px);
+      visibility: hidden;
+      opacity: 0;
+      z-index: 1;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    .post-body a.b-tooltip-container .b-tooltip iframe {
+      width: 200px;
+      height: 198px;
+      max-width: none;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (hover: hover) {
+      .post-body a.b-tooltip-container:hover .b-tooltip {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  </style>
+  <!-- LINT.ThenChange(//depot/google3/java/com/google/blogger/b2/layouts/widgets/v2-style.css) -->
+</b:includable>
+        </b:widget>
+      </b:section>
+        </main>
+        <aside aria-label='Sidebar' class='layout-sidebar'>
+          <b:section class='sidebar' id='sidebar' showaddelement='yes'>
+            <b:widget id='BlogSearch1' locked='false' title='Search this blog' type='BlogSearch' version='2' visible='false'>
+              <b:includable id='main'>
+  <b:include name='widget-title'/>
+  <b:include name='content'/>
+</b:includable>
+              <b:includable id='content'>
+  <div class='widget-content' role='search'>
+    <b:include name='searchForm'/>
+  </div>
+</b:includable>
+              <b:includable id='searchForm'>
+  <form class='blog-search-form' expr:action='data:blog.searchUrl'>
+    <b:attr cond='not data:view.isPreview' name='target' value='_top'/>
+    <b:include name='urlParamsAsFormInput'/>
+    <div class='search-input'>
+      <input autocomplete='off' expr:aria-label='data:messages.searchThisBlog' expr:placeholder='data:messages.searchThisBlog' expr:value='data:view.isSearch ? data:view.search.query.escaped : &quot;&quot;' name='q'/>
+    </div>
+    <b:include name='searchSubmit'/>
+  </form>
+</b:includable>
+              <b:includable id='searchSubmit'>
+  <input class='search-action' expr:value='data:messages.search.escaped' type='submit'/>
+</b:includable>
+            </b:widget>
+            <b:widget id='PageList1' locked='false' title='Pages' type='PageList' visible='false'>
+              <b:widget-settings>
+                <b:widget-setting name='pageListJson'><![CDATA[{"link0":{"href":"https://extefw99.blogspot.com/","position":0,"title":"Home"}}]]></b:widget-setting>
+                <b:widget-setting name='homeTitle'>Home</b:widget-setting>
+              </b:widget-settings>
+              <b:includable id='main'>
+  <b:include name='widget-title'/>
+  <b:include name='content'/>
+</b:includable>
+              <b:includable id='content'>
+  <div class='widget-content'>
+    <b:include name='pageList'/>
+  </div>
+</b:includable>
+              <b:includable id='overflowButton'>
+  <b:include name='verticalMoreIcon'/>
+</b:includable>
+              <b:includable id='overflowablePageList'>
+  <div class='overflowable-container'>
+    <div class='overflowable-contents'>
+      <div class='container'>
+        <b:with value='true' var='overflow'>
+        <b:with value='&quot;tabs&quot;' var='pageListClass'>
+          <b:include name='pageList'/>
+        </b:with>
+        </b:with>
+      </div>
+    </div>
+    <div class='overflow-button hidden'>
+      <b:include name='overflowButton'/>
+    </div>
+  </div>
+</b:includable>
+              <b:includable id='pageLink'>
+  <li>
+    <b:class cond='data:overflow' name='overflowable-item'/>
+    <b:class cond='data:link.isCurrentPage' name='selected'/>
+
+    <a expr:href='data:link.href'><data:link.title/></a>
+  </li>
+</b:includable>
+              <b:includable id='pageList'>
+  <ul>
+    <b:class cond='data:pageListClass' expr:name='data:pageListClass'/>
+    <b:loop values='data:links' var='link'>
+      <b:include name='pageLink'/>
+    </b:loop>
+  </ul>
+</b:includable>
+            </b:widget>
+            <b:widget id='HTML3' locked='false' title='Developer tools' type='HTML' visible='true'>
+              <b:widget-settings>
+                <b:widget-setting name='content'><![CDATA[<div id="dev-tools" class="widget-content dev-tools" lang="en">
+<p class="dev-tools-intro">Docs and tools to build &amp; publish <strong>Firefox</strong> add-ons (WebExtensions on AMO).</p>
+<div class="dev-tools-group">
+<p class="dev-tools-label">Publish · AMO</p>
+<ul>
+<li><a href="https://addons.mozilla.org/developers/" rel="noopener noreferrer" target="_blank">AMO Developer Hub</a></li>
+<li><a href="https://extensionworkshop.com/documentation/publish/add-on-accounts/" rel="noopener noreferrer" target="_blank">Publishing on AMO</a></li>
+</ul>
+</div>
+<div class="dev-tools-group">
+<p class="dev-tools-label">Documentation</p>
+<ul>
+<li><a href="https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions" rel="noopener noreferrer" target="_blank">MDN — WebExtensions</a></li>
+<li><a href="https://extensionworkshop.com/" rel="noopener noreferrer" target="_blank">Extension Workshop</a></li>
+</ul>
+</div>
+<div class="dev-tools-group">
+<p class="dev-tools-label">Build &amp; test</p>
+<ul>
+<li><a href="https://extensionworkshop.com/documentation/develop/getting-started-with-web-ext/" rel="noopener noreferrer" target="_blank">web-ext — getting started</a></li>
+<li><a href="https://extensionworkshop.com/documentation/develop/web-ext-command-reference/" rel="noopener noreferrer" target="_blank">web-ext — command reference</a></li>
+<li><a href="https://github.com/mozilla/webextension-polyfill" rel="noopener noreferrer" target="_blank">browser API polyfill (GitHub)</a></li>
+</ul>
+</div>
+<p style="font-size:0.75rem;margin:12px 0 0;opacity:.88;line-height:1.4">Edit this block in <strong>Theme → Layout</strong>.</p>
+</div>]]></b:widget-setting>
+              </b:widget-settings>
+              <b:includable id='main'>
+  <b:include name='widget-title'/>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+</b:includable>
+            </b:widget>
+            <b:widget id='Label1' locked='false' title='Tags' type='Label' visible='true'>
+              <b:widget-settings>
+                <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
+                <b:widget-setting name='display'>LIST</b:widget-setting>
+                <b:widget-setting name='selectedLabelsList'/>
+                <b:widget-setting name='showType'>ALL</b:widget-setting>
+                <b:widget-setting name='showFreqNumbers'>false</b:widget-setting>
+              </b:widget-settings>
+              <b:includable id='main' var='this'>
+  <b:include name='widget-title'/>
+  <b:include name='content'/>
+</b:includable>
+              <b:includable id='cloud'>
+  <b:loop values='data:labels' var='label'>
+    <span class='label-size'>
+      <b:class expr:name='&quot;label-size-&quot; + data:label.cssSize'/>
+      <a class='label-name' expr:href='data:label.url'>
+        <data:label.name/>
+        <b:if cond='data:this.showFreqNumbers'>
+          <span class='label-count'><data:label.count/></span>
+        </b:if>
+      </a>
+    </span>
+  </b:loop>
+</b:includable>
+              <b:includable id='content'>
+  <div class='widget-content'>
+    <b:class expr:name='data:this.display + &quot;-label-widget-content&quot;'/>
+    <b:include cond='data:this.display == &quot;list&quot;' name='list'/>
+    <b:include cond='data:this.display == &quot;cloud&quot;' name='cloud'/>
+  </div>
+</b:includable>
+              <b:includable id='list'>
+  <ul>
+    <b:loop values='data:labels' var='label'>
+      <li>
+        <a class='label-name' expr:href='data:label.url'>
+          <data:label.name/>
+          <b:if cond='data:this.showFreqNumbers'>
+            <span class='label-count'><data:label.count/></span>
+          </b:if>
+        </a>
+      </li>
+    </b:loop>
+  </ul>
+</b:includable>
+            </b:widget>
+            <b:widget id='PopularPosts1' locked='false' title='Popular posts' type='PopularPosts' version='2' visible='false'>
+              <b:widget-settings>
+                <b:widget-setting name='numItemsToShow'>6</b:widget-setting>
+                <b:widget-setting name='showThumbnails'>true</b:widget-setting>
+                <b:widget-setting name='showSnippets'>false</b:widget-setting>
+                <b:widget-setting name='timeRange'>LAST_YEAR</b:widget-setting>
+              </b:widget-settings>
+              <b:includable id='main' var='this'>
+  <b:include name='widget-title'/>
+  <b:include name='content'/>
+</b:includable>
+              <b:includable id='content'>
+  <div class='widget-content popular-posts-a11y'>
+    <ul class='popular-posts-list'>
+      <b:loop values='data:posts' var='post'>
+        <li class='popular-post-item'>
+          <b:if cond='data:post.thumbnailUrl'>
+            <a class='popular-post-row' expr:href='data:post.url' expr:title='data:post.title'>
+              <span class='popular-post-thumb-wrap'>
+                <img class='popular-post-thumb' decoding='async' expr:alt='data:post.title' expr:src='data:post.thumbnailUrl' height='48' loading='lazy' width='48'/>
+              </span>
+              <span class='popular-post-title'><data:post.title/></span>
+            </a>
+          <b:else/>
+            <a class='popular-post-link-only' expr:href='data:post.url' expr:title='data:post.title'><data:post.title/></a>
+          </b:if>
+        </li>
+      </b:loop>
+    </ul>
+  </div>
+</b:includable>
+              <b:includable id='snippetedPosts'>
+<!-- Override default role=feed markup; list is in content includable. -->
+</b:includable>
+            </b:widget>
+            <b:widget id='BlogArchive1' locked='false' title='Archives' type='BlogArchive' visible='true'>
+              <b:widget-settings>
+                <b:widget-setting name='showStyle'>HIERARCHY</b:widget-setting>
+                <b:widget-setting name='yearPattern'>yyyy</b:widget-setting>
+                <b:widget-setting name='showWeekEnd'>true</b:widget-setting>
+                <b:widget-setting name='monthPattern'>MMMM</b:widget-setting>
+                <b:widget-setting name='dayPattern'>MMM dd</b:widget-setting>
+                <b:widget-setting name='weekPattern'>MM/dd</b:widget-setting>
+                <b:widget-setting name='chronological'>false</b:widget-setting>
+                <b:widget-setting name='showPosts'>false</b:widget-setting>
+                <b:widget-setting name='frequency'>MONTHLY</b:widget-setting>
+              </b:widget-settings>
+              <b:includable id='main' var='this'>
+  <b:include name='widget-title'/>
+  <b:include name='content'/>
+</b:includable>
+              <b:includable id='content'>
+  <div class='widget-content'>
+    <div id='ArchiveList'>
+      <div expr:id='data:widget.instanceId + &quot;_ArchiveList&quot;'>
+        <b:include cond='data:this.style == &quot;HIERARCHY&quot;' name='hierarchy'/>
+        <b:include cond='data:this.style in {&quot;FLAT&quot;, &quot;MENU&quot;}' name='flat'/>
+      </div>
+    </div>
+  </div>
+</b:includable>
+              <b:includable id='flat'>
+  <ul class='flat'>
+    <b:loop values='data:data' var='i'>
+      <li class='archivedate'>
+        <a expr:href='data:i.url'>
+          <data:i.name/><span class='post-count'><data:i.post-count/></span>
+        </a>
+      </li>
+    </b:loop>
+  </ul>
+</b:includable>
+              <b:includable id='hierarchy'>
+  <b:include data='data' name='interval'/>
+</b:includable>
+              <b:includable id='interval' var='intervals'>
+  <ul class='hierarchy'>
+    <b:loop values='data:intervals' var='interval'>
+      <li class='archivedate'>
+        <div class='hierarchy-title'>
+          <a class='post-count-link' expr:href='data:interval.url'>
+            <data:interval.name/>
+            <span class='post-count'><data:interval.post-count/></span>
+          </a>
+        </div>
+        <div class='hierarchy-content'>
+          <b:include cond='data:interval.data' data='interval.data' name='interval'/>
+          <b:include cond='data:interval.posts' data='interval.posts' name='posts'/>
+        </div>
+      </li>
+    </b:loop>
+  </ul>
+</b:includable>
+              <b:includable id='posts' var='posts'>
+  <ul class='posts hierarchy'>
+    <b:loop values='data:posts' var='post'>
+      <li>
+        <a expr:href='data:post.url'><data:post.title/></a>
+      </li>
+    </b:loop>
+  </ul>
+</b:includable>
+            </b:widget>
+            <b:widget id='Profile1' locked='false' title='Author' type='Profile' visible='true'>
+              <b:widget-settings>
+                <b:widget-setting name='showaboutme'>false</b:widget-setting>
+                <b:widget-setting name='showlocation'>false</b:widget-setting>
+              </b:widget-settings>
+              <b:includable id='main' var='this'>
+  <b:include name='widget-title'/>
+  <b:include name='content'/>
+</b:includable>
+              <b:includable id='authorProfileImage'>
+  <img class='profile-img' expr:alt='data:messages.myPhoto' expr:height='data:authorPhoto.height' expr:src='data:authorPhoto.image' expr:width='data:authorPhoto.width'/>
+</b:includable>
+              <b:includable id='content'>
+  <b:if cond='data:team'>
+    <div class='widget-content team'>
+      <b:include name='teamProfile'/>
+    </div>
+  <b:else/>
+    <div class='widget-content individual'>
+      <b:include name='userProfile'/>
+    </div>
+  </b:if>
+</b:includable>
+              <b:includable id='defaultProfileImage'>
+  <div class='default-avatar'/>
+</b:includable>
+              <b:includable id='profileImage'>
+  <b:if cond='data:authorPhoto.image'>
+    <b:include name='authorProfileImage'/>
+  <b:else/>
+    <b:include name='defaultProfileImage'/>
+  </b:if>
+</b:includable>
+              <b:includable id='teamProfile'>
+  <ul>
+    <b:loop values='data:authors' var='author'>
+      <li>
+        <div class='team-member'>
+          <b:include data='author' name='teamProfileLink'/>
+        </div>
+      </li>
+    </b:loop>
+  </ul>
+</b:includable>
+              <b:includable id='teamProfileLink'>
+  <a class='profile-link g-profile' expr:href='data:userUrl' rel='nofollow'>
+    <b:include name='profileImage'/>
+    <span class='profile-name'><data:display-name/></span>
+  </a>
+</b:includable>
+              <b:includable id='userLocation'>
+  <dd class='profile-data location'><data:location/></dd>
+</b:includable>
+              <b:includable id='userProfile'>
+  <b:include name='userProfileImage'/>
+  <b:include name='userProfileInfo'/>
+</b:includable>
+              <b:includable id='userProfileData'>
+  <dt class='profile-data'>
+    <a class='profile-link g-profile' expr:href='data:userUrl' rel='author nofollow'>
+      <data:displayname/>
+    </a>
+  </dt>
+</b:includable>
+              <b:includable id='userProfileImage'>
+  <a expr:href='data:userUrl' rel='nofollow'>
+    <b:include name='profileImage'/>
+  </a>
+</b:includable>
+              <b:includable id='userProfileInfo'>
+  <div class='profile-info'>
+    <dl class='profile-datablock'>
+      <b:class cond='data:showlocation and data:location != &quot;&quot;' name='has-location'/>
+
+      <b:include name='userProfileData'/>
+      <b:include cond='data:showlocation and data:location != &quot;&quot;' name='userLocation'/>
+      <b:include cond='data:aboutme != &quot;&quot;' name='userProfileText'/>
+    </dl>
+    <b:include name='viewProfileLink'/>
+  </div>
+</b:includable>
+              <b:includable id='userProfileText'>
+  <dd class='profile-textblock'>
+    <data:aboutme/>
+  </dd>
+</b:includable>
+              <b:includable id='viewProfileLink'>
+  <a class='profile-link' expr:href='data:userUrl' rel='author nofollow'>
+    <data:messages.viewMyCompleteProfile/>
+  </a>
+</b:includable>
+            </b:widget>
+            <b:widget id='HTML1' locked='false' title='Mozilla AMO' type='HTML' visible='true'>
+              <b:widget-settings>
+                <b:widget-setting name='content'><![CDATA[<div class="widget-content"><p style="margin-top:0"><strong>Mozilla AMO</strong></p><ul style="padding-left:1.1rem;margin:0 0 8px;line-height:1.5"><li><a href="https://addons.mozilla.org/" rel="noopener noreferrer" target="_blank">addons.mozilla.org</a></li><li><a href="https://addons.mozilla.org/en-US/firefox/user/19705561/" rel="noopener me noreferrer" target="_blank">Your AMO profile</a></li></ul><p style="font-size:0.8rem;margin:0;opacity:.9">Firefox add-ons only. Edit links in <strong>Layout</strong>.</p></div>]]></b:widget-setting>
+              </b:widget-settings>
+              <b:includable id='main'>
+  <b:include name='widget-title'/>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+</b:includable>
+            </b:widget>
+          </b:section>
+        </aside>
+      </div>
+    </div>
+    <a aria-label='Back to top' class='back-to-top' href='#top' id='backToTop'>&#8593;</a>
+  </body>
+</html>
