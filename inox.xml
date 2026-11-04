@@ -134,8 +134,19 @@
   <link crossorigin='crossorigin' href='https://fonts.gstatic.com' rel='preconnect'/>
   <link href='https://raw.githubusercontent.com' rel='preconnect'/>
   <link href='https://blogger.googleusercontent.com' rel='preconnect'/>
-  <link as='image' fetchpriority='high' href='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/hero-railing.jpg' rel='preload'/>
-  <link href='https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Noto+Sans+Arabic:wght@400;500;600;700;800&amp;display=swap' rel='stylesheet'/>
+  <b:if cond='data:view.isHomepage'>
+    <link as='image' fetchpriority='high' href='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/hero-railing-1280.webp' imagesizes='(min-width: 1240px) 560px, (min-width: 861px) 45vw, (min-width: 681px) 680px, calc(100vw - 40px)' imagesrcset='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/hero-railing-640.webp 640w, https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/hero-railing-960.webp 960w, https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/hero-railing-1280.webp 1280w' rel='preload' type='image/webp'/>
+  <b:else/>
+    <b:if cond='data:view.isPost'>
+      <b:loop values='data:posts' var='post'>
+        <b:if cond='data:post.featuredImage'>
+          <link as='image' expr:href='resizeImage(data:post.featuredImage, 1200, &quot;16:9&quot;)' expr:imagesrcset='resizeImage(data:post.featuredImage, 640, &quot;16:9&quot;) + &quot; 640w, &quot; + resizeImage(data:post.featuredImage, 960, &quot;16:9&quot;) + &quot; 960w, &quot; + resizeImage(data:post.featuredImage, 1200, &quot;16:9&quot;) + &quot; 1200w&quot;' fetchpriority='high' imagesizes='(min-width: 940px) 880px, calc(100vw - 32px)' rel='preload'/>
+        </b:if>
+      </b:loop>
+    </b:if>
+  </b:if>
+  <link as='font' crossorigin='crossorigin' href='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/fonts/manrope-latin-wght-normal.woff2' rel='preload' type='font/woff2'/>
+  <link href='https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700;800&amp;display=swap' rel='stylesheet'/>
 
   <!-- Données structurées : aucune adresse, note ou récompense fictive. -->
   <b:if cond='data:view.isHomepage'>
@@ -201,6 +212,11 @@
     .svg-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
     .skip-link { position: fixed; top: 12px; left: 12px; z-index: 9999; padding: 10px 16px; background: var(--accent); color: var(--ink); border-radius: 6px; transform: translateY(-160%); transition: transform .2s; }
     .skip-link:focus { transform: translateY(0); }
+    .scroll-progress { position: fixed; z-index: 1200; top: 0; left: 0; width: 100%; height: 3px; background: var(--accent); transform: scaleX(0); transform-origin: left center; pointer-events: none; }
+    html[dir='rtl'] .scroll-progress { transform-origin: right center; }
+    html[data-motion='ready'] [data-reveal], html[data-motion='ready'] [data-reveal-item='true'] { opacity: 0; }
+    html[data-motion='ready'] [data-reveal='transform'], html[data-motion='ready'] [data-reveal='transform-scale'] { opacity: 1; }
+    html[data-motion='ready'] [data-reveal].is-visible, html[data-motion='ready'] [data-reveal-item='true'].is-visible { opacity: 1; }
     .eyebrow { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 18px; font-size: .72rem; line-height: 1.4; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
     .eyebrow::before { content: ''; width: 28px; height: 2px; background: currentColor; }
     .eyebrow--accent { color: var(--accent); }
@@ -288,7 +304,8 @@
     .hero-visual::before { content: ''; position: absolute; left: 0; bottom: 0; width: 58%; height: 62%; border: 1px solid rgba(143,200,255,.4); border-radius: 12px; }
     .hero-photo { position: relative; margin: 0; border-radius: 12px; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,.34); }
     .hero-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,18,15,.52), transparent 42%); pointer-events: none; }
-    .hero-photo img { display: block; width: 100%; height: 500px; object-fit: cover; }
+    .hero-photo img { display: block; width: 100%; height: 500px; object-fit: cover; transition: transform 1s cubic-bezier(.2,.7,.2,1); }
+    .hero-photo:hover img { transform: scale(1.025); }
     .hero-photo figcaption { position: absolute; z-index: 1; bottom: 20px; left: 22px; display: flex; align-items: center; gap: 10px; font-size: .66rem; letter-spacing: .14em; font-weight: 800; }
     .hero-photo figcaption::before { content: ''; width: 24px; height: 2px; background: var(--accent); }
     .hero-note { position: absolute; z-index: 3; right: -18px; bottom: 0; width: 210px; padding: 20px; background: var(--accent); color: var(--ink); border-radius: 10px; box-shadow: 0 16px 45px rgba(0,0,0,.2); }
@@ -348,6 +365,8 @@
     .social-actions .btn--outline { border-color: rgba(23,29,34,.3); }
     .lightbox { width: min(1060px, calc(100% - 32px)); max-height: 92vh; padding: 0; border: 0; border-radius: 12px; background: var(--ink); color: #fff; box-shadow: 0 35px 100px rgba(0,0,0,.55); overflow: visible; }
     .lightbox::backdrop { background: rgba(8,10,8,.86); backdrop-filter: blur(7px); }
+    .lightbox[open] { animation: lightbox-in .26s cubic-bezier(.2,.7,.2,1); }
+    @keyframes lightbox-in { from { opacity: 0; transform: translateY(12px) scale(.985); } to { opacity: 1; transform: none; } }
     .lightbox img { display: block; width: 100%; max-height: 78vh; object-fit: contain; border-radius: 12px 12px 0 0; }
     .lightbox-caption { margin: 0; padding: 14px 20px; font-size: .8rem; }
     .lightbox-close { position: absolute; top: -15px; right: -12px; width: 40px; height: 40px; border: 0; border-radius: 50%; background: var(--accent); color: var(--ink); font-size: 1.4rem; cursor: pointer; }
@@ -448,7 +467,7 @@
     .breadcrumbs a:hover { color: var(--accent-dark); }
     .post-single-header .post-title { margin: 10px 0 20px; font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.15; letter-spacing: -.05em; }
     .post-single-image { margin: 0; }
-    .post-single-image img { display: block; width: 100%; max-height: 580px; object-fit: cover; }
+    .post-single-image img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; max-height: 580px; object-fit: cover; }
     .post-body { padding: 44px 54px; color: var(--body-copy); font-size: .98rem; line-height: 1.9; }
     .post-body > :first-child { margin-top: 0; }
     .post-body > :last-child { margin-bottom: 0; }
@@ -696,9 +715,13 @@
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+      html[data-motion='ready'] [data-reveal], html[data-motion='ready'] [data-reveal-item='true'] { opacity: 1 !important; }
+      .scroll-progress { display: none; }
+      .hero-photo:hover img { transform: none; }
     }
     @media print {
-      .topbar, .site-header, .whatsapp-float, .quote-section, .site-footer, .hero-actions, .blog-pager, .comments { display: none !important; }
+      .topbar, .site-header, .whatsapp-float, .quote-section, .site-footer, .hero-actions, .blog-pager, .comments, .scroll-progress { display: none !important; }
+      [data-reveal], [data-reveal-item] { opacity: 1 !important; }
       body { background: #fff; color: #000; }
       .hero { background: #fff; color: #000; }
       .hero-inner { min-height: auto; }
@@ -708,6 +731,7 @@
 </head>
 <body>
   <a class='skip-link' href='#contenu'>Aller au contenu</a>
+  <div aria-hidden='true' class='scroll-progress' id='scroll-progress'></div>
 
   <!-- Icônes locales : aucune bibliothèque externe. -->
   <svg aria-hidden='true' class='svg-sprite' xmlns='http://www.w3.org/2000/svg'>
@@ -789,7 +813,7 @@
       <!-- HERO -->
       <section class='hero' id='accueil'>
         <div class='container hero-inner'>
-          <div class='hero-copy'>
+          <div class='hero-copy' data-reveal='transform'>
             <p class='eyebrow eyebrow--accent'>Métallerie &amp; inox sur mesure · Maroc</p>
             <h1>L’inox prend forme <span>avec précision.</span></h1>
             <p class='hero-lead'>Portes, garde-corps, grilles, cuisines et ouvrages décoratifs : INOX.UP transforme vos idées en réalisations durables, ajustées à votre espace et à votre style.</p>
@@ -803,9 +827,9 @@
               <li><svg class='icon' aria-hidden='true'><use href='#i-check'/></svg> Fabrication sur mesure</li>
             </ul>
           </div>
-          <div class='hero-visual'>
+          <div class='hero-visual' data-reveal='transform-scale'>
             <figure class='hero-photo'>
-              <img alt='Garde-corps d’escalier en acier inoxydable dans un intérieur contemporain' fetchpriority='high' height='853' src='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/hero-railing.jpg' width='1280'/>
+              <img alt='Garde-corps d’escalier en acier inoxydable dans un intérieur contemporain' decoding='async' fetchpriority='high' height='853' sizes='(min-width: 1240px) 560px, (min-width: 861px) 45vw, (min-width: 681px) 680px, calc(100vw - 40px)' src='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/hero-railing-1280.webp' srcset='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/hero-railing-640.webp 640w, https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/hero-railing-960.webp 960w, https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/hero-railing-1280.webp 1280w' width='1280'/>
               <figcaption>Précision · Équilibre · Durabilité</figcaption>
             </figure>
             <div class='hero-note'>
@@ -817,51 +841,51 @@
         </div>
       </section>
 
-      <div class='precision-strip' aria-label='Les engagements INOX.UP'>
+      <div class='precision-strip' data-reveal-group='true' aria-label='Les engagements INOX.UP'>
         <div class='container precision-grid'>
-          <div class='precision-item'><svg class='icon' aria-hidden='true'><use href='#i-ruler'/></svg><div><strong>Sur mesure</strong><span>Adapté à vos dimensions</span></div></div>
-          <div class='precision-item'><svg class='icon' aria-hidden='true'><use href='#i-spark'/></svg><div><strong>Finition premium</strong><span>Le soin jusqu’au détail</span></div></div>
-          <div class='precision-item'><svg class='icon' aria-hidden='true'><use href='#i-pin'/></svg><div><strong>Partout au Maroc</strong><span>Étude de projets à distance</span></div></div>
+          <div class='precision-item' data-reveal-item='true'><svg class='icon' aria-hidden='true'><use href='#i-ruler'/></svg><div><strong>Sur mesure</strong><span>Adapté à vos dimensions</span></div></div>
+          <div class='precision-item' data-reveal-item='true'><svg class='icon' aria-hidden='true'><use href='#i-spark'/></svg><div><strong>Finition premium</strong><span>Le soin jusqu’au détail</span></div></div>
+          <div class='precision-item' data-reveal-item='true'><svg class='icon' aria-hidden='true'><use href='#i-pin'/></svg><div><strong>Partout au Maroc</strong><span>Étude de projets à distance</span></div></div>
         </div>
       </div>
 
       <!-- SERVICES -->
       <section class='section services-section' id='services'>
         <div class='container'>
-          <div class='section-heading'>
+          <div class='section-heading' data-reveal='up'>
             <div><p class='eyebrow'>Notre savoir-faire</p><h2>Des ouvrages pensés pour votre quotidien.</h2></div>
             <p>Du besoin fonctionnel à la finition décorative, chaque réalisation associe solidité, esthétique et justesse des proportions.</p>
           </div>
-          <div class='services-grid'>
-            <article class='service-card'>
+          <div class='services-grid' data-reveal-group='true'>
+            <article class='service-card' data-reveal-item='true'>
               <div class='service-top'><span class='service-icon'><svg class='icon' aria-hidden='true'><use href='#i-door'/></svg></span><span class='service-number'>01 / 06</span></div>
               <h3>Portes en inox</h3><p>Des portes robustes au design épuré, fabriquées selon vos dimensions et votre configuration.</p>
-              <a class='text-link' data-service='Portes en inox' href='#devis'>Demander ce service <svg class='icon' aria-hidden='true'><use href='#i-arrow'/></svg></a>
+              <a class='text-link' data-service='Portes en inox' href='#devis'>Demander ce service <span class='sr-only'>Portes en inox</span><svg class='icon' aria-hidden='true'><use href='#i-arrow'/></svg></a>
             </article>
-            <article class='service-card'>
+            <article class='service-card' data-reveal-item='true'>
               <div class='service-top'><span class='service-icon'><svg class='icon' aria-hidden='true'><use href='#i-railing'/></svg></span><span class='service-number'>02 / 06</span></div>
               <h3>Garde-corps &amp; rampes</h3><p>Escaliers, balcons et terrasses : des lignes sûres et élégantes qui s’intègrent à votre architecture.</p>
-              <a class='text-link' data-service='Garde-corps et rampes' href='#devis'>Demander ce service <svg class='icon' aria-hidden='true'><use href='#i-arrow'/></svg></a>
+              <a class='text-link' data-service='Garde-corps et rampes' href='#devis'>Demander ce service <span class='sr-only'>Garde-corps et rampes</span><svg class='icon' aria-hidden='true'><use href='#i-arrow'/></svg></a>
             </article>
-            <article class='service-card'>
+            <article class='service-card' data-reveal-item='true'>
               <div class='service-top'><span class='service-icon'><svg class='icon' aria-hidden='true'><use href='#i-window'/></svg></span><span class='service-number'>03 / 06</span></div>
               <h3>Grilles de sécurité</h3><p>Protégez vos fenêtres avec des ouvrages résistants, sans renoncer à l’harmonie de votre façade.</p>
-              <a class='text-link' data-service='Grilles de sécurité' href='#devis'>Demander ce service <svg class='icon' aria-hidden='true'><use href='#i-arrow'/></svg></a>
+              <a class='text-link' data-service='Grilles de sécurité' href='#devis'>Demander ce service <span class='sr-only'>Grilles de sécurité</span><svg class='icon' aria-hidden='true'><use href='#i-arrow'/></svg></a>
             </article>
-            <article class='service-card'>
+            <article class='service-card' data-reveal-item='true'>
               <div class='service-top'><span class='service-icon'><svg class='icon' aria-hidden='true'><use href='#i-kitchen'/></svg></span><span class='service-number'>04 / 06</span></div>
               <h3>Cuisines &amp; équipements</h3><p>Plans de travail, mobiliers et équipements inox pour les espaces résidentiels et professionnels.</p>
-              <a class='text-link' data-service='Cuisines et équipements inox' href='#devis'>Demander ce service <svg class='icon' aria-hidden='true'><use href='#i-arrow'/></svg></a>
+              <a class='text-link' data-service='Cuisines et équipements inox' href='#devis'>Demander ce service <span class='sr-only'>Cuisines et équipements inox</span><svg class='icon' aria-hidden='true'><use href='#i-arrow'/></svg></a>
             </article>
-            <article class='service-card'>
+            <article class='service-card' data-reveal-item='true'>
               <div class='service-top'><span class='service-icon'><svg class='icon' aria-hidden='true'><use href='#i-panel'/></svg></span><span class='service-number'>05 / 06</span></div>
               <h3>Décoration métallique</h3><p>Claustras, habillages et détails décoratifs pour structurer et personnaliser vos espaces.</p>
-              <a class='text-link' data-service='Décoration métallique' href='#devis'>Demander ce service <svg class='icon' aria-hidden='true'><use href='#i-arrow'/></svg></a>
+              <a class='text-link' data-service='Décoration métallique' href='#devis'>Demander ce service <span class='sr-only'>Décoration métallique</span><svg class='icon' aria-hidden='true'><use href='#i-arrow'/></svg></a>
             </article>
-            <article class='service-card'>
+            <article class='service-card' data-reveal-item='true'>
               <div class='service-top'><span class='service-icon'><svg class='icon' aria-hidden='true'><use href='#i-ruler'/></svg></span><span class='service-number'>06 / 06</span></div>
               <h3>Projet 100 % sur mesure</h3><p>Une idée particulière ? Nous étudions avec vous la forme, l’usage et la finition adaptés.</p>
-              <a class='text-link' data-service='Projet personnalisé' href='#devis'>Parler de mon idée <svg class='icon' aria-hidden='true'><use href='#i-arrow'/></svg></a>
+              <a class='text-link' data-service='Projet personnalisé' href='#devis'>Parler de mon idée <span class='sr-only'>Projet 100 % sur mesure</span><svg class='icon' aria-hidden='true'><use href='#i-arrow'/></svg></a>
             </article>
           </div>
         </div>
@@ -870,29 +894,29 @@
       <!-- APPLICATIONS : visuels d’ambiance à remplacer par les vraies réalisations. -->
       <section class='section gallery-section' id='realisations'>
         <div class='container'>
-          <div class='section-heading'>
+          <div class='section-heading' data-reveal='up'>
             <div><p class='eyebrow'>Applications &amp; inspirations</p><h2>L’inox, dans toutes ses expressions.</h2></div>
             <p>Une matière, des usages variés. Cliquez sur un visuel pour découvrir chaque application en grand format.</p>
           </div>
-          <div class='gallery-grid'>
-            <button class='project-card' data-caption='Garde-corps en inox et verre pour balcon' data-full='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/balcony-railing.jpg' data-lightbox='true' type='button'>
-              <img alt='Garde-corps de balcon en inox et verre' height='853' loading='lazy' src='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/balcony-railing.jpg' width='1280'/>
+          <div class='gallery-grid' data-reveal-group='true'>
+            <button class='project-card' data-reveal-item='true' data-caption='Garde-corps en inox et verre pour balcon' data-full='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/balcony-railing-1280.webp' data-lightbox='true' type='button'>
+              <img alt='Garde-corps de balcon en inox et verre' decoding='async' height='853' loading='lazy' sizes='(min-width: 1240px) 690px, (min-width: 861px) 58vw, (min-width: 601px) calc(100vw - 48px), calc(100vw - 28px)' src='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/balcony-railing-1280.webp' srcset='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/balcony-railing-640.webp 640w, https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/balcony-railing-960.webp 960w, https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/balcony-railing-1280.webp 1280w' width='1280'/>
               <span class='project-caption'><small>Extérieur · Sécurité</small><strong>Garde-corps &amp; balcons</strong></span><span class='project-zoom'><svg class='icon' aria-hidden='true'><use href='#i-expand'/></svg></span>
             </button>
-            <button class='project-card' data-caption='Porte d’entrée contemporaine en acier inoxydable' data-full='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/steel-door.jpg' data-lightbox='true' type='button'>
-              <img alt='Porte d’entrée contemporaine en acier inoxydable' height='853' loading='lazy' src='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/steel-door.jpg' width='1280'/>
+            <button class='project-card' data-reveal-item='true' data-caption='Porte d’entrée contemporaine en acier inoxydable' data-full='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/steel-door-1280.webp' data-lightbox='true' type='button'>
+              <img alt='Porte d’entrée contemporaine en acier inoxydable' decoding='async' height='853' loading='lazy' sizes='(min-width: 1240px) 490px, (min-width: 861px) 42vw, (min-width: 601px) 50vw, calc(100vw - 28px)' src='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/steel-door-1280.webp' srcset='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/steel-door-640.webp 640w, https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/steel-door-960.webp 960w, https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/steel-door-1280.webp 1280w' width='1280'/>
               <span class='project-caption'><small>Entrée · Sur mesure</small><strong>Portes en inox</strong></span><span class='project-zoom'><svg class='icon' aria-hidden='true'><use href='#i-expand'/></svg></span>
             </button>
-            <button class='project-card' data-caption='Grille de fenêtre décorative en inox' data-full='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/window-grille.jpg' data-lightbox='true' type='button'>
-              <img alt='Grille de sécurité décorative pour fenêtre' height='853' loading='lazy' src='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/window-grille.jpg' width='1280'/>
+            <button class='project-card' data-reveal-item='true' data-caption='Grille de fenêtre décorative en inox' data-full='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/window-grille-1280.webp' data-lightbox='true' type='button'>
+              <img alt='Grille de sécurité décorative pour fenêtre' decoding='async' height='853' loading='lazy' sizes='(min-width: 1240px) 490px, (min-width: 861px) 42vw, (min-width: 601px) 50vw, calc(100vw - 28px)' src='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/window-grille-1280.webp' srcset='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/window-grille-640.webp 640w, https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/window-grille-960.webp 960w, https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/window-grille-1280.webp 1280w' width='1280'/>
               <span class='project-caption'><small>Façade · Protection</small><strong>Grilles de sécurité</strong></span><span class='project-zoom'><svg class='icon' aria-hidden='true'><use href='#i-expand'/></svg></span>
             </button>
-            <button class='project-card' data-caption='Plan de travail et équipement de cuisine en inox' data-full='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/kitchen-inox.jpg' data-lightbox='true' type='button'>
-              <img alt='Cuisine contemporaine avec plan de travail en inox' height='853' loading='lazy' src='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/kitchen-inox.jpg' width='1280'/>
+            <button class='project-card' data-reveal-item='true' data-caption='Plan de travail et équipement de cuisine en inox' data-full='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/kitchen-inox-1280.webp' data-lightbox='true' type='button'>
+              <img alt='Cuisine contemporaine avec plan de travail en inox' decoding='async' height='853' loading='lazy' sizes='(min-width: 1240px) 590px, (min-width: 861px) 50vw, (min-width: 601px) 50vw, calc(100vw - 28px)' src='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/kitchen-inox-1280.webp' srcset='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/kitchen-inox-640.webp 640w, https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/kitchen-inox-960.webp 960w, https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/kitchen-inox-1280.webp 1280w' width='1280'/>
               <span class='project-caption'><small>Cuisine · Hygiène</small><strong>Équipements inox</strong></span><span class='project-zoom'><svg class='icon' aria-hidden='true'><use href='#i-expand'/></svg></span>
             </button>
-            <button class='project-card' data-caption='Claustra décoratif en acier inoxydable' data-full='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/decorative-panel.jpg' data-lightbox='true' type='button'>
-              <img alt='Claustra décoratif en inox dans un intérieur contemporain' height='853' loading='lazy' src='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/decorative-panel.jpg' width='1280'/>
+            <button class='project-card' data-reveal-item='true' data-caption='Claustra décoratif en acier inoxydable' data-full='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/decorative-panel-1280.webp' data-lightbox='true' type='button'>
+              <img alt='Claustra décoratif en inox dans un intérieur contemporain' decoding='async' height='853' loading='lazy' sizes='(min-width: 1240px) 590px, (min-width: 861px) 50vw, (min-width: 601px) 50vw, calc(100vw - 28px)' src='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/decorative-panel-1280.webp' srcset='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/decorative-panel-640.webp 640w, https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/decorative-panel-960.webp 960w, https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/decorative-panel-1280.webp 1280w' width='1280'/>
               <span class='project-caption'><small>Intérieur · Décoration</small><strong>Claustras &amp; habillages</strong></span><span class='project-zoom'><svg class='icon' aria-hidden='true'><use href='#i-expand'/></svg></span>
             </button>
           </div>
@@ -902,7 +926,7 @@
 
       <!-- INSTAGRAM ET FACEBOOK OFFICIELS -->
       <section aria-labelledby='social-title' class='social-section'>
-        <div class='container social-card'>
+        <div class='container social-card' data-reveal='scale'>
           <div class='social-profile'>
             <span class='brand-mark brand-mark--logo social-logo' aria-hidden='true'>
               <img alt='' class='brand-logo-image' height='320' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEhQiLkxeot0dRFo2p7LdMw3Brgk83XC9FAJGFg8atBhk0UazWLHL0xRFqDMHJK8N6VgJGITBY74fXlA4Ej_AqIB8cM1et-qrip-mPr6oxILXptgOylRMmgjtGmKBIEi_WlX06_oH7h-RmTHMgYoM-J9hjjVWih8hslFRS0pRdA6dljk2W5W8oNGhIdpfKU=s320' width='320'/>
@@ -924,15 +948,15 @@
       <!-- PROCESSUS -->
       <section class='section process-section' id='processus'>
         <div class='container'>
-          <div class='section-heading section-heading--dark'>
+          <div class='section-heading section-heading--dark' data-reveal='up'>
             <div><p class='eyebrow eyebrow--accent'>Simple et transparent</p><h2>De votre idée à la pose.</h2></div>
             <p>Un échange direct et des étapes claires pour avancer sereinement, du premier croquis au dernier contrôle.</p>
           </div>
-          <div class='process-grid'>
-            <article class='process-step'><span class='process-number'>ÉTAPE 01</span><h3>Parlons du besoin</h3><p>Envoyez votre idée, quelques photos et les dimensions disponibles sur WhatsApp.</p></article>
-            <article class='process-step'><span class='process-number'>ÉTAPE 02</span><h3>Étude &amp; devis</h3><p>Nous précisons ensemble l’ouvrage, les finitions et les contraintes de votre espace.</p></article>
-            <article class='process-step'><span class='process-number'>ÉTAPE 03</span><h3>Fabrication</h3><p>Votre projet prend forme avec un travail attentif des assemblages et des finitions.</p></article>
-            <article class='process-step'><span class='process-number'>ÉTAPE 04</span><h3>Pose &amp; vérification</h3><p>Nous finalisons l’installation et vérifions l’ensemble avec vous.</p></article>
+          <div class='process-grid' data-reveal-group='true'>
+            <article class='process-step' data-reveal-item='true'><span class='process-number'>ÉTAPE 01</span><h3>Parlons du besoin</h3><p>Envoyez votre idée, quelques photos et les dimensions disponibles sur WhatsApp.</p></article>
+            <article class='process-step' data-reveal-item='true'><span class='process-number'>ÉTAPE 02</span><h3>Étude &amp; devis</h3><p>Nous précisons ensemble l’ouvrage, les finitions et les contraintes de votre espace.</p></article>
+            <article class='process-step' data-reveal-item='true'><span class='process-number'>ÉTAPE 03</span><h3>Fabrication</h3><p>Votre projet prend forme avec un travail attentif des assemblages et des finitions.</p></article>
+            <article class='process-step' data-reveal-item='true'><span class='process-number'>ÉTAPE 04</span><h3>Pose &amp; vérification</h3><p>Nous finalisons l’installation et vérifions l’ensemble avec vous.</p></article>
           </div>
         </div>
       </section>
@@ -940,16 +964,16 @@
       <!-- VALEURS -->
       <section class='values-section'>
         <div class='container values-inner'>
-          <div class='values-copy'>
+          <div class='values-copy' data-reveal='up'>
             <p class='eyebrow'>Pourquoi l’inox ?</p>
             <h2>Un choix durable.<br/>Une allure intemporelle.</h2>
             <p>L’acier inoxydable associe résistance, entretien simple et élégance. Travaillé avec précision, il trouve naturellement sa place dans les intérieurs contemporains comme sur les façades.</p>
             <a class='btn btn--outline' href='#devis'>Étudier mon projet <svg class='icon' aria-hidden='true'><use href='#i-arrow'/></svg></a>
           </div>
-          <div class='values-list'>
-            <article class='value-item'><span class='value-icon'><svg class='icon' aria-hidden='true'><use href='#i-shield'/></svg></span><div><h3>Résistance au quotidien</h3><p>Une matière robuste, pensée pour les usages réguliers et les environnements exigeants.</p></div></article>
-            <article class='value-item'><span class='value-icon'><svg class='icon' aria-hidden='true'><use href='#i-spark'/></svg></span><div><h3>Entretien simplifié</h3><p>Un nettoyage adapté suffit à préserver son aspect et la qualité de sa finition.</p></div></article>
-            <article class='value-item'><span class='value-icon'><svg class='icon' aria-hidden='true'><use href='#i-ruler'/></svg></span><div><h3>Liberté de conception</h3><p>Dimensions, lignes et associations de matériaux : votre projet reste personnalisable.</p></div></article>
+          <div class='values-list' data-reveal-group='true'>
+            <article class='value-item' data-reveal-item='true'><span class='value-icon'><svg class='icon' aria-hidden='true'><use href='#i-shield'/></svg></span><div><h3>Résistance au quotidien</h3><p>Une matière robuste, pensée pour les usages réguliers et les environnements exigeants.</p></div></article>
+            <article class='value-item' data-reveal-item='true'><span class='value-icon'><svg class='icon' aria-hidden='true'><use href='#i-spark'/></svg></span><div><h3>Entretien simplifié</h3><p>Un nettoyage adapté suffit à préserver son aspect et la qualité de sa finition.</p></div></article>
+            <article class='value-item' data-reveal-item='true'><span class='value-icon'><svg class='icon' aria-hidden='true'><use href='#i-ruler'/></svg></span><div><h3>Liberté de conception</h3><p>Dimensions, lignes et associations de matériaux : votre projet reste personnalisable.</p></div></article>
           </div>
         </div>
       </section>
@@ -957,17 +981,17 @@
       <!-- FAQ -->
       <section class='section faq-section' id='faq'>
         <div class='container faq-layout'>
-          <div class='faq-intro'>
+          <div class='faq-intro' data-reveal='up'>
             <p class='eyebrow'>Questions fréquentes</p>
             <h2>Avant de lancer votre projet.</h2>
             <p>Vous ne trouvez pas votre réponse ? <a data-wa='question' href='https://wa.me/212688913311?text=Bonjour%20INOX.UP%2C%20j%27ai%20une%20question%20sur%20un%20projet.' rel='noopener noreferrer' target='_blank'>Écrivez-nous sur WhatsApp</a>.</p>
           </div>
-          <div class='faq-list'>
-            <details class='faq-item' open='open'><summary>Quels types d’ouvrages réalisez-vous ?</summary><div class='faq-answer'><p>Nous travaillons les portes, garde-corps, rampes, grilles de sécurité, cuisines, équipements et éléments décoratifs en inox. Une demande spécifique peut être étudiée directement avec vous.</p></div></details>
-            <details class='faq-item'><summary>Comment demander un devis ?</summary><div class='faq-answer'><p>Utilisez le formulaire ci-dessous ou contactez-nous sur WhatsApp avec une description, des photos et, si possible, les dimensions. Ces éléments permettent un premier échange plus précis.</p></div></details>
-            <details class='faq-item'><summary>Pouvez-vous adapter le design à mon espace ?</summary><div class='faq-answer'><p>Oui. Le sur mesure permet d’ajuster les dimensions et de réfléchir aux lignes, à l’usage et à la finition en fonction de votre espace et de vos préférences.</p></div></details>
-            <details class='faq-item'><summary>Quel est le délai de fabrication ?</summary><div class='faq-answer'><p>Le délai dépend de la complexité, des dimensions, de la finition et du planning de l’atelier. Il est précisé après l’étude de votre demande, avant la validation du projet.</p></div></details>
-            <details class='faq-item'><summary>Comment entretenir l’acier inoxydable ?</summary><div class='faq-answer'><p>Utilisez généralement un chiffon doux, de l’eau et un produit non abrasif adapté. Évitez les éponges métalliques et suivez les recommandations propres à la finition choisie.</p></div></details>
+          <div class='faq-list' data-reveal-group='true'>
+            <details class='faq-item' data-reveal-item='true' open='open'><summary>Quels types d’ouvrages réalisez-vous ?</summary><div class='faq-answer'><p>Nous travaillons les portes, garde-corps, rampes, grilles de sécurité, cuisines, équipements et éléments décoratifs en inox. Une demande spécifique peut être étudiée directement avec vous.</p></div></details>
+            <details class='faq-item' data-reveal-item='true'><summary>Comment demander un devis ?</summary><div class='faq-answer'><p>Utilisez le formulaire ci-dessous ou contactez-nous sur WhatsApp avec une description, des photos et, si possible, les dimensions. Ces éléments permettent un premier échange plus précis.</p></div></details>
+            <details class='faq-item' data-reveal-item='true'><summary>Pouvez-vous adapter le design à mon espace ?</summary><div class='faq-answer'><p>Oui. Le sur mesure permet d’ajuster les dimensions et de réfléchir aux lignes, à l’usage et à la finition en fonction de votre espace et de vos préférences.</p></div></details>
+            <details class='faq-item' data-reveal-item='true'><summary>Quel est le délai de fabrication ?</summary><div class='faq-answer'><p>Le délai dépend de la complexité, des dimensions, de la finition et du planning de l’atelier. Il est précisé après l’étude de votre demande, avant la validation du projet.</p></div></details>
+            <details class='faq-item' data-reveal-item='true'><summary>Comment entretenir l’acier inoxydable ?</summary><div class='faq-answer'><p>Utilisez généralement un chiffon doux, de l’eau et un produit non abrasif adapté. Évitez les éponges métalliques et suivez les recommandations propres à la finition choisie.</p></div></details>
           </div>
         </div>
       </section>
@@ -975,7 +999,7 @@
       <!-- DEVIS WHATSAPP -->
       <section class='section quote-section' id='devis'>
         <div class='container quote-layout'>
-          <div class='quote-copy'>
+          <div class='quote-copy' data-reveal='up'>
             <p class='eyebrow eyebrow--accent'>Votre projet commence ici</p>
             <h2>Une idée ?<br/>Donnons-lui forme.</h2>
             <p>Décrivez votre besoin en quelques lignes. Le formulaire prépare un message clair et l’ouvre directement dans WhatsApp.</p>
@@ -984,7 +1008,7 @@
               <a data-wa='project' href='https://wa.me/212688913311?text=Bonjour%20INOX.UP%2C%20je%20souhaite%20parler%20d%27un%20projet.' rel='noopener noreferrer' target='_blank'><svg class='icon' aria-hidden='true'><use href='#i-whatsapp'/></svg> Discuter directement sur WhatsApp</a>
             </div>
           </div>
-          <form class='quote-form' id='quote-form'>
+          <form class='quote-form' data-reveal='scale' id='quote-form'>
             <div class='form-field'><label for='quote-name'>Votre nom *</label><input autocomplete='name' id='quote-name' name='name' placeholder='Ex. Yassine' required='required' type='text'/></div>
             <div class='form-field'><label for='quote-city'>Ville <span>(facultatif)</span></label><input autocomplete='address-level2' id='quote-city' name='city' placeholder='Ex. Agadir' type='text'/></div>
             <div class='form-field form-field--full'><label for='quote-service'>Service souhaité *</label><select id='quote-service' name='service' required='required'><option value='' disabled='disabled' selected='selected'>Choisissez un service</option><option value='Portes en inox'>Portes en inox</option><option value='Garde-corps et rampes'>Garde-corps et rampes</option><option value='Grilles de sécurité'>Grilles de sécurité</option><option value='Cuisines et équipements inox'>Cuisines et équipements inox</option><option value='Décoration métallique'>Décoration métallique</option><option value='Projet personnalisé'>Projet personnalisé</option></select></div>
@@ -998,7 +1022,7 @@
     </b:if>
 
     <b:if cond='data:view.isMultipleItems and !data:view.isHomepage'>
-      <header class='archive-header'>
+      <header class='archive-header' data-reveal='transform'>
         <div class='container'>
           <p class='eyebrow eyebrow--accent'>INOX.UP · Le journal</p>
           <h1><data:blog.pageTitle/></h1>
@@ -1010,7 +1034,7 @@
     <section class='journal-section' id='journal'>
       <div class='container'>
         <b:if cond='data:view.isHomepage'>
-          <div class='section-heading'>
+          <div class='section-heading' data-reveal='up'>
             <div><p class='eyebrow'>Conseils &amp; actualités</p><h2>Le journal INOX.UP.</h2></div>
             <p>Des idées et des informations utiles pour préparer, entretenir et faire évoluer vos projets.</p>
           </div>
@@ -1038,7 +1062,7 @@
       <b:widget-setting name='showReactions'>false</b:widget-setting>
     </b:widget-settings>
     <b:includable id='main' var='this'>
-  <div expr:class='data:view.isMultipleItems ? &quot;blog-posts hfeed post-grid&quot; : &quot;blog-posts hfeed single-post&quot;'>
+  <div data-reveal-group='true' expr:class='data:view.isMultipleItems ? &quot;blog-posts hfeed post-grid&quot; : &quot;blog-posts hfeed single-post&quot;'>
     <b:loop index='i' values='data:posts' var='post'>
       <b:include data='post' name='postCommentsAndAd'/>
     </b:loop>
@@ -1270,12 +1294,12 @@
   </a>
 </b:includable>
     <b:includable id='post' var='post'>
-  <div class='post'>
+  <div class='post' data-reveal='transform' expr:data-reveal-item='data:view.isMultipleItems ? &quot;true&quot; : &quot;&quot;'>
     <b:include data='post' name='postMeta'/>
     <b:if cond='data:view.isMultipleItems'>
       <b:if cond='data:post.featuredImage'>
         <a class='post-card-media' expr:href='data:post.url' expr:title='data:post.title'>
-          <img expr:alt='data:post.title' expr:src='resizeImage(data:post.featuredImage, 720, &quot;4:3&quot;)' height='540' loading='lazy' width='720'/>
+          <img expr:alt='data:post.title' expr:src='resizeImage(data:post.featuredImage, 720, &quot;4:3&quot;)' decoding='async' height='540' loading='lazy' width='720'/>
         </a>
       </b:if>
       <div class='post-card-content'>
@@ -1285,7 +1309,7 @@
         </div>
         <b:include data='post' name='postTitle'/>
         <p class='post-excerpt'><data:post.snippets.short/></p>
-        <a class='text-link' expr:href='data:post.url'>Lire l’article <svg class='icon' aria-hidden='true'><use href='#i-arrow'/></svg></a>
+        <a class='text-link' expr:href='data:post.url'>Lire l’article <span class='sr-only' data-no-i18n='true' dir='auto'>: <data:post.title/></span><svg class='icon' aria-hidden='true'><use href='#i-arrow'/></svg></a>
       </div>
     <b:else/>
       <header class='post-single-header'>
@@ -1300,7 +1324,7 @@
       </header>
       <b:if cond='data:post.featuredImage'>
         <figure class='post-single-image'>
-          <img expr:alt='data:post.title' expr:src='resizeImage(data:post.featuredImage, 1200, &quot;16:9&quot;)' height='675' width='1200'/>
+          <img expr:alt='data:post.title' decoding='async' fetchpriority='high' height='675' sizes='(min-width: 940px) 880px, calc(100vw - 32px)' expr:src='resizeImage(data:post.featuredImage, 1200, &quot;16:9&quot;)' expr:srcset='resizeImage(data:post.featuredImage, 640, &quot;16:9&quot;) + &quot; 640w, &quot; + resizeImage(data:post.featuredImage, 960, &quot;16:9&quot;) + &quot; 960w, &quot; + resizeImage(data:post.featuredImage, 1200, &quot;16:9&quot;) + &quot; 1200w&quot;' width='1200'/>
         </figure>
       </b:if>
       <b:include data='post' name='postBody'/>
@@ -1429,7 +1453,7 @@
   </script>
 </b:includable>
     <b:includable id='threadedComments' var='post'>
-  <section class='comments threaded' expr:data-embed='data:post.embedCommentForm' expr:data-num-comments='data:post.numberOfComments' id='comments'>
+  <section class='comments threaded' data-reveal='up' expr:data-embed='data:post.embedCommentForm' expr:data-num-comments='data:post.numberOfComments' id='comments'>
     <a name='comments'/>
 
     <b:include name='commentsTitle'/>
@@ -1511,7 +1535,7 @@
   <!-- Visionneuse d’images native et accessible. -->
   <dialog aria-label='Aperçu du visuel' class='lightbox' id='lightbox'>
     <button aria-label='Fermer l’aperçu' class='lightbox-close' id='lightbox-close' type='button'>×</button>
-    <img alt='' height='853' id='lightbox-image' src='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/balcony-railing.jpg' width='1280'/>
+    <img alt='' height='853' id='lightbox-image' src='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/balcony-railing-1280.webp' width='1280'/>
     <p class='lightbox-caption' id='lightbox-caption'></p>
   </dialog>
 
@@ -1982,7 +2006,7 @@
         acceptNode: function (node) {
           var parent = node.parentElement;
           if (!parent || /^(SCRIPT|STYLE|NOSCRIPT|TEXTAREA|SVG|SYMBOL)$/.test(parent.tagName)) { return NodeFilter.FILTER_REJECT; }
-          if (parent.closest('.preferences')) { return NodeFilter.FILTER_REJECT; }
+          if (parent.closest('.preferences, [data-no-i18n]')) { return NodeFilter.FILTER_REJECT; }
           var dynamicContent = parent.closest('.post-body, .post-title, .post-excerpt, .post-labels, time, .comments, .blog-pager');
           if (dynamicContent && !parent.closest('[data-preview]')) { return NodeFilter.FILTER_REJECT; }
           return normalizeText(node.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
@@ -1997,7 +2021,7 @@
     var i18nAttributes = [];
     var translatedAttributes = ['alt', 'title', 'placeholder', 'data-caption', 'aria-label'];
     Array.prototype.forEach.call(document.querySelectorAll('[alt], [title], [placeholder], [data-caption], [aria-label]'), function (element) {
-      if (element.id === 'language-select' || element.closest('.post-body, .comments')) { return; }
+      if (element.id === 'language-select' || element.closest('.post-body, .comments, [data-no-i18n]')) { return; }
       if (element.closest('.post-card-media, .post-single-image') && !element.closest('[data-preview]')) { return; }
       translatedAttributes.forEach(function (attribute) {
         if (!element.hasAttribute(attribute)) { return; }
@@ -2159,11 +2183,97 @@
       });
     }
 
-    function updateHeader() {
-      if (header) { header.classList.toggle('is-scrolled', window.scrollY > 12); }
+    /* Scroll fluide : une écriture par frame, sans lecture de layout répétée. */
+    var progress = document.getElementById('scroll-progress');
+    var motionPreference = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : { matches: true };
+    var scrollFrame = 0;
+    var lastHeaderState = null;
+    var maxScroll = 1;
+    function measureScroll() {
+      maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
     }
-    updateHeader();
-    window.addEventListener('scroll', updateHeader, { passive: true });
+    function updateScrollUI() {
+      scrollFrame = 0;
+      var scrollTop = window.scrollY || window.pageYOffset || 0;
+      var isScrolled = scrollTop > 12;
+      if (header && isScrolled !== lastHeaderState) {
+        header.classList.toggle('is-scrolled', isScrolled);
+        lastHeaderState = isScrolled;
+      }
+      if (progress && !motionPreference.matches) {
+        var ratio = Math.min(1, Math.max(0, scrollTop / maxScroll));
+        progress.style.transform = 'scaleX(' + ratio.toFixed(3) + ')';
+      }
+    }
+    function requestScrollUI() {
+      if (!scrollFrame) { scrollFrame = window.requestAnimationFrame(updateScrollUI); }
+    }
+    function requestScrollMeasurement() {
+      if (!scrollFrame) {
+        scrollFrame = window.requestAnimationFrame(function () { measureScroll(); updateScrollUI(); });
+      }
+    }
+    requestScrollMeasurement();
+    window.addEventListener('scroll', requestScrollUI, { passive: true });
+    window.addEventListener('resize', requestScrollMeasurement, { passive: true });
+    window.addEventListener('load', requestScrollMeasurement, { once: true });
+    if (window.ResizeObserver) {
+      var pageResizeObserver = new ResizeObserver(requestScrollMeasurement);
+      pageResizeObserver.observe(document.body);
+    }
+
+    /* Révélations compositées, désactivées sans IntersectionObserver ou en mouvement réduit. */
+    var revealElements = document.querySelectorAll('[data-reveal], [data-reveal-item="true"]');
+    var revealObserver = null;
+    var activeAnimations = [];
+    function disableRevealAnimations() {
+      root.removeAttribute('data-motion');
+      activeAnimations.forEach(function (animation) { animation.cancel(); });
+      Array.prototype.forEach.call(revealElements, function (element) { element.classList.add('is-visible'); });
+      if (revealObserver) { revealObserver.disconnect(); }
+    }
+    function setupRevealAnimations() {
+      if (motionPreference.matches || !window.IntersectionObserver || typeof document.body.animate !== 'function') {
+        disableRevealAnimations();
+        return;
+      }
+      Array.prototype.forEach.call(document.querySelectorAll('[data-reveal-group]'), function (group) {
+        Array.prototype.forEach.call(group.querySelectorAll('[data-reveal-item="true"]'), function (element, index) {
+          element._revealDelay = Math.min(index * 65, 260);
+        });
+      });
+      revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) { return; }
+          var element = entry.target;
+          revealObserver.unobserve(element);
+          element.classList.add('is-visible');
+          var variant = element.getAttribute('data-reveal');
+          var fromTransform = variant === 'scale' || variant === 'transform-scale' ? 'scale(.975)' : (variant === 'fade' ? 'none' : 'translate3d(0,22px,0)');
+          var toTransform = variant === 'scale' || variant === 'transform-scale' ? 'scale(1)' : (variant === 'fade' ? 'none' : 'translate3d(0,0,0)');
+          var fromOpacity = variant === 'transform' || variant === 'transform-scale' ? 1 : 0;
+          var animation = element.animate([
+            { opacity: fromOpacity, transform: fromTransform },
+            { opacity: 1, transform: toTransform }
+          ], {
+            duration: 620,
+            delay: element._revealDelay || 0,
+            easing: 'cubic-bezier(.2,.7,.2,1)',
+            fill: 'backwards'
+          });
+          activeAnimations.push(animation);
+        });
+      }, { threshold: .01, rootMargin: '0px 0px -5% 0px' });
+      Array.prototype.forEach.call(revealElements, function (element) { revealObserver.observe(element); });
+      root.setAttribute('data-motion', 'ready');
+    }
+    function handleMotionPreference(event) {
+      if (event.matches) { disableRevealAnimations(); }
+      requestScrollUI();
+    }
+    setupRevealAnimations();
+    if (motionPreference.addEventListener) { motionPreference.addEventListener('change', handleMotionPreference); }
+    else if (motionPreference.addListener) { motionPreference.addListener(handleMotionPreference); }
 
     /* Préselection du service demandé dans le formulaire. */
     var serviceSelect = document.getElementById('quote-service');
