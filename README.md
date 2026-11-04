@@ -9,8 +9,8 @@ Refonte complète de `inox.xml` pour présenter les services d’**INOX.UP** dan
 - Mode clair/sombre persistant, compatible avec la préférence du système et appliqué aux articles, formulaires et commentaires.
 - Logo Blogger d’origine avec fallback automatique, favicon coordonné et liens Instagram visibles dans la barre supérieure, une bannière dédiée et le pied de page.
 - Services, applications en inox, méthode de travail, avantages et FAQ.
-- Galerie avec visionneuse native (`<dialog>`), sans bibliothèque externe.
-- Animations d’apparition au scroll, barre de progression et micro-interactions, sans dépendance JavaScript et avec respect de `prefers-reduced-motion`.
+- Galerie avec visionneuse native (`<dialog>`), navigation précédent/suivant, clavier, swipe tactile et compteur, sans bibliothèque externe.
+- Animations d’apparition au scroll, navigation de section active, barre de progression et micro-interactions, sans dépendance JavaScript et avec respect de `prefers-reduced-motion`.
 - Images WebP responsives (640/960/1280 px), préchargement LCP adapté à la page et police Manrope variable auto-hébergée.
 - Formulaire de devis qui prépare un message WhatsApp ; aucun backend et aucune donnée enregistrée.
 - Articles, pages, pagination et commentaires Blogger stylés.
@@ -76,7 +76,7 @@ Les traductions se trouvent dans `var translations` à la fin d’`inox.xml`. Le
 
 ### Animations et performances
 
-Les animations utilisent l’API Web Animations et `IntersectionObserver`, sans bibliothèque externe. Les éléments LCP de l’accueil et des articles restent opaques : seules des transformations légères sont animées afin de ne pas retarder leur affichage. Les cartes et les sections secondaires apparaissent progressivement, la visionneuse a une courte transition d’entrée et une barre indique la progression de lecture.
+Les animations utilisent l’API Web Animations et `IntersectionObserver`, sans bibliothèque externe. Les éléments LCP de l’accueil et des articles restent opaques : seules des transformations légères sont animées afin de ne pas retarder leur affichage. Les cartes et les sections secondaires apparaissent progressivement, le menu indique la section active et une barre indique la progression de lecture. La visionneuse permet de circuler avec ses boutons, les flèches gauche/droite du clavier ou un swipe horizontal ; son compteur et ses contrôles sont localisés.
 
 Le système respecte `prefers-reduced-motion` et réagit à son changement. Des fallbacks gardent tout le contenu visible sans JavaScript, sans `IntersectionObserver` ou sans Web Animations. Les mises à jour au scroll sont regroupées avec `requestAnimationFrame`, les dimensions sont mises en cache et `ResizeObserver` recalcule la progression sans lecture synchrone répétée.
 
@@ -121,6 +121,7 @@ Le formulaire utilise uniquement JavaScript pour construire une URL `wa.me`. Il 
 - Menu mobile, galerie et changement de langue pendant la visionneuse, présélection des services et composition des messages WhatsApp FR/AR/EN testés.
 - Contenu Blogger non traduit et direction automatique des articles/commentaires vérifiés.
 - Audits automatisés WCAG 2 A/AA et WCAG 2.1 A/AA sans violation détectée sur les 24 combinaisons accueil/article, desktop/mobile, langue et thème.
-- Animations, progression de lecture, préférences reduced-motion et fallbacks sans JavaScript/IntersectionObserver/Web Animations testés sur desktop et mobile.
+- Animations, progression de lecture, navigation active, préférences reduced-motion et fallbacks sans JavaScript/IntersectionObserver/Web Animations testés sur desktop et mobile.
+- Navigation dans la visionneuse par boutons, clavier et swipe, compteur, traduction des contrôles et absence d’animation en mouvement réduit vérifiés ; deux audits axe supplémentaires avec la visionneuse ouverte, sans violation.
 - Chargement des WebP adaptés au viewport, préchargement LCP, absence de reflow synchrone au scroll et stabilité des images vérifiés.
 - Lighthouse local : 100 dans les quatre catégories sur l’accueil mobile et desktop ; 96 en Performance et 100 dans les trois autres catégories sur l’article mobile. Rapports conservés hors du dépôt pour ne pas alourdir le thème.
