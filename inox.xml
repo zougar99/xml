@@ -1,0 +1,873 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:defaultwidgetversion='2' b:layoutsVersion='3' b:version='2' class='v2' expr:dir='data:blog.languageDirection' lang='fr' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+  <meta content='width=device-width, initial-scale=1' name='viewport'/>
+  <title><data:blog.pageTitle/></title>
+  <meta content='INOX.UP Maroc : fabrication inox sur mesure — portes acier inoxydable, garde-corps escalier et balcon, grilles de sécurité fenêtres, menuiserie et décoration métal. Qualité, délais, WhatsApp +212 6 88 913-311.' name='description'/>
+  <meta content='INOX.UP, inox Maroc, acier inoxydable Maroc, fabrication inox sur mesure, porte inox, porte acier inoxydable, garde corps inox, garde-corps balcon, rampe escalier inox, grille sécurité fenêtre, grille fenêtre inox, menuiserie métallique, décoration inox intérieur extérieur, métallier inox, Casablanca Rabat Maroc, qualité inox' name='keywords'/>
+  <meta content='INOX.UP' name='author'/>
+  <meta content='index, follow, max-image-preview:large' name='robots'/>
+  <meta content='index, follow' name='googlebot'/>
+  <meta content='fr' http-equiv='content-language'/>
+  <meta content='French' name='language'/>
+  <meta content='MA' name='geo.region'/>
+  <meta content='Morocco' name='geo.placename'/>
+  <meta content='#0a0f1a' name='theme-color'/>
+  <link expr:href='data:blog.canonicalUrl' rel='canonical'/>
+  <!-- Open Graph / Facebook -->
+  <meta content='website' property='og:type'/>
+  <meta expr:content='data:blog.pageTitle' property='og:title'/>
+  <meta content='INOX.UP — spécialiste inox sur mesure au Maroc : portes, garde-corps, grilles fenêtres, décorations. Acier inoxydable, normes qualité. Contact WhatsApp.' property='og:description'/>
+  <meta expr:content='data:blog.canonicalUrl' property='og:url'/>
+  <meta content='INOX.UP' property='og:site_name'/>
+  <meta content='fr_MA' property='og:locale'/>
+  <meta content='fr_FR' property='og:locale:alternate'/>
+  <!-- og:image : meme URL que votre logo (remplacer placehold.co apres upload) -->
+  <meta content='https://placehold.co/200x200/0f172a/3b82f6/png?text=INOX.UP' property='og:image'/>
+  <meta content='Logo INOX.UP — inox sur mesure Maroc' property='og:image:alt'/>
+  <!-- Twitter Card -->
+  <meta content='summary_large_image' name='twitter:card'/>
+  <meta expr:content='data:blog.pageTitle' name='twitter:title'/>
+  <meta content='Portes inox, garde-corps, grilles sécurité, réalisations sur mesure au Maroc. INOX.UP — qualité, délai, WhatsApp.' name='twitter:description'/>
+  <meta content='https://placehold.co/200x200/0f172a/3b82f6/png?text=INOX.UP' name='twitter:image'/>
+  <!-- JSON-LD : remplacer inoxup.blogspot.com par l URL reelle du blog -->
+  <script type='application/ld+json'>{&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@type&quot;:[&quot;LocalBusiness&quot;,&quot;Store&quot;],&quot;name&quot;:&quot;INOX.UP&quot;,&quot;alternateName&quot;:&quot;Inox Up Maroc&quot;,&quot;description&quot;:&quot;Fabrication et pose en acier inoxydable sur mesure au Maroc : portes INOX, garde-corps escaliers et balcons, grilles de sécurité pour fenêtres, décorations intérieures et extérieures.&quot;,&quot;url&quot;:&quot;https://inoxup.blogspot.com&quot;,&quot;image&quot;:[&quot;https://placehold.co/200x200/0f172a/3b82f6/png?text=INOX.UP&quot;],&quot;telephone&quot;:&quot;+212688913311&quot;,&quot;priceRange&quot;:&quot;$$&quot;,&quot;address&quot;:{&quot;@type&quot;:&quot;PostalAddress&quot;,&quot;addressCountry&quot;:&quot;MA&quot;},&quot;areaServed&quot;:{&quot;@type&quot;:&quot;Country&quot;,&quot;name&quot;:&quot;Morocco&quot;},&quot;openingHoursSpecification&quot;:{&quot;@type&quot;:&quot;OpeningHoursSpecification&quot;,&quot;dayOfWeek&quot;:[&quot;Monday&quot;,&quot;Tuesday&quot;,&quot;Wednesday&quot;,&quot;Thursday&quot;,&quot;Friday&quot;,&quot;Saturday&quot;],&quot;opens&quot;:&quot;08:00&quot;,&quot;closes&quot;:&quot;18:00&quot;},&quot;sameAs&quot;:[&quot;https://www.facebook.com/people/InoxUp/61559115741472/&quot;,&quot;https://www.instagram.com/inox_up/&quot;],&quot;knowsAbout&quot;:[&quot;acier inoxydable&quot;,&quot;garde-corps&quot;,&quot;portes métalliques&quot;,&quot;grilles de sécurité&quot;,&quot;menuiserie inox&quot;],&quot;hasOfferCatalog&quot;:{&quot;@type&quot;:&quot;OfferCatalog&quot;,&quot;name&quot;:&quot;Services INOX.UP&quot;,&quot;itemListElement&quot;:[{&quot;@type&quot;:&quot;Offer&quot;,&quot;itemOffered&quot;:{&quot;@type&quot;:&quot;Service&quot;,&quot;name&quot;:&quot;Portes en acier inoxydable&quot;}},{&quot;@type&quot;:&quot;Offer&quot;,&quot;itemOffered&quot;:{&quot;@type&quot;:&quot;Service&quot;,&quot;name&quot;:&quot;Garde-corps et rampes inox&quot;}},{&quot;@type&quot;:&quot;Offer&quot;,&quot;itemOffered&quot;:{&quot;@type&quot;:&quot;Service&quot;,&quot;name&quot;:&quot;Grilles de sécurité fenêtres&quot;}},{&quot;@type&quot;:&quot;Offer&quot;,&quot;itemOffered&quot;:{&quot;@type&quot;:&quot;Service&quot;,&quot;name&quot;:&quot;Décoration et réalisations inox sur mesure&quot;}}]}}</script>
+  <b:include data='blog' name='all-head-content'/>
+  <link href='https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap' rel='stylesheet'/>
+  <b:skin><![CDATA[
+    :root { --bg: #0a0f1a; --card: #0f172a; --accent: #1e40af; --accent-light: #3b82f6; --text: #f8fafc; --muted: #94a3b8; --border: #1e293b; }
+    html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; margin: 0; padding: 0; background: var(--bg); color: var(--text); line-height: 1.6; background-image: radial-gradient(ellipse 100% 70% at 50% -15%, rgba(30,64,175,0.22), transparent 55%); background-attachment: fixed; }
+    .inoxup-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    .inoxup-navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1rem 2rem; background: rgba(10,10,15,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+    .inoxup-logo { display: flex; align-items: center; gap: 0.75rem; font-size: 1.25rem; font-weight: 700; color: var(--text); text-decoration: none; }
+    .inoxup-logo-badge { width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(145deg, #1e3a8a, #2563eb); display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 16px rgba(37,99,235,0.45); border: 1px solid rgba(96,165,250,0.5); }
+    .inoxup-logo-badge-i { font-size: 0.65rem; font-weight: 800; letter-spacing: 0.12em; color: #fff; line-height: 1; }
+    .inoxup-logo-badge-u { font-size: 0.75rem; font-weight: 800; color: #bfdbfe; line-height: 1; margin-top: 2px; }
+    .inoxup-logo-badge--hero { width: 120px; height: 120px; border-radius: 24px; margin: 0 auto 1.25rem; }
+    .inoxup-logo-badge--hero .inoxup-logo-badge-i { font-size: 1rem; letter-spacing: 0.15em; }
+    .inoxup-logo-badge--hero .inoxup-logo-badge-u { font-size: 1.15rem; margin-top: 4px; }
+    .inoxup-logo-wordmark { font-weight: 700; letter-spacing: 0.05em; }
+    .inoxup-social-wall { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 2.5rem; max-width: 900px; margin-left: auto; margin-right: auto; }
+    @media (min-width: 960px) { .inoxup-social-wall { grid-template-columns: 1fr 1fr; max-width: 1100px; align-items: start; } }
+    .inoxup-social-box { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.25rem; box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
+    .inoxup-social-box h3 { margin: 0 0 0.75rem; font-size: 1.1rem; color: var(--text); text-align: center; }
+    .inoxup-fb-frame { width: 100%; max-width: 500px; margin: 0 auto; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); min-height: 480px; background: #fff; }
+    .inoxup-fb-frame iframe { display: block; width: 100%; border: 0; min-height: 480px; }
+    .inoxup-ig-lead { color: var(--muted); font-size: 0.95rem; text-align: center; margin: 0 0 1rem; line-height: 1.5; }
+    .inoxup-social-box .inoxup-btn-ig { width: 100%; justify-content: center; box-sizing: border-box; }
+    .inoxup-nav-links { display: flex; gap: 2rem; }
+    .inoxup-nav-links a { color: var(--muted); text-decoration: none; font-weight: 500; }
+    .inoxup-nav-links a:hover { color: var(--accent-light); }
+    .inoxup-btn { display: inline-block; padding: 0.6rem 1.25rem; border-radius: 10px; font-weight: 600; text-decoration: none; background: var(--accent); color: white; }
+    .inoxup-btn:hover { background: var(--accent-light); opacity: 1; }
+    .inoxup-hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 8rem 2rem 4rem; background: radial-gradient(ellipse 90% 55% at 50% 20%, rgba(59,130,246,0.08), transparent 60%); }
+    .inoxup-hero h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; margin-bottom: 1rem; letter-spacing: 0.05em; }
+    .inoxup-hero .inoxup-tagline { font-size: 1rem; color: var(--accent-light); margin-bottom: 0.5rem; }
+    .inoxup-hero p:not(.inoxup-tagline) { font-size: 1.1rem; color: var(--muted); margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .inoxup-section { padding: 5rem 0; }
+    .inoxup-section-title { text-align: center; margin-bottom: 3rem; }
+    .inoxup-section-title h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .inoxup-section-title p { color: var(--muted); }
+    .inoxup-official-links { text-align: center; margin: 0 auto 2rem; max-width: 42rem; padding: 0 0.5rem; }
+    .inoxup-official-links .inoxup-official-lead { color: var(--text); margin: 0 0 0.75rem; font-size: 1.05rem; font-weight: 600; }
+    .inoxup-official-links .inoxup-official-sub { color: var(--muted); margin: 0 0 1rem; font-size: 0.95rem; line-height: 1.5; }
+    .inoxup-official-btns { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1rem; }
+    .inoxup-official-hint { font-size: 0.82rem; color: var(--muted); line-height: 1.55; margin: 0; padding: 0.75rem 1rem; background: rgba(15,23,42,0.6); border-radius: 12px; border: 1px solid var(--border); text-align: left; }
+    .inoxup-work-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+    .inoxup-work-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; box-shadow: 0 4px 24px rgba(0,0,0,0.25); }
+    .inoxup-work-card:hover { border-color: var(--accent); }
+    .inoxup-work-card h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: var(--accent-light); }
+    .inoxup-work-card p { color: var(--muted); }
+    .inoxup-services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+    .inoxup-service-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; text-align: center; box-shadow: 0 4px 24px rgba(0,0,0,0.25); }
+    .inoxup-service-card:hover { border-color: var(--accent); }
+    .inoxup-service-icon { display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; color: var(--accent-light); }
+    .inoxup-service-icon svg { width: 2.5rem; height: 2.5rem; flex-shrink: 0; }
+    .inoxup-ico { display: inline-block; vertical-align: middle; flex-shrink: 0; }
+    .inoxup-btn .inoxup-ico, .inoxup-btn-whatsapp .inoxup-ico, .inoxup-btn-phone .inoxup-ico, .inoxup-btn-ig .inoxup-ico, .inoxup-btn-fb .inoxup-ico { width: 1.15em; height: 1.15em; margin-right: 0.4rem; }
+    .inoxup-float-whatsapp svg { width: 28px; height: 28px; display: block; }
+    .inoxup-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .inoxup-gallery-item { aspect-ratio: 16/10; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); background: #1e293b; box-shadow: 0 6px 28px rgba(0,0,0,0.35); transition: transform 0.22s ease, box-shadow 0.22s ease; }
+    .inoxup-gallery-item:hover { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(30,64,175,0.18); border-color: rgba(59,130,246,0.45); }
+    .inoxup-gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .inoxup-video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 16px; background: #000; }
+    .inoxup-video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    .inoxup-embed-note { max-width: 720px; margin: 1rem auto 0; padding: 1rem 1.25rem; font-size: 0.9rem; color: var(--muted); border: 1px dashed var(--border); border-radius: 12px; text-align: left; line-height: 1.5; }
+    .inoxup-info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .inoxup-info-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; text-align: center; }
+    .inoxup-info-card strong { display: block; font-size: 1.25rem; color: var(--accent-light); }
+    .inoxup-info-card span { color: var(--muted); font-size: 0.9rem; }
+    .inoxup-footer { padding: 2rem; border-top: 1px solid var(--border); text-align: center; }
+    .inoxup-footer a { color: var(--accent-light); text-decoration: none; }
+    .inoxup-footer-copy { color: var(--muted); font-size: 0.85rem; margin-top: 1rem; }
+    .inoxup-contact-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin: 1.5rem 0; }
+    .inoxup-btn-whatsapp { background: #25D366 !important; color: white !important; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; border-radius: 12px; font-weight: 600; text-decoration: none; }
+    .inoxup-btn-whatsapp:hover { background: #20bd5a !important; opacity: 1; }
+    .inoxup-btn-phone { background: var(--accent); color: white; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; border-radius: 12px; font-weight: 600; text-decoration: none; }
+    .inoxup-btn-fb { background: #1877f2; color: white; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; border-radius: 12px; font-weight: 600; text-decoration: none; }
+    .inoxup-btn-ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; border-radius: 12px; font-weight: 600; text-decoration: none; }
+    .inoxup-float-whatsapp { position: fixed; bottom: 24px; right: 24px; z-index: 999; width: 60px; height: 60px; border-radius: 50%; background: #25D366; color: white; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 20px rgba(37,211,102,0.5); }
+    .inoxup-float-whatsapp:hover { background: #20bd5a; transform: scale(1.05); }
+    .inoxup-mnav-cb { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+    .inoxup-mnav-btn { display: none; align-items: center; justify-content: center; padding: 0.45rem 0.6rem; color: var(--text); cursor: pointer; border-radius: 8px; border: 1px solid var(--border); background: var(--card); }
+    .inoxup-mnav-btn:hover { border-color: var(--accent-light); color: var(--accent-light); }
+    @media (max-width: 900px) {
+      body { background-attachment: scroll; }
+      .inoxup-navbar { flex-wrap: wrap; gap: 0.75rem; align-items: center; padding: 0.75rem 1rem; }
+      .inoxup-mnav-btn { display: flex; order: 2; margin-left: auto; }
+      .inoxup-navbar > a.inoxup-btn { order: 3; font-size: 0.8rem; padding: 0.45rem 0.65rem; }
+      .inoxup-nav-links { display: none; width: 100%; order: 10; flex-direction: column; gap: 0; padding: 0.75rem 0 0; border-top: 1px solid var(--border); margin-top: 0.25rem; }
+      .inoxup-nav-links a { padding: 0.65rem 0; border-bottom: 1px solid var(--border); }
+      .inoxup-nav-links a:last-child { border-bottom: none; }
+      #inoxup-mnav:checked ~ .inoxup-nav-links { display: flex; }
+    }
+    #main, .main-inner { background: var(--bg); color: var(--text); }
+    .main-inner .column-center-inner { max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+    .blog-posts .post { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem; margin-bottom: 1.5rem; }
+    .blog-posts .post-title a, .blog-posts h3.post-title a { color: var(--accent-light); text-decoration: none; }
+    .blog-posts .post-title a:hover { text-decoration: underline; }
+    .blog-posts .post-body { color: var(--muted); }
+    .blog-posts .post-footer, .blog-posts .post-header { color: var(--muted); font-size: 0.9rem; }
+    .blog-pager { text-align: center; margin: 2rem 0; }
+    .blog-pager a { color: var(--accent-light); font-weight: 600; text-decoration: none; }
+    .blog-pager a:hover { text-decoration: underline; }
+  ]]></b:skin>
+</head>
+<body>
+
+<!-- ============================================== -->
+<!-- InoxUp - Template page Facebook -->
+<!-- https://www.facebook.com/people/InoxUp/61559115741472/ -->
+<!-- ============================================== -->
+
+<div class='inoxup-navbar'>
+  <a class='inoxup-logo' expr:href='data:blog.homepageUrl'>
+    <span class='inoxup-logo-badge' title='INOX.UP'><span class='inoxup-logo-badge-i'>INOX</span><span class='inoxup-logo-badge-u'>.UP</span></span>
+    <span class='inoxup-logo-wordmark'>INOX.UP</span>
+  </a>
+  <input class='inoxup-mnav-cb' id='inoxup-mnav' type='checkbox'/>
+  <label aria-label='Ouvrir ou fermer le menu' class='inoxup-mnav-btn' for='inoxup-mnav'><svg aria-hidden='true' fill='none' height='22' stroke='currentColor' stroke-width='2' viewBox='0 0 24 24' width='22' xmlns='http://www.w3.org/2000/svg'><path d='M4 6h16M4 12h16M4 18h16'/></svg></label>
+  <div class='inoxup-nav-links'>
+    <a href='#work'>Nos réalisations</a>
+    <a href='#services'>Services</a>
+    <a href='#photos'>Galerie</a>
+    <a href='#video'>Vidéo</a>
+    <a href='#contact'>Contact</a>
+  </div>
+  <a class='inoxup-btn' href='https://wa.me/212688913311?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20les%20services%20INOX.UP' style='background:#25D366;display:inline-flex;align-items:center;'><svg aria-hidden='true' class='inoxup-ico' fill='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.172.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.881 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z'/></svg> WhatsApp</a>
+</div>
+
+<!-- HEADER - LOGO -->
+<b:section class='header' id='header' maxwidgets='1' showaddelement='no'>
+  <b:widget id='Header1' locked='true' title='inox up (Header)' type='Header' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='displayUrl'>https://blogger.googleusercontent.com/img/a/AVvXsEhQiLkxeot0dRFo2p7LdMw3Brgk83XC9FAJGFg8atBhk0UazWLHL0xRFqDMHJK8N6VgJGITBY74fXlA4Ej_AqIB8cM1et-qrip-mPr6oxILXptgOylRMmgjtGmKBIEi_WlX06_oH7h-RmTHMgYoM-J9hjjVWih8hslFRS0pRdA6dljk2W5W8oNGhIdpfKU=s1600</b:widget-setting>
+      <b:widget-setting name='displayHeight'>1600</b:widget-setting>
+      <b:widget-setting name='sectionWidth'>1630</b:widget-setting>
+      <b:widget-setting name='useImage'>true</b:widget-setting>
+      <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
+      <b:widget-setting name='imagePlacement'>BEHIND</b:widget-setting>
+      <b:widget-setting name='displayWidth'>1600</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main' var='this'>
+    <div class='header-widget'>
+      <b:include cond='data:imagePlacement in {&quot;REPLACE&quot;, &quot;BEFORE_DESCRIPTION&quot;}' name='image'/>
+      <b:include cond='data:imagePlacement not in {&quot;REPLACE&quot;, &quot;BEFORE_DESCRIPTION&quot;}' name='title'/>
+      <b:include cond='data:imagePlacement != &quot;REPLACE&quot;' name='description'/>
+      <b:include cond='data:shrinkToFit and data:imagePlacement != &quot;BEHIND&quot;' name='shrinkToFitStyle'/>
+    </div>
+    <b:include cond='data:imagePlacement == &quot;BEHIND&quot;' name='behindImageStyle'/>
+  </b:includable>
+    <b:includable id='behindImageStyle'>
+    <b:if cond='data:sourceUrl'>
+      <b:include cond='data:this.image' data='{                    image: data:this.image,                    selector: &quot;.header-widget&quot;                  }' name='responsiveImageStyle'/>
+      <b:with value='data:shrinkToFit ? &quot;100%&quot; : &quot;cover&quot;' var='backgroundSize'>
+      <style type='text/css'>
+        .header-widget {
+          background-position: <data:blog.locale.languageAlignment/>;
+          background-repeat: no-repeat;
+          background-size: <data:backgroundSize/>;
+        }
+      </style>
+      </b:with>
+    </b:if>
+  </b:includable>
+    <b:includable id='description'>
+    <p>
+      <data:this.description/>
+    </p>
+  </b:includable>
+    <b:includable id='image'>
+    <a class='header-image-wrapper' expr:href='data:blog.homepageUrl'>
+      <b:with value='data:shrinkToFit ? &quot;header-widget-img-shrink-to-fit&quot;: &quot;&quot;' var='imageClass'>
+      <b:include data='{                                                 image: data:image,                                                 imageClass: data:imageClass,                                                 altText: data:blog.title.escaped,                                                 originalWidth: data:width,                                                 originalHeight: data:height                                               }' name='responsiveImage'/>
+      </b:with>
+    </a>
+  </b:includable>
+    <b:includable id='shrinkToFitStyle'>
+    <style type='text/css'>
+      .header-widget-img-shrink-to-fit {
+        max-width: 100%;
+        height: auto;
+        object-fit: scale-down;
+      }
+    </style>
+  </b:includable>
+    <b:includable id='title'>
+    <h1>
+      <b:tag cond='data:view.url != data:blog.homepageUrl' expr:href='data:blog.homepageUrl' name='a'>
+        <data:title/>
+      </b:tag>
+    </h1>
+  </b:includable>
+  </b:widget>
+</b:section>
+
+<!-- HERO -->
+<section class='inoxup-hero'>
+  <div>
+<div class='inoxup-logo-badge inoxup-logo-badge--hero' title='INOX.UP'><span class='inoxup-logo-badge-i'>INOX</span><span class='inoxup-logo-badge-u'>.UP</span></div>
+    <h1>INOX.UP</h1>
+    <p class='inoxup-tagline'>Des produits en inox de haute qualité conformes aux normes internationales.</p>
+    <p>Spécialiste en Inox sur Mesure &#8212; Garde-corps, Portes, Cuisines &amp; plus. Vous trouverez chez INOX UP : fabrication de portes INOX, garde-corps pour escaliers et balcons, grilles de sécurité pour fenêtres, décorations intérieures et extérieures, réalisations sur mesure.</p>
+    <a class='inoxup-btn' href='#services'>Découvrir nos services</a>
+    <a class='inoxup-btn' href='https://wa.me/212688913311?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20les%20services%20INOX.UP' style='background:#25D366;margin-left:1rem;display:inline-flex;align-items:center;'><svg aria-hidden='true' class='inoxup-ico' fill='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.172.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.881 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z'/></svg> WhatsApp</a>
+  </div>
+</section>
+
+<!-- Nos réalisations -->
+<section class='inoxup-section' id='work'>
+  <div class='inoxup-container'>
+    <div class='inoxup-section-title'>
+      <h2>Vous trouverez chez INOX UP :</h2>
+      <p>Des produits en inox de haute qualité conformes aux normes internationales</p>
+    </div>
+    <div class='inoxup-work-grid'>
+      <div class='inoxup-work-card'>
+        <h3>La fabrication de portes en acier inoxydable (INOX)</h3>
+        <p>Portes résistantes et durables.</p>
+      </div>
+      <div class='inoxup-work-card'>
+        <h3>Les garde-corps pour escaliers et balcons</h3>
+        <p>Main-courantes et rampes élégantes.</p>
+      </div>
+      <div class='inoxup-work-card'>
+        <h3>Les grilles de sécurité pour fenêtres</h3>
+        <p>Sécurité et esthétique.</p>
+      </div>
+      <div class='inoxup-work-card'>
+        <h3>Les décorations intérieures et extérieures</h3>
+        <p>Décoration sur mesure.</p>
+      </div>
+      <div class='inoxup-work-card'>
+        <h3>Les réalisations sur mesure en INOX</h3>
+        <p>Créations personnalisées selon vos besoins.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class='inoxup-section' id='services'>
+  <div class='inoxup-container'>
+    <div class='inoxup-section-title'>
+      <h2>Nos services</h2>
+      <p>Vous trouverez chez INOX UP tout ce dont vous avez besoin</p>
+    </div>
+    <div class='inoxup-services-grid'>
+      <div class='inoxup-service-card'>
+        <div class='inoxup-service-icon'><svg aria-hidden='true' fill='none' stroke='currentColor' stroke-width='2' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M4 21V5a2 2 0 012-2h8a2 2 0 012 2v16'/><circle cx='9' cy='12' fill='currentColor' r='1' stroke='none'/></svg></div>
+        <h3>Portes en INOX</h3>
+        <p>Fabrication de portes en acier inoxydable</p>
+      </div>
+      <div class='inoxup-service-card'>
+        <div class='inoxup-service-icon'><svg aria-hidden='true' fill='none' stroke='currentColor' stroke-width='2' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M4 18V6M8 18V10M12 18V6M16 18v-8M20 18V6'/></svg></div>
+        <h3>Garde-corps</h3>
+        <p>Escaliers et balcons</p>
+      </div>
+      <div class='inoxup-service-card'>
+        <div class='inoxup-service-icon'><svg aria-hidden='true' fill='none' stroke='currentColor' stroke-width='2' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><rect height='18' rx='1' width='18' x='3' y='3'/><path d='M12 3v18M3 12h18'/></svg></div>
+        <h3>Grilles de sécurité</h3>
+        <p>Pour fenêtres</p>
+      </div>
+      <div class='inoxup-service-card'>
+        <div class='inoxup-service-icon'><svg aria-hidden='true' fill='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2zm0 10l1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3z'/></svg></div>
+        <h3>Décorations</h3>
+        <p>Intérieures et extérieures</p>
+      </div>
+      <div class='inoxup-service-card'>
+        <div class='inoxup-service-icon'><svg aria-hidden='true' fill='none' stroke='currentColor' stroke-width='2' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M4 20L20 4'/><path d='M7 17l2-2M10 14l2-2M13 11l2-2M16 8l2-2'/></svg></div>
+        <h3>Sur mesure</h3>
+        <p>Réalisations personnalisées en INOX</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIE &#8212; comptes officiels : Instagram https://www.instagram.com/inox_up/ | Facebook https://www.facebook.com/people/InoxUp/61559115741472/
+  Le theme ma y9derch y télécharge automatiquement mn IG/FB. Khoud les photos manuellement (Enregistrer / capture), puis upload Blogger ou imgbb, puis badel kol <img src>.
+  VIDEO : mn meme pages &#8212; Reel/Video &#8594; Partager &#8594; copier lien ; pour le site khass YouTube (upload) wla code Intégrer IG/FB f section Vidéo.
+-->
+<section class='inoxup-section' id='photos'>
+  <div class='inoxup-container'>
+    <div class='inoxup-section-title'>
+      <h2>Galerie de nos réalisations</h2>
+      <p>La qualité se voit au premier coup d&#39;œil</p>
+    </div>
+    <div aria-label='Comptes officiels INOX.UP' class='inoxup-official-links' role='navigation'>
+      <p class='inoxup-official-lead'>Photos &amp; vidéos aussi sur nos réseaux</p>
+      <p class='inoxup-official-sub'>Pour récupérer le logo et les images : ouvrez les publications sur Instagram ou Facebook, enregistrez les fichiers sur votre téléphone ou PC, puis remplacez les liens dans le thème après les avoir hébergés sur Blogger.</p>
+      <div class='inoxup-official-btns'>
+        <a class='inoxup-btn-ig' href='https://www.instagram.com/inox_up/' rel='noopener noreferrer' target='_blank'>Instagram &#8212; @inox_up</a>
+        <a class='inoxup-btn-fb' href='https://www.facebook.com/people/InoxUp/61559115741472/' rel='noopener noreferrer' target='_blank'>Facebook &#8212; InoxUp</a>
+      </div>
+      <p class='inoxup-official-hint'><strong>Instagram</strong> : profil ou post &#8594; menu &#8942; &#8594; Enregistrer (ou capture d&#39;écran). <strong>Facebook</strong> : page <a href='https://www.facebook.com/people/InoxUp/61559115741472/' rel='noopener' style='color:var(--accent-light);' target='_blank'>InoxUp</a> &#8594; ouvrir photo/vidéo &#8594; enregistrer si disponible. Ensuite : nouveau brouillon Blogger &#8594; Insérer l&#39;image &#8594; copier l&#39;URL <code style='font-size:0.85em;'>https://...</code> et coller dans chaque image de la galerie ci-dessous.</p>
+    </div>
+    <div class='inoxup-social-wall'>
+      <div class='inoxup-social-box'>
+        <h3>Notre page Facebook</h3>
+        <div class='inoxup-fb-frame'>
+          <iframe allow='autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share' allowfullscreen='true' loading='lazy' src='https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpeople%2FInoxUp%2F61559115741472%2F&amp;tabs=timeline&amp;width=500&amp;height=520&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true' title='Facebook InoxUp'/>
+        </div>
+        <p style='font-size:0.8rem;color:var(--muted);margin:0.75rem 0 0;text-align:center;'>Si le cadre est vide : connectez-vous à Facebook dans le navigateur ou ouvrez la <a href='https://www.facebook.com/people/InoxUp/61559115741472/' rel='noopener' style='color:var(--accent-light);' target='_blank'>page InoxUp</a>.</p>
+      </div>
+      <div class='inoxup-social-box'>
+        <h3>Instagram @inox_up</h3>
+        <p class='inoxup-ig-lead'>Les reels et photos du chantier sont publiés sur Instagram. Ouvrez le profil pour tout voir ; vous pouvez aussi coller une publication (menu &#8942; &#8594; Intégrer) dans un article Blogger.</p>
+        <a class='inoxup-btn-ig' href='https://www.instagram.com/inox_up/' rel='noopener noreferrer' target='_blank'>Voir le profil Instagram</a>
+      </div>
+    </div>
+    <div class='inoxup-gallery'>
+      <div class='inoxup-gallery-item'><img alt='Grille fenêtre INOX - INOX.UP Maroc' loading='lazy' src='https://picsum.photos/seed/inoxup1/800/500'/></div>
+      <div class='inoxup-gallery-item'><img alt='Grille sécurité INOX - INOX.UP Maroc' loading='lazy' src='https://picsum.photos/seed/inoxup2/800/500'/></div>
+      <div class='inoxup-gallery-item'><img alt='Grille décorative inox - INOX.UP' loading='lazy' src='https://picsum.photos/seed/inoxup3/800/500'/></div>
+      <div class='inoxup-gallery-item'><img alt='Porte INOX sur mesure - INOX.UP Maroc' loading='lazy' src='https://picsum.photos/seed/inoxup4/800/500'/></div>
+      <div class='inoxup-gallery-item'><img alt='Grille fenêtre moderne INOX - INOX.UP' loading='lazy' src='https://picsum.photos/seed/inoxup5/800/500'/></div>
+      <div class='inoxup-gallery-item'><img alt='Grille INOX design - INOX.UP Maroc' loading='lazy' src='https://picsum.photos/seed/inoxup6/800/500'/></div>
+      <div class='inoxup-gallery-item'><img alt='Fenêtre sécurisée inox - INOX.UP' loading='lazy' src='https://picsum.photos/seed/inoxup7/800/500'/></div>
+      <div class='inoxup-gallery-item'><img alt='Grille acier inoxydable - INOX.UP Maroc' loading='lazy' src='https://picsum.photos/seed/inoxup8/800/500'/></div>
+      <div class='inoxup-gallery-item'><img alt='Grille sur mesure inox - INOX.UP' loading='lazy' src='https://picsum.photos/seed/inoxup9/800/500'/></div>
+      <div class='inoxup-gallery-item'><img alt='Décoration INOX - INOX.UP Maroc' loading='lazy' src='https://picsum.photos/seed/inoxup10/800/500'/></div>
+      <div class='inoxup-gallery-item'><img alt='Grille élégante inox - INOX.UP' loading='lazy' src='https://picsum.photos/seed/inoxup11/800/500'/></div>
+      <div class='inoxup-gallery-item'><img alt='Porte vitrée INOX - INOX.UP Maroc' loading='lazy' src='https://picsum.photos/seed/inoxup12/800/500'/></div>
+      <div class='inoxup-gallery-item'><img alt='Grille sécurité fenêtre - INOX.UP' loading='lazy' src='https://picsum.photos/seed/inoxup13/800/500'/></div>
+      <div class='inoxup-gallery-item'><img alt='Fenêtre INOX - INOX.UP Maroc' loading='lazy' src='https://picsum.photos/seed/inoxup14/800/500'/></div>
+      <div class='inoxup-gallery-item'><img alt='Grille design inox - INOX.UP' loading='lazy' src='https://picsum.photos/seed/inoxup15/800/500'/></div>
+      <div class='inoxup-gallery-item'><img alt='Réalisation sur mesure INOX - INOX.UP Maroc' loading='lazy' src='https://picsum.photos/seed/inoxup16/800/500'/></div>
+      <div class='inoxup-gallery-item'><img alt='Grille moderne inox - INOX.UP' loading='lazy' src='https://picsum.photos/seed/inoxup17/800/500'/></div>
+      <div class='inoxup-gallery-item'><img alt='Acier inoxydable Maroc - INOX.UP' loading='lazy' src='https://picsum.photos/seed/inoxup18/800/500'/></div>
+      <div class='inoxup-gallery-item'><img alt='Grille fenêtre inox - INOX.UP Maroc' loading='lazy' src='https://picsum.photos/seed/inoxup19/800/500'/></div>
+      <div class='inoxup-gallery-item'><img alt='Sécurité et esthétique grille INOX - INOX.UP' loading='lazy' src='https://picsum.photos/seed/inoxup20/800/500'/></div>
+      <div class='inoxup-gallery-item'><img alt='Décoration fenêtre inox - INOX.UP Maroc' loading='lazy' src='https://picsum.photos/seed/inoxup21/800/500'/></div>
+      <div class='inoxup-gallery-item'><img alt='Grille INOX - INOX.UP Maroc' loading='lazy' src='https://picsum.photos/seed/inoxup22/800/500'/></div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO (YouTube / Facebook / Instagram) &#8212;
+  &#8226; YOUTUBE (le plus simple pour iframe) : téléversez la vidéo sur une chaîne YouTube &#8594; copiez l&#8217;ID &#8594; mettez : https://www.youtube.com/embed/VOTRE_ID
+  &#8226; FACEBOOK : ouvrez la vidéo &#8594; &#8942; Partager &#8594; Intégrer &#8594; copiez le <iframe> fourni par Facebook &#8594; remplacez tout le bloc .inoxup-video-wrapper ci-dessous par ce code.
+  &#8226; INSTAGRAM : Reel ou post vidéo &#8594; &#8942; Intégrer &#8594; copiez le bloc (blockquote + script). Souvent plus fiable dans un Article Blogger que dans le thème ; si le thème accepte, collez après la section (sinon créez une page article avec l&#8217;intégration).
+  Ne mettez pas fb.watch ou instagram.com/p/... direct dans src= sans code d&#8217;intégration officiel.
+-->
+<section class='inoxup-section' id='video'>
+  <div class='inoxup-container'>
+    <div class='inoxup-section-title'>
+      <h2>Vidéo</h2>
+      <p>Découvrez nos réalisations</p>
+    </div>
+    <div class='inoxup-video-wrapper'>
+      <iframe allowfullscreen='allowfullscreen' loading='lazy' src='https://www.youtube.com/embed/jNQXAC9IVRw' title='Vidéo INOX.UP — remplacez par votre ID YouTube'/>
+    </div>
+    <p class='inoxup-embed-note'>Astuce : si la vidéo est seulement sur Instagram ou Facebook, utilisez le bouton <strong>Intégrer</strong> sur le post (code officiel), ou importez une copie sur YouTube pour garder cette zone simple.</p>
+  </div>
+</section>
+
+<!-- Qualités -->
+<section class='inoxup-section'>
+  <div class='inoxup-container'>
+    <div class='inoxup-section-title'>
+      <h2>Qualités de nos produits</h2>
+      <p>Résistant &#8226; Solide &#8226; Élégant &#8226; Propre &#8226; Durable</p>
+    </div>
+    <div class='inoxup-info-grid'>
+      <div class='inoxup-info-card'><strong>Résistant</strong><span>Haute résistance</span></div>
+      <div class='inoxup-info-card'><strong>Solide</strong><span>Construction robuste</span></div>
+      <div class='inoxup-info-card'><strong>Élégant</strong><span>Design moderne</span></div>
+      <div class='inoxup-info-card'><strong>Propre</strong><span>Facile d&#39;entretien</span></div>
+      <div class='inoxup-info-card'><strong>Durable</strong><span>Longue durée de vie</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG - Articles -->
+<b:section class='main' id='main' showaddelement='yes'>
+  <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='showDateHeader'>false</b:widget-setting>
+      <b:widget-setting name='showShareButtons'>true</b:widget-setting>
+      <b:widget-setting name='showCommentLink'>true</b:widget-setting>
+      <b:widget-setting name='showAuthor'>false</b:widget-setting>
+      <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
+      <b:widget-setting name='timestampLabel'/>
+      <b:widget-setting name='reactionsLabel'/>
+      <b:widget-setting name='showAuthorProfile'>false</b:widget-setting>
+      <b:widget-setting name='style.layout'>1x1</b:widget-setting>
+      <b:widget-setting name='showLabels'>true</b:widget-setting>
+      <b:widget-setting name='showLocation'>true</b:widget-setting>
+      <b:widget-setting name='postLabelsLabel'/>
+      <b:widget-setting name='showTimestamp'>true</b:widget-setting>
+      <b:widget-setting name='postsPerAd'>3</b:widget-setting>
+      <b:widget-setting name='showBacklinks'>false</b:widget-setting>
+      <b:widget-setting name='showInlineAds'>true</b:widget-setting>
+      <b:widget-setting name='showReactions'>false</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main' var='this'>
+  <div class='blog-posts hfeed container'>
+    <b:loop index='i' values='data:posts' var='post'>
+      <b:include data='post' name='postCommentsAndAd'/>
+    </b:loop>
+  </div>
+  <b:include cond='data:view.isMultipleItems' name='postPagination'/>
+  <b:include name='feedLinks'/>
+  <b:if cond='data:blog.isGoogleEverywhereLinkTooltipEnabled'>
+    <b:include name='tooltipCss'/>
+  </b:if>
+</b:includable>
+    <b:includable id='aboutPostAuthor'>
+  <div class='author-name'>
+    <a class='g-profile' expr:href='data:post.author.profileUrl' rel='author' title='author profile'>
+      <span>
+        <data:post.author.name/>
+      </span>
+    </a>
+  </div>
+  <div>
+    <span class='author-desc'>
+      <data:post.author.aboutMe/>
+    </span>
+  </div>
+</b:includable>
+    <b:includable id='addComments'>
+  <a expr:href='data:post.commentsUrl' expr:onclick='data:post.commentsUrlOnclick'>
+    <b:message name='messages.postAComment'/>
+  </a>
+</b:includable>
+    <b:includable id='commentAuthorAvatar'>
+  <div class='avatar-image-container'>
+    <img class='author-avatar' expr:src='data:comment.authorAvatarSrc' height='35' width='35'/>
+  </div>
+</b:includable>
+    <b:includable id='commentDeleteIcon' var='comment'>
+  <span expr:class='&quot;item-control &quot; + data:comment.adminClass'>
+    <b:if cond='data:showCmtPopup'>
+      <div class='goog-toggle-button'>
+        <div class='goog-inline-block comment-action-icon'/>
+      </div>
+    <b:else/>
+      <a class='comment-delete' expr:href='data:comment.deleteUrl' expr:title='data:messages.deleteComment'>
+        <img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+      </a>
+    </b:if>
+  </span>
+</b:includable>
+    <b:includable id='commentForm' var='post'>
+  <div class='comment-form'>
+    <a name='comment-form'/>
+    <h4 id='comment-post-message'><data:messages.postAComment/></h4>
+    <b:if cond='data:this.messages.blogComment != &quot;&quot;'>
+      <p><data:this.messages.blogComment/></p>
+    </b:if>
+    <b:include data='post' name='commentFormIframeSrc'/>
+    <iframe allowtransparency='allowtransparency' class='blogger-iframe-colorize blogger-comment-from-post' expr:height='data:cmtIframeInitialHeight ?: &quot;90px&quot;' frameborder='0' id='comment-editor' name='comment-editor' src='' width='100%'/>
+    <data:post.cmtfpIframe/>
+    <script type='text/javascript'>
+      BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;);
+    </script>
+  </div>
+</b:includable>
+    <b:includable id='commentFormIframeSrc' var='post'>
+  <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
+</b:includable>
+    <b:includable id='commentItem' var='comment'>
+  <div class='comment' expr:id='&quot;c&quot; + data:comment.id'>
+    <b:include cond='data:blog.enabledCommentProfileImages' name='commentAuthorAvatar'/>
+
+    <div class='comment-block'>
+      <div class='comment-author'>
+        <b:if cond='data:comment.authorUrl'>
+          <b:message name='messages.authorSaidWithLink'>
+            <b:param expr:value='data:comment.author' name='authorName'/>
+            <b:param expr:value='data:comment.authorUrl' name='authorUrl'/>
+          </b:message>
+        <b:else/>
+          <b:message name='messages.authorSaid'>
+            <b:param expr:value='data:comment.author' name='authorName'/>
+          </b:message>
+        </b:if>
+      </div>
+      <div expr:class='&quot;comment-body&quot; + (data:comment.isDeleted ? &quot; deleted&quot; : &quot;&quot;)'>
+        <data:comment.body/>
+      </div>
+      <div class='comment-footer'>
+        <span class='comment-timestamp'>
+          <a expr:href='data:comment.url' title='comment permalink'>
+            <data:comment.timestamp/>
+          </a>
+          <b:include data='comment' name='commentDeleteIcon'/>
+        </span>
+      </div>
+    </div>
+  </div>
+</b:includable>
+    <b:includable id='commentList' var='comments'>
+  <div id='comments-block'>
+    <b:loop values='data:comments' var='comment'>
+      <b:include data='comment' name='commentItem'/>
+    </b:loop>
+  </div>
+</b:includable>
+    <b:includable id='commentPicker' var='post'>
+  <b:if cond='data:post.showThreadedComments'>
+    <b:include data='post' name='threadedComments'/>
+  <b:else/>
+    <b:include data='post' name='comments'/>
+  </b:if>
+</b:includable>
+    <b:includable id='comments' var='post'>
+  <section expr:class='&quot;comments&quot; + (data:post.embedCommentForm ? &quot; embed&quot; : &quot;&quot;)' expr:data-num-comments='data:post.numberOfComments' id='comments'>
+    <a name='comments'/>
+    <b:if cond='data:post.allowComments'>
+
+      <b:include name='commentsTitle'/>
+
+      <div expr:id='data:widget.instanceId + &quot;_comments-block-wrapper&quot;'>
+        <b:include cond='data:post.comments' data='post.comments' name='commentList'/>
+      </div>
+
+      <b:if cond='data:post.commentPagingRequired'>
+        <div class='paging-control-container'>
+          <b:if cond='data:post.hasOlderLinks'>
+            <a expr:class='data:post.oldLinkClass' expr:href='data:post.oldestLinkUrl'>
+              <data:messages.oldest/>
+            </a>
+            <a expr:class='data:post.oldLinkClass' expr:href='data:post.olderLinkUrl'>
+              <data:messages.older/>
+            </a>
+          </b:if>
+
+          <span class='comment-range-text'>
+            <data:post.commentRangeText/>
+          </span>
+
+          <b:if cond='data:post.hasNewerLinks'>
+            <a expr:class='data:post.newLinkClass' expr:href='data:post.newerLinkUrl'>
+              <data:messages.newer/>
+            </a>
+            <a expr:class='data:post.newLinkClass' expr:href='data:post.newestLinkUrl'>
+              <data:messages.newest/>
+            </a>
+          </b:if>
+        </div>
+      </b:if>
+
+      <div class='footer'>
+        <b:if cond='data:post.embedCommentForm'>
+          <b:if cond='data:post.allowNewComments'>
+            <b:include data='post' name='commentForm'/>
+          <b:else/>
+            <data:post.noNewCommentsText/>
+          </b:if>
+        <b:else/>
+          <b:if cond='data:post.allowComments'>
+            <b:include data='post' name='addComments'/>
+          </b:if>
+        </b:if>
+      </div>
+    </b:if>
+    <b:if cond='data:showCmtPopup'>
+      <div id='comment-popup'>
+        <iframe allowtransparency='allowtransparency' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'>
+        </iframe>
+      </div>
+    </b:if>
+  </section>
+</b:includable>
+    <b:includable id='commentsTitle'>
+  <h3 class='title'><data:messages.comments/></h3>
+</b:includable>
+    <b:includable id='feedLinks'>
+  <b:if cond='!data:view.isPost'> <!-- Blog feed links -->
+    <b:if cond='data:feedLinks'>
+      <div class='blog-feeds'>
+        <b:include data='feedLinks' name='feedLinksBody'/>
+      </div>
+    </b:if>
+  <b:else/> <!--Post feed links -->
+    <div class='post-feeds'>
+      <b:loop values='data:posts' var='post'>
+        <b:if cond='data:post.allowComments and data:post.feedLinks'>
+          <b:include data='post.feedLinks' name='feedLinksBody'/>
+        </b:if>
+      </b:loop>
+    </div>
+  </b:if>
+</b:includable>
+    <b:includable id='feedLinksBody' var='links'>
+  <div class='feed-links'>
+  <data:messages.subscribeTo/>
+  <b:loop values='data:links' var='f'>
+     <a class='feed-link' expr:href='data:f.url' expr:type='data:f.mimeType' target='_blank'><data:f.name/> (<data:f.feedType/>)</a>
+  </b:loop>
+  </div>
+</b:includable>
+    <b:includable id='homePageLink'>
+  <a class='home-link' expr:href='data:blog.homepageUrl'>
+    <data:messages.home/>
+  </a>
+</b:includable>
+    <b:includable id='iframeComments' var='post'>
+  <!-- G+ comments, no longer available. The includable is retained for backwards-compatibility. -->
+</b:includable>
+    <b:includable id='inlineAd' var='post'>
+  <b:if cond='!data:view.isPreview'>
+    <b:if cond='data:this.adCode or data:this.adClientId or data:blog.adsenseClientId'>
+      <!-- Ad -->
+      <div class='inline-ad'>
+        <b:if cond='data:this.adCode != &quot;&quot;'>
+          <data:this.adCode/>
+        <b:else/>
+          <b:include cond='data:this.adClientId or data:blog.adsenseClientId' name='defaultAdUnit'/>
+        </b:if>
+      </div>
+    </b:if>
+  <b:else/>
+    <div class='inline-ad'>
+      <div class='inline-ad-placeholder'>
+        <span><b:message name='messages.adsGoHere'/></span>
+      </div>
+    </div>
+  </b:if>
+</b:includable>
+    <b:includable id='nextPageLink'>
+  <a class='blog-pager-older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' expr:title='data:messages.olderPosts'>
+    <data:messages.olderPosts/>
+  </a>
+</b:includable>
+    <b:includable id='post' var='post'>
+  <div class='post'>
+    <b:include data='post' name='postMeta'/>
+    <b:include data='post' name='postTitle'/>
+    <b:include name='headerByline'/>
+    <b:if cond='data:view.isSingleItem'>
+      <b:include data='post' name='postBody'/>
+    <b:else/>
+      <b:include data='post' name='postBodySnippet'/>
+      <b:include data='post' name='postJumpLink'/>
+    </b:if>
+    <b:include data='post' name='postFooter'/>
+  </div>
+</b:includable>
+    <b:includable id='postBody' var='post'>
+  <!-- If metaDescription is empty, use the post body as the schema.org description too, for G+/FB snippeting. -->
+  <div class='post-body entry-content float-container' expr:id='&quot;post-body-&quot; + data:post.id'>
+    <data:post.body/>
+  </div>
+</b:includable>
+    <b:includable id='postBodySnippet' var='post'>
+  <b:include data='post' name='postBody'/>
+</b:includable>
+    <b:includable id='postCommentsAndAd' var='post'>
+  <article class='post-outer-container'>
+    <!-- Post title and body -->
+    <div class='post-outer'>
+      <b:include data='post' name='post'/>
+    </div>
+
+    <!-- Comments -->
+    <b:include cond='data:view.isSingleItem' data='post' name='commentPicker'/>
+
+    <!-- Show ad inside post container, after comments, if single item. -->
+    <b:include cond='data:view.isSingleItem and data:post.includeAd' data='post' name='inlineAd'/>
+  </article>
+
+  <!-- Show ad outside post container (between posts) for feed pages. -->
+  <b:include cond='data:view.isMultipleItems and data:post.includeAd' data='post' name='inlineAd'/>
+</b:includable>
+    <b:includable id='postCommentsLink'>
+  <b:if cond='data:view.isMultipleItems'>
+    <span class='byline post-comment-link container'>
+      <b:include cond='data:post.commentSource != 1' name='commentsLink'/>
+    </span>
+  </b:if>
+</b:includable>
+    <b:includable id='postFooter' var='post'>
+  <div class='post-footer'>
+    <b:include name='footerBylines'/>
+    <b:include data='post' name='postFooterAuthorProfile'/>
+  </div>
+</b:includable>
+    <b:includable id='postFooterAuthorProfile' var='post'>
+  <b:if cond='data:post.author.aboutMe and data:view.isPost'>
+    <div class='author-profile'>
+      <b:if cond='data:post.author.authorPhoto.url'>
+        <img class='author-image' expr:src='data:post.author.authorPhoto.url' width='50px'/>
+        <div class='author-about'>
+          <b:include data='post' name='aboutPostAuthor'/>
+        </div>
+      <b:else/>
+        <b:include data='post' name='aboutPostAuthor'/>
+      </b:if>
+    </div>
+  </b:if>
+</b:includable>
+    <b:includable id='postHeader' var='post'>
+  <b:include name='headerByline'/>
+</b:includable>
+    <b:includable id='postMeta' var='post'>
+  <b:include data='post' name='postMetadataJSON'/>
+</b:includable>
+    <b:includable id='postPagination'>
+  <div class='blog-pager container' id='blog-pager'>
+    <b:include cond='data:newerPageUrl' name='previousPageLink'/>
+    <b:include cond='data:olderPageUrl' name='nextPageLink'/>
+    <b:include cond='data:view.url != data:blog.homepageUrl' name='homePageLink'/>
+  </div>
+</b:includable>
+    <b:includable id='postTitle' var='post'>
+  <a expr:name='data:post.id'/>
+  <b:if cond='data:post.title != &quot;&quot;'>
+    <h3 class='post-title entry-title'>
+      <b:if cond='data:post.link or (data:post.url and data:view.url != data:post.url)'>
+        <a expr:href='data:post.link ?: data:post.url'><data:post.title/></a>
+      <b:else/>
+        <data:post.title/>
+      </b:if>
+    </h3>
+  </b:if>
+</b:includable>
+    <b:includable id='previousPageLink'>
+  <a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:messages.newerPosts'>
+    <data:messages.newerPosts/>
+  </a>
+</b:includable>
+    <b:includable id='threadedCommentForm' var='post'>
+  <div class='comment-form'>
+    <a name='comment-form'/>
+    <h4 id='comment-post-message'><data:messages.postAComment/></h4>
+    <b:if cond='data:this.messages.blogComment != &quot;&quot;'>
+      <p><data:this.messages.blogComment/></p>
+    </b:if>
+    <b:include data='post' name='commentFormIframeSrc'/>
+    <iframe allowtransparency='allowtransparency' class='blogger-iframe-colorize blogger-comment-from-post' expr:height='data:cmtIframeInitialHeight ?: &quot;90px&quot;' frameborder='0' id='comment-editor' name='comment-editor' src='' width='100%'/>
+    <data:post.cmtfpIframe/>
+    <script type='text/javascript'>
+      BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;);
+    </script>
+  </div>
+</b:includable>
+    <b:includable id='threadedCommentJs' var='post'>
+  <script async='async' expr:src='data:post.commentSrc' type='text/javascript'/>
+  <b:template-script inline='true' name='threaded_comments'/>
+  <script type='text/javascript'>
+    blogger.widgets.blog.initThreadedComments(
+        <data:post.commentJso/>,
+        <data:post.commentMsgs/>,
+        <data:post.commentConfig/>);
+  </script>
+</b:includable>
+    <b:includable id='threadedComments' var='post'>
+  <section class='comments threaded' expr:data-embed='data:post.embedCommentForm' expr:data-num-comments='data:post.numberOfComments' id='comments'>
+    <a name='comments'/>
+
+    <b:include name='commentsTitle'/>
+
+    <div class='comments-content'>
+      <b:if cond='data:post.embedCommentForm'>
+        <b:include data='post' name='threadedCommentJs'/>
+      </b:if>
+      <div id='comment-holder'>
+         <data:post.commentHtml/>
+      </div>
+    </div>
+
+    <p class='comment-footer'>
+      <b:if cond='data:post.allowNewComments'>
+        <b:include data='post' name='threadedCommentForm'/>
+      <b:else/>
+        <data:post.noNewCommentsText/>
+      </b:if>
+      <b:if cond='data:post.showManageComments'>
+        <b:include data='post' name='manageComments'/>
+      </b:if>
+    </p>
+
+    <b:if cond='data:showCmtPopup'>
+      <div id='comment-popup'>
+        <iframe allowtransparency='allowtransparency' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'>
+        </iframe>
+      </div>
+    </b:if>
+  </section>
+</b:includable>
+    <b:includable id='tooltipCss'>
+  <!-- LINT.IfChange -->
+  <style>
+    .post-body a.b-tooltip-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .post-body a.b-tooltip-container .b-tooltip {
+      display: block !important;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translate(-20%, 1px);
+      visibility: hidden;
+      opacity: 0;
+      z-index: 1;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    .post-body a.b-tooltip-container .b-tooltip iframe {
+      width: 200px;
+      height: 198px;
+      max-width: none;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (hover: hover) {
+      .post-body a.b-tooltip-container:hover .b-tooltip {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  </style>
+  <!-- LINT.ThenChange(//depot/google3/java/com/google/blogger/b2/layouts/widgets/v2-style.css) -->
+</b:includable>
+  </b:widget>
+</b:section>
+
+<!-- Bouton WhatsApp flottant -->
+<a class='inoxup-float-whatsapp' href='https://wa.me/212688913311?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20les%20services%20INOX.UP' rel='noopener' target='_blank' title='Contactez-nous via WhatsApp'><svg aria-hidden='true' fill='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.172.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.881 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z'/></svg></a>
+
+<!-- FOOTER - Contact -->
+<footer class='inoxup-footer' id='contact'>
+  <p style='font-size:1.25rem;font-weight:700;margin-bottom:1rem;'>Contactez-nous aujourd&#39;hui et laissez INOX UP ouvrir les portes de l&#39;élégance</p>
+  <div class='inoxup-contact-btns'>
+    <a class='inoxup-btn-whatsapp' href='https://wa.me/212688913311?text=Bonjour%2C%20je%20souhaite%20des%20informations%20sur%20les%20services%20INOX.UP' rel='noopener' target='_blank'><svg aria-hidden='true' class='inoxup-ico' fill='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.172.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.881 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z'/></svg> WhatsApp</a>
+    <a class='inoxup-btn-phone' href='tel:+212688913311'><svg aria-hidden='true' class='inoxup-ico' fill='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.21z'/></svg> +212 6 88 913-311</a>
+    <a class='inoxup-btn-ig' href='https://www.instagram.com/inox_up/' rel='noopener' target='_blank'><svg aria-hidden='true' class='inoxup-ico' fill='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.635-2.622 6.98-6.98C23.986 15.668 24 15.259 24 12c0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.98-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z'/></svg> Instagram @inox_up</a>
+    <a class='inoxup-btn-fb' href='https://www.facebook.com/people/InoxUp/61559115741472/' rel='noopener' target='_blank'><svg aria-hidden='true' class='inoxup-ico' fill='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z'/></svg> Facebook</a>
+  </div>
+  <p class='inoxup-footer-copy'>&#169; <script>document.write(new Date().getFullYear())</script> INOX.UP. Tous droits réservés.</p>
+</footer>
+
+</body>
+</html>
