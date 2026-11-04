@@ -29,6 +29,28 @@
   <meta content='INOX.UP' name='author'/>
   <meta content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' name='robots'/>
   <meta content='#171d22' name='theme-color'/>
+  <meta content='light dark' name='color-scheme'/>
+  <script type='text/javascript'>
+  //<![CDATA[
+  (function () {
+    var root = document.documentElement;
+    var theme = null;
+    var language = null;
+    try {
+      theme = localStorage.getItem('inoxup-theme');
+      language = localStorage.getItem('inoxup-language');
+    } catch (error) {}
+    if (theme !== 'dark' && theme !== 'light') {
+      theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    if (language !== 'ar' && language !== 'en' && language !== 'fr') { language = 'fr'; }
+    root.setAttribute('data-theme', theme);
+    root.setAttribute('data-lang', language);
+    root.setAttribute('lang', language);
+    root.setAttribute('dir', language === 'ar' ? 'rtl' : 'ltr');
+  }());
+  //]]>
+  </script>
   <link href='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/favicon.svg' rel='icon' type='image/svg+xml'/>
   <link href='https://blogger.googleusercontent.com/img/a/AVvXsEhQiLkxeot0dRFo2p7LdMw3Brgk83XC9FAJGFg8atBhk0UazWLHL0xRFqDMHJK8N6VgJGITBY74fXlA4Ej_AqIB8cM1et-qrip-mPr6oxILXptgOylRMmgjtGmKBIEi_WlX06_oH7h-RmTHMgYoM-J9hjjVWih8hslFRS0pRdA6dljk2W5W8oNGhIdpfKU=s180' rel='apple-touch-icon'/>
   <link expr:href='data:blog.homepageUrl + &quot;sitemap.xml&quot;' rel='sitemap' type='application/xml'/>
@@ -113,7 +135,7 @@
   <link href='https://raw.githubusercontent.com' rel='preconnect'/>
   <link href='https://blogger.googleusercontent.com' rel='preconnect'/>
   <link as='image' fetchpriority='high' href='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/hero-railing.jpg' rel='preload'/>
-  <link href='https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap' rel='stylesheet'/>
+  <link href='https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Noto+Sans+Arabic:wght@400;500;600;700;800&amp;display=swap' rel='stylesheet'/>
 
   <!-- Données structurées : aucune adresse, note ou récompense fictive. -->
   <b:if cond='data:view.isHomepage'>
@@ -147,13 +169,19 @@
       --radius-sm: 10px;
       --shadow: 0 24px 70px rgba(23,29,34,.10);
       --container: 1200px;
+      --on-light: #171d22;
+      --body-copy: #343a34;
+      --soft-accent: #e9f1f7;
+      --field-bg: #f8fafb;
+      --image-placeholder: #e3e9ed;
+      color-scheme: light;
     }
     *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; scroll-padding-top: 108px; }
     body {
       margin: 0;
       background: var(--paper);
-      color: var(--ink);
+      color: var(--on-light);
       font-family: 'Manrope', Arial, sans-serif;
       font-size: 16px;
       line-height: 1.7;
@@ -189,8 +217,8 @@
     .btn--dark:hover { background: var(--ink-3); }
     .btn--ghost { border-color: rgba(255,255,255,.35); color: #fff; background: transparent; }
     .btn--ghost:hover { border-color: #fff; background: rgba(255,255,255,.07); }
-    .btn--outline { border-color: var(--line); background: transparent; color: var(--ink); }
-    .btn--outline:hover { border-color: var(--ink); }
+    .btn--outline { border-color: var(--line); background: transparent; color: var(--on-light); }
+    .btn--outline:hover { border-color: var(--on-light); }
     .text-link { display: inline-flex; align-items: center; gap: 8px; color: inherit; text-decoration: none; font-size: .82rem; font-weight: 800; }
     .text-link .icon { width: 17px; transition: transform .2s ease; }
     .text-link:hover .icon { transform: translate(3px,-3px); }
@@ -224,6 +252,16 @@
     .site-nav a:hover { color: #fff; }
     .site-nav a:hover::after { right: 0; }
     .header-cta { min-height: 42px; padding: 10px 16px; font-size: .76rem; }
+    .preferences { display: flex; align-items: center; gap: 7px; }
+    .theme-toggle { width: 40px; height: 40px; display: inline-grid; place-items: center; padding: 0; border: 1px solid var(--line-dark); border-radius: 8px; background: transparent; color: #fff; cursor: pointer; }
+    .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+    .theme-toggle .icon { width: 18px; height: 18px; }
+    .theme-icon--moon { display: none; }
+    :root[data-theme='dark'] .theme-icon--sun { display: none; }
+    :root[data-theme='dark'] .theme-icon--moon { display: block; }
+    .language-select { width: 58px; height: 40px; padding: 0 7px; border: 1px solid var(--line-dark); border-radius: 8px; background: var(--ink); color: #fff; font-size: .68rem; font-weight: 800; cursor: pointer; }
+    .language-select option { background: var(--ink); color: #fff; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
     .nav-toggle { display: none; width: 44px; height: 44px; border: 1px solid var(--line-dark); border-radius: 8px; background: transparent; cursor: pointer; align-items: center; justify-content: center; }
     .nav-toggle-box { width: 20px; height: 15px; position: relative; }
     .nav-toggle-box span { position: absolute; left: 0; width: 100%; height: 2px; background: #fff; transition: transform .2s, top .2s, opacity .2s; }
@@ -271,7 +309,7 @@
     .service-card { position: relative; min-height: 310px; display: flex; flex-direction: column; padding: 30px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm); transition: background .25s ease, color .25s ease, transform .25s ease, box-shadow .25s ease; }
     .service-card:hover { background: var(--ink); color: #fff; transform: translateY(-5px); box-shadow: var(--shadow); }
     .service-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
-    .service-icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 8px; background: #e9f1f7; color: var(--ink); transition: background .25s, color .25s; }
+    .service-icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 8px; background: var(--soft-accent); color: var(--on-light); transition: background .25s, color .25s; }
     .service-icon .icon { width: 25px; height: 25px; }
     .service-number { color: var(--muted); font-size: .68rem; letter-spacing: .14em; font-weight: 800; }
     .service-card h3 { margin: 28px 0 12px; font-size: 1.16rem; line-height: 1.4; letter-spacing: -.02em; }
@@ -282,9 +320,9 @@
     .service-card:hover .text-link { color: var(--accent); }
 
     /* Gallery */
-    .gallery-section { background: #fff; }
+    .gallery-section { background: var(--surface); }
     .gallery-grid { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: 230px; gap: 14px; }
-    .project-card { position: relative; grid-column: span 4; padding: 0; border: 0; border-radius: 10px; overflow: hidden; background: #dfe5e9; cursor: zoom-in; text-align: left; }
+    .project-card { position: relative; grid-column: span 4; padding: 0; border: 0; border-radius: 10px; overflow: hidden; background: var(--image-placeholder); cursor: zoom-in; text-align: left; }
     .project-card:nth-child(1) { grid-column: span 7; grid-row: span 2; }
     .project-card:nth-child(2) { grid-column: span 5; }
     .project-card:nth-child(3) { grid-column: span 5; }
@@ -298,7 +336,7 @@
     .project-zoom { position: absolute; z-index: 2; right: 18px; bottom: 18px; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: var(--accent); color: var(--ink); }
     .project-zoom .icon { width: 16px; height: 16px; }
     .gallery-note { margin: 18px 0 0; color: var(--muted); font-size: .7rem; }
-    .social-section { padding: 0 0 104px; background: #fff; }
+    .social-section { padding: 0 0 104px; background: var(--surface); }
     .social-card { display: flex; align-items: center; justify-content: space-between; gap: 36px; padding: 34px 38px; border-radius: 12px; background: var(--accent); color: var(--ink); }
     .social-profile { display: flex; align-items: center; gap: 22px; min-width: 0; }
     .social-logo { width: 74px; height: 74px; flex: 0 0 auto; border-color: rgba(23,29,34,.18); border-radius: 12px; }
@@ -335,22 +373,22 @@
     .values-list { display: grid; gap: 0; }
     .value-item { display: grid; grid-template-columns: 46px 1fr; gap: 18px; padding: 25px 0; border-bottom: 1px solid var(--line); }
     .value-item:first-child { border-top: 1px solid var(--line); }
-    .value-icon { width: 42px; height: 42px; display: grid; place-items: center; background: #e5eef4; border-radius: 50%; }
+    .value-icon { width: 42px; height: 42px; display: grid; place-items: center; background: var(--soft-accent); border-radius: 50%; }
     .value-item h3 { margin: 0 0 5px; font-size: .92rem; }
     .value-item p { margin: 0; color: var(--muted); font-size: .77rem; }
 
     /* FAQ */
-    .faq-section { background: #fff; }
+    .faq-section { background: var(--surface); }
     .faq-layout { display: grid; grid-template-columns: .7fr 1.3fr; gap: 80px; align-items: start; }
     .faq-intro { position: sticky; top: 120px; }
     .faq-intro h2 { margin: 0 0 18px; font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.15; letter-spacing: -.045em; }
     .faq-intro p { color: var(--muted); font-size: .85rem; }
-    .faq-intro a { color: var(--ink); font-weight: 800; }
+    .faq-intro a { color: var(--on-light); font-weight: 800; }
     .faq-list { border-top: 1px solid var(--line); }
     .faq-item { border-bottom: 1px solid var(--line); }
     .faq-item summary { position: relative; padding: 24px 50px 24px 0; list-style: none; cursor: pointer; font-size: .93rem; font-weight: 800; }
     .faq-item summary::-webkit-details-marker { display: none; }
-    .faq-item summary::before, .faq-item summary::after { content: ''; position: absolute; top: 50%; right: 5px; width: 16px; height: 2px; background: var(--ink); transition: transform .2s; }
+    .faq-item summary::before, .faq-item summary::after { content: ''; position: absolute; top: 50%; right: 5px; width: 16px; height: 2px; background: var(--on-light); transition: transform .2s; }
     .faq-item summary::after { transform: rotate(90deg); }
     .faq-item[open] summary::after { transform: rotate(0); }
     .faq-item[open] summary { color: var(--accent-dark); }
@@ -367,12 +405,12 @@
     .quote-contact a { display: flex; align-items: center; gap: 13px; width: fit-content; color: #fff; text-decoration: none; font-size: .82rem; font-weight: 700; }
     .quote-contact a:hover { color: var(--accent); }
     .quote-contact .icon { color: var(--accent); }
-    .quote-form { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; padding: 34px; background: #fff; color: var(--ink); border-radius: 12px; box-shadow: 0 30px 80px rgba(0,0,0,.2); }
+    .quote-form { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; padding: 34px; background: var(--surface); color: var(--on-light); border-radius: 12px; box-shadow: 0 30px 80px rgba(0,0,0,.2); }
     .form-field { display: grid; gap: 8px; }
     .form-field--full { grid-column: 1 / -1; }
     .form-field label { font-size: .7rem; font-weight: 800; }
     .form-field label span { color: var(--muted); font-weight: 500; }
-    .form-field input, .form-field select, .form-field textarea { width: 100%; min-height: 48px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 7px; background: #f8fafb; color: var(--ink); font-size: .8rem; outline: none; transition: border-color .2s, box-shadow .2s; }
+    .form-field input, .form-field select, .form-field textarea { width: 100%; min-height: 48px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 7px; background: var(--field-bg); color: var(--on-light); font-size: .8rem; outline: none; transition: border-color .2s, box-shadow .2s; }
     .form-field textarea { min-height: 112px; resize: vertical; }
     .form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: #4e83aa; box-shadow: 0 0 0 3px rgba(143,200,255,.35); }
     .quote-form .btn { width: 100%; border: 0; }
@@ -387,15 +425,15 @@
     .blog-posts.post-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
     .post-grid .post-outer-container { min-width: 0; }
     .post-grid .post-outer { height: 100%; }
-    .post-grid .post { height: 100%; display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; transition: transform .25s, box-shadow .25s; }
+    .post-grid .post { height: 100%; display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; transition: transform .25s, box-shadow .25s; }
     .post-grid .post:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
-    .post-card-media { display: block; aspect-ratio: 4 / 3; overflow: hidden; background: #e3e9ed; }
+    .post-card-media { display: block; aspect-ratio: 4 / 3; overflow: hidden; background: var(--image-placeholder); }
     .post-card-media img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .5s; }
     .post:hover .post-card-media img { transform: scale(1.04); }
     .post-card-content { display: flex; flex: 1; flex-direction: column; padding: 24px; }
     .post-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin-bottom: 14px; color: var(--muted); font-size: .65rem; font-weight: 600; }
     .post-labels { display: flex; flex-wrap: wrap; gap: 6px; }
-    .post-labels a { padding: 3px 8px; border-radius: 4px; background: #e7f0f7; color: var(--accent-dark); text-decoration: none; font-size: .59rem; font-weight: 800; }
+    .post-labels a { padding: 3px 8px; border-radius: 4px; background: var(--soft-accent); color: var(--accent-dark); text-decoration: none; font-size: .59rem; font-weight: 800; }
     .post-title { margin: 0; line-height: 1.35; letter-spacing: -.025em; }
     .post-card-content .post-title { font-size: 1.08rem; }
     .post-title a { text-decoration: none; }
@@ -403,7 +441,7 @@
     .post-excerpt { margin: 13px 0 24px; color: var(--muted); font-size: .77rem; line-height: 1.75; }
     .post-card-content > .text-link { margin-top: auto; }
     .single-post { max-width: 880px; margin: 0 auto; }
-    .single-post .post { background: #fff; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+    .single-post .post { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
     .post-single-header { padding: 44px 54px 34px; }
     .breadcrumbs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; color: var(--muted); font-size: .68rem; }
     .breadcrumbs a { text-decoration: none; font-weight: 700; }
@@ -411,16 +449,16 @@
     .post-single-header .post-title { margin: 10px 0 20px; font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.15; letter-spacing: -.05em; }
     .post-single-image { margin: 0; }
     .post-single-image img { display: block; width: 100%; max-height: 580px; object-fit: cover; }
-    .post-body { padding: 44px 54px; color: #343a34; font-size: .98rem; line-height: 1.9; }
+    .post-body { padding: 44px 54px; color: var(--body-copy); font-size: .98rem; line-height: 1.9; }
     .post-body > :first-child { margin-top: 0; }
     .post-body > :last-child { margin-bottom: 0; }
-    .post-body h2, .post-body h3, .post-body h4 { margin: 1.8em 0 .65em; color: var(--ink); line-height: 1.3; letter-spacing: -.025em; }
+    .post-body h2, .post-body h3, .post-body h4 { margin: 1.8em 0 .65em; color: var(--on-light); line-height: 1.3; letter-spacing: -.025em; }
     .post-body h2 { font-size: 1.65rem; }
     .post-body h3 { font-size: 1.3rem; }
-    .post-body a { color: #23577b; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .post-body a { color: var(--accent-dark); text-decoration-thickness: 1px; text-underline-offset: 3px; }
     .post-body img { height: auto; border-radius: 8px; }
-    .post-body blockquote { margin: 30px 0; padding: 20px 24px; border-left: 4px solid var(--accent); background: #edf4f8; color: var(--ink); }
-    .post-body ul, .post-body ol { padding-left: 24px; }
+    .post-body blockquote { margin: 30px 0; padding: 20px 24px; border-inline-start: 4px solid var(--accent); background: var(--soft-accent); color: var(--on-light); }
+    .post-body ul, .post-body ol { padding-inline-start: 24px; }
     .post-body table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; }
     .post-body td, .post-body th { padding: 10px; border: 1px solid var(--line); }
     .post-body pre { max-width: 100%; overflow-x: auto; padding: 18px; border-radius: 8px; background: var(--ink); color: #e8ede6; }
@@ -431,11 +469,11 @@
     .article-cta span { color: #b8c0b7; font-size: .72rem; }
     .article-cta .btn { flex: 0 0 auto; }
     .blog-pager { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 38px; }
-    .blog-pager a { display: inline-flex; padding: 10px 16px; border: 1px solid var(--line); border-radius: 7px; background: #fff; text-decoration: none; font-size: .75rem; font-weight: 800; }
-    .blog-pager a:hover { border-color: var(--ink); }
+    .blog-pager a { display: inline-flex; padding: 10px 16px; border: 1px solid var(--line); border-radius: 7px; background: var(--surface); text-decoration: none; font-size: .75rem; font-weight: 800; }
+    .blog-pager a:hover { border-color: var(--on-light); }
     .blog-feeds, .post-feeds { margin-top: 28px; color: var(--muted); font-size: .7rem; text-align: center; }
     .feed-link { color: inherit; }
-    .comments { max-width: 880px; margin: 26px auto 0; padding: 32px 42px; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+    .comments { max-width: 880px; margin: 26px auto 0; padding: 32px 42px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
     .comments .title { margin: 0 0 24px; font-size: 1.25rem; }
     .comments .comment { position: relative; padding: 18px 0; border-top: 1px solid var(--line); }
     .comments .avatar-image-container { float: left; width: 38px; height: 38px; margin-right: 12px; border-radius: 50%; overflow: hidden; }
@@ -472,9 +510,35 @@
     .whatsapp-float:hover { transform: translateY(-3px); background: #0b5c2f; }
     .whatsapp-float .icon { width: 22px; height: 22px; }
 
+    /* Dark mode : surfaces, articles, formulaires et commentaires. */
+    :root[data-theme='dark'] {
+      --paper: #10171c;
+      --surface: #1a242b;
+      --muted: #a4b1ba;
+      --line: #35444e;
+      --accent-dark: #8fc8ff;
+      --on-light: #eef4f7;
+      --body-copy: #c7d1d8;
+      --soft-accent: #243945;
+      --field-bg: #202d35;
+      --image-placeholder: #27353d;
+      --shadow: 0 24px 70px rgba(0,0,0,.28);
+      color-scheme: dark;
+    }
+    input::placeholder, textarea::placeholder { color: var(--muted); opacity: .85; }
+    :root[data-theme='dark'] .social-card .btn--outline { color: var(--ink); border-color: rgba(23,29,34,.3); }
+    :root[data-theme='dark'] .social-card .btn--outline:hover { border-color: var(--ink); }
+
     @media (max-width: 1080px) {
-      .site-nav { gap: 18px; }
-      .site-nav a { font-size: .72rem; }
+      .header-cta { order: 2; margin-inline-start: 4px; }
+      .nav-toggle { display: inline-flex; order: 3; }
+      .site-nav { position: absolute; top: calc(100% + 1px); left: 0; right: 0; display: grid; gap: 0; max-height: 0; padding: 0 20px; overflow: hidden; visibility: hidden; opacity: 0; background: var(--ink); border: 1px solid var(--line-dark); border-radius: 0 0 10px 10px; transition: max-height .25s, opacity .2s, padding .25s, visibility .25s; }
+      .nav-open .site-nav { max-height: 420px; padding: 12px 20px 20px; visibility: visible; opacity: 1; }
+      .site-nav a { padding: 12px 0; border-bottom: 1px solid var(--line-dark); font-size: .8rem; }
+      .site-nav a:last-child { border-bottom: 0; }
+      .site-nav a::after { display: none; }
+    }
+    @media (max-width: 1080px) {
       .hero-inner { grid-template-columns: 1fr 1fr; gap: 38px; }
       .hero-photo img { height: 450px; }
       .hero-note { right: 0; }
@@ -494,7 +558,7 @@
       .topbar-links { width: 100%; justify-content: space-between; }
       .navbar { min-height: 68px; gap: 12px; }
       .nav-toggle { display: inline-flex; order: 3; }
-      .header-cta { order: 2; margin-left: 4px; }
+      .header-cta { order: 2; }
       .site-nav { position: absolute; top: calc(100% + 1px); left: 0; right: 0; display: grid; gap: 0; max-height: 0; padding: 0 20px; overflow: hidden; visibility: hidden; opacity: 0; background: var(--ink); border: 1px solid var(--line-dark); border-radius: 0 0 10px 10px; transition: max-height .25s, opacity .2s, padding .25s, visibility .25s; }
       .nav-open .site-nav { max-height: 420px; padding: 12px 20px 20px; visibility: visible; opacity: 1; }
       .site-nav a { padding: 12px 0; border-bottom: 1px solid var(--line-dark); font-size: .8rem; }
@@ -585,6 +649,50 @@
       .whatsapp-float { right: 14px; bottom: 14px; width: 52px; height: 52px; padding: 0; justify-content: center; }
       .whatsapp-float span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
     }
+    /* Arabe : police, direction RTL et détails physiques du layout. */
+    html[dir='rtl'] body { font-family: 'Noto Sans Arabic', Arial, sans-serif; }
+    html[dir='rtl'] h1, html[dir='rtl'] h2, html[dir='rtl'] h3, html[dir='rtl'] h4,
+    html[dir='rtl'] .eyebrow, html[dir='rtl'] .brand-tagline { letter-spacing: 0; }
+    html[dir='rtl'] .hero h1 { line-height: 1.25; }
+    html[dir='rtl'] .section-heading h2, html[dir='rtl'] .quote-copy h2, html[dir='rtl'] .values-copy h2, html[dir='rtl'] .faq-intro h2 { line-height: 1.4; }
+    html[dir='rtl'] .hero-lead { line-height: 2; }
+    html[dir='rtl'] .brand { margin-right: 0; margin-left: auto; }
+    html[dir='rtl'] .brand-name, html[dir='rtl'] .service-number { direction: ltr; unicode-bidi: isolate; }
+    html[dir='rtl'] .topbar a[href^='tel'], html[dir='rtl'] .quote-contact a[href^='tel'], html[dir='rtl'] .footer-contact a[href^='tel'] { direction: ltr; unicode-bidi: isolate; }
+    html[dir='rtl'] .site-nav a::after { left: auto; right: 100%; }
+    html[dir='rtl'] .site-nav a:hover::after { left: auto; right: 0; }
+    html[dir='rtl'] .hero-visual { padding-left: 0; padding-right: 28px; }
+    html[dir='rtl'] .hero-visual::before { left: auto; right: 0; }
+    html[dir='rtl'] .hero-note { right: auto; left: -18px; }
+    html[dir='rtl'] .hero-photo figcaption { left: auto; right: 22px; }
+    html[dir='rtl'] .project-card { text-align: right; }
+    html[dir='rtl'] .project-caption { left: 58px; right: 22px; }
+    html[dir='rtl'] .project-zoom { left: 18px; right: auto; }
+    html[dir='rtl'] .lightbox-close { left: -12px; right: auto; }
+    html[dir='rtl'] .process-step { padding-right: 0; padding-left: 28px; }
+    html[dir='rtl'] .process-step:not(:last-child) { margin-right: 0; margin-left: 28px; }
+    html[dir='rtl'] .process-step::before { left: auto; right: 0; }
+    html[dir='rtl'] .process-step::after { left: 0; right: 9px; }
+    html[dir='rtl'] .faq-item summary { padding: 24px 0 24px 50px; }
+    html[dir='rtl'] .faq-item summary::before, html[dir='rtl'] .faq-item summary::after { left: 5px; right: auto; }
+    html[dir='rtl'] .faq-answer { padding: 0 0 24px 44px; }
+    html[dir='rtl'] .comments .avatar-image-container { float: right; margin-right: 0; margin-left: 12px; }
+    html[dir='rtl'] .comments .comment-block { margin-left: 0; margin-right: 50px; }
+    html[dir='rtl'] .item-control { float: left; }
+    @media (max-width: 1080px) {
+      html[dir='rtl'] .hero-note { right: auto; left: 0; }
+      html[dir='rtl'] .header-cta { margin-left: 0; margin-right: 4px; }
+    }
+    @media (max-width: 600px) {
+      .header-cta { display: none; }
+      .preferences { gap: 5px; }
+      .theme-toggle { width: 38px; height: 38px; }
+      .language-select { width: 52px; height: 38px; padding: 0 5px; }
+      html[dir='rtl'] .hero-visual { padding-left: 0; padding-right: 12px; }
+      html[dir='rtl'] .lightbox-close { left: 0; right: auto; }
+      html[dir='rtl'] .process-step { padding-left: 0; }
+      html[dir='rtl'] .process-step:not(:last-child) { margin-left: 0; }
+    }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
@@ -612,6 +720,8 @@
     <symbol id='i-ruler' viewBox='0 0 24 24'><path d='m4 16 12-12 4 4L8 20l-4-4Zm4-4 2 2m1-5 2 2m1-5 2 2' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.6'/></symbol>
     <symbol id='i-shield' viewBox='0 0 24 24'><path d='M12 3 4.5 6v5.5c0 4.5 3 7.8 7.5 9.5 4.5-1.7 7.5-5 7.5-9.5V6L12 3Z' fill='none' stroke='currentColor' stroke-linejoin='round' stroke-width='1.6'/><path d='m8.5 12 2.2 2.2 4.8-5' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.6'/></symbol>
     <symbol id='i-spark' viewBox='0 0 24 24'><path d='M12 2c.5 5.5 4.5 9.5 10 10-5.5.5-9.5 4.5-10 10-.5-5.5-4.5-9.5-10-10 5.5-.5 9.5-4.5 10-10Z' fill='none' stroke='currentColor' stroke-linejoin='round' stroke-width='1.5'/></symbol>
+    <symbol id='i-sun' viewBox='0 0 24 24'><circle cx='12' cy='12' r='4' fill='none' stroke='currentColor' stroke-width='1.7'/><path d='M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4m0-14.2-1.4 1.4M6.3 17.7l-1.4 1.4' fill='none' stroke='currentColor' stroke-linecap='round' stroke-width='1.7'/></symbol>
+    <symbol id='i-moon' viewBox='0 0 24 24'><path d='M20 15.2A8.5 8.5 0 0 1 8.8 4 8.5 8.5 0 1 0 20 15.2Z' fill='none' stroke='currentColor' stroke-linejoin='round' stroke-width='1.7'/></symbol>
     <symbol id='i-door' viewBox='0 0 24 24'><path d='M5 21V4a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v17M3 21h18M14 12v1' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.6'/></symbol>
     <symbol id='i-railing' viewBox='0 0 24 24'><path d='M3 19h18M5 19V8m4 11V5m5 14V8m5 11V5M3 8l8-4 10 4' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.6'/></symbol>
     <symbol id='i-window' viewBox='0 0 24 24'><rect x='3' y='3' width='18' height='18' rx='1' fill='none' stroke='currentColor' stroke-width='1.6'/><path d='M9 3v18m6-18v18M3 9h18M3 15h18' fill='none' stroke='currentColor' stroke-width='1.4'/></symbol>
@@ -653,6 +763,20 @@
         <a expr:href='data:blog.homepageUrl + &quot;#processus&quot;'>Notre méthode</a>
         <a expr:href='data:blog.homepageUrl + &quot;#faq&quot;'>FAQ</a>
       </nav>
+      <div class='preferences'>
+        <button aria-label='Activer le mode sombre' aria-pressed='false' class='theme-toggle' id='theme-toggle' title='Activer le mode sombre' type='button'>
+          <svg aria-hidden='true' class='icon theme-icon theme-icon--sun'><use href='#i-sun'/></svg>
+          <svg aria-hidden='true' class='icon theme-icon theme-icon--moon'><use href='#i-moon'/></svg>
+        </button>
+        <label class='language-control'>
+          <span class='sr-only'>Langue / اللغة / Language</span>
+          <select aria-label='Langue / اللغة / Language' id='language-select'>
+            <option value='fr'>FR</option>
+            <option value='ar'>AR</option>
+            <option value='en'>EN</option>
+          </select>
+        </label>
+      </div>
       <a class='btn btn--accent header-cta' expr:href='data:blog.homepageUrl + &quot;#devis&quot;'>Devis gratuit <svg class='icon' aria-hidden='true'><use href='#i-arrow'/></svg></a>
       <button aria-controls='site-nav' aria-expanded='false' aria-label='Ouvrir le menu' class='nav-toggle' id='nav-toggle' type='button'>
         <span aria-hidden='true' class='nav-toggle-box'><span></span><span></span><span></span></span>
@@ -836,7 +960,7 @@
           <div class='faq-intro'>
             <p class='eyebrow'>Questions fréquentes</p>
             <h2>Avant de lancer votre projet.</h2>
-            <p>Vous ne trouvez pas votre réponse ? <a href='https://wa.me/212688913311?text=Bonjour%20INOX.UP%2C%20j%27ai%20une%20question%20sur%20un%20projet.' rel='noopener noreferrer' target='_blank'>Écrivez-nous sur WhatsApp</a>.</p>
+            <p>Vous ne trouvez pas votre réponse ? <a data-wa='question' href='https://wa.me/212688913311?text=Bonjour%20INOX.UP%2C%20j%27ai%20une%20question%20sur%20un%20projet.' rel='noopener noreferrer' target='_blank'>Écrivez-nous sur WhatsApp</a>.</p>
           </div>
           <div class='faq-list'>
             <details class='faq-item' open='open'><summary>Quels types d’ouvrages réalisez-vous ?</summary><div class='faq-answer'><p>Nous travaillons les portes, garde-corps, rampes, grilles de sécurité, cuisines, équipements et éléments décoratifs en inox. Une demande spécifique peut être étudiée directement avec vous.</p></div></details>
@@ -857,13 +981,13 @@
             <p>Décrivez votre besoin en quelques lignes. Le formulaire prépare un message clair et l’ouvre directement dans WhatsApp.</p>
             <div class='quote-contact'>
               <a href='tel:+212688913311'><svg class='icon' aria-hidden='true'><use href='#i-phone'/></svg> +212 6 88 91 33 11</a>
-              <a href='https://wa.me/212688913311?text=Bonjour%20INOX.UP%2C%20je%20souhaite%20parler%20d%27un%20projet.' rel='noopener noreferrer' target='_blank'><svg class='icon' aria-hidden='true'><use href='#i-whatsapp'/></svg> Discuter directement sur WhatsApp</a>
+              <a data-wa='project' href='https://wa.me/212688913311?text=Bonjour%20INOX.UP%2C%20je%20souhaite%20parler%20d%27un%20projet.' rel='noopener noreferrer' target='_blank'><svg class='icon' aria-hidden='true'><use href='#i-whatsapp'/></svg> Discuter directement sur WhatsApp</a>
             </div>
           </div>
           <form class='quote-form' id='quote-form'>
             <div class='form-field'><label for='quote-name'>Votre nom *</label><input autocomplete='name' id='quote-name' name='name' placeholder='Ex. Yassine' required='required' type='text'/></div>
             <div class='form-field'><label for='quote-city'>Ville <span>(facultatif)</span></label><input autocomplete='address-level2' id='quote-city' name='city' placeholder='Ex. Agadir' type='text'/></div>
-            <div class='form-field form-field--full'><label for='quote-service'>Service souhaité *</label><select id='quote-service' name='service' required='required'><option value='' disabled='disabled' selected='selected'>Choisissez un service</option><option>Portes en inox</option><option>Garde-corps et rampes</option><option>Grilles de sécurité</option><option>Cuisines et équipements inox</option><option>Décoration métallique</option><option>Projet personnalisé</option></select></div>
+            <div class='form-field form-field--full'><label for='quote-service'>Service souhaité *</label><select id='quote-service' name='service' required='required'><option value='' disabled='disabled' selected='selected'>Choisissez un service</option><option value='Portes en inox'>Portes en inox</option><option value='Garde-corps et rampes'>Garde-corps et rampes</option><option value='Grilles de sécurité'>Grilles de sécurité</option><option value='Cuisines et équipements inox'>Cuisines et équipements inox</option><option value='Décoration métallique'>Décoration métallique</option><option value='Projet personnalisé'>Projet personnalisé</option></select></div>
             <div class='form-field form-field--full'><label for='quote-message'>Votre projet <span>(dimensions, finition, délai…)</span></label><textarea id='quote-message' name='message' placeholder='Décrivez votre besoin. Vous pourrez ajouter des photos directement dans WhatsApp.'></textarea></div>
             <div class='form-field form-field--full'><button class='btn btn--dark' type='submit'><svg class='icon' aria-hidden='true'><use href='#i-whatsapp'/></svg> Préparer ma demande sur WhatsApp</button></div>
             <p class='form-privacy'>Aucune donnée n’est enregistrée sur ce site. Le message part uniquement lorsque vous l’envoyez dans WhatsApp.</p>
@@ -1192,7 +1316,7 @@
       <b:if cond='data:view.isPost'>
         <aside class='article-cta'>
           <div><strong>Un projet en inox sur mesure ?</strong><span>Parlons de vos dimensions, de vos envies et de votre espace.</span></div>
-          <a class='btn btn--accent' href='https://wa.me/212688913311?text=Bonjour%20INOX.UP%2C%20je%20souhaite%20parler%20d%27un%20projet.' rel='noopener noreferrer' target='_blank'>Demander un devis</a>
+          <a class='btn btn--accent' data-wa='project' href='https://wa.me/212688913311?text=Bonjour%20INOX.UP%2C%20je%20souhaite%20parler%20d%27un%20projet.' rel='noopener noreferrer' target='_blank'>Demander un devis</a>
         </aside>
       </b:if>
     </b:if>
@@ -1418,7 +1542,7 @@
         <h2 class='footer-title'>Nous contacter</h2>
         <div class='footer-contact'>
           <a href='tel:+212688913311'><svg class='icon' aria-hidden='true'><use href='#i-phone'/></svg><span>+212 6 88 91 33 11</span></a>
-          <a href='https://wa.me/212688913311?text=Bonjour%20INOX.UP%2C%20je%20souhaite%20des%20informations.' rel='noopener noreferrer' target='_blank'><svg class='icon' aria-hidden='true'><use href='#i-whatsapp'/></svg><span>WhatsApp</span></a>
+          <a data-wa='info' href='https://wa.me/212688913311?text=Bonjour%20INOX.UP%2C%20je%20souhaite%20des%20informations.' rel='noopener noreferrer' target='_blank'><svg class='icon' aria-hidden='true'><use href='#i-whatsapp'/></svg><span>WhatsApp</span></a>
           <span><svg class='icon' aria-hidden='true'><use href='#i-clock'/></svg><span>Lun — Sam · 08:00 — 18:00</span></span>
           <span><svg class='icon' aria-hidden='true'><use href='#i-pin'/></svg><span>Projets partout au Maroc</span></span>
         </div>
@@ -1430,7 +1554,7 @@
     </div>
   </footer>
 
-  <a aria-label='Contacter INOX.UP sur WhatsApp' class='whatsapp-float' href='https://wa.me/212688913311?text=Bonjour%20INOX.UP%2C%20je%20souhaite%20parler%20d%27un%20projet%20en%20inox.' rel='noopener noreferrer' target='_blank'>
+  <a aria-label='Contacter INOX.UP sur WhatsApp' class='whatsapp-float' data-wa='project' href='https://wa.me/212688913311?text=Bonjour%20INOX.UP%2C%20je%20souhaite%20parler%20d%27un%20projet%20en%20inox.' rel='noopener noreferrer' target='_blank'>
     <svg class='icon' aria-hidden='true'><use href='#i-whatsapp'/></svg><span>WhatsApp</span>
   </a>
 
@@ -1438,6 +1562,556 @@
   //<![CDATA[
   (function () {
     'use strict';
+
+    /* Interface trilingue : FR par défaut, EN et AR avec RTL. */
+    var root = document.documentElement;
+    var translations = {
+    "ar": {
+        "Aller au contenu": "انتقل إلى المحتوى",
+        "Fabrication & pose d’ouvrages inox sur mesure": "تصنيع وتركيب أعمال الإينوكس حسب القياس",
+        "Lun — Sam · 08:00 — 18:00": "الاثنين — السبت · 08:00 — 18:00",
+        "Métallerie sur mesure": "أعمال معدنية حسب القياس",
+        "Accueil": "الرئيسية",
+        "Services": "الخدمات",
+        "Applications": "التطبيقات",
+        "Notre méthode": "طريقة عملنا",
+        "FAQ": "الأسئلة",
+        "Devis gratuit": "عرض ثمن مجاني",
+        "Métallerie & inox sur mesure · Maroc": "أعمال المعادن والإينوكس حسب القياس · المغرب",
+        "L’inox prend forme": "الإينوكس يتشكّل",
+        "avec précision.": "بدقة.",
+        "Portes, garde-corps, grilles, cuisines et ouvrages décoratifs : INOX.UP transforme vos idées en réalisations durables, ajustées à votre espace et à votre style.": "أبواب، درابزين، شبكات حماية، مطابخ وأعمال ديكورية: INOX.UP يحوّل أفكارك إلى إنجازات متينة ومناسبة لمساحتك وذوقك.",
+        "Parlons de votre projet": "لنتحدث عن مشروعك",
+        "Explorer les applications": "اكتشف التطبيقات",
+        "Conseil personnalisé": "استشارة مخصصة",
+        "Finitions soignées": "تشطيبات متقنة",
+        "Fabrication sur mesure": "تصنيع حسب القياس",
+        "Précision · Équilibre · Durabilité": "الدقة · التوازن · المتانة",
+        "Votre espace. Vos mesures.": "مساحتك. قياساتك.",
+        "Une conception adaptée à chaque projet, sans compromis sur les détails.": "تصميم مناسب لكل مشروع، دون تنازل عن دقة التفاصيل.",
+        "Sur mesure": "حسب القياس",
+        "Adapté à vos dimensions": "مناسب لقياساتك",
+        "Finition premium": "تشطيب راقٍ",
+        "Le soin jusqu’au détail": "عناية بأدق التفاصيل",
+        "Partout au Maroc": "في جميع أنحاء المغرب",
+        "Étude de projets à distance": "دراسة المشاريع عن بعد",
+        "Notre savoir-faire": "خبرتنا",
+        "Des ouvrages pensés pour votre quotidien.": "أعمال معدنية مصممة لحياتك اليومية.",
+        "Du besoin fonctionnel à la finition décorative, chaque réalisation associe solidité, esthétique et justesse des proportions.": "من الاحتياج العملي إلى التشطيب الديكوري، كل إنجاز يجمع بين المتانة والجمال وتناسق الأبعاد.",
+        "Portes en inox": "أبواب إينوكس",
+        "Des portes robustes au design épuré, fabriquées selon vos dimensions et votre configuration.": "أبواب متينة بتصميم عصري بسيط، مصنوعة وفق قياساتك ومتطلبات مساحتك.",
+        "Demander ce service": "اطلب هذه الخدمة",
+        "Garde-corps & rampes": "الدرابزين والحواجز",
+        "Escaliers, balcons et terrasses : des lignes sûres et élégantes qui s’intègrent à votre architecture.": "سلالم، شرفات وتراسات: خطوط آمنة وأنيقة تندمج مع تصميم المكان.",
+        "Grilles de sécurité": "شبكات الحماية",
+        "Protégez vos fenêtres avec des ouvrages résistants, sans renoncer à l’harmonie de votre façade.": "احمِ نوافذك بأعمال معدنية متينة، دون التأثير على جمالية الواجهة.",
+        "Cuisines & équipements": "المطابخ والتجهيزات",
+        "Plans de travail, mobiliers et équipements inox pour les espaces résidentiels et professionnels.": "أسطح عمل وأثاث وتجهيزات إينوكس للمساحات السكنية والمهنية.",
+        "Décoration métallique": "الديكور المعدني",
+        "Claustras, habillages et détails décoratifs pour structurer et personnaliser vos espaces.": "قواطع وتكسيات وتفاصيل ديكورية لتنظيم مساحتك وإضافة طابعك الخاص.",
+        "Projet 100 % sur mesure": "مشروع مخصص 100%",
+        "Une idée particulière ? Nous étudions avec vous la forme, l’usage et la finition adaptés.": "لديك فكرة خاصة؟ ندرس معك الشكل والاستخدام والتشطيب المناسب.",
+        "Parler de mon idée": "لنتحدث عن فكرتي",
+        "Applications & inspirations": "التطبيقات والإلهام",
+        "L’inox, dans toutes ses expressions.": "الإينوكس بكل أشكاله.",
+        "Une matière, des usages variés. Cliquez sur un visuel pour découvrir chaque application en grand format.": "مادة واحدة واستخدامات متعددة. اضغط على أي صورة لاكتشاف التطبيق بحجم كبير.",
+        "Extérieur · Sécurité": "الخارج · الحماية",
+        "Garde-corps & balcons": "الدرابزين والشرفات",
+        "Entrée · Sur mesure": "المدخل · حسب القياس",
+        "Façade · Protection": "الواجهة · الحماية",
+        "Cuisine · Hygiène": "المطبخ · النظافة",
+        "Équipements inox": "تجهيزات إينوكس",
+        "Intérieur · Décoration": "الداخل · الديكور",
+        "Claustras & habillages": "القواطع والتكسيات",
+        "Visuels d’ambiance présentant des exemples d’applications. Votre ouvrage sera conçu selon vos mesures, vos contraintes et la finition choisie.": "صور توضيحية لأمثلة الاستخدام. سيتم تصميم عملك وفق قياساتك ومتطلباتك والتشطيب الذي تختاره.",
+        "INOX.UP sur les réseaux": "INOX.UP على شبكات التواصل",
+        "L’atelier en images et en vidéos.": "الورشة في الصور والفيديوهات.",
+        "Retrouvez nos dernières publications, nos réalisations et nos vidéos sur le compte Instagram officiel": "تابع أحدث منشوراتنا وإنجازاتنا وفيديوهاتنا على حساب إنستغرام الرسمي",
+        "Suivre @inox_up": "تابع @inox_up",
+        "Simple et transparent": "بسيطة وواضحة",
+        "De votre idée à la pose.": "من فكرتك إلى التركيب.",
+        "Un échange direct et des étapes claires pour avancer sereinement, du premier croquis au dernier contrôle.": "تواصل مباشر وخطوات واضحة لتقدم مشروعك بثقة، من أول مخطط إلى المراجعة النهائية.",
+        "ÉTAPE 01": "الخطوة 01",
+        "ÉTAPE 02": "الخطوة 02",
+        "ÉTAPE 03": "الخطوة 03",
+        "ÉTAPE 04": "الخطوة 04",
+        "Parlons du besoin": "لنتحدث عن احتياجك",
+        "Envoyez votre idée, quelques photos et les dimensions disponibles sur WhatsApp.": "أرسل فكرتك وبعض الصور والقياسات المتوفرة عبر واتساب.",
+        "Étude & devis": "الدراسة وعرض الثمن",
+        "Nous précisons ensemble l’ouvrage, les finitions et les contraintes de votre espace.": "نحدد معك العمل المعدني والتشطيبات ومتطلبات المساحة.",
+        "Fabrication": "التصنيع",
+        "Votre projet prend forme avec un travail attentif des assemblages et des finitions.": "يأخذ مشروعك شكله مع عناية دقيقة بالتجميع والتشطيبات.",
+        "Pose & vérification": "التركيب والمراجعة",
+        "Nous finalisons l’installation et vérifions l’ensemble avec vous.": "نكمل التركيب ونراجع كل التفاصيل معك.",
+        "Pourquoi l’inox ?": "لماذا الإينوكس؟",
+        "Un choix durable.": "اختيار يدوم.",
+        "Une allure intemporelle.": "مظهر لا يفقد أناقته.",
+        "L’acier inoxydable associe résistance, entretien simple et élégance. Travaillé avec précision, il trouve naturellement sa place dans les intérieurs contemporains comme sur les façades.": "يجمع الفولاذ المقاوم للصدأ بين المتانة وسهولة العناية والأناقة. وبتصنيع دقيق، يناسب التصاميم الداخلية العصرية والواجهات على حد سواء.",
+        "Étudier mon projet": "لنناقش مشروعي",
+        "Résistance au quotidien": "متانة للاستخدام اليومي",
+        "Une matière robuste, pensée pour les usages réguliers et les environnements exigeants.": "مادة متينة مصممة للاستخدام المتكرر والبيئات الصعبة.",
+        "Entretien simplifié": "عناية سهلة",
+        "Un nettoyage adapté suffit à préserver son aspect et la qualité de sa finition.": "تنظيف مناسب يكفي للحفاظ على مظهرها وجودة تشطيبها.",
+        "Liberté de conception": "حرية التصميم",
+        "Dimensions, lignes et associations de matériaux : votre projet reste personnalisable.": "الأبعاد والخطوط ودمج المواد: يبقى مشروعك قابلاً للتخصيص.",
+        "Questions fréquentes": "الأسئلة الشائعة",
+        "Avant de lancer votre projet.": "قبل بدء مشروعك.",
+        "Vous ne trouvez pas votre réponse ?": "لم تجد جواب سؤالك؟",
+        "Écrivez-nous sur WhatsApp": "راسلنا عبر واتساب",
+        "Quels types d’ouvrages réalisez-vous ?": "ما هي أنواع الأعمال المعدنية التي تنفذونها؟",
+        "Nous travaillons les portes, garde-corps, rampes, grilles de sécurité, cuisines, équipements et éléments décoratifs en inox. Une demande spécifique peut être étudiée directement avec vous.": "نصنع الأبواب والدرابزين والحواجز وشبكات الحماية والمطابخ والتجهيزات والعناصر الديكورية من الإينوكس. ويمكننا أيضاً دراسة أي طلب خاص معك مباشرة.",
+        "Comment demander un devis ?": "كيف أطلب عرض ثمن؟",
+        "Utilisez le formulaire ci-dessous ou contactez-nous sur WhatsApp avec une description, des photos et, si possible, les dimensions. Ces éléments permettent un premier échange plus précis.": "استعمل النموذج أدناه أو تواصل معنا عبر واتساب مع وصف وصور والقياسات إن أمكن. هذه التفاصيل تساعدنا على فهم طلبك بدقة أكبر.",
+        "Pouvez-vous adapter le design à mon espace ?": "هل يمكنكم تكييف التصميم مع مساحتي؟",
+        "Oui. Le sur mesure permet d’ajuster les dimensions et de réfléchir aux lignes, à l’usage et à la finition en fonction de votre espace et de vos préférences.": "نعم. التصنيع حسب القياس يتيح تعديل الأبعاد واختيار الخطوط والاستخدام والتشطيب وفق مساحتك وتفضيلاتك.",
+        "Quel est le délai de fabrication ?": "ما هي مدة التصنيع؟",
+        "Le délai dépend de la complexité, des dimensions, de la finition et du planning de l’atelier. Il est précisé après l’étude de votre demande, avant la validation du projet.": "تعتمد المدة على التعقيد والأبعاد والتشطيب وبرنامج الورشة. يتم تحديدها بعد دراسة طلبك وقبل تأكيد المشروع.",
+        "Comment entretenir l’acier inoxydable ?": "كيف أعتني بالفولاذ المقاوم للصدأ؟",
+        "Utilisez généralement un chiffon doux, de l’eau et un produit non abrasif adapté. Évitez les éponges métalliques et suivez les recommandations propres à la finition choisie.": "استعمل عادة قطعة قماش ناعمة والماء ومنتجاً مناسباً غير كاشط. تجنب الإسفنج المعدني واتبع التعليمات الخاصة بالتشطيب المختار.",
+        "Votre projet commence ici": "مشروعك يبدأ من هنا",
+        "Une idée ?": "لديك فكرة؟",
+        "Donnons-lui forme.": "لنحوّلها إلى واقع.",
+        "Décrivez votre besoin en quelques lignes. Le formulaire prépare un message clair et l’ouvre directement dans WhatsApp.": "صف احتياجك في بضعة أسطر. يجهّز النموذج رسالة واضحة ويفتحها مباشرة في واتساب.",
+        "Discuter directement sur WhatsApp": "تحدث معنا مباشرة عبر واتساب",
+        "Votre nom *": "اسمك *",
+        "Ville": "المدينة",
+        "(facultatif)": "(اختياري)",
+        "Service souhaité *": "الخدمة المطلوبة *",
+        "Choisissez un service": "اختر خدمة",
+        "Garde-corps et rampes": "الدرابزين والحواجز",
+        "Cuisines et équipements inox": "المطابخ والتجهيزات من الإينوكس",
+        "Projet personnalisé": "مشروع مخصص",
+        "Votre projet": "مشروعك",
+        "(dimensions, finition, délai…)": "(الأبعاد، التشطيب، المدة…)",
+        "Préparer ma demande sur WhatsApp": "جهّز طلبي عبر واتساب",
+        "Aucune donnée n’est enregistrée sur ce site. Le message part uniquement lorsque vous l’envoyez dans WhatsApp.": "لا يتم حفظ أي بيانات على هذا الموقع. لا تُرسل الرسالة إلا عندما ترسلها بنفسك عبر واتساب.",
+        "Conseils & actualités": "نصائح وأخبار",
+        "Le journal INOX.UP.": "مجلة INOX.UP.",
+        "Des idées et des informations utiles pour préparer, entretenir et faire évoluer vos projets.": "أفكار ومعلومات مفيدة لتخطيط مشاريعك والعناية بها وتطويرها.",
+        "Des ouvrages en inox pensés avec précision, fabriqués sur mesure et adaptés à votre quotidien.": "أعمال إينوكس مصممة بدقة، مصنوعة حسب القياس ومناسبة لحياتك اليومية.",
+        "Navigation": "روابط التصفح",
+        "Nos services": "خدماتنا",
+        "Le journal": "المجلة",
+        "Nous contacter": "اتصل بنا",
+        "Projets partout au Maroc": "مشاريع في جميع أنحاء المغرب",
+        "INOX.UP. Tous droits réservés.": "INOX.UP. جميع الحقوق محفوظة.",
+        "La précision dans chaque détail.": "الدقة في كل التفاصيل.",
+        "· Journal INOX.UP": "· مجلة INOX.UP",
+        "Lire l’article": "اقرأ المقال",
+        "Publié le": "نُشر في",
+        "Journal": "المجلة",
+        "Un projet en inox sur mesure ?": "مشروع إينوكس حسب القياس؟",
+        "Parlons de vos dimensions, de vos envies et de votre espace.": "لنتحدث عن قياساتك وأفكارك ومساحتك.",
+        "Demander un devis": "اطلب عرض ثمن",
+        "INOX.UP · Le journal": "INOX.UP · المجلة",
+        "Conseils, inspirations et actualités autour de l’inox sur mesure.": "نصائح وإلهام وأخبار حول أعمال الإينوكس حسب القياس.",
+        "Votre message est prêt. Ouverture de WhatsApp…": "رسالتك جاهزة. جارٍ فتح واتساب…",
+        "Navigation principale": "التصفح الرئيسي",
+        "Ouvrir le menu": "افتح القائمة",
+        "Fermer le menu": "أغلق القائمة",
+        "Activer le mode sombre": "فعّل الوضع الداكن",
+        "Activer le mode clair": "فعّل الوضع الفاتح",
+        "Les engagements INOX.UP": "التزامات INOX.UP",
+        "Fil d’Ariane": "مسار التصفح",
+        "Aperçu du visuel": "معاينة الصورة",
+        "Fermer l’aperçu": "أغلق المعاينة",
+        "INOX.UP sur Instagram": "INOX.UP على إنستغرام",
+        "INOX.UP sur Facebook": "INOX.UP على فيسبوك",
+        "Navigation de pied de page": "روابط التذييل",
+        "Contacter INOX.UP sur WhatsApp": "تواصل مع INOX.UP عبر WhatsApp",
+        "Ex. Yassine": "مثال: ياسين",
+        "Ex. Agadir": "مثال: أكادير",
+        "Décrivez votre besoin. Vous pourrez ajouter des photos directement dans WhatsApp.": "صف احتياجك. يمكنك إضافة الصور مباشرة في واتساب.",
+        "Garde-corps d’escalier en acier inoxydable dans un intérieur contemporain": "درابزين سلم من الفولاذ المقاوم للصدأ في تصميم داخلي عصري",
+        "Garde-corps de balcon en inox et verre": "درابزين شرفة من الإينوكس والزجاج",
+        "Porte d’entrée contemporaine en acier inoxydable": "باب مدخل عصري من الفولاذ المقاوم للصدأ",
+        "Grille de sécurité décorative pour fenêtre": "شبكة حماية ديكورية للنافذة",
+        "Cuisine contemporaine avec plan de travail en inox": "مطبخ عصري بسطح عمل من الإينوكس",
+        "Claustra décoratif en inox dans un intérieur contemporain": "قاطع ديكوري من الإينوكس في تصميم داخلي عصري",
+        "Garde-corps en inox et verre pour balcon": "درابزين شرفة من الإينوكس والزجاج",
+        "Grille de fenêtre décorative en inox": "شبكة نافذة ديكورية من الإينوكس",
+        "Plan de travail et équipement de cuisine en inox": "سطح عمل وتجهيزات مطبخ من الإينوكس",
+        "Claustra décoratif en acier inoxydable": "قاطع ديكوري من الفولاذ المقاوم للصدأ",
+        "Fermer": "إغلاق",
+        "Garde-corps en inox": "درابزين من الإينوكس",
+        "Cuisine en inox": "مطبخ من الإينوكس",
+        "Porte en inox": "باب من الإينوكس",
+        "Comment préparer votre projet de garde-corps sur mesure": "كيف تستعد لمشروع درابزين حسب القياس",
+        "Les éléments à réunir avant le premier échange : dimensions, photos, usage et finition souhaitée.": "ما يجب تجهيزه قبل أول نقاش: القياسات والصور والاستخدام والتشطيب المطلوب.",
+        "Pourquoi choisir l’inox dans une cuisine contemporaine ?": "لماذا تختار الإينوكس في المطبخ العصري؟",
+        "Robustesse, entretien et esthétique : les points à connaître pour imaginer un plan de travail durable.": "المتانة والعناية والجمال: نقاط مهمة لتخطيط سطح عمل يدوم طويلاً.",
+        "Portes en inox : les finitions qui changent tout": "أبواب الإينوكس: تشطيبات تغيّر كل شيء",
+        "Brossé, satiné ou associé à d’autres matériaux : quelques repères pour affiner votre choix.": "مصقول أو ساتان أو مدمج مع مواد أخرى: بعض الإرشادات لاختيار الأنسب."
+    },
+    "en": {
+        "Aller au contenu": "Skip to content",
+        "Fabrication & pose d’ouvrages inox sur mesure": "Custom stainless steel fabrication and installation",
+        "Lun — Sam · 08:00 — 18:00": "Mon — Sat · 08:00 — 18:00",
+        "Métallerie sur mesure": "Custom metalwork",
+        "Accueil": "Home",
+        "Services": "Services",
+        "Applications": "Applications",
+        "Notre méthode": "Our process",
+        "FAQ": "FAQ",
+        "Devis gratuit": "Free quote",
+        "Métallerie & inox sur mesure · Maroc": "Metalwork & custom stainless steel · Morocco",
+        "L’inox prend forme": "Stainless steel takes shape",
+        "avec précision.": "with precision.",
+        "Portes, garde-corps, grilles, cuisines et ouvrages décoratifs : INOX.UP transforme vos idées en réalisations durables, ajustées à votre espace et à votre style.": "Doors, railings, grilles, kitchens and decorative metalwork: INOX.UP turns your ideas into durable creations tailored to your space and style.",
+        "Parlons de votre projet": "Let’s discuss your project",
+        "Explorer les applications": "Explore applications",
+        "Conseil personnalisé": "Personalised advice",
+        "Finitions soignées": "Careful finishes",
+        "Fabrication sur mesure": "Custom fabrication",
+        "Précision · Équilibre · Durabilité": "Precision · Balance · Durability",
+        "Votre espace. Vos mesures.": "Your space. Your measurements.",
+        "Une conception adaptée à chaque projet, sans compromis sur les détails.": "A design tailored to every project, with no compromise on detail.",
+        "Sur mesure": "Made to measure",
+        "Adapté à vos dimensions": "Tailored to your dimensions",
+        "Finition premium": "Premium finish",
+        "Le soin jusqu’au détail": "Care down to the last detail",
+        "Partout au Maroc": "Anywhere in Morocco",
+        "Étude de projets à distance": "Remote project assessment",
+        "Notre savoir-faire": "Our expertise",
+        "Des ouvrages pensés pour votre quotidien.": "Metalwork designed for everyday life.",
+        "Du besoin fonctionnel à la finition décorative, chaque réalisation associe solidité, esthétique et justesse des proportions.": "From functional requirements to decorative finishes, every creation combines strength, aesthetics and balanced proportions.",
+        "Portes en inox": "Stainless steel doors",
+        "Des portes robustes au design épuré, fabriquées selon vos dimensions et votre configuration.": "Robust doors with a clean design, made to your dimensions and configuration.",
+        "Demander ce service": "Request this service",
+        "Garde-corps & rampes": "Railings & handrails",
+        "Escaliers, balcons et terrasses : des lignes sûres et élégantes qui s’intègrent à votre architecture.": "Stairs, balconies and terraces: safe, elegant lines that blend into your architecture.",
+        "Grilles de sécurité": "Security grilles",
+        "Protégez vos fenêtres avec des ouvrages résistants, sans renoncer à l’harmonie de votre façade.": "Protect your windows with robust metalwork without compromising your façade’s harmony.",
+        "Cuisines & équipements": "Kitchens & equipment",
+        "Plans de travail, mobiliers et équipements inox pour les espaces résidentiels et professionnels.": "Stainless steel worktops, furniture and equipment for residential and professional spaces.",
+        "Décoration métallique": "Decorative metalwork",
+        "Claustras, habillages et détails décoratifs pour structurer et personnaliser vos espaces.": "Screens, cladding and decorative details to structure and personalise your spaces.",
+        "Projet 100 % sur mesure": "100% custom project",
+        "Une idée particulière ? Nous étudions avec vous la forme, l’usage et la finition adaptés.": "A specific idea? We work with you to define the right shape, use and finish.",
+        "Parler de mon idée": "Discuss my idea",
+        "Applications & inspirations": "Applications & inspiration",
+        "L’inox, dans toutes ses expressions.": "Stainless steel, in every expression.",
+        "Une matière, des usages variés. Cliquez sur un visuel pour découvrir chaque application en grand format.": "One material, many uses. Click an image to explore each application in full size.",
+        "Extérieur · Sécurité": "Exterior · Safety",
+        "Garde-corps & balcons": "Railings & balconies",
+        "Entrée · Sur mesure": "Entrance · Custom",
+        "Façade · Protection": "Façade · Protection",
+        "Cuisine · Hygiène": "Kitchen · Hygiene",
+        "Équipements inox": "Stainless steel equipment",
+        "Intérieur · Décoration": "Interior · Decoration",
+        "Claustras & habillages": "Screens & cladding",
+        "Visuels d’ambiance présentant des exemples d’applications. Votre ouvrage sera conçu selon vos mesures, vos contraintes et la finition choisie.": "Lifestyle images showing examples of applications. Your metalwork will be designed to your measurements, constraints and chosen finish.",
+        "INOX.UP sur les réseaux": "INOX.UP on social media",
+        "L’atelier en images et en vidéos.": "The workshop in photos and videos.",
+        "Retrouvez nos dernières publications, nos réalisations et nos vidéos sur le compte Instagram officiel": "Find our latest posts, projects and videos on the official Instagram account",
+        "Suivre @inox_up": "Follow @inox_up",
+        "Simple et transparent": "Simple and transparent",
+        "De votre idée à la pose.": "From your idea to installation.",
+        "Un échange direct et des étapes claires pour avancer sereinement, du premier croquis au dernier contrôle.": "Direct communication and clear steps to move forward with confidence, from the first sketch to the final check.",
+        "ÉTAPE 01": "STEP 01",
+        "ÉTAPE 02": "STEP 02",
+        "ÉTAPE 03": "STEP 03",
+        "ÉTAPE 04": "STEP 04",
+        "Parlons du besoin": "Let’s discuss your needs",
+        "Envoyez votre idée, quelques photos et les dimensions disponibles sur WhatsApp.": "Send your idea, a few photos and any available measurements on WhatsApp.",
+        "Étude & devis": "Assessment & quote",
+        "Nous précisons ensemble l’ouvrage, les finitions et les contraintes de votre espace.": "Together, we define the metalwork, finishes and constraints of your space.",
+        "Fabrication": "Fabrication",
+        "Votre projet prend forme avec un travail attentif des assemblages et des finitions.": "Your project takes shape with careful attention to joints and finishes.",
+        "Pose & vérification": "Installation & checks",
+        "Nous finalisons l’installation et vérifions l’ensemble avec vous.": "We complete the installation and check everything with you.",
+        "Pourquoi l’inox ?": "Why stainless steel?",
+        "Un choix durable.": "A lasting choice.",
+        "Une allure intemporelle.": "A timeless look.",
+        "L’acier inoxydable associe résistance, entretien simple et élégance. Travaillé avec précision, il trouve naturellement sa place dans les intérieurs contemporains comme sur les façades.": "Stainless steel combines strength, easy maintenance and elegance. Precision-crafted, it feels at home in contemporary interiors and on façades alike.",
+        "Étudier mon projet": "Assess my project",
+        "Résistance au quotidien": "Everyday durability",
+        "Une matière robuste, pensée pour les usages réguliers et les environnements exigeants.": "A robust material designed for regular use and demanding environments.",
+        "Entretien simplifié": "Easy maintenance",
+        "Un nettoyage adapté suffit à préserver son aspect et la qualité de sa finition.": "Suitable cleaning is enough to preserve its appearance and finish.",
+        "Liberté de conception": "Design freedom",
+        "Dimensions, lignes et associations de matériaux : votre projet reste personnalisable.": "Dimensions, lines and material combinations: your project remains customisable.",
+        "Questions fréquentes": "Frequently asked questions",
+        "Avant de lancer votre projet.": "Before starting your project.",
+        "Vous ne trouvez pas votre réponse ?": "Can’t find your answer?",
+        "Écrivez-nous sur WhatsApp": "Message us on WhatsApp",
+        "Quels types d’ouvrages réalisez-vous ?": "What types of metalwork do you make?",
+        "Nous travaillons les portes, garde-corps, rampes, grilles de sécurité, cuisines, équipements et éléments décoratifs en inox. Une demande spécifique peut être étudiée directement avec vous.": "We make doors, railings, handrails, security grilles, kitchens, equipment and decorative stainless steel elements. We can also discuss a specific request directly with you.",
+        "Comment demander un devis ?": "How do I request a quote?",
+        "Utilisez le formulaire ci-dessous ou contactez-nous sur WhatsApp avec une description, des photos et, si possible, les dimensions. Ces éléments permettent un premier échange plus précis.": "Use the form below or contact us on WhatsApp with a description, photos and, if possible, measurements. These details make our first discussion more precise.",
+        "Pouvez-vous adapter le design à mon espace ?": "Can you adapt the design to my space?",
+        "Oui. Le sur mesure permet d’ajuster les dimensions et de réfléchir aux lignes, à l’usage et à la finition en fonction de votre espace et de vos préférences.": "Yes. Made-to-measure work lets us adjust dimensions and consider lines, use and finish according to your space and preferences.",
+        "Quel est le délai de fabrication ?": "How long does fabrication take?",
+        "Le délai dépend de la complexité, des dimensions, de la finition et du planning de l’atelier. Il est précisé après l’étude de votre demande, avant la validation du projet.": "Timing depends on complexity, dimensions, finish and the workshop schedule. It is confirmed after reviewing your request and before approving the project.",
+        "Comment entretenir l’acier inoxydable ?": "How should stainless steel be maintained?",
+        "Utilisez généralement un chiffon doux, de l’eau et un produit non abrasif adapté. Évitez les éponges métalliques et suivez les recommandations propres à la finition choisie.": "Generally use a soft cloth, water and a suitable non-abrasive product. Avoid metal scourers and follow the recommendations for your chosen finish.",
+        "Votre projet commence ici": "Your project starts here",
+        "Une idée ?": "Have an idea?",
+        "Donnons-lui forme.": "Let’s shape it.",
+        "Décrivez votre besoin en quelques lignes. Le formulaire prépare un message clair et l’ouvre directement dans WhatsApp.": "Describe your needs in a few lines. The form prepares a clear message and opens it directly in WhatsApp.",
+        "Discuter directement sur WhatsApp": "Chat directly on WhatsApp",
+        "Votre nom *": "Your name *",
+        "Ville": "City",
+        "(facultatif)": "(optional)",
+        "Service souhaité *": "Required service *",
+        "Choisissez un service": "Choose a service",
+        "Garde-corps et rampes": "Railings and handrails",
+        "Cuisines et équipements inox": "Stainless steel kitchens and equipment",
+        "Projet personnalisé": "Custom project",
+        "Votre projet": "Your project",
+        "(dimensions, finition, délai…)": "(dimensions, finish, timing…)",
+        "Préparer ma demande sur WhatsApp": "Prepare my request on WhatsApp",
+        "Aucune donnée n’est enregistrée sur ce site. Le message part uniquement lorsque vous l’envoyez dans WhatsApp.": "No data is stored on this site. The message is only sent when you send it in WhatsApp.",
+        "Conseils & actualités": "Advice & news",
+        "Le journal INOX.UP.": "The INOX.UP journal.",
+        "Des idées et des informations utiles pour préparer, entretenir et faire évoluer vos projets.": "Ideas and useful information to plan, maintain and develop your projects.",
+        "Des ouvrages en inox pensés avec précision, fabriqués sur mesure et adaptés à votre quotidien.": "Stainless steelwork designed with precision, made to measure and adapted to everyday life.",
+        "Navigation": "Navigation",
+        "Nos services": "Our services",
+        "Le journal": "The journal",
+        "Nous contacter": "Contact us",
+        "Projets partout au Maroc": "Projects throughout Morocco",
+        "INOX.UP. Tous droits réservés.": "INOX.UP. All rights reserved.",
+        "La précision dans chaque détail.": "Precision in every detail.",
+        "· Journal INOX.UP": "· INOX.UP Journal",
+        "Lire l’article": "Read article",
+        "Publié le": "Published on",
+        "Journal": "Journal",
+        "Un projet en inox sur mesure ?": "A custom stainless steel project?",
+        "Parlons de vos dimensions, de vos envies et de votre espace.": "Let’s discuss your measurements, ideas and space.",
+        "Demander un devis": "Request a quote",
+        "INOX.UP · Le journal": "INOX.UP · The journal",
+        "Conseils, inspirations et actualités autour de l’inox sur mesure.": "Advice, inspiration and news about custom stainless steel.",
+        "Votre message est prêt. Ouverture de WhatsApp…": "Your message is ready. Opening WhatsApp…",
+        "Navigation principale": "Main navigation",
+        "Ouvrir le menu": "Open menu",
+        "Fermer le menu": "Close menu",
+        "Activer le mode sombre": "Switch to dark mode",
+        "Activer le mode clair": "Switch to light mode",
+        "Les engagements INOX.UP": "The INOX.UP commitments",
+        "Fil d’Ariane": "Breadcrumb",
+        "Aperçu du visuel": "Image preview",
+        "Fermer l’aperçu": "Close preview",
+        "INOX.UP sur Instagram": "INOX.UP on Instagram",
+        "INOX.UP sur Facebook": "INOX.UP on Facebook",
+        "Navigation de pied de page": "Footer navigation",
+        "Contacter INOX.UP sur WhatsApp": "Contact INOX.UP on WhatsApp",
+        "Ex. Yassine": "E.g. Yassine",
+        "Ex. Agadir": "E.g. Agadir",
+        "Décrivez votre besoin. Vous pourrez ajouter des photos directement dans WhatsApp.": "Describe your needs. You can add photos directly in WhatsApp.",
+        "Garde-corps d’escalier en acier inoxydable dans un intérieur contemporain": "Stainless steel staircase railing in a contemporary interior",
+        "Garde-corps de balcon en inox et verre": "Stainless steel and glass balcony railing",
+        "Porte d’entrée contemporaine en acier inoxydable": "Contemporary stainless steel entrance door",
+        "Grille de sécurité décorative pour fenêtre": "Decorative window security grille",
+        "Cuisine contemporaine avec plan de travail en inox": "Contemporary kitchen with stainless steel worktop",
+        "Claustra décoratif en inox dans un intérieur contemporain": "Decorative stainless steel screen in a contemporary interior",
+        "Garde-corps en inox et verre pour balcon": "Stainless steel and glass balcony railing",
+        "Grille de fenêtre décorative en inox": "Decorative stainless steel window grille",
+        "Plan de travail et équipement de cuisine en inox": "Stainless steel kitchen worktop and equipment",
+        "Claustra décoratif en acier inoxydable": "Decorative stainless steel screen",
+        "Fermer": "Close",
+        "Garde-corps en inox": "Stainless steel railing",
+        "Cuisine en inox": "Stainless steel kitchen",
+        "Porte en inox": "Stainless steel door",
+        "Comment préparer votre projet de garde-corps sur mesure": "How to plan your custom railing project",
+        "Les éléments à réunir avant le premier échange : dimensions, photos, usage et finition souhaitée.": "What to prepare before the first discussion: dimensions, photos, intended use and desired finish.",
+        "Pourquoi choisir l’inox dans une cuisine contemporaine ?": "Why choose stainless steel in a contemporary kitchen?",
+        "Robustesse, entretien et esthétique : les points à connaître pour imaginer un plan de travail durable.": "Durability, maintenance and aesthetics: what to know when planning a long-lasting worktop.",
+        "Portes en inox : les finitions qui changent tout": "Stainless steel doors: finishes that make all the difference",
+        "Brossé, satiné ou associé à d’autres matériaux : quelques repères pour affiner votre choix.": "Brushed, satin or combined with other materials: a few pointers to refine your choice."
+    }
+};
+
+    var whatsappMessages = {
+      fr: {
+        question: "Bonjour INOX.UP, j'ai une question sur un projet.",
+        project: "Bonjour INOX.UP, je souhaite parler d'un projet.",
+        info: "Bonjour INOX.UP, je souhaite des informations."
+      },
+      en: {
+        question: "Hello INOX.UP, I have a question about a project.",
+        project: "Hello INOX.UP, I would like to discuss a project.",
+        info: "Hello INOX.UP, I would like some information."
+      },
+      ar: {
+        question: "مرحباً INOX.UP، لدي سؤال حول مشروع.",
+        project: "مرحباً INOX.UP، أود التحدث عن مشروع.",
+        info: "مرحباً INOX.UP، أود الحصول على بعض المعلومات."
+      }
+    };
+    var quoteMessages = {
+      fr: { greeting: 'Bonjour INOX.UP,', intro: 'Je souhaite demander un devis pour un projet.', name: 'Nom : ', service: 'Service : ', city: 'Ville : ', details: 'Détails : ', fallback: 'À préciser ensemble', closing: 'Merci de me recontacter.' },
+      en: { greeting: 'Hello INOX.UP,', intro: 'I would like to request a quote for a project.', name: 'Name: ', service: 'Service: ', city: 'City: ', details: 'Details: ', fallback: 'To be discussed together', closing: 'Please contact me.' },
+      ar: { greeting: 'مرحباً INOX.UP،', intro: 'أود طلب عرض ثمن لمشروع.', name: 'الاسم : ', service: 'الخدمة : ', city: 'المدينة : ', details: 'التفاصيل : ', fallback: 'نحددها معاً', closing: 'أرجو إعادة التواصل معي.' }
+    };
+
+    function getPreference(key) {
+      try { return localStorage.getItem(key); } catch (error) { return null; }
+    }
+    function setPreference(key, value) {
+      try { localStorage.setItem(key, value); } catch (error) {}
+    }
+    function normalizeText(value) {
+      return String(value || '').replace(/\s+/g, ' ').trim();
+    }
+
+    var currentLanguage = root.getAttribute('data-lang');
+    if (!/^(fr|ar|en)$/.test(currentLanguage || '')) {
+      currentLanguage = getPreference('inoxup-language');
+      if (!/^(fr|ar|en)$/.test(currentLanguage || '')) { currentLanguage = 'fr'; }
+    }
+    var currentTheme = root.getAttribute('data-theme');
+    if (currentTheme !== 'dark' && currentTheme !== 'light') {
+      currentTheme = getPreference('inoxup-theme');
+      if (currentTheme !== 'dark' && currentTheme !== 'light') {
+        currentTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+    }
+    root.setAttribute('data-theme', currentTheme);
+
+    function translateText(source, language) {
+      var key = normalizeText(source);
+      var lang = language || currentLanguage;
+      if (lang === 'fr') { return key; }
+      return translations[lang] && translations[lang][key] ? translations[lang][key] : key;
+    }
+
+    var i18nTextNodes = [];
+    if (document.createTreeWalker && window.NodeFilter) {
+      var textWalker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+        acceptNode: function (node) {
+          var parent = node.parentElement;
+          if (!parent || /^(SCRIPT|STYLE|NOSCRIPT|TEXTAREA|SVG|SYMBOL)$/.test(parent.tagName)) { return NodeFilter.FILTER_REJECT; }
+          if (parent.closest('.preferences')) { return NodeFilter.FILTER_REJECT; }
+          var dynamicContent = parent.closest('.post-body, .post-title, .post-excerpt, .post-labels, time, .comments, .blog-pager');
+          if (dynamicContent && !parent.closest('[data-preview]')) { return NodeFilter.FILTER_REJECT; }
+          return normalizeText(node.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+        }
+      });
+      var textNode;
+      while ((textNode = textWalker.nextNode())) {
+        i18nTextNodes.push({ node: textNode, source: normalizeText(textNode.nodeValue) });
+      }
+    }
+
+    var i18nAttributes = [];
+    var translatedAttributes = ['alt', 'title', 'placeholder', 'data-caption', 'aria-label'];
+    Array.prototype.forEach.call(document.querySelectorAll('[alt], [title], [placeholder], [data-caption], [aria-label]'), function (element) {
+      if (element.id === 'language-select' || element.closest('.post-body, .comments')) { return; }
+      if (element.closest('.post-card-media, .post-single-image') && !element.closest('[data-preview]')) { return; }
+      translatedAttributes.forEach(function (attribute) {
+        if (!element.hasAttribute(attribute)) { return; }
+        var source = normalizeText(element.getAttribute(attribute));
+        if (source) { i18nAttributes.push({ element: element, attribute: attribute, source: source }); }
+      });
+    });
+
+    /* Le contenu Blogger garde sa langue et choisit sa propre direction. */
+    Array.prototype.forEach.call(document.querySelectorAll('.post-body, .post-title, .post-excerpt, .comments .comment-content'), function (element) {
+      if (!element.hasAttribute('dir')) { element.setAttribute('dir', 'auto'); }
+    });
+
+    var dateNodes = document.querySelectorAll('time');
+    Array.prototype.forEach.call(dateNodes, function (node) {
+      node._i18nDate = normalizeText(node.textContent);
+      node._i18nOriginalDir = node.getAttribute('dir');
+      node._i18nOriginalDatetime = node.getAttribute('datetime');
+    });
+
+    function formatDates(language) {
+      var months = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
+      Array.prototype.forEach.call(dateNodes, function (node) {
+        var source = node._i18nDate;
+        if (!source) { return; }
+        node.textContent = source;
+        if (node._i18nOriginalDir === null) { node.removeAttribute('dir'); }
+        else { node.setAttribute('dir', node._i18nOriginalDir); }
+        if (node._i18nOriginalDatetime === null) { node.removeAttribute('datetime'); }
+        else { node.setAttribute('datetime', node._i18nOriginalDatetime); }
+        if (language === 'fr') { return; }
+        var day = source.match(/^(\d{1,2})\s+([a-zà-ÿ]+)\s+(\d{4})$/i);
+        var monthOnly = source.match(/^([a-zà-ÿ]+)\s+(\d{4})$/i);
+        var monthIndex = day ? months.indexOf(day[2].toLowerCase()) : (monthOnly ? months.indexOf(monthOnly[1].toLowerCase()) : -1);
+        if (monthIndex < 0) { node.textContent = source; return; }
+        var year = day ? day[3] : monthOnly[2];
+        var date = new Date(Date.UTC(Number(year), monthIndex, day ? Number(day[1]) : 1));
+        try {
+          node.textContent = new Intl.DateTimeFormat(language === 'ar' ? 'ar-MA' : 'en-GB', {
+            day: day ? 'numeric' : undefined,
+            month: 'long',
+            year: 'numeric',
+            timeZone: 'UTC'
+          }).format(date);
+        } catch (error) { node.textContent = source; }
+        node.setAttribute('datetime', date.toISOString().slice(0, 10));
+        node.setAttribute('dir', language === 'ar' ? 'rtl' : 'ltr');
+      });
+    }
+
+    function updateWhatsAppLinks() {
+      Array.prototype.forEach.call(document.querySelectorAll('[data-wa]'), function (link) {
+        var type = link.getAttribute('data-wa');
+        var messages = whatsappMessages[currentLanguage] || whatsappMessages.fr;
+        if (messages[type]) {
+          link.href = 'https://wa.me/212688913311?text=' + encodeURIComponent(messages[type]);
+        }
+      });
+    }
+
+    function updateThemeToggle() {
+      var toggle = document.getElementById('theme-toggle');
+      if (!toggle) { return; }
+      var label = translateText(currentTheme === 'dark' ? 'Activer le mode clair' : 'Activer le mode sombre');
+      toggle.setAttribute('aria-label', label);
+      toggle.setAttribute('title', label);
+      toggle.setAttribute('aria-pressed', String(currentTheme === 'dark'));
+    }
+
+    function updateNavigationToggle() {
+      var toggle = document.getElementById('nav-toggle');
+      if (!toggle) { return; }
+      var isOpen = document.body.classList.contains('nav-open');
+      toggle.setAttribute('aria-label', translateText(isOpen ? 'Fermer le menu' : 'Ouvrir le menu'));
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    }
+
+    function applyTheme(theme, save) {
+      currentTheme = theme === 'dark' ? 'dark' : 'light';
+      root.setAttribute('data-theme', currentTheme);
+      if (save !== false) { setPreference('inoxup-theme', currentTheme); }
+      updateThemeToggle();
+    }
+
+    var activeGalleryButton = null;
+    function applyLanguage(language, save) {
+      currentLanguage = /^(fr|ar|en)$/.test(language) ? language : 'fr';
+      root.setAttribute('data-lang', currentLanguage);
+      root.setAttribute('lang', currentLanguage);
+      root.setAttribute('dir', currentLanguage === 'ar' ? 'rtl' : 'ltr');
+      if (save !== false) { setPreference('inoxup-language', currentLanguage); }
+
+      i18nTextNodes.forEach(function (item) {
+        var raw = item.node.nodeValue;
+        var leading = (raw.match(/^\s*/) || [''])[0];
+        var trailing = (raw.match(/\s*$/) || [''])[0];
+        item.node.nodeValue = leading + translateText(item.source, currentLanguage) + trailing;
+      });
+      i18nAttributes.forEach(function (item) {
+        item.element.setAttribute(item.attribute, translateText(item.source, currentLanguage));
+      });
+
+      var languageSelect = document.getElementById('language-select');
+      if (languageSelect) { languageSelect.value = currentLanguage; }
+      formatDates(currentLanguage);
+      updateWhatsAppLinks();
+      updateThemeToggle();
+      updateNavigationToggle();
+      if (activeGalleryButton && lightboxImage && lightboxCaption) {
+        var activeImage = activeGalleryButton.querySelector('img');
+        lightboxImage.alt = activeImage ? activeImage.alt : '';
+        lightboxCaption.textContent = activeGalleryButton.getAttribute('data-caption') || '';
+      }
+    }
 
     var body = document.body;
     var header = document.getElementById('site-header');
@@ -1459,8 +2133,7 @@
     function closeNavigation() {
       body.classList.remove('nav-open');
       if (navToggle) {
-        navToggle.setAttribute('aria-expanded', 'false');
-        navToggle.setAttribute('aria-label', 'Ouvrir le menu');
+        updateNavigationToggle();
       }
     }
 
@@ -1468,8 +2141,7 @@
       navToggle.addEventListener('click', function () {
         var willOpen = !body.classList.contains('nav-open');
         body.classList.toggle('nav-open', willOpen);
-        navToggle.setAttribute('aria-expanded', String(willOpen));
-        navToggle.setAttribute('aria-label', willOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+        updateNavigationToggle();
       });
       siteNav.addEventListener('click', function (event) {
         if (event.target.closest('a')) { closeNavigation(); }
@@ -1483,7 +2155,7 @@
         }
       });
       window.addEventListener('resize', function () {
-        if (window.innerWidth > 860) { closeNavigation(); }
+        if (window.innerWidth > 1080) { closeNavigation(); }
       });
     }
 
@@ -1512,20 +2184,21 @@
         var formData = new FormData(quoteForm);
         var name = String(formData.get('name') || '').trim();
         var city = String(formData.get('city') || '').trim();
-        var service = String(formData.get('service') || '').trim();
+        var service = serviceSelect && serviceSelect.selectedIndex >= 0 ? normalizeText(serviceSelect.options[serviceSelect.selectedIndex].textContent) : String(formData.get('service') || '').trim();
         var details = String(formData.get('message') || '').trim();
+        var messages = quoteMessages[currentLanguage] || quoteMessages.fr;
         var lines = [
-          'Bonjour INOX.UP,',
+          messages.greeting,
           '',
-          'Je souhaite demander un devis pour un projet.',
+          messages.intro,
           '',
-          'Nom : ' + name,
-          'Service : ' + service
+          messages.name + name,
+          messages.service + service
         ];
-        if (city) { lines.push('Ville : ' + city); }
-        lines.push('Détails : ' + (details || 'À préciser ensemble'));
-        lines.push('', 'Merci de me recontacter.');
-        if (formStatus) { formStatus.textContent = 'Votre message est prêt. Ouverture de WhatsApp…'; }
+        if (city) { lines.push(messages.city + city); }
+        lines.push(messages.details + (details || messages.fallback));
+        lines.push('', messages.closing);
+        if (formStatus) { formStatus.textContent = translateText('Votre message est prêt. Ouverture de WhatsApp…'); }
         window.location.href = 'https://wa.me/212688913311?text=' + encodeURIComponent(lines.join('\n'));
       });
     }
@@ -1540,6 +2213,7 @@
     if (lightbox && lightboxImage) {
       Array.prototype.forEach.call(galleryButtons, function (button) {
         button.addEventListener('click', function () {
+          activeGalleryButton = button;
           var image = button.querySelector('img');
           lightboxImage.src = button.getAttribute('data-full');
           lightboxImage.alt = image ? image.alt : '';
@@ -1557,7 +2231,28 @@
       lightbox.addEventListener('click', function (event) {
         if (event.target === lightbox) { lightbox.close(); }
       });
+      lightbox.addEventListener('close', function () { activeGalleryButton = null; });
     }
+
+    var languageSelect = document.getElementById('language-select');
+    if (languageSelect) {
+      languageSelect.addEventListener('change', function () { applyLanguage(languageSelect.value, true); });
+    }
+    var themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+      themeToggle.addEventListener('click', function () { applyTheme(currentTheme === 'dark' ? 'light' : 'dark', true); });
+    }
+    var themeMedia = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+    function followSystemTheme(event) {
+      if (!getPreference('inoxup-theme')) { applyTheme(event.matches ? 'dark' : 'light', false); }
+    }
+    if (themeMedia) {
+      if (typeof themeMedia.addEventListener === 'function') { themeMedia.addEventListener('change', followSystemTheme); }
+      else if (typeof themeMedia.addListener === 'function') { themeMedia.addListener(followSystemTheme); }
+    }
+
+    applyTheme(currentTheme, false);
+    applyLanguage(currentLanguage, false);
 
     var year = document.getElementById('current-year');
     if (year) { year.textContent = new Date().getFullYear(); }

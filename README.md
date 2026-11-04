@@ -5,6 +5,8 @@ Refonte complète de `inox.xml` pour présenter les services d’**INOX.UP** dan
 ## Ce qui est inclus
 
 - Accueil premium graphite et bleu acier, avec navigation fixe et menu mobile accessible.
+- Interface instantanée en français, arabe et anglais, avec RTL complet et police Noto Sans Arabic.
+- Mode clair/sombre persistant, compatible avec la préférence du système et appliqué aux articles, formulaires et commentaires.
 - Logo Blogger d’origine avec fallback automatique, favicon coordonné et liens Instagram visibles dans la barre supérieure, une bannière dédiée et le pied de page.
 - Services, applications en inox, méthode de travail, avantages et FAQ.
 - Galerie avec visionneuse native (`<dialog>`), sans bibliothèque externe.
@@ -35,10 +37,27 @@ https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/
 2. Vérifiez que `inox.xml` et le dossier `assets/inoxup` sont bien publiés sur `main`.
 3. Ouvrez **Thème → menu ⋮ → Modifier le HTML**, remplacez le contenu par celui de `inox.xml`, puis enregistrez. Vous pouvez aussi utiliser **Restaurer → Importer** si cette option est proposée.
 4. Dans **Paramètres → Balises Meta**, activez la description pour les moteurs de recherche.
-5. Vérifiez l’accueil, un article, une page statique et le formulaire WhatsApp sur téléphone.
+5. Vérifiez l’accueil, un article, une page statique et le formulaire WhatsApp sur téléphone, dans les trois langues et les deux thèmes.
 6. Dans Google Search Console, ajoutez la propriété du blog puis envoyez `https://inoxup.blogspot.com/sitemap.xml`. Pour chaque article, ajoutez une image à la une et une description de recherche dans Blogger.
 
 ## Personnalisation
+
+### Langues et mode sombre
+
+Le sélecteur **FR / AR / EN** et le bouton soleil/lune se trouvent dans l’en-tête. Le français est la langue initiale par défaut. Le changement est immédiat, sans rechargement, et les préférences sont conservées dans le stockage local du navigateur :
+
+```text
+inoxup-language    fr, ar ou en
+inoxup-theme       light ou dark
+```
+
+Sans choix de thème enregistré, le site suit `prefers-color-scheme`. Un choix manuel devient prioritaire ; pour revenir au comportement du système, supprimez la préférence du site dans les données du navigateur.
+
+L’arabe active `lang="ar"`, `dir="rtl"`, la mise en page RTL et **Noto Sans Arabic**. Les textes de l’interface, les libellés accessibles, les placeholders, les légendes, les dates reconnues et les messages WhatsApp sont localisés. Les valeurs internes des services restent stables pour préserver la présélection et le formulaire.
+
+Les traductions se trouvent dans `var translations` à la fin d’`inox.xml`. Les clés sont les textes français présents dans le HTML. Si vous modifiez un libellé français, modifiez aussi sa clé et ses traductions `en`/`ar`. Les messages WhatsApp sont regroupés dans `whatsappMessages` et `quoteMessages`. Les couleurs sombres sont centralisées dans `:root[data-theme='dark']`.
+
+**Limite volontaire :** le contenu rédigé des articles, pages et commentaires n’est pas traduit automatiquement, pas plus que les messages système natifs de Blogger. Leur direction est déterminée avec `dir="auto"` pour rester lisible dans une interface RTL. Cette solution ne crée pas d’URL localisées ni de balises `hreflang` et ne duplique pas les articles.
 
 ### Logo et Instagram
 
@@ -72,7 +91,10 @@ Le formulaire utilise uniquement JavaScript pour construire une URL `wa.me`. Il 
 - XML bien formé et structure Blogger conservée pour les articles/commentaires.
 - Syntaxe JavaScript et quatre blocs JSON-LD (`LocalBusiness`, `WebSite`, `FAQPage`, `BreadcrumbList`) validés.
 - Chargement du logo et fonctionnement du fallback testés.
-- Contrôle visuel sur desktop et mobile.
-- Aucun débordement horizontal aux largeurs 320, 390, 768, 1024 et 1440 px.
-- Menu mobile, galerie, présélection des services et composition du message WhatsApp testés.
-- Audit automatisé WCAG 2 A/AA et WCAG 2.1 A/AA sans violation détectée sur la maquette desktop et mobile.
+- Contrôle visuel sur desktop, mobile et tablette, y compris l’arabe RTL et le mode sombre.
+- Aucun débordement horizontal ni chevauchement des contrôles aux largeurs 320, 390, 600, 768, 1024, 1080, 1081 et 1440 px.
+- Douze combinaisons langue/thème testées sur l’accueil en desktop et mobile, puis douze sur la maquette article/commentaires.
+- Persistance après rechargement, retour FR → AR → EN → FR, suivi du thème système et changement de langue sans rechargement testés.
+- Menu mobile, galerie et changement de langue pendant la visionneuse, présélection des services et composition des messages WhatsApp FR/AR/EN testés.
+- Contenu Blogger non traduit et direction automatique des articles/commentaires vérifiés.
+- Audits automatisés WCAG 2 A/AA et WCAG 2.1 A/AA sans violation détectée sur les 24 combinaisons accueil/article, desktop/mobile, langue et thème.
