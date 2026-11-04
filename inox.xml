@@ -9,17 +9,29 @@
   <b:if cond='data:view.isHomepage'>
     <title>INOX.UP — Inox sur mesure au Maroc</title>
   <b:else/>
-    <title><data:blog.pageTitle/></title>
+    <b:if cond='data:view.isSingleItem'>
+      <title><data:blog.pageName/> | INOX.UP</title>
+    <b:else/>
+      <title><data:blog.pageTitle/></title>
+    </b:if>
   </b:if>
   <b:if cond='data:blog.metaDescription'>
     <meta expr:content='data:blog.metaDescription' name='description'/>
   <b:else/>
-    <meta content='INOX.UP conçoit, fabrique et pose vos ouvrages en inox sur mesure au Maroc : portes, garde-corps, grilles de sécurité, cuisines et décorations. Demandez votre devis sur WhatsApp.' name='description'/>
+    <b:if cond='data:view.isPost'>
+      <b:loop values='data:posts' var='post'>
+        <meta expr:content='snippet(data:post.snippets.long, { length: 155, links: false, linebreaks: false })' name='description'/>
+      </b:loop>
+    <b:else/>
+      <meta content='INOX.UP conçoit, fabrique et pose vos ouvrages en inox sur mesure au Maroc : portes, garde-corps, grilles de sécurité, cuisines et décorations. Demandez votre devis sur WhatsApp.' name='description'/>
+    </b:if>
   </b:if>
   <meta content='INOX.UP' name='author'/>
-  <meta content='index, follow, max-image-preview:large, max-snippet:-1' name='robots'/>
-  <meta content='#171a18' name='theme-color'/>
+  <meta content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' name='robots'/>
+  <meta content='#171d22' name='theme-color'/>
   <link href='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/favicon.svg' rel='icon' type='image/svg+xml'/>
+  <link href='https://blogger.googleusercontent.com/img/a/AVvXsEhQiLkxeot0dRFo2p7LdMw3Brgk83XC9FAJGFg8atBhk0UazWLHL0xRFqDMHJK8N6VgJGITBY74fXlA4Ej_AqIB8cM1et-qrip-mPr6oxILXptgOylRMmgjtGmKBIEi_WlX06_oH7h-RmTHMgYoM-J9hjjVWih8hslFRS0pRdA6dljk2W5W8oNGhIdpfKU=s180' rel='apple-touch-icon'/>
+  <link expr:href='data:blog.homepageUrl + &quot;sitemap.xml&quot;' rel='sitemap' type='application/xml'/>
   <meta content='MA' name='geo.region'/>
   <link expr:href='data:blog.canonicalUrl' rel='canonical'/>
 
@@ -38,54 +50,102 @@
     <meta expr:content='data:blog.metaDescription' property='og:description'/>
     <meta expr:content='data:blog.metaDescription' name='twitter:description'/>
   <b:else/>
-    <meta content='Fabrication et pose d’inox sur mesure au Maroc. Portes, garde-corps, grilles, cuisines et réalisations décoratives par INOX.UP.' property='og:description'/>
-    <meta content='Fabrication et pose d’inox sur mesure au Maroc. Découvrez INOX.UP et demandez votre devis.' name='twitter:description'/>
+    <b:if cond='data:view.isPost'>
+      <b:loop values='data:posts' var='post'>
+        <meta expr:content='snippet(data:post.snippets.long, { length: 155, links: false, linebreaks: false })' property='og:description'/>
+        <meta expr:content='snippet(data:post.snippets.long, { length: 155, links: false, linebreaks: false })' name='twitter:description'/>
+      </b:loop>
+    <b:else/>
+      <meta content='Fabrication et pose d’inox sur mesure au Maroc. Portes, garde-corps, grilles, cuisines et réalisations décoratives par INOX.UP.' property='og:description'/>
+      <meta content='Fabrication et pose d’inox sur mesure au Maroc. Découvrez INOX.UP et demandez votre devis.' name='twitter:description'/>
+    </b:if>
   </b:if>
   <meta expr:content='data:blog.canonicalUrl' property='og:url'/>
   <meta content='INOX.UP' property='og:site_name'/>
   <meta content='fr_MA' property='og:locale'/>
-  <meta content='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/hero-railing.jpg' property='og:image'/>
-  <meta content='Ouvrage en acier inoxydable sur mesure — INOX.UP' property='og:image:alt'/>
+  <b:if cond='data:view.isPost'>
+    <b:loop values='data:posts' var='post'>
+      <b:if cond='data:post.featuredImage'>
+        <meta expr:content='resizeImage(data:post.featuredImage, 1200, &quot;16:9&quot;)' property='og:image'/>
+      <b:else/>
+        <meta content='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/hero-railing.jpg' property='og:image'/>
+      </b:if>
+      <meta expr:content='data:post.title' property='og:image:alt'/>
+      <meta expr:content='data:post.date.iso8601' property='article:published_time'/>
+      <b:if cond='data:post.lastUpdated'>
+        <meta expr:content='data:post.lastUpdated.iso8601' property='article:modified_time'/>
+      </b:if>
+      <b:if cond='data:post.author.profileUrl'>
+        <meta expr:content='data:post.author.profileUrl' property='article:author'/>
+      </b:if>
+      <meta content='https://www.facebook.com/people/InoxUp/61559115741472/' property='article:publisher'/>
+      <b:if cond='data:post.labels.first'>
+        <meta expr:content='data:post.labels.first.name' property='article:section'/>
+      </b:if>
+      <b:loop values='data:post.labels' var='label'>
+        <meta expr:content='data:label.name' property='article:tag'/>
+      </b:loop>
+    </b:loop>
+  <b:else/>
+    <meta content='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/hero-railing.jpg' property='og:image'/>
+    <meta content='Ouvrage en acier inoxydable sur mesure — INOX.UP' property='og:image:alt'/>
+  </b:if>
   <meta content='summary_large_image' name='twitter:card'/>
   <b:if cond='data:view.isHomepage'>
     <meta content='INOX.UP — Inox sur mesure au Maroc' name='twitter:title'/>
   <b:else/>
     <meta expr:content='data:blog.pageTitle' name='twitter:title'/>
   </b:if>
-  <meta content='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/hero-railing.jpg' name='twitter:image'/>
+  <b:if cond='data:view.isPost'>
+    <b:loop values='data:posts' var='post'>
+      <b:if cond='data:post.featuredImage'>
+        <meta expr:content='resizeImage(data:post.featuredImage, 1200, &quot;16:9&quot;)' name='twitter:image'/>
+      <b:else/>
+        <meta content='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/hero-railing.jpg' name='twitter:image'/>
+      </b:if>
+    </b:loop>
+  <b:else/>
+    <meta content='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/hero-railing.jpg' name='twitter:image'/>
+  </b:if>
 
   <link href='https://fonts.googleapis.com' rel='preconnect'/>
   <link crossorigin='crossorigin' href='https://fonts.gstatic.com' rel='preconnect'/>
   <link href='https://raw.githubusercontent.com' rel='preconnect'/>
+  <link href='https://blogger.googleusercontent.com' rel='preconnect'/>
   <link as='image' fetchpriority='high' href='https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/hero-railing.jpg' rel='preload'/>
   <link href='https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap' rel='stylesheet'/>
 
   <!-- Données structurées : aucune adresse, note ou récompense fictive. -->
   <b:if cond='data:view.isHomepage'>
-    <script type='application/ld+json'>{&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@type&quot;:&quot;LocalBusiness&quot;,&quot;name&quot;:&quot;INOX.UP&quot;,&quot;alternateName&quot;:&quot;Inox Up Maroc&quot;,&quot;description&quot;:&quot;Conception, fabrication et pose d’ouvrages en acier inoxydable sur mesure au Maroc.&quot;,&quot;url&quot;:&quot;<data:blog.homepageUrl/>&quot;,&quot;image&quot;:&quot;https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/hero-railing.jpg&quot;,&quot;telephone&quot;:&quot;+212688913311&quot;,&quot;priceRange&quot;:&quot;$$&quot;,&quot;address&quot;:{&quot;@type&quot;:&quot;PostalAddress&quot;,&quot;addressCountry&quot;:&quot;MA&quot;},&quot;areaServed&quot;:{&quot;@type&quot;:&quot;Country&quot;,&quot;name&quot;:&quot;Morocco&quot;},&quot;openingHoursSpecification&quot;:{&quot;@type&quot;:&quot;OpeningHoursSpecification&quot;,&quot;dayOfWeek&quot;:[&quot;Monday&quot;,&quot;Tuesday&quot;,&quot;Wednesday&quot;,&quot;Thursday&quot;,&quot;Friday&quot;,&quot;Saturday&quot;],&quot;opens&quot;:&quot;08:00&quot;,&quot;closes&quot;:&quot;18:00&quot;},&quot;sameAs&quot;:[&quot;https://www.facebook.com/people/InoxUp/61559115741472/&quot;,&quot;https://www.instagram.com/inox_up/&quot;],&quot;knowsAbout&quot;:[&quot;acier inoxydable&quot;,&quot;garde-corps&quot;,&quot;portes métalliques&quot;,&quot;grilles de sécurité&quot;,&quot;menuiserie inox&quot;],&quot;hasOfferCatalog&quot;:{&quot;@type&quot;:&quot;OfferCatalog&quot;,&quot;name&quot;:&quot;Services INOX.UP&quot;,&quot;itemListElement&quot;:[{&quot;@type&quot;:&quot;Offer&quot;,&quot;itemOffered&quot;:{&quot;@type&quot;:&quot;Service&quot;,&quot;name&quot;:&quot;Portes en acier inoxydable&quot;}},{&quot;@type&quot;:&quot;Offer&quot;,&quot;itemOffered&quot;:{&quot;@type&quot;:&quot;Service&quot;,&quot;name&quot;:&quot;Garde-corps et rampes inox&quot;}},{&quot;@type&quot;:&quot;Offer&quot;,&quot;itemOffered&quot;:{&quot;@type&quot;:&quot;Service&quot;,&quot;name&quot;:&quot;Grilles de sécurité pour fenêtres&quot;}},{&quot;@type&quot;:&quot;Offer&quot;,&quot;itemOffered&quot;:{&quot;@type&quot;:&quot;Service&quot;,&quot;name&quot;:&quot;Cuisines et équipements inox&quot;}},{&quot;@type&quot;:&quot;Offer&quot;,&quot;itemOffered&quot;:{&quot;@type&quot;:&quot;Service&quot;,&quot;name&quot;:&quot;Décoration et ouvrages inox sur mesure&quot;}}]}}</script>
+    <script type='application/ld+json'>{&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@type&quot;:&quot;LocalBusiness&quot;,&quot;@id&quot;:&quot;<data:blog.homepageUrl/>#business&quot;,&quot;name&quot;:&quot;INOX.UP&quot;,&quot;alternateName&quot;:&quot;Inox Up Maroc&quot;,&quot;description&quot;:&quot;Conception, fabrication et pose d’ouvrages en acier inoxydable sur mesure au Maroc.&quot;,&quot;url&quot;:&quot;<data:blog.homepageUrl/>&quot;,&quot;image&quot;:&quot;https://raw.githubusercontent.com/zougar99/xml/main/assets/inoxup/hero-railing.jpg&quot;,&quot;logo&quot;:{&quot;@type&quot;:&quot;ImageObject&quot;,&quot;url&quot;:&quot;https://blogger.googleusercontent.com/img/a/AVvXsEhQiLkxeot0dRFo2p7LdMw3Brgk83XC9FAJGFg8atBhk0UazWLHL0xRFqDMHJK8N6VgJGITBY74fXlA4Ej_AqIB8cM1et-qrip-mPr6oxILXptgOylRMmgjtGmKBIEi_WlX06_oH7h-RmTHMgYoM-J9hjjVWih8hslFRS0pRdA6dljk2W5W8oNGhIdpfKU=s512&quot;},&quot;telephone&quot;:&quot;+212688913311&quot;,&quot;priceRange&quot;:&quot;$$&quot;,&quot;address&quot;:{&quot;@type&quot;:&quot;PostalAddress&quot;,&quot;addressCountry&quot;:&quot;MA&quot;},&quot;areaServed&quot;:{&quot;@type&quot;:&quot;Country&quot;,&quot;name&quot;:&quot;Morocco&quot;},&quot;openingHoursSpecification&quot;:{&quot;@type&quot;:&quot;OpeningHoursSpecification&quot;,&quot;dayOfWeek&quot;:[&quot;Monday&quot;,&quot;Tuesday&quot;,&quot;Wednesday&quot;,&quot;Thursday&quot;,&quot;Friday&quot;,&quot;Saturday&quot;],&quot;opens&quot;:&quot;08:00&quot;,&quot;closes&quot;:&quot;18:00&quot;},&quot;sameAs&quot;:[&quot;https://www.facebook.com/people/InoxUp/61559115741472/&quot;,&quot;https://www.instagram.com/inox_up/&quot;],&quot;knowsAbout&quot;:[&quot;acier inoxydable&quot;,&quot;garde-corps&quot;,&quot;portes métalliques&quot;,&quot;grilles de sécurité&quot;,&quot;menuiserie inox&quot;],&quot;hasOfferCatalog&quot;:{&quot;@type&quot;:&quot;OfferCatalog&quot;,&quot;name&quot;:&quot;Services INOX.UP&quot;,&quot;itemListElement&quot;:[{&quot;@type&quot;:&quot;Offer&quot;,&quot;itemOffered&quot;:{&quot;@type&quot;:&quot;Service&quot;,&quot;name&quot;:&quot;Portes en acier inoxydable&quot;}},{&quot;@type&quot;:&quot;Offer&quot;,&quot;itemOffered&quot;:{&quot;@type&quot;:&quot;Service&quot;,&quot;name&quot;:&quot;Garde-corps et rampes inox&quot;}},{&quot;@type&quot;:&quot;Offer&quot;,&quot;itemOffered&quot;:{&quot;@type&quot;:&quot;Service&quot;,&quot;name&quot;:&quot;Grilles de sécurité pour fenêtres&quot;}},{&quot;@type&quot;:&quot;Offer&quot;,&quot;itemOffered&quot;:{&quot;@type&quot;:&quot;Service&quot;,&quot;name&quot;:&quot;Cuisines et équipements inox&quot;}},{&quot;@type&quot;:&quot;Offer&quot;,&quot;itemOffered&quot;:{&quot;@type&quot;:&quot;Service&quot;,&quot;name&quot;:&quot;Décoration et ouvrages inox sur mesure&quot;}}]}}</script>
+    <script type='application/ld+json'>{&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@type&quot;:&quot;WebSite&quot;,&quot;@id&quot;:&quot;<data:blog.homepageUrl/>#website&quot;,&quot;url&quot;:&quot;<data:blog.homepageUrl/>&quot;,&quot;name&quot;:&quot;INOX.UP&quot;,&quot;inLanguage&quot;:&quot;fr-MA&quot;,&quot;publisher&quot;:{&quot;@id&quot;:&quot;<data:blog.homepageUrl/>#business&quot;}}</script>
+    <script type='application/ld+json'>{&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@type&quot;:&quot;FAQPage&quot;,&quot;@id&quot;:&quot;<data:blog.homepageUrl/>#faq&quot;,&quot;url&quot;:&quot;<data:blog.homepageUrl/>#faq&quot;,&quot;inLanguage&quot;:&quot;fr-MA&quot;,&quot;about&quot;:{&quot;@id&quot;:&quot;<data:blog.homepageUrl/>#business&quot;},&quot;mainEntity&quot;:[{&quot;@type&quot;:&quot;Question&quot;,&quot;name&quot;:&quot;Quels types d’ouvrages réalisez-vous ?&quot;,&quot;acceptedAnswer&quot;:{&quot;@type&quot;:&quot;Answer&quot;,&quot;text&quot;:&quot;Nous travaillons les portes, garde-corps, rampes, grilles de sécurité, cuisines, équipements et éléments décoratifs en inox. Une demande spécifique peut être étudiée directement avec vous.&quot;}},{&quot;@type&quot;:&quot;Question&quot;,&quot;name&quot;:&quot;Comment demander un devis ?&quot;,&quot;acceptedAnswer&quot;:{&quot;@type&quot;:&quot;Answer&quot;,&quot;text&quot;:&quot;Utilisez le formulaire ou contactez-nous sur WhatsApp avec une description, des photos et, si possible, les dimensions. Ces éléments permettent un premier échange plus précis.&quot;}},{&quot;@type&quot;:&quot;Question&quot;,&quot;name&quot;:&quot;Pouvez-vous adapter le design à mon espace ?&quot;,&quot;acceptedAnswer&quot;:{&quot;@type&quot;:&quot;Answer&quot;,&quot;text&quot;:&quot;Oui. Le sur mesure permet d’ajuster les dimensions et de réfléchir aux lignes, à l’usage et à la finition en fonction de votre espace et de vos préférences.&quot;}},{&quot;@type&quot;:&quot;Question&quot;,&quot;name&quot;:&quot;Quel est le délai de fabrication ?&quot;,&quot;acceptedAnswer&quot;:{&quot;@type&quot;:&quot;Answer&quot;,&quot;text&quot;:&quot;Le délai dépend de la complexité, des dimensions, de la finition et du planning de l’atelier. Il est précisé après l’étude de votre demande, avant la validation du projet.&quot;}},{&quot;@type&quot;:&quot;Question&quot;,&quot;name&quot;:&quot;Comment entretenir l’acier inoxydable ?&quot;,&quot;acceptedAnswer&quot;:{&quot;@type&quot;:&quot;Answer&quot;,&quot;text&quot;:&quot;Utilisez généralement un chiffon doux, de l’eau et un produit non abrasif adapté. Évitez les éponges métalliques et suivez les recommandations propres à la finition choisie.&quot;}}]}</script>
+  </b:if>
+  <b:if cond='data:view.isSingleItem'>
+    <script type='application/ld+json'>{&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@type&quot;:&quot;BreadcrumbList&quot;,&quot;itemListElement&quot;:[{&quot;@type&quot;:&quot;ListItem&quot;,&quot;position&quot;:1,&quot;name&quot;:&quot;Accueil&quot;,&quot;item&quot;:&quot;<data:blog.homepageUrl/>&quot;},{&quot;@type&quot;:&quot;ListItem&quot;,&quot;position&quot;:2,&quot;name&quot;:<data:blog.pageName json='true'/>,&quot;item&quot;:&quot;<data:blog.canonicalUrl/>&quot;}]}</script>
   </b:if>
 
   <b:skin><![CDATA[
     /* ---------------------------------------------------------
        INOX.UP — Premium Blogger theme
-       Palette : graphite, papier minéral, acier et vert précision.
+       Palette : graphite, papier minéral et bleu acier.
        --------------------------------------------------------- */
     :root {
-      --ink: #171a18;
-      --ink-2: #222723;
-      --ink-3: #303630;
-      --paper: #f3f3ee;
+      --ink: #171d22;
+      --ink-2: #232c33;
+      --ink-3: #303d46;
+      --paper: #f2f4f5;
       --surface: #ffffff;
       --steel: #aab1ab;
       --muted: #676d66;
-      --line: #d9ddd5;
+      --line: #d8dee2;
       --line-dark: rgba(255,255,255,.14);
-      --accent: #d8f879;
-      --accent-dark: #4c6417;
+      --accent: #8fc8ff;
+      --accent-dark: #23577b;
       --whatsapp: #10733b;
       --radius: 18px;
       --radius-sm: 10px;
-      --shadow: 0 24px 70px rgba(23,26,24,.10);
+      --shadow: 0 24px 70px rgba(23,29,34,.10);
       --container: 1200px;
     }
     *, *::before, *::after { box-sizing: border-box; }
@@ -124,7 +184,7 @@
     .btn { display: inline-flex; min-height: 50px; align-items: center; justify-content: center; gap: 10px; padding: 13px 21px; border: 1px solid transparent; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: .88rem; line-height: 1.3; cursor: pointer; transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease; }
     .btn:hover { transform: translateY(-2px); }
     .btn--accent { background: var(--accent); color: var(--ink); }
-    .btn--accent:hover { background: #e4ff98; }
+    .btn--accent:hover { background: #b9dfff; }
     .btn--dark { background: var(--ink); color: #fff; }
     .btn--dark:hover { background: var(--ink-3); }
     .btn--ghost { border-color: rgba(255,255,255,.35); color: #fff; background: transparent; }
@@ -136,20 +196,23 @@
     .text-link:hover .icon { transform: translate(3px,-3px); }
 
     /* Top bar + navigation */
-    .topbar { background: #101310; color: #d5dad3; border-bottom: 1px solid var(--line-dark); font-size: .72rem; }
+    .topbar { background: #11171b; color: #d5dad3; border-bottom: 1px solid var(--line-dark); font-size: .72rem; }
     .topbar-inner { min-height: 36px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
     .topbar p { margin: 0; }
     .topbar-status { display: flex; align-items: center; gap: 9px; }
-    .status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgba(216,248,121,.09); }
+    .status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgba(143,200,255,.09); }
     .topbar-links { display: flex; align-items: center; gap: 22px; }
     .topbar a { display: inline-flex; align-items: center; gap: 7px; color: inherit; text-decoration: none; }
     .topbar a:hover { color: var(--accent); }
     .topbar .icon { width: 14px; height: 14px; }
-    .site-header { position: sticky; top: 0; z-index: 1000; background: rgba(23,26,24,.96); color: #fff; border-bottom: 1px solid var(--line-dark); backdrop-filter: blur(16px); transition: box-shadow .25s ease; }
+    .site-header { position: sticky; top: 0; z-index: 1000; background: rgba(23,29,34,.96); color: #fff; border-bottom: 1px solid var(--line-dark); backdrop-filter: blur(16px); transition: box-shadow .25s ease; }
     .site-header.is-scrolled { box-shadow: 0 12px 35px rgba(0,0,0,.18); }
     .navbar { min-height: 78px; display: flex; align-items: center; gap: 32px; position: relative; }
     .brand { display: inline-flex; align-items: center; gap: 11px; margin-right: auto; color: #fff; text-decoration: none; }
     .brand-mark { width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.28); border-radius: 7px; color: var(--accent); }
+    .brand-mark--logo { overflow: hidden; background: #fff; }
+    .brand-logo-image { display: block; width: 100%; height: 100%; padding: 2px; object-fit: contain; border-radius: 6px; background: #fff; }
+    .brand-logo-fallback { display: none; }
     .brand-mark svg { width: 29px; height: 29px; }
     .brand-copy { display: grid; line-height: 1; gap: 6px; }
     .brand-name { font-size: 1.12rem; letter-spacing: .06em; font-weight: 800; }
@@ -184,7 +247,7 @@
     .hero-assurances li { display: flex; align-items: center; gap: 7px; }
     .hero-assurances .icon { width: 16px; height: 16px; color: var(--accent); }
     .hero-visual { position: relative; min-width: 0; padding: 0 0 30px 28px; }
-    .hero-visual::before { content: ''; position: absolute; left: 0; bottom: 0; width: 58%; height: 62%; border: 1px solid rgba(216,248,121,.4); border-radius: 12px; }
+    .hero-visual::before { content: ''; position: absolute; left: 0; bottom: 0; width: 58%; height: 62%; border: 1px solid rgba(143,200,255,.4); border-radius: 12px; }
     .hero-photo { position: relative; margin: 0; border-radius: 12px; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,.34); }
     .hero-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,18,15,.52), transparent 42%); pointer-events: none; }
     .hero-photo img { display: block; width: 100%; height: 500px; object-fit: cover; }
@@ -196,7 +259,7 @@
     .hero-note span { display: block; font-size: .7rem; line-height: 1.55; }
     .precision-strip { background: var(--accent); color: var(--ink); }
     .precision-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
-    .precision-item { display: flex; align-items: center; justify-content: center; gap: 14px; min-height: 84px; padding: 18px 28px; border-right: 1px solid rgba(23,26,24,.18); }
+    .precision-item { display: flex; align-items: center; justify-content: center; gap: 14px; min-height: 84px; padding: 18px 28px; border-right: 1px solid rgba(23,29,34,.18); }
     .precision-item:last-child { border-right: 0; }
     .precision-item .icon { width: 24px; height: 24px; }
     .precision-item strong { display: block; font-size: .82rem; }
@@ -208,7 +271,7 @@
     .service-card { position: relative; min-height: 310px; display: flex; flex-direction: column; padding: 30px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm); transition: background .25s ease, color .25s ease, transform .25s ease, box-shadow .25s ease; }
     .service-card:hover { background: var(--ink); color: #fff; transform: translateY(-5px); box-shadow: var(--shadow); }
     .service-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
-    .service-icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 8px; background: #eef1e9; color: var(--ink); transition: background .25s, color .25s; }
+    .service-icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 8px; background: #e9f1f7; color: var(--ink); transition: background .25s, color .25s; }
     .service-icon .icon { width: 25px; height: 25px; }
     .service-number { color: var(--muted); font-size: .68rem; letter-spacing: .14em; font-weight: 800; }
     .service-card h3 { margin: 28px 0 12px; font-size: 1.16rem; line-height: 1.4; letter-spacing: -.02em; }
@@ -221,7 +284,7 @@
     /* Gallery */
     .gallery-section { background: #fff; }
     .gallery-grid { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: 230px; gap: 14px; }
-    .project-card { position: relative; grid-column: span 4; padding: 0; border: 0; border-radius: 10px; overflow: hidden; background: #dfe2dc; cursor: zoom-in; text-align: left; }
+    .project-card { position: relative; grid-column: span 4; padding: 0; border: 0; border-radius: 10px; overflow: hidden; background: #dfe5e9; cursor: zoom-in; text-align: left; }
     .project-card:nth-child(1) { grid-column: span 7; grid-row: span 2; }
     .project-card:nth-child(2) { grid-column: span 5; }
     .project-card:nth-child(3) { grid-column: span 5; }
@@ -230,11 +293,21 @@
     .project-card::after { content: ''; position: absolute; inset: 35% 0 0; background: linear-gradient(to top, rgba(12,15,12,.82), transparent); pointer-events: none; }
     .project-card:hover img { transform: scale(1.045); }
     .project-caption { position: absolute; z-index: 2; left: 22px; right: 58px; bottom: 19px; color: #fff; }
-    .project-caption small { display: block; margin-bottom: 4px; color: #dbe0d9; font-size: .59rem; letter-spacing: .13em; text-transform: uppercase; font-weight: 700; }
+    .project-caption small { display: block; margin-bottom: 4px; color: #dbe7f0; font-size: .59rem; letter-spacing: .13em; text-transform: uppercase; font-weight: 700; }
     .project-caption strong { display: block; font-size: .92rem; line-height: 1.4; }
     .project-zoom { position: absolute; z-index: 2; right: 18px; bottom: 18px; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: var(--accent); color: var(--ink); }
     .project-zoom .icon { width: 16px; height: 16px; }
     .gallery-note { margin: 18px 0 0; color: var(--muted); font-size: .7rem; }
+    .social-section { padding: 0 0 104px; background: #fff; }
+    .social-card { display: flex; align-items: center; justify-content: space-between; gap: 36px; padding: 34px 38px; border-radius: 12px; background: var(--accent); color: var(--ink); }
+    .social-profile { display: flex; align-items: center; gap: 22px; min-width: 0; }
+    .social-logo { width: 74px; height: 74px; flex: 0 0 auto; border-color: rgba(23,29,34,.18); border-radius: 12px; }
+    .social-logo .brand-logo-image { border-radius: 10px; }
+    .social-profile .eyebrow { margin-bottom: 8px; font-size: .62rem; }
+    .social-profile h2 { margin: 0 0 7px; font-size: clamp(1.35rem, 2.4vw, 2rem); line-height: 1.25; letter-spacing: -.035em; }
+    .social-profile p:last-child { margin: 0; max-width: 570px; font-size: .75rem; }
+    .social-actions { display: flex; flex: 0 0 auto; flex-wrap: wrap; gap: 10px; }
+    .social-actions .btn--outline { border-color: rgba(23,29,34,.3); }
     .lightbox { width: min(1060px, calc(100% - 32px)); max-height: 92vh; padding: 0; border: 0; border-radius: 12px; background: var(--ink); color: #fff; box-shadow: 0 35px 100px rgba(0,0,0,.55); overflow: visible; }
     .lightbox::backdrop { background: rgba(8,10,8,.86); backdrop-filter: blur(7px); }
     .lightbox img { display: block; width: 100%; max-height: 78vh; object-fit: contain; border-radius: 12px 12px 0 0; }
@@ -262,7 +335,7 @@
     .values-list { display: grid; gap: 0; }
     .value-item { display: grid; grid-template-columns: 46px 1fr; gap: 18px; padding: 25px 0; border-bottom: 1px solid var(--line); }
     .value-item:first-child { border-top: 1px solid var(--line); }
-    .value-icon { width: 42px; height: 42px; display: grid; place-items: center; background: #e7ebdf; border-radius: 50%; }
+    .value-icon { width: 42px; height: 42px; display: grid; place-items: center; background: #e5eef4; border-radius: 50%; }
     .value-item h3 { margin: 0 0 5px; font-size: .92rem; }
     .value-item p { margin: 0; color: var(--muted); font-size: .77rem; }
 
@@ -299,9 +372,9 @@
     .form-field--full { grid-column: 1 / -1; }
     .form-field label { font-size: .7rem; font-weight: 800; }
     .form-field label span { color: var(--muted); font-weight: 500; }
-    .form-field input, .form-field select, .form-field textarea { width: 100%; min-height: 48px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 7px; background: #fafbf8; color: var(--ink); font-size: .8rem; outline: none; transition: border-color .2s, box-shadow .2s; }
+    .form-field input, .form-field select, .form-field textarea { width: 100%; min-height: 48px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 7px; background: #f8fafb; color: var(--ink); font-size: .8rem; outline: none; transition: border-color .2s, box-shadow .2s; }
     .form-field textarea { min-height: 112px; resize: vertical; }
-    .form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: #758d3c; box-shadow: 0 0 0 3px rgba(216,248,121,.35); }
+    .form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: #4e83aa; box-shadow: 0 0 0 3px rgba(143,200,255,.35); }
     .quote-form .btn { width: 100%; border: 0; }
     .form-privacy { grid-column: 1 / -1; margin: -6px 0 0; color: var(--muted); font-size: .63rem; text-align: center; }
     .form-status { grid-column: 1 / -1; min-height: 0; margin: 0; color: var(--accent-dark); font-size: .72rem; text-align: center; }
@@ -316,13 +389,13 @@
     .post-grid .post-outer { height: 100%; }
     .post-grid .post { height: 100%; display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; transition: transform .25s, box-shadow .25s; }
     .post-grid .post:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
-    .post-card-media { display: block; aspect-ratio: 4 / 3; overflow: hidden; background: #e4e7e0; }
+    .post-card-media { display: block; aspect-ratio: 4 / 3; overflow: hidden; background: #e3e9ed; }
     .post-card-media img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .5s; }
     .post:hover .post-card-media img { transform: scale(1.04); }
     .post-card-content { display: flex; flex: 1; flex-direction: column; padding: 24px; }
     .post-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin-bottom: 14px; color: var(--muted); font-size: .65rem; font-weight: 600; }
     .post-labels { display: flex; flex-wrap: wrap; gap: 6px; }
-    .post-labels a { padding: 3px 8px; border-radius: 4px; background: #edf2e3; color: var(--accent-dark); text-decoration: none; font-size: .59rem; font-weight: 800; }
+    .post-labels a { padding: 3px 8px; border-radius: 4px; background: #e7f0f7; color: var(--accent-dark); text-decoration: none; font-size: .59rem; font-weight: 800; }
     .post-title { margin: 0; line-height: 1.35; letter-spacing: -.025em; }
     .post-card-content .post-title { font-size: 1.08rem; }
     .post-title a { text-decoration: none; }
@@ -344,9 +417,9 @@
     .post-body h2, .post-body h3, .post-body h4 { margin: 1.8em 0 .65em; color: var(--ink); line-height: 1.3; letter-spacing: -.025em; }
     .post-body h2 { font-size: 1.65rem; }
     .post-body h3 { font-size: 1.3rem; }
-    .post-body a { color: #435d0d; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .post-body a { color: #23577b; text-decoration-thickness: 1px; text-underline-offset: 3px; }
     .post-body img { height: auto; border-radius: 8px; }
-    .post-body blockquote { margin: 30px 0; padding: 20px 24px; border-left: 4px solid var(--accent); background: #f3f6ed; color: var(--ink); }
+    .post-body blockquote { margin: 30px 0; padding: 20px 24px; border-left: 4px solid var(--accent); background: #edf4f8; color: var(--ink); }
     .post-body ul, .post-body ol { padding-left: 24px; }
     .post-body table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; }
     .post-body td, .post-body th { padding: 10px; border: 1px solid var(--line); }
@@ -377,7 +450,7 @@
     .inline-ad { margin: 24px 0; }
 
     /* Footer + floating contact */
-    .site-footer { background: #101310; color: #fff; }
+    .site-footer { background: #11171b; color: #fff; }
     .footer-main { display: grid; grid-template-columns: 1.35fr .65fr .8fr; gap: 70px; padding-top: 70px; padding-bottom: 54px; }
     .footer-brand > p { max-width: 390px; margin: 22px 0; color: #aeb6ad; font-size: .78rem; }
     .social-links { display: flex; gap: 9px; }
@@ -435,6 +508,7 @@
       .precision-item { padding: 16px; }
       .precision-item span { display: none; }
       .gallery-grid { grid-auto-rows: 210px; }
+      .social-card { align-items: flex-start; flex-direction: column; padding: 28px; }
       .project-card, .project-card:nth-child(n) { grid-column: span 6; grid-row: span 1; }
       .project-card:nth-child(1) { grid-column: span 12; grid-row: span 2; }
       .process-grid { grid-template-columns: repeat(2, 1fr); gap: 38px 0; }
@@ -473,7 +547,7 @@
       .hero-note { width: 175px; padding: 15px; }
       .hero-note .icon { margin-bottom: 10px; }
       .precision-grid { grid-template-columns: 1fr; padding: 8px 0; }
-      .precision-item { min-height: 56px; justify-content: flex-start; border-right: 0; border-bottom: 1px solid rgba(23,26,24,.14); }
+      .precision-item { min-height: 56px; justify-content: flex-start; border-right: 0; border-bottom: 1px solid rgba(23,29,34,.14); }
       .precision-item:last-child { border-bottom: 0; }
       .precision-item span { display: block; }
       .services-grid { grid-template-columns: 1fr; }
@@ -481,6 +555,11 @@
       .gallery-grid { display: grid; grid-template-columns: 1fr; grid-auto-rows: 280px; }
       .project-card, .project-card:nth-child(n) { grid-column: auto; grid-row: auto; }
       .gallery-note { line-height: 1.6; }
+      .social-section { padding-bottom: 64px; }
+      .social-card { gap: 24px; padding: 24px; }
+      .social-profile { align-items: flex-start; gap: 15px; }
+      .social-logo { width: 58px; height: 58px; }
+      .social-actions { display: grid; width: 100%; }
       .lightbox-close { right: 0; }
       .process-grid { grid-template-columns: 1fr; gap: 34px; }
       .process-step { padding-right: 0; }
@@ -549,6 +628,7 @@
       <p class='topbar-status'><span class='status-dot'></span> Fabrication &amp; pose d’ouvrages inox sur mesure</p>
       <div class='topbar-links'>
         <span>Lun — Sam · 08:00 — 18:00</span>
+        <a href='https://www.instagram.com/inox_up/' rel='noopener noreferrer' target='_blank'><svg class='icon' aria-hidden='true'><use href='#i-instagram'/></svg> @inox_up</a>
         <a href='tel:+212688913311'><svg class='icon' aria-hidden='true'><use href='#i-phone'/></svg> +212 6 88 91 33 11</a>
       </div>
     </div>
@@ -557,8 +637,9 @@
   <header class='site-header' id='site-header'>
     <div class='container navbar'>
       <a class='brand' expr:href='data:blog.homepageUrl'>
-        <span class='brand-mark' aria-hidden='true'>
-          <svg viewBox='0 0 48 42'><path d='M7 6v30M17 6v30M28 6v19c0 14 14 14 14 0V6' fill='none' stroke='currentColor' stroke-linecap='square' stroke-width='3'/></svg>
+        <span class='brand-mark brand-mark--logo' aria-hidden='true'>
+          <img alt='' class='brand-logo-image' height='160' src='https://blogger.googleusercontent.com/img/a/AVvXsEhQiLkxeot0dRFo2p7LdMw3Brgk83XC9FAJGFg8atBhk0UazWLHL0xRFqDMHJK8N6VgJGITBY74fXlA4Ej_AqIB8cM1et-qrip-mPr6oxILXptgOylRMmgjtGmKBIEi_WlX06_oH7h-RmTHMgYoM-J9hjjVWih8hslFRS0pRdA6dljk2W5W8oNGhIdpfKU=s160' width='160'/>
+          <svg class='brand-logo-fallback' viewBox='0 0 48 42'><path d='M7 6v30M17 6v30M28 6v19c0 14 14 14 14 0V6' fill='none' stroke='currentColor' stroke-linecap='square' stroke-width='3'/></svg>
         </span>
         <span class='brand-copy'>
           <span class='brand-name'>INOX<span>.UP</span></span>
@@ -692,6 +773,27 @@
             </button>
           </div>
           <p class='gallery-note'>Visuels d’ambiance présentant des exemples d’applications. Votre ouvrage sera conçu selon vos mesures, vos contraintes et la finition choisie.</p>
+        </div>
+      </section>
+
+      <!-- INSTAGRAM ET FACEBOOK OFFICIELS -->
+      <section aria-labelledby='social-title' class='social-section'>
+        <div class='container social-card'>
+          <div class='social-profile'>
+            <span class='brand-mark brand-mark--logo social-logo' aria-hidden='true'>
+              <img alt='' class='brand-logo-image' height='320' loading='lazy' src='https://blogger.googleusercontent.com/img/a/AVvXsEhQiLkxeot0dRFo2p7LdMw3Brgk83XC9FAJGFg8atBhk0UazWLHL0xRFqDMHJK8N6VgJGITBY74fXlA4Ej_AqIB8cM1et-qrip-mPr6oxILXptgOylRMmgjtGmKBIEi_WlX06_oH7h-RmTHMgYoM-J9hjjVWih8hslFRS0pRdA6dljk2W5W8oNGhIdpfKU=s320' width='320'/>
+              <svg class='brand-logo-fallback' viewBox='0 0 48 42'><path d='M7 6v30M17 6v30M28 6v19c0 14 14 14 14 0V6' fill='none' stroke='currentColor' stroke-linecap='square' stroke-width='3'/></svg>
+            </span>
+            <div>
+              <p class='eyebrow'>INOX.UP sur les réseaux</p>
+              <h2 id='social-title'>L’atelier en images et en vidéos.</h2>
+              <p>Retrouvez nos dernières publications, nos réalisations et nos vidéos sur le compte Instagram officiel <strong>@inox_up</strong>.</p>
+            </div>
+          </div>
+          <div class='social-actions'>
+            <a class='btn btn--dark' href='https://www.instagram.com/inox_up/' rel='noopener noreferrer' target='_blank'><svg class='icon' aria-hidden='true'><use href='#i-instagram'/></svg> Suivre @inox_up</a>
+            <a class='btn btn--outline' href='https://www.facebook.com/people/InoxUp/61559115741472/' rel='noopener noreferrer' target='_blank'><svg class='icon' aria-hidden='true'><use href='#i-facebook'/></svg> Facebook</a>
+          </div>
         </div>
       </section>
 
@@ -1293,7 +1395,7 @@
     <div class='container footer-main'>
       <div class='footer-brand'>
         <a class='brand' expr:href='data:blog.homepageUrl'>
-          <span class='brand-mark' aria-hidden='true'><svg viewBox='0 0 48 42'><path d='M7 6v30M17 6v30M28 6v19c0 14 14 14 14 0V6' fill='none' stroke='currentColor' stroke-linecap='square' stroke-width='3'/></svg></span>
+          <span class='brand-mark brand-mark--logo' aria-hidden='true'><img alt='' class='brand-logo-image' height='160' src='https://blogger.googleusercontent.com/img/a/AVvXsEhQiLkxeot0dRFo2p7LdMw3Brgk83XC9FAJGFg8atBhk0UazWLHL0xRFqDMHJK8N6VgJGITBY74fXlA4Ej_AqIB8cM1et-qrip-mPr6oxILXptgOylRMmgjtGmKBIEi_WlX06_oH7h-RmTHMgYoM-J9hjjVWih8hslFRS0pRdA6dljk2W5W8oNGhIdpfKU=s160' width='160'/><svg class='brand-logo-fallback' viewBox='0 0 48 42'><path d='M7 6v30M17 6v30M28 6v19c0 14 14 14 14 0V6' fill='none' stroke='currentColor' stroke-linecap='square' stroke-width='3'/></svg></span>
           <span class='brand-copy'><span class='brand-name'>INOX<span>.UP</span></span><span class='brand-tagline'>Métallerie sur mesure</span></span>
         </a>
         <p>Des ouvrages en inox pensés avec précision, fabriqués sur mesure et adaptés à votre quotidien.</p>
@@ -1341,6 +1443,18 @@
     var header = document.getElementById('site-header');
     var navToggle = document.getElementById('nav-toggle');
     var siteNav = document.getElementById('site-nav');
+
+    /* Conserve une identité visible même si l’image du logo est indisponible. */
+    var logoImages = document.querySelectorAll('.brand-logo-image');
+    Array.prototype.forEach.call(logoImages, function (image) {
+      function showLogoFallback() {
+        image.style.display = 'none';
+        var fallback = image.parentElement.querySelector('.brand-logo-fallback');
+        if (fallback) { fallback.style.display = 'block'; }
+      }
+      image.addEventListener('error', showLogoFallback);
+      if (image.complete && image.naturalWidth === 0) { showLogoFallback(); }
+    });
 
     function closeNavigation() {
       body.classList.remove('nav-open');
