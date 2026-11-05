@@ -6,7 +6,7 @@ Refonte complète de `inox.xml` pour présenter les services d’**INOX.UP** dan
 
 - Accueil premium graphite et bleu acier, avec navigation fixe et menu mobile accessible.
 - Interface en français, arabe et anglais, avec RTL complet, police Noto Sans Arabic, titre d’accueil localisé et annonces accessibles.
-- Mode clair/sombre persistant, compatible avec la préférence du système, transitions animées et couleur du navigateur synchronisée.
+- Mode clair/sombre persistant, avec hero réellement clair ou sombre, transitions animées et couleur du navigateur synchronisée.
 - Logo Blogger d’origine avec fallback automatique, favicon coordonné et liens Instagram visibles dans la barre supérieure, une bannière dédiée et le pied de page.
 - Services, applications en inox, méthode de travail, avantages et FAQ.
 - Galerie avec visionneuse native (`<dialog>`), navigation précédent/suivant, clavier, swipe tactile et compteur, sans bibliothèque externe.
@@ -66,7 +66,7 @@ inoxup-language    fr, ar ou en
 inoxup-theme       light ou dark
 ```
 
-Les changements manuels utilisent la View Transitions API lorsqu’elle est disponible, avec un fondu WAAPI en fallback et aucune animation en mouvement réduit. Une région `aria-live` annonce la nouvelle langue ou le nouveau thème dans la langue active. Le titre de l’onglet d’accueil est localisé ; les titres d’articles restent inchangés puisque leur contenu n’est pas traduit. Le thème met aussi à jour `color-scheme` et la balise `theme-color` pour les contrôles natifs et la barre du navigateur mobile.
+Les changements manuels utilisent la View Transitions API lorsqu’elle est disponible, avec un fondu WAAPI en fallback et aucune animation en mouvement réduit. Une région `aria-live` annonce la nouvelle langue ou le nouveau thème dans la langue active. Le titre de l’onglet d’accueil est localisé ; les titres d’articles restent inchangés puisque leur contenu n’est pas traduit. Le thème met aussi à jour `color-scheme` et la balise `theme-color` pour les contrôles natifs et la barre du navigateur mobile. Le hero possède des variables de surface, de texte, d’accent et de bouton distinctes en clair et en sombre afin que le changement soit visible dès le premier écran.
 
 Sans choix de thème enregistré, le site suit `prefers-color-scheme`. Un choix manuel devient prioritaire ; pour revenir au comportement du système, supprimez la préférence du site dans les données du navigateur.
 
@@ -120,7 +120,7 @@ Le formulaire utilise uniquement JavaScript pour construire une URL `wa.me`. Il 
 - Aucun débordement horizontal ni chevauchement des contrôles aux largeurs 320, 390, 600, 768, 1024, 1080, 1081 et 1440 px.
 - Douze combinaisons langue/thème testées sur l’accueil en desktop et mobile, puis douze sur la maquette article/commentaires.
 - Persistance après rechargement, retour FR → AR → EN → FR, suivi du thème système et changement de langue sans rechargement testés.
-- Transitions de langue/thème avec View Transitions, fallback WAAPI, reduced-motion et absence des deux APIs testées ; annonces localisées, titre d’accueil, `theme-color`, `color-scheme` et conservation des champs du formulaire vérifiés.
+- Transitions de langue/thème avec View Transitions, fallback WAAPI, reduced-motion et absence des deux APIs testées ; annonces localisées, titre d’accueil, `theme-color`, `color-scheme`, couleurs distinctes du hero et conservation des champs du formulaire vérifiés.
 - Menu mobile, galerie et changement de langue pendant la visionneuse, présélection des services et composition des messages WhatsApp FR/AR/EN testés.
 - Contenu Blogger non traduit et direction automatique des articles/commentaires vérifiés.
 - Audits automatisés WCAG 2 A/AA et WCAG 2.1 A/AA sans violation détectée sur les 24 combinaisons accueil/article, desktop/mobile, langue et thème.
