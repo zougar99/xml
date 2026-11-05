@@ -48,6 +48,8 @@
     root.setAttribute('data-lang', language);
     root.setAttribute('lang', language);
     root.setAttribute('dir', language === 'ar' ? 'rtl' : 'ltr');
+    var themeColor = document.querySelector('meta[name="theme-color"]');
+    if (themeColor) { themeColor.setAttribute('content', theme === 'dark' ? '#10171c' : '#f2f4f5'); }
   }());
   //]]>
   </script>
@@ -189,6 +191,7 @@
     }
     *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; scroll-padding-top: 108px; }
+    ::view-transition-old(root), ::view-transition-new(root) { animation-duration: .26s; animation-timing-function: cubic-bezier(.2,.7,.2,1); }
     body {
       margin: 0;
       background: var(--paper);
@@ -270,13 +273,13 @@
     .site-nav a:hover::after, .site-nav a.is-active::after { right: 0; }
     .header-cta { min-height: 42px; padding: 10px 16px; font-size: .76rem; }
     .preferences { display: flex; align-items: center; gap: 7px; }
-    .theme-toggle { width: 40px; height: 40px; display: inline-grid; place-items: center; padding: 0; border: 1px solid var(--line-dark); border-radius: 8px; background: transparent; color: #fff; cursor: pointer; }
+    .theme-toggle { width: 40px; height: 40px; display: inline-grid; place-items: center; padding: 0; border: 1px solid var(--line-dark); border-radius: 8px; background: transparent; color: #fff; cursor: pointer; transition: border-color .2s ease, color .2s ease, background .2s ease; }
     .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
     .theme-toggle .icon { width: 18px; height: 18px; }
     .theme-icon--moon { display: none; }
     :root[data-theme='dark'] .theme-icon--sun { display: none; }
     :root[data-theme='dark'] .theme-icon--moon { display: block; }
-    .language-select { width: 58px; height: 40px; padding: 0 7px; border: 1px solid var(--line-dark); border-radius: 8px; background: var(--ink); color: #fff; font-size: .68rem; font-weight: 800; cursor: pointer; }
+    .language-select { width: 58px; height: 40px; padding: 0 7px; border: 1px solid var(--line-dark); border-radius: 8px; background: var(--ink); color: #fff; font-size: .68rem; font-weight: 800; cursor: pointer; transition: border-color .2s ease, background .2s ease; }
     .language-select option { background: var(--ink); color: #fff; }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
     .nav-toggle { display: none; width: 44px; height: 44px; border: 1px solid var(--line-dark); border-radius: 8px; background: transparent; cursor: pointer; align-items: center; justify-content: center; }
@@ -741,6 +744,7 @@
 <body>
   <a class='skip-link' href='#contenu'>Aller au contenu</a>
   <div aria-hidden='true' class='scroll-progress' id='scroll-progress'></div>
+  <p aria-atomic='true' aria-live='polite' class='sr-only' data-no-i18n='true' id='preference-status' role='status'></p>
 
   <!-- Icônes locales : aucune bibliothèque externe. -->
   <svg aria-hidden='true' class='svg-sprite' xmlns='http://www.w3.org/2000/svg'>
@@ -2122,16 +2126,24 @@
     function applyTheme(theme, save) {
       currentTheme = theme === 'dark' ? 'dark' : 'light';
       root.setAttribute('data-theme', currentTheme);
+      var themeColor = document.querySelector('meta[name="theme-color"]');
+      if (themeColor) { themeColor.setAttribute('content', currentTheme === 'dark' ? '#10171c' : '#f2f4f5'); }
       if (save !== false) { setPreference('inoxup-theme', currentTheme); }
       updateThemeToggle();
     }
 
+    var homepageTitles = {
+      fr: 'INOX.UP — Inox sur mesure au Maroc',
+      en: 'INOX.UP — Custom stainless steel in Morocco',
+      ar: 'INOX.UP — الإينوكس حسب القياس في المغرب'
+    };
     var activeGalleryButton = null;
     function applyLanguage(language, save) {
       currentLanguage = /^(fr|ar|en)$/.test(language) ? language : 'fr';
       root.setAttribute('data-lang', currentLanguage);
       root.setAttribute('lang', currentLanguage);
       root.setAttribute('dir', currentLanguage === 'ar' ? 'rtl' : 'ltr');
+      if (document.getElementById('accueil')) { document.title = homepageTitles[currentLanguage]; }
       if (save !== false) { setPreference('inoxup-language', currentLanguage); }
 
       i18nTextNodes.forEach(function (item) {
@@ -2443,13 +2455,79 @@
       lightbox.addEventListener('close', function () { activeGalleryButton = null; swipeStart = null; });
     }
 
+    var preferenceMessages = {
+      fr: {
+        dark: 'Mode sombre activé.', light: 'Mode clair activé.',
+        fr: 'Langue définie sur le français.', en: 'Langue définie sur l’anglais.', ar: 'Langue définie sur l’arabe.'
+      },
+      en: {
+        dark: 'Dark mode enabled.', light: 'Light mode enabled.',
+        fr: 'Language set to French.', en: 'Language set to English.', ar: 'Language set to Arabic.'
+      },
+      ar: {
+        dark: 'تم تفعيل الوضع الداكن.', light: 'تم تفعيل الوضع الفاتح.',
+        fr: 'تم تفعيل اللغة الفرنسية.', en: 'تم تفعيل اللغة الإنجليزية.', ar: 'تم تفعيل اللغة العربية.'
+      }
+    };
+    var preferenceAnimation = null;
+    var preferenceAnnouncementTimer = 0;
+    function announcePreference(key) {
+      var status = document.getElementById('preference-status');
+      var messages = preferenceMessages[currentLanguage] || preferenceMessages.fr;
+      if (!status || !messages[key]) { return; }
+      if (preferenceAnnouncementTimer) { window.clearTimeout(preferenceAnnouncementTimer); }
+      status.textContent = '';
+      preferenceAnnouncementTimer = window.setTimeout(function () {
+        status.textContent = messages[key];
+        preferenceAnnouncementTimer = 0;
+      }, 40);
+    }
+    function runPreferenceTransition(update) {
+      if (!motionPreference.matches && typeof document.startViewTransition === 'function') {
+        try {
+          document.startViewTransition(update);
+          return true;
+        } catch (error) { /* Fallback simple si la transition native est indisponible. */ }
+      }
+      update();
+      if (!motionPreference.matches) {
+        var main = document.getElementById('contenu');
+        if (main && typeof main.animate === 'function') {
+          if (preferenceAnimation) { preferenceAnimation.cancel(); }
+          preferenceAnimation = main.animate([{ opacity: .72 }, { opacity: 1 }], {
+            duration: 220,
+            easing: 'cubic-bezier(.2,.7,.2,1)'
+          });
+        }
+      }
+      return false;
+    }
+    function animateThemeIcon(theme) {
+      if (motionPreference.matches) { return; }
+      var toggle = document.getElementById('theme-toggle');
+      var icon = toggle ? toggle.querySelector(theme === 'dark' ? '.theme-icon--moon' : '.theme-icon--sun') : null;
+      if (icon && typeof icon.animate === 'function') {
+        icon.animate([
+          { opacity: 0, transform: 'rotate(-50deg) scale(.65)' },
+          { opacity: 1, transform: 'rotate(0) scale(1)' }
+        ], { duration: 260, easing: 'cubic-bezier(.2,.7,.2,1)' });
+      }
+    }
+
     var languageSelect = document.getElementById('language-select');
     if (languageSelect) {
-      languageSelect.addEventListener('change', function () { applyLanguage(languageSelect.value, true); });
+      languageSelect.addEventListener('change', function () {
+        var nextLanguage = languageSelect.value;
+        runPreferenceTransition(function () { applyLanguage(nextLanguage, true); announcePreference(nextLanguage); });
+      });
     }
     var themeToggle = document.getElementById('theme-toggle');
     if (themeToggle) {
-      themeToggle.addEventListener('click', function () { applyTheme(currentTheme === 'dark' ? 'light' : 'dark', true); });
+      themeToggle.addEventListener('click', function () {
+        var nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        var nativeTransition = runPreferenceTransition(function () { applyTheme(nextTheme, true); announcePreference(nextTheme); });
+        if (!nativeTransition) { animateThemeIcon(nextTheme); }
+      });
     }
     var themeMedia = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
     function followSystemTheme(event) {
